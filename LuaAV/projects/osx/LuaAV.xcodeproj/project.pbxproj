@@ -4107,7 +4107,7 @@
 		36FFDE7210B766E900718E3A /* luaav_app_menu_cocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = luaav_app_menu_cocoa.mm; sourceTree = "<group>"; };
 		36FFDEBC10B769C800718E3A /* preferences.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = preferences.lua; sourceTree = "<group>"; };
 		36FFDECA10B76A0B00718E3A /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
-		36FFDED210B76A1200718E3A /* LuaAV.lua */ = {isa = PBXFileReference; explicitFileType = sourcecode.lua; fileEncoding = 4; lastKnownFileType = text; path = LuaAV.lua; sourceTree = "<group>"; };
+		36FFDED210B76A1200718E3A /* LuaAV.lua */ = {isa = PBXFileReference; explicitFileType = sourcecode.lua; fileEncoding = 4; path = LuaAV.lua; sourceTree = "<group>"; };
 		36FFDFF410B779A500718E3A /* luaav_midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_midi.cpp; sourceTree = "<group>"; };
 		36FFDFFA10B779BA00718E3A /* RtMidi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtMidi.h; sourceTree = "<group>"; };
 		36FFDFFB10B779BA00718E3A /* RtError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtError.h; sourceTree = "<group>"; };
@@ -10642,7 +10642,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\nsvn export --force ${PROJECT_DIR}/../../dev_osx/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\nsvn export --force ${PROJECT_DIR}/../../dev/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\nsvn export --force ${PROJECT_DIR}/../../LuaAVApp/luaclang/llvm-2.8/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\nsvn export --force ${PROJECT_DIR}/../../LuaAVApp/luaclang/llvm-2.8/lib_osx/clang/2.8/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\nsvn export --force ${PROJECT_DIR}/../../modules/space/src/bindings ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers";
+			shellScript = "\n# svn export --force ${PROJECT_DIR}/../../dev_osx/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\n# svn export --force ${PROJECT_DIR}/../../dev/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\n# svn export --force ${PROJECT_DIR}/../../LuaAVApp/luaclang/llvm-2.8/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\n# svn export --force ${PROJECT_DIR}/../../LuaAVApp/luaclang/llvm-2.8/lib_osx/clang/2.8/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\n# svn export --force ${PROJECT_DIR}/../../modules/space/src/bindings ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\n\n\ncp -rf ${PROJECT_DIR}/../../dev_osx/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\ncp -rf ${PROJECT_DIR}/../../dev/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\ncp -rf ${PROJECT_DIR}/../../LuaAVApp/luaclang/llvm-2.8/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\ncp -rf ${PROJECT_DIR}/../../LuaAVApp/luaclang/llvm-2.8/lib_osx/clang/2.8/include ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers\ncp -rf ${PROJECT_DIR}/../../modules/space/src/bindings ${BUILD_DIR}/${CONFIGURATION}/LuaAV.app/Contents/Resources/Headers";
 		};
 		36EE694812469C0D00C9A19E /* Copy Extras */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -10656,7 +10656,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\nsvn export --force ${PROJECT_DIR}/../../extra ${BUILD_DIR}/${CONFIGURATION}/extra\ncp ${PROJECT_DIR}/../../LuaAVApp/bin/osx/* ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}";
+			shellScript = "export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH\necho $PATH\n# svn export --force ${PROJECT_DIR}/../../extra ${BUILD_DIR}/${CONFIGURATION}/extra\ncd ${PROJECT_DIR}/../../extra\npwd\ncp -rf ${PROJECT_DIR}/../../extra ${BUILD_DIR}/${CONFIGURATION}/extra\ncp ${PROJECT_DIR}/../../LuaAVApp/bin/osx/* ${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}";
 		};
 /* End PBXShellScriptBuildPhase section */
 
