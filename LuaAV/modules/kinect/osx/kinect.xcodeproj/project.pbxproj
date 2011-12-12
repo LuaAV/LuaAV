@@ -1,0 +1,339 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		36387F911295E41F00B43240 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36387F8D1295E41F00B43240 /* libusb-1.0.a */; };
+		3639E141129A179700B8AE66 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3639E140129A179700B8AE66 /* IOKit.framework */; };
+		3639E151129A17F600B8AE66 /* inits.c in Sources */ = {isa = PBXBuildFile; fileRef = 36387F8C1295E41F00B43240 /* inits.c */; };
+		3639E152129A17F800B8AE66 /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = 36387F8A1295E41F00B43240 /* cameras.c */; };
+		B9DAD777103B52AD000527A5 /* luaopen_kinect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DAD776103B52AD000527A5 /* luaopen_kinect.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		360D3CAC10F2B535000A3997 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "../../../../../sysbuild/$(CONFIGURATION)/modules";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		362E19C510866B7400145CFE /* test_kinect.lua */ = {isa = PBXFileReference; explicitFileType = sourcecode.lua; fileEncoding = 4; path = test_kinect.lua; sourceTree = "<group>"; };
+		36387F851295E41F00B43240 /* glview.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glview.c; sourceTree = "<group>"; };
+		36387F871295E41F00B43240 /* libfreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libfreenect.h; sourceTree = "<group>"; };
+		36387F881295E41F00B43240 /* libusb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
+		36387F8A1295E41F00B43240 /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
+		36387F8B1295E41F00B43240 /* cameras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameras.h; sourceTree = "<group>"; };
+		36387F8C1295E41F00B43240 /* inits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inits.c; sourceTree = "<group>"; };
+		36387F8D1295E41F00B43240 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
+		3639E140129A179700B8AE66 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		36C2AEF20CD7A2DB0054F99E /* kinect.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = kinect.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9DAD776103B52AD000527A5 /* luaopen_kinect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaopen_kinect.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36C2AEF00CD7A2DB0054F99E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36387F911295E41F00B43240 /* libusb-1.0.a in Frameworks */,
+				3639E141129A179700B8AE66 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C2AEF20CD7A2DB0054F99E /* kinect.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* cocoa_ogl */ = {
+			isa = PBXGroup;
+			children = (
+				36387F831295E41F00B43240 /* libfreenect */,
+				362E19C410866B7400145CFE /* test */,
+				DF00B63C0E17FD4700E60A0B /* src */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				3639E140129A179700B8AE66 /* IOKit.framework */,
+			);
+			name = cocoa_ogl;
+			sourceTree = "<group>";
+		};
+		362E19C410866B7400145CFE /* test */ = {
+			isa = PBXGroup;
+			children = (
+				362E19C510866B7400145CFE /* test_kinect.lua */,
+			);
+			name = test;
+			path = ../test;
+			sourceTree = SOURCE_ROOT;
+		};
+		36387F831295E41F00B43240 /* libfreenect */ = {
+			isa = PBXGroup;
+			children = (
+				36387F841295E41F00B43240 /* examples */,
+				36387F861295E41F00B43240 /* include */,
+				36387F891295E41F00B43240 /* lib_osx */,
+			);
+			name = libfreenect;
+			path = ../libfreenect;
+			sourceTree = SOURCE_ROOT;
+		};
+		36387F841295E41F00B43240 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				36387F851295E41F00B43240 /* glview.c */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
+		36387F861295E41F00B43240 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				36387F871295E41F00B43240 /* libfreenect.h */,
+				36387F881295E41F00B43240 /* libusb.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		36387F891295E41F00B43240 /* lib_osx */ = {
+			isa = PBXGroup;
+			children = (
+				36387F8A1295E41F00B43240 /* cameras.c */,
+				36387F8B1295E41F00B43240 /* cameras.h */,
+				36387F8C1295E41F00B43240 /* inits.c */,
+				36387F8D1295E41F00B43240 /* libusb-1.0.a */,
+			);
+			path = lib_osx;
+			sourceTree = "<group>";
+		};
+		DF00B63C0E17FD4700E60A0B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B9DAD776103B52AD000527A5 /* luaopen_kinect.cpp */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		36C2AEF10CD7A2DB0054F99E /* module */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "module" */;
+			buildPhases = (
+				36C2AEEF0CD7A2DB0054F99E /* Sources */,
+				36C2AEF00CD7A2DB0054F99E /* Frameworks */,
+				360D3CAC10F2B535000A3997 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = module;
+			productName = testmod2;
+			productReference = 36C2AEF20CD7A2DB0054F99E /* kinect.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "kinect" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* cocoa_ogl */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36C2AEF10CD7A2DB0054F99E /* module */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36C2AEEF0CD7A2DB0054F99E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3639E152129A17F800B8AE66 /* cameras.c in Sources */,
+				3639E151129A17F600B8AE66 /* inits.c in Sources */,
+				B9DAD777103B52AD000527A5 /* luaopen_kinect.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		36C2AF010CD7A2EB0054F99E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_LINK_WITH_DYNAMIC_LIBRARIES = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../libusb/osx/libs\"",
+					"\"$(SRCROOT)/../libfreenect/lib\"",
+					"\"$(SRCROOT)/../libfreenect/lib_osx\"",
+				);
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-DPD",
+					"-DHAVE_UNISTD_H",
+					"-DHAVE_LIBDL",
+					"-DUSEAPI_DUMMY",
+					"-Wno-int-to-pointer-cast",
+					"-Wno-pointer-to-int-cast",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = $PROJECT_NAME;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = macosx10.5;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = debugging;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libpd/src $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include $(SRCROOT)/../../../libluaav/include";
+			};
+			name = Debug;
+		};
+		36C2AF020CD7A2EB0054F99E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_LINK_WITH_DYNAMIC_LIBRARIES = YES;
+				GCC_MODEL_TUNING = G5;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = "";
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../libusb/osx/libs\"",
+					"\"$(SRCROOT)/../libfreenect/lib\"",
+					"\"$(SRCROOT)/../libfreenect/lib_osx\"",
+				);
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-DPD",
+					"-DHAVE_UNISTD_H",
+					"-DHAVE_LIBDL",
+					"-DUSEAPI_DUMMY",
+					"-Wno-int-to-pointer-cast",
+					"-Wno-pointer-to-int-cast",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = $PROJECT_NAME;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = macosx10.5;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = debugging;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../libpd/src $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include $(SRCROOT)/../../../libluaav/include";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.4;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.4;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "module" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C2AF010CD7A2EB0054F99E /* Debug */,
+				36C2AF020CD7A2EB0054F99E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "kinect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

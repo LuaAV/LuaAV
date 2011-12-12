@@ -1,0 +1,130 @@
+Shader
+{
+	name = "cf.motionblur.shl",
+	description = [[ Two-pass Gaussian blur ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter {
+			1,
+			name = "amount", type = "float", 
+			description =  "amount of blur",
+		},
+		
+		Parameter {
+			45,
+			name = "angle", type = "float",
+			description = "angle of blur",
+		},
+		
+		Parameter {
+			0,
+			name = "tex0", type = "int",
+			description = "Input texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program {
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord;
+
+void main()
+{
+    // perform standard transform on vertex
+    gl_Position = ftransform();
+
+    // transform texcoords
+	texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program {
+	type = "fragment",
+
+	[[
+
+varying vec2 texcoord;
+
+// define our rectangular texture samplers 
+uniform sampler2D tex0;
+
+uniform float amount;
+uniform float angle;
+
+void main (void) {
+
+	vec2 texcoord0 = texcoord;
+	float theta = radians(angle); 
+//	float theta = angle;
+
+	// our offsets, where we sample
+	vec2 amount1,amount2,amount3,amount4,amount5,amount6,amount7,amount8; 
+
+	amount1 = vec2(cos(theta), sin(theta)) * amount;
+
+	amount2 = amount1 *2.0;
+	amount3 = amount1 *3.0;
+	amount4 = amount1 *4.0;
+
+	amount5 = -amount1;
+	amount6 = amount5 * 2.0;
+	amount7 = amount5 * 3.0;
+	amount8 = amount5 * 4.0;
+
+	// sample our textures
+	vec4 sample0 = texture2D(tex0, texcoord0);
+	vec4 sample1 = texture2D(tex0, texcoord0 + amount1);
+	vec4 sample2 = texture2D(tex0, texcoord0 + amount2);
+	vec4 sample3 = texture2D(tex0, texcoord0 + amount3);
+	vec4 sample4 = texture2D(tex0, texcoord0 + amount4);
+	vec4 sample5 = texture2D(tex0, texcoord0 + amount5);
+	vec4 sample6 = texture2D(tex0, texcoord0 + amount6);
+	vec4 sample7 = texture2D(tex0, texcoord0 + amount7);
+	vec4 sample8 = texture2D(tex0, texcoord0 + amount8);
+
+	// force a 45 degree blur blur
+	
+/*	vec4 sample0 = texture2DRect(tex0, texcoord);
+	vec4 sample1 = texture2DRect(tex0, texcoord + vec2(0., 2));
+	vec4 sample2 = texture2DRect(tex0, texcoord + vec2(0., 4.));
+	vec4 sample3 = texture2DRect(tex0, texcoord + vec2(0., 6.));
+	vec4 sample4 = texture2DRect(tex0, texcoord + vec2(0., 8.));
+	vec4 sample5 = texture2DRect(tex0, texcoord + vec2(0., -2.));
+	vec4 sample6 = texture2DRect(tex0, texcoord + vec2(0., -4.));
+	vec4 sample7 = texture2DRect(tex0, texcoord + vec2(0., -6.));
+	vec4 sample8 = texture2DRect(tex0, texcoord + vec2(0., -8.));
+*/
+	
+
+	// quasi gaussian distro
+	vec4 result = sample0 * .25;
+	result += (sample4 + sample5) * 0.2;
+	result += (sample3 + sample6) * 0.1;
+	result += (sample2 + sample7) * 0.05;
+	result += (sample1 + sample8) * 0.025;
+	gl_FragColor = result;
+
+	//straight averaging	
+//	gl_FragColor = (sample0 + sample1 + sample2 + sample3 + sample4 + sample5 + sample6 + sample7 + sample8) / 9.0;
+
+} 
+
+
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

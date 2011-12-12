@@ -1,0 +1,270 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">opengl.Mesh</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../opengl.html">opengl</a></li>
+							<li><a href="../opengl/Mesh.html">Mesh</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>Mesh efficiently draws large buffers of geometry data with the constraint that all  geometry buffers except for indices must have the same number of cells.</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mesh:color">
+				<span class="function_name">Mesh:color</span><span class="params">(color)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Set the color data</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mesh:draw">
+				<span class="function_name">Mesh:draw</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Draw the mesh</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mesh:index">
+				<span class="function_name">Mesh:index</span><span class="params">(index)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Set the index data</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mesh:normal">
+				<span class="function_name">Mesh:normal</span><span class="params">(normal)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Set the normal data</td>
+		
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Mesh.primitive">
+				<span class="function_name">Mesh.primitive</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> The drawing primitive</td>
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mesh:texcoord">
+				<span class="function_name">Mesh:texcoord</span><span class="params">(texcoord)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Set the texture coordinate data</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mesh:vertex">
+				<span class="function_name">Mesh:vertex</span><span class="params">(vertex)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Set the vertex data</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mesh:color"></a><span class="function_name">Mesh:color</span><span class="param">(color)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Color data must have 4 components of type Float32.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">color</td>
+							<td class="description">Array of color data</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mesh:draw"></a><span class="function_name">Mesh:draw</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Draw the mesh</p>
+		</div>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mesh:index"></a><span class="function_name">Mesh:index</span><span class="param">(index)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Indices must have 1 component of type UInt32</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">index</td>
+							<td class="description">Array of index data</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mesh:normal"></a><span class="function_name">Mesh:normal</span><span class="param">(normal)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Normal data must have 3 components of type Float32.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">normal</td>
+							<td class="description">Array of normal data</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Mesh.primitive"></a><span class="function_name">Mesh.primitive</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p>The drawing primitive used by the mesh. Valid values are GL_POINTS,  GL_LINES, GL_LINE_STRIP, GL_LINE_LOOP, GL_TRIANGLES, GL_QUADS, and GL_POLYGON.</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mesh:texcoord"></a><span class="function_name">Mesh:texcoord</span><span class="param">(texcoord)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Texture coordinate data must have 2 or 3 components of type Float32.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">texcoord</td>
+							<td class="description">Array of texture coordinate data</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mesh:vertex"></a><span class="function_name">Mesh:vertex</span><span class="param">(vertex)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Vertex data must have 3 components of type Float32.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">vertex</td>
+							<td class="description">Array of vertex data</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

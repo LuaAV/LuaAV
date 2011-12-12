@@ -1,0 +1,95 @@
+Shader{
+	name = "audio.scope.vertices.shl",
+	description = [[ Takes a 2D 1Plane texture and converts it to a 3-Plane texture ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter {
+			0.,
+			name = "sample", type = "float",
+			description = "sample position",
+		},
+		
+		Parameter {
+			1.,
+			name = "scale", type = "float",
+			description = "sample position",
+		},
+	
+		Parameter {
+			{1., -1.},
+			name = "xrange", type = "vec2",
+			description = "output x-axis range",
+		},
+		
+		
+		Parameter {
+			{512, 32},
+			name = "texdim", type = "vec2",
+			description = "input texture dimensions",
+		},
+		
+		Parameter {
+			0,
+			name = "tex0", type = "int",
+			description = "audio buffer",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program {
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord0;
+
+void main() {
+    gl_Position = ftransform();
+    texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program {
+	type = "fragment",
+
+	[[
+
+varying vec2 texcoord0;
+uniform sampler2D tex0;
+uniform vec2 texdim;
+uniform vec2 xrange;
+uniform float sample;
+uniform float scale;
+
+void main() {
+	float nsamples = texdim.x*texdim.y;
+	// delta is the 1/2 the size of a pixel
+	vec2 delta = 0.5/texdim;
+	vec2 tcpos = texcoord0-delta;
+	float spos = ((tcpos.x + tcpos.y*texdim.y)*texdim.x)/scale;
+	// add fudge-factor to deal with floating point error
+	float pos = mod(floor(sample-spos+0.01), nsamples);
+	vec2 tc = vec2(mod(pos, texdim.x), floor(pos/texdim.x))/texdim;
+	tc += delta;
+
+	vec4 c = texture2D(tex0, tc);
+	float xpos = spos/nsamples*scale;
+	gl_FragColor.r = (xrange.y-xrange.x)*xpos+xrange.x;
+	gl_FragColor.g = c.g;
+	gl_FragColor.b = 0.;
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

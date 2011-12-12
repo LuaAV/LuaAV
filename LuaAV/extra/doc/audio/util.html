@@ -1,0 +1,250 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">audio.util</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../audio.html">audio</a></li>
+							<li><a href="../audio/util.html">util</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>Audio related utilities</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#atodb">
+				<span class="function_name">atodb</span><span class="params">(amplitude)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>convert amplitude (0..1) to decibels:</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#dbtoa">
+				<span class="function_name">dbtoa</span><span class="params">(db)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>convert amplitude (0..1) to decibels:</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#ftom">
+				<span class="function_name">ftom</span><span class="params">(frequency)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>convert frequency to MIDI note number</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#mtof">
+				<span class="function_name">mtof</span><span class="params">(notenumber)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>convert MIDI note number to frequency</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#ntom">
+				<span class="function_name">ntom</span><span class="params">(n)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>convert note name to note number (chroma)</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="atodb"></a><span class="function_name">atodb</span><span class="param">(amplitude)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>convert amplitude (0..1) to decibels:</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">amplitude</td>
+							<td class="description">(0..1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>decibels</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="dbtoa"></a><span class="function_name">dbtoa</span><span class="param">(db)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>convert amplitude (0..1) to decibels:</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">db</td>
+							<td class="description">decibels</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>amplitude (0..1)</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="ftom"></a><span class="function_name">ftom</span><span class="param">(frequency)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>note: assumes middle A4 is freq 440Hz and MIDI note 69</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">frequency</td>
+							<td class="description">in Hertz</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>notenumber MIDI note number</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="mtof"></a><span class="function_name">mtof</span><span class="param">(notenumber)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>note: assumes middle A4 is freq 440Hz and MIDI note 69</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">notenumber</td>
+							<td class="description">MIDI note number</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>frequency in Hertz</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="ntom"></a><span class="function_name">ntom</span><span class="param">(n)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Valid names: C, C#, c, c#, etc.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">n</td>
+							<td class="description">note number</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>note name</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

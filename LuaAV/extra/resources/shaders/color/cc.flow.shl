@@ -1,0 +1,55 @@
+Shader{
+	name = "cc.flow.shl",
+	description = [[ optical flow visualizer ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter{
+			0,
+			name = "tex0", type = "int",
+			description = "Input texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program{
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord0;
+
+void main() {
+	gl_Position = ftransform();
+	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program{
+	type = "fragment",
+
+	[[
+
+uniform sampler2D tex0;
+
+varying vec2 texcoord0;
+
+void main() {
+	vec4 color = texture2D(tex0, texcoord0);
+    gl_FragColor.rg = color.ra;
+    gl_FragColor.ba = vec2(0., 1.);
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

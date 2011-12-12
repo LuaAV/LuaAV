@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<g25spec 
+    license="gpl" 
+    language="cpp"
+    namespace="c2ga"
+    coordStorage="variables"
+    defaultOperatorBindings="true"
+    dimension="4"
+    reportUsage="false" 
+    gmvCode="expand"
+    parser="builtin"
+    testSuite="true"
+    copyright="Gaigen 2.5 Test Suite"
+>
+
+
+
+<inline 
+	constructors="true" 
+	set="true" 
+	assign="true" 
+	operators="true" 
+	functions="true"
+	/>
+
+
+<floatType type="double"/>
+
+<basisVectorNames 
+	name1="no"
+	name2="e1"
+	name3="e2"
+	name4="ni"
+	/>
+	
+<metric name="default" round="true">no.ni=-1</metric>
+<metric name="default">e1.e1=e2.e2=1</metric>
+<metric name="euclidean" round="false">no.no=e1.e1=e2.e2=ni.ni=1</metric>
+
+<mv name="mv" compress="byGrade" coordinateOrder="default"
+memAlloc="full">
+</mv>
+
+
+    <smv name="no" const="true" type="blade">no=1</smv>
+    <smv name="e1" const="true" type="blade">e1=1</smv>
+    <smv name="e2" const="true" type="blade">e2=1</smv>
+    <smv name="ni" const="true" type="blade">ni=1</smv>
+    <smv name="noni" const="true" type="blade">no^ni=1</smv>
+    <smv name="I2" const="true" type="blade">e1^e2=1</smv>
+    <smv name="I4" const="true" type="blade">no^e1^e2^ni=1</smv>
+    <smv name="I4i" const="true" type="blade">no^e1^e2^ni=-1</smv>
+
+    <smv name="vectorE2GA" type="blade">e1 e2</smv>
+    <smv name="bivectorE2GA" type="blade">e1^e2</smv>
+    <smv name="rotorE2GA" type="versor">scalar e1^e2</smv>
+
+    <smv name="normalizedPoint" type="blade">no=1 e1 e2 ni</smv>  
+    <smv name="dualCircle" type="blade">no e1 e2 ni</smv>
+    <smv name="freeVector" type="blade">e1^ni e2^ni</smv>
+    <smv name="freeBivector" type="blade">e1^e2^ni</smv>
+
+    <smv name="circle" type="blade">no^e1^e2 no^e1^ni no^e2^ni e1^e2^ni</smv>
+    <smv name="line" type="blade">e1^e2^ni e1^no^ni e2^no^ni</smv>
+
+    <smv name="pseudoscalar" type="blade">no^e1^e2^ni</smv>
+
+    <smv name="normalizedTranslator" type="versor">scalar=1.0 e1^ni e2^ni</smv>
+    <smv name="translator" type="versor">scalar e1^ni e2^ni</smv>
+    
+    <smv name="evenVersor" type="versor">
+    scalar
+    no^e1 no^e2 e1^e2 e1^ni e2^ni no^ni
+    no^e1^e2^ni
+  </smv>
+
+  <smv name="oddVersor" type="versor">
+    no e1 e2 ni
+    no^e1^e2 no^e1^ni no^e2^ni e1^e2^ni
+  </smv>
+  
+
+<constant name="vectorE1" type="vectorE2GA">e1=1 e2=0</constant>
+<constant name="vectorE2" type="vectorE2GA">e1=0 e2=1</constant>
+<constant name="pointAtOrigin" type="normalizedPoint">no=1<comment>The point at the origin . . . </comment></constant>
+<constant name="pointAtInfinity" type="dualCircle">ni=1 <comment>The point at infinity . . . </comment></constant>
+
+    <om name="om" coordinateOrder="default" />
+
+    <som name="grade1OM_E2GA">
+        <domain>e1 e2</domain>
+    </som>
+
+    <som name="grade1OM">
+        <domain>no e1 e2 ni</domain>
+    </som>
+
+    <som name="flatPointOM">
+        <domain>e1^ni e2^ni no^ni</domain>
+        <range>e1^ni e2^ni no^ni</range> 
+    </som> 
+  
+    <function name="gp" arg1="mv" arg2="mv"/>
+    <function name="gp" arg1="vectorE2GA" arg2="vectorE2GA"/>
+    <function name="gp" arg1="rotorE2GA" arg2="vectorE2GA"/>
+    <function name="gp" arg1="vectorE2GA" arg2="rotorE2GA"/>
+    <function name="gp" arg1="rotorE2GA" arg2="rotorE2GA"/>
+    <function name="gp" arg1="rotorE2GA" arg2="line"/>
+    <function name="gp" arg1="circle" arg2="line"/>
+    <function name="gp" arg1="bivectorE2GA" arg2="bivectorE2GA"/>
+    <function name="gp" arg1="normalizedPoint" arg2="normalizedPoint"/>
+    <function name="gp" arg1="e1" arg2="e2"/>
+    <function name="gp" arg1="no" arg2="ni"/>
+    
+    <function name="op" arg1="mv" arg2="mv"/>
+    <function name="op" arg1="vectorE2GA" arg2="vectorE2GA"/>
+    <function name="op" arg1="rotorE2GA" arg2="vectorE2GA"/>
+    <function name="op" arg1="vectorE2GA" arg2="rotorE2GA"/>
+    <function name="op" arg1="rotorE2GA" arg2="rotorE2GA"/>
+    <function name="op" arg1="vectorE2GA" arg2="line"/>
+    <function name="op" arg1="rotorE2GA" arg2="circle"/>
+    <function name="op" arg1="bivectorE2GA" arg2="bivectorE2GA"/>
+    <function name="op" arg1="pseudoscalar" arg2="oddVersor"/>
+    <function name="op" arg1="no" arg2="ni"/>
+    <function name="op" arg1="ni" arg2="no"/>
+  
+</g25spec>

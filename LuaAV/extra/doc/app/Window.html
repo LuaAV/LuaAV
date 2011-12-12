@@ -1,0 +1,478 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">app.Window</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../app.html">app</a></li>
+							<li><a href="../app/Window.html">Window</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>An OpenGL Window.  Manages OS event callbacks within the window and during window focus.</p><p> Current callbacks are: <pre><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>create</span><span class=operator>(</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>init</span><span class=operator>(</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>closing</span><span class=operator>(</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>key</span><span class=operator>(</span><span class=identifier>event</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>btn</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>modifiers</span><span class=operator>(</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>mouse</span><span class=operator>(</span><span class=identifier>event</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>btn</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>x</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>y</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>nclicks</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>scroll</span><span class=operator>(</span><span class=identifier>x</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>y</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>dx</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>dy</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>resize</span><span class=operator>(</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>Window</span><span class=operator>:</span><span class=identifier>draw</span><span class=operator>(</span><span class=operator>)</span><span class=whitespace>
+ </span></pre></p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.alt">
+				<span class="function_name">Window.alt</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> Alt key flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.autoclear">
+				<span class="function_name">Window.autoclear</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Autoclear</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.border">
+				<span class="function_name">Window.border</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Border flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.clearcolor">
+				<span class="function_name">Window.clearcolor</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Clear color</td>
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Window:close">
+				<span class="function_name">Window:close</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Close the window</td>
+		
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.cmd">
+				<span class="function_name">Window.cmd</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> Cmd key flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.ctrl">
+				<span class="function_name">Window.ctrl</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> Ctrl key flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.cursor">
+				<span class="function_name">Window.cursor</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Cursor visible flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.cursorstyle">
+				<span class="function_name">Window.cursorstyle</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Cursor style</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.dim">
+				<span class="function_name">Window.dim</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Dimensions</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.floating">
+				<span class="function_name">Window.floating</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Floating flag</td>
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Window:flush">
+				<span class="function_name">Window:flush</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Flush and swap Window contents</td>
+		
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.fps">
+				<span class="function_name">Window.fps</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Frames per second</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.fullscreen">
+				<span class="function_name">Window.fullscreen</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Fullscreen flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.grow">
+				<span class="function_name">Window.grow</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Grow flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.mousemove">
+				<span class="function_name">Window.mousemove</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Mouse move event flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.origin">
+				<span class="function_name">Window.origin</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Origin</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.shift">
+				<span class="function_name">Window.shift</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> Shift key flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.stereo">
+				<span class="function_name">Window.stereo</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Stereo flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.sync">
+				<span class="function_name">Window.sync</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Vertical sync flag</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Window.title">
+				<span class="function_name">Window.title</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Title</td>
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt>
+		<a name="Window.alt"></a><span class="function_name">Window.alt</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Alt key flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.autoclear"></a><span class="function_name">Window.autoclear</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Autoclear</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.border"></a><span class="function_name">Window.border</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Border flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.clearcolor"></a><span class="function_name">Window.clearcolor</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Clear color</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Window:close"></a><span class="function_name">Window:close</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Close the window</p>
+		</div>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.cmd"></a><span class="function_name">Window.cmd</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Cmd key flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.ctrl"></a><span class="function_name">Window.ctrl</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Ctrl key flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.cursor"></a><span class="function_name">Window.cursor</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Cursor visible flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.cursorstyle"></a><span class="function_name">Window.cursorstyle</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Cursor style</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.dim"></a><span class="function_name">Window.dim</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Dimensions</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.floating"></a><span class="function_name">Window.floating</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Floating flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Window:flush"></a><span class="function_name">Window:flush</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Flush and swap Window contents</p>
+		</div>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.fps"></a><span class="function_name">Window.fps</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Frames per second</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.fullscreen"></a><span class="function_name">Window.fullscreen</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Fullscreen flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.grow"></a><span class="function_name">Window.grow</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Grow flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.mousemove"></a><span class="function_name">Window.mousemove</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Mouse move event flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.origin"></a><span class="function_name">Window.origin</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Origin</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.shift"></a><span class="function_name">Window.shift</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Shift key flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.stereo"></a><span class="function_name">Window.stereo</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Stereo flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.sync"></a><span class="function_name">Window.sync</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Vertical sync flag</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Window.title"></a><span class="function_name">Window.title</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Title</p>
+		</div>
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+local f = Filter{
+	name = "testf",
+	parameters = {
+		Param{
+			0.,
+			name = "c1",
+			type = "float",
+			role = "uniform",	
+		},
+	},
+
+	nin = 2,
+	nout = 1,
+	
+	planes = {1, 4},
+	types = {"char", "float32"},
+	dims = {1, 3},
+	
+
+	[[
+		in Mat in0;
+		in Mat in1;
+		out Cell out0;
+		out Cell out1;
+	
+		void process() {
+			Cell v1 = sample(in0, coord(in0));
+			Cell v2 = sample(in1, coord(in1));
+			out0 = 1+v1*v2;
+			out1 = v2*v1+c1;
+		}
+	]],
+}

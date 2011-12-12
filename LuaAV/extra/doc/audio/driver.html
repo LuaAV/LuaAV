@@ -1,0 +1,175 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">audio.driver</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../audio.html">audio</a></li>
+							<li><a href="../audio/driver.html">driver</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>audio.driver.inputs and audio.driver.outputs store the available input/output devices (device name as key, parameter table as value)</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#configure">
+				<span class="function_name">configure</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>configure the audio driver</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#refresh">
+				<span class="function_name">refresh</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>refresh the driver lists</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#status">
+				<span class="function_name">status</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>returns a string of status info from the driver</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="configure"></a><span class="function_name">configure</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>all argument fields are optional</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">driver parameters</td>
+						</tr>
+											<tr>
+							<td class="name">args.blocksize</td>
+							<td class="description">integer (should be a multiple of 64)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">device name</td>
+						</tr>
+											<tr>
+							<td class="name">args.inputs</td>
+							<td class="description">integer </td>
+						</tr>
+											<tr>
+							<td class="name">args.output</td>
+							<td class="description">device name </td>
+						</tr>
+											<tr>
+							<td class="name">args.outputs</td>
+							<td class="description">integer </td>
+						</tr>
+											<tr>
+							<td class="name">args.samplerate</td>
+							<td class="description">number</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>success, errormsg</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="refresh"></a><span class="function_name">refresh</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>audio.driver.inputs and audio.driver.outputs store the available input/output devices</p>
+		</div>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="status"></a><span class="function_name">status</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>returns a string of status info from the driver</p>
+		</div>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>string</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

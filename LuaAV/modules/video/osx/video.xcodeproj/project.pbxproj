@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9751CC0123F233700A932A1 /* QtKitVideoCameraImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = B9751CBE123F233700A932A1 /* QtKitVideoCameraImpl.h */; };
+		B9751CC1123F233700A932A1 /* QtKitVideoCameraImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9751CBF123F233700A932A1 /* QtKitVideoCameraImpl.mm */; };
+		B9751CDE123F267600A932A1 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9751CDD123F267600A932A1 /* CoreVideo.framework */; };
+		B9751CE0123F267600A932A1 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9751CDF123F267600A932A1 /* QTKit.framework */; };
+		B9751DAF123F43AC00A932A1 /* QtKitVideoImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = B9751DAD123F43AC00A932A1 /* QtKitVideoImpl.h */; };
+		B9751DB0123F43AC00A932A1 /* QtKitVideoImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9751DAE123F43AC00A932A1 /* QtKitVideoImpl.mm */; };
+		B97532081243F5FA00A932A1 /* v002_MoviePlayerPlugInOld.h in Headers */ = {isa = PBXBuildFile; fileRef = B97531FC1243F5FA00A932A1 /* v002_MoviePlayerPlugInOld.h */; };
+		B9B0BD06122D379D0026D582 /* lua_video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD05122D379D0026D582 /* lua_video.cpp */; };
+		B9B0BD30122D37E60026D582 /* ofVideoImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD15122D37E60026D582 /* ofVideoImpl.cpp */; };
+		B9B0BD31122D37E60026D582 /* ofVideoImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD16122D37E60026D582 /* ofVideoImpl.h */; };
+		B9B0BD32122D37E60026D582 /* Video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD17122D37E60026D582 /* Video.cpp */; };
+		B9B0BD33122D37E60026D582 /* Video.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD18122D37E60026D582 /* Video.h */; };
+		B9B0BD34122D37E60026D582 /* VideoCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD19122D37E60026D582 /* VideoCamera.cpp */; };
+		B9B0BD35122D37E60026D582 /* VideoCamera.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD1A122D37E60026D582 /* VideoCamera.h */; };
+		B9B0BD36122D37E60026D582 /* VideoCameraImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD1B122D37E60026D582 /* VideoCameraImpl.cpp */; };
+		B9B0BD37122D37E60026D582 /* VideoCameraImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD1C122D37E60026D582 /* VideoCameraImpl.h */; };
+		B9B0BD38122D37E60026D582 /* VideoImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD1D122D37E60026D582 /* VideoImpl.cpp */; };
+		B9B0BD39122D37E60026D582 /* VideoImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD1E122D37E60026D582 /* VideoImpl.h */; };
+		B9B0BD55122D3B8C0026D582 /* video_common.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD54122D3B8C0026D582 /* video_common.h */; };
+		B9B0BD8A122D3D9A0026D582 /* ofConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD76122D3D9A0026D582 /* ofConstants.h */; };
+		B9B0BD8E122D3D9A0026D582 /* ofGraphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD7A122D3D9A0026D582 /* ofGraphics.cpp */; };
+		B9B0BD8F122D3D9A0026D582 /* ofGraphics.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD7B122D3D9A0026D582 /* ofGraphics.h */; };
+		B9B0BD92122D3D9A0026D582 /* ofQtUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD7E122D3D9A0026D582 /* ofQtUtils.cpp */; };
+		B9B0BD93122D3D9A0026D582 /* ofQtUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD7F122D3D9A0026D582 /* ofQtUtils.h */; };
+		B9B0BD97122D3D9A0026D582 /* ofVideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD83122D3D9A0026D582 /* ofVideoPlayer.cpp */; };
+		B9B0BD98122D3D9A0026D582 /* ofVideoPlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BD84122D3D9A0026D582 /* ofVideoPlayer.h */; };
+		B9B0BDDA122D3EC70026D582 /* QuickTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B0BDD9122D3EC70026D582 /* QuickTime.framework */; };
+		B9B0C107122D3EEC0026D582 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B0C101122D3EEC0026D582 /* ApplicationServices.framework */; };
+		B9B0C108122D3EEC0026D582 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B0C102122D3EEC0026D582 /* CoreFoundation.framework */; };
+		B9B0C109122D3EEC0026D582 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B0C103122D3EEC0026D582 /* CoreServices.framework */; };
+		B9B0C10A122D3EEC0026D582 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B0C104122D3EEC0026D582 /* AppKit.framework */; };
+		B9B0C10B122D3EEC0026D582 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B0C105122D3EEC0026D582 /* CoreData.framework */; };
+		B9B0C10C122D3EEC0026D582 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B0C106122D3EEC0026D582 /* Foundation.framework */; };
+		B9FEBDEA126A55C20077A573 /* ofxQtVideoSaver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9FEBDE8126A55C20077A573 /* ofxQtVideoSaver.cpp */; };
+		B9FEBDEB126A55C20077A573 /* ofxQtVideoSaver.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FEBDE9126A55C20077A573 /* ofxQtVideoSaver.h */; };
+		B9FEBDEF126A56800077A573 /* ofVideoRecorderImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = B9FEBDED126A56800077A573 /* ofVideoRecorderImpl.h */; };
+		B9FEBDF0126A56800077A573 /* ofVideoRecorderImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9FEBDEE126A56800077A573 /* ofVideoRecorderImpl.cpp */; };
+		B9FEBDF7126A59B30077A573 /* VideoRecorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD1F122D37E60026D582 /* VideoRecorder.cpp */; };
+		B9FEBDF8126A59B60077A573 /* VideoRecorderImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BD21122D37E60026D582 /* VideoRecorderImpl.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36C2AEF20CD7A2DB0054F99E /* video.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = video.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9751CBE123F233700A932A1 /* QtKitVideoCameraImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QtKitVideoCameraImpl.h; sourceTree = "<group>"; };
+		B9751CBF123F233700A932A1 /* QtKitVideoCameraImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QtKitVideoCameraImpl.mm; sourceTree = "<group>"; };
+		B9751CDD123F267600A932A1 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		B9751CDF123F267600A932A1 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
+		B9751DAD123F43AC00A932A1 /* QtKitVideoImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QtKitVideoImpl.h; sourceTree = "<group>"; };
+		B9751DAE123F43AC00A932A1 /* QtKitVideoImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = QtKitVideoImpl.mm; sourceTree = "<group>"; };
+		B97531FC1243F5FA00A932A1 /* v002_MoviePlayerPlugInOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = v002_MoviePlayerPlugInOld.h; sourceTree = "<group>"; };
+		B97531FD1243F5FA00A932A1 /* v002_MoviePlayerPlugInOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = v002_MoviePlayerPlugInOld.m; sourceTree = "<group>"; };
+		B9B0BD05122D379D0026D582 /* lua_video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_video.cpp; sourceTree = "<group>"; };
+		B9B0BD15122D37E60026D582 /* ofVideoImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofVideoImpl.cpp; sourceTree = "<group>"; };
+		B9B0BD16122D37E60026D582 /* ofVideoImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofVideoImpl.h; sourceTree = "<group>"; };
+		B9B0BD17122D37E60026D582 /* Video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Video.cpp; sourceTree = "<group>"; };
+		B9B0BD18122D37E60026D582 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		B9B0BD19122D37E60026D582 /* VideoCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoCamera.cpp; sourceTree = "<group>"; };
+		B9B0BD1A122D37E60026D582 /* VideoCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCamera.h; sourceTree = "<group>"; };
+		B9B0BD1B122D37E60026D582 /* VideoCameraImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoCameraImpl.cpp; sourceTree = "<group>"; };
+		B9B0BD1C122D37E60026D582 /* VideoCameraImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCameraImpl.h; sourceTree = "<group>"; };
+		B9B0BD1D122D37E60026D582 /* VideoImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoImpl.cpp; sourceTree = "<group>"; };
+		B9B0BD1E122D37E60026D582 /* VideoImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoImpl.h; sourceTree = "<group>"; };
+		B9B0BD1F122D37E60026D582 /* VideoRecorder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoRecorder.cpp; sourceTree = "<group>"; };
+		B9B0BD20122D37E60026D582 /* VideoRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecorder.h; sourceTree = "<group>"; };
+		B9B0BD21122D37E60026D582 /* VideoRecorderImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoRecorderImpl.cpp; sourceTree = "<group>"; };
+		B9B0BD22122D37E60026D582 /* VideoRecorderImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecorderImpl.h; sourceTree = "<group>"; };
+		B9B0BD54122D3B8C0026D582 /* video_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_common.h; sourceTree = "<group>"; };
+		B9B0BD76122D3D9A0026D582 /* ofConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofConstants.h; sourceTree = "<group>"; };
+		B9B0BD7A122D3D9A0026D582 /* ofGraphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofGraphics.cpp; sourceTree = "<group>"; };
+		B9B0BD7B122D3D9A0026D582 /* ofGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofGraphics.h; sourceTree = "<group>"; };
+		B9B0BD7E122D3D9A0026D582 /* ofQtUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofQtUtils.cpp; sourceTree = "<group>"; };
+		B9B0BD7F122D3D9A0026D582 /* ofQtUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofQtUtils.h; sourceTree = "<group>"; };
+		B9B0BD83122D3D9A0026D582 /* ofVideoPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofVideoPlayer.cpp; sourceTree = "<group>"; };
+		B9B0BD84122D3D9A0026D582 /* ofVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofVideoPlayer.h; sourceTree = "<group>"; };
+		B9B0BDD9122D3EC70026D582 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = System/Library/Frameworks/QuickTime.framework; sourceTree = SDKROOT; };
+		B9B0C101122D3EEC0026D582 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
+		B9B0C102122D3EEC0026D582 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		B9B0C103122D3EEC0026D582 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
+		B9B0C104122D3EEC0026D582 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		B9B0C105122D3EEC0026D582 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		B9B0C106122D3EEC0026D582 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		B9B0C162122D446F0026D582 /* dev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dev; path = ../../../dev; sourceTree = SOURCE_ROOT; };
+		B9FEBDE8126A55C20077A573 /* ofxQtVideoSaver.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxQtVideoSaver.cpp; sourceTree = "<group>"; };
+		B9FEBDE9126A55C20077A573 /* ofxQtVideoSaver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxQtVideoSaver.h; sourceTree = "<group>"; };
+		B9FEBDED126A56800077A573 /* ofVideoRecorderImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofVideoRecorderImpl.h; sourceTree = "<group>"; };
+		B9FEBDEE126A56800077A573 /* ofVideoRecorderImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofVideoRecorderImpl.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36C2AEF00CD7A2DB0054F99E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9B0BDDA122D3EC70026D582 /* QuickTime.framework in Frameworks */,
+				B9B0C107122D3EEC0026D582 /* ApplicationServices.framework in Frameworks */,
+				B9B0C108122D3EEC0026D582 /* CoreFoundation.framework in Frameworks */,
+				B9B0C109122D3EEC0026D582 /* CoreServices.framework in Frameworks */,
+				B9B0C10A122D3EEC0026D582 /* AppKit.framework in Frameworks */,
+				B9B0C10B122D3EEC0026D582 /* CoreData.framework in Frameworks */,
+				B9B0C10C122D3EEC0026D582 /* Foundation.framework in Frameworks */,
+				B9751CDE123F267600A932A1 /* CoreVideo.framework in Frameworks */,
+				B9751CE0123F267600A932A1 /* QTKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C2AEF20CD7A2DB0054F99E /* video.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* cocoa_ogl */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0C162122D446F0026D582 /* dev */,
+				B9C977E31227ACEF00091F80 /* src */,
+				B9B0BD75122D3D9A0026D582 /* of */,
+				B97531FA1243F5FA00A932A1 /* v002 */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				B9B0BDD9122D3EC70026D582 /* QuickTime.framework */,
+				B9B0C101122D3EEC0026D582 /* ApplicationServices.framework */,
+				B9B0C102122D3EEC0026D582 /* CoreFoundation.framework */,
+				B9B0C103122D3EEC0026D582 /* CoreServices.framework */,
+				B9B0C104122D3EEC0026D582 /* AppKit.framework */,
+				B9B0C105122D3EEC0026D582 /* CoreData.framework */,
+				B9B0C106122D3EEC0026D582 /* Foundation.framework */,
+				B9751CDD123F267600A932A1 /* CoreVideo.framework */,
+				B9751CDF123F267600A932A1 /* QTKit.framework */,
+			);
+			name = cocoa_ogl;
+			sourceTree = "<group>";
+		};
+		B97531FA1243F5FA00A932A1 /* v002 */ = {
+			isa = PBXGroup;
+			children = (
+				B97531FC1243F5FA00A932A1 /* v002_MoviePlayerPlugInOld.h */,
+				B97531FD1243F5FA00A932A1 /* v002_MoviePlayerPlugInOld.m */,
+			);
+			name = v002;
+			path = ../v002;
+			sourceTree = SOURCE_ROOT;
+		};
+		B9B0BD07122D37E60026D582 /* video */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0BD54122D3B8C0026D582 /* video_common.h */,
+				B9B0BD18122D37E60026D582 /* Video.h */,
+				B9B0BD17122D37E60026D582 /* Video.cpp */,
+				B9B0BD1E122D37E60026D582 /* VideoImpl.h */,
+				B9B0BD1D122D37E60026D582 /* VideoImpl.cpp */,
+				B9B0BD16122D37E60026D582 /* ofVideoImpl.h */,
+				B9B0BD15122D37E60026D582 /* ofVideoImpl.cpp */,
+				B9751DAD123F43AC00A932A1 /* QtKitVideoImpl.h */,
+				B9751DAE123F43AC00A932A1 /* QtKitVideoImpl.mm */,
+				B9B0BD1A122D37E60026D582 /* VideoCamera.h */,
+				B9B0BD19122D37E60026D582 /* VideoCamera.cpp */,
+				B9B0BD1C122D37E60026D582 /* VideoCameraImpl.h */,
+				B9B0BD1B122D37E60026D582 /* VideoCameraImpl.cpp */,
+				B9751CBE123F233700A932A1 /* QtKitVideoCameraImpl.h */,
+				B9751CBF123F233700A932A1 /* QtKitVideoCameraImpl.mm */,
+				B9B0BD20122D37E60026D582 /* VideoRecorder.h */,
+				B9B0BD1F122D37E60026D582 /* VideoRecorder.cpp */,
+				B9B0BD22122D37E60026D582 /* VideoRecorderImpl.h */,
+				B9B0BD21122D37E60026D582 /* VideoRecorderImpl.cpp */,
+				B9FEBDED126A56800077A573 /* ofVideoRecorderImpl.h */,
+				B9FEBDEE126A56800077A573 /* ofVideoRecorderImpl.cpp */,
+			);
+			path = video;
+			sourceTree = "<group>";
+		};
+		B9B0BD75122D3D9A0026D582 /* of */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0BD76122D3D9A0026D582 /* ofConstants.h */,
+				B9B0BD7B122D3D9A0026D582 /* ofGraphics.h */,
+				B9B0BD7A122D3D9A0026D582 /* ofGraphics.cpp */,
+				B9B0BD7F122D3D9A0026D582 /* ofQtUtils.h */,
+				B9B0BD7E122D3D9A0026D582 /* ofQtUtils.cpp */,
+				B9B0BD84122D3D9A0026D582 /* ofVideoPlayer.h */,
+				B9B0BD83122D3D9A0026D582 /* ofVideoPlayer.cpp */,
+				B9FEBDE9126A55C20077A573 /* ofxQtVideoSaver.h */,
+				B9FEBDE8126A55C20077A573 /* ofxQtVideoSaver.cpp */,
+			);
+			name = of;
+			path = ../of;
+			sourceTree = SOURCE_ROOT;
+		};
+		B9C977E31227ACEF00091F80 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0BD07122D37E60026D582 /* video */,
+				B9B0BD05122D379D0026D582 /* lua_video.cpp */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36C2AEEE0CD7A2DB0054F99E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9B0BD31122D37E60026D582 /* ofVideoImpl.h in Headers */,
+				B9B0BD33122D37E60026D582 /* Video.h in Headers */,
+				B9B0BD35122D37E60026D582 /* VideoCamera.h in Headers */,
+				B9B0BD37122D37E60026D582 /* VideoCameraImpl.h in Headers */,
+				B9B0BD39122D37E60026D582 /* VideoImpl.h in Headers */,
+				B9B0BD55122D3B8C0026D582 /* video_common.h in Headers */,
+				B9B0BD8A122D3D9A0026D582 /* ofConstants.h in Headers */,
+				B9B0BD8F122D3D9A0026D582 /* ofGraphics.h in Headers */,
+				B9B0BD93122D3D9A0026D582 /* ofQtUtils.h in Headers */,
+				B9B0BD98122D3D9A0026D582 /* ofVideoPlayer.h in Headers */,
+				B9751CC0123F233700A932A1 /* QtKitVideoCameraImpl.h in Headers */,
+				B9751DAF123F43AC00A932A1 /* QtKitVideoImpl.h in Headers */,
+				B97532081243F5FA00A932A1 /* v002_MoviePlayerPlugInOld.h in Headers */,
+				B9FEBDEB126A55C20077A573 /* ofxQtVideoSaver.h in Headers */,
+				B9FEBDEF126A56800077A573 /* ofVideoRecorderImpl.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		36C2AEF10CD7A2DB0054F99E /* video */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "video" */;
+			buildPhases = (
+				36C2AEEE0CD7A2DB0054F99E /* Headers */,
+				36C2AEEF0CD7A2DB0054F99E /* Sources */,
+				36C2AEF00CD7A2DB0054F99E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = video;
+			productName = testmod2;
+			productReference = 36C2AEF20CD7A2DB0054F99E /* video.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "video" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* cocoa_ogl */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36C2AEF10CD7A2DB0054F99E /* video */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36C2AEEF0CD7A2DB0054F99E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9B0BD06122D379D0026D582 /* lua_video.cpp in Sources */,
+				B9B0BD30122D37E60026D582 /* ofVideoImpl.cpp in Sources */,
+				B9B0BD32122D37E60026D582 /* Video.cpp in Sources */,
+				B9B0BD34122D37E60026D582 /* VideoCamera.cpp in Sources */,
+				B9B0BD36122D37E60026D582 /* VideoCameraImpl.cpp in Sources */,
+				B9B0BD38122D37E60026D582 /* VideoImpl.cpp in Sources */,
+				B9B0BD8E122D3D9A0026D582 /* ofGraphics.cpp in Sources */,
+				B9B0BD92122D3D9A0026D582 /* ofQtUtils.cpp in Sources */,
+				B9B0BD97122D3D9A0026D582 /* ofVideoPlayer.cpp in Sources */,
+				B9751CC1123F233700A932A1 /* QtKitVideoCameraImpl.mm in Sources */,
+				B9751DB0123F43AC00A932A1 /* QtKitVideoImpl.mm in Sources */,
+				B9FEBDEA126A55C20077A573 /* ofxQtVideoSaver.cpp in Sources */,
+				B9FEBDF0126A56800077A573 /* ofVideoRecorderImpl.cpp in Sources */,
+				B9FEBDF7126A59B30077A573 /* VideoRecorder.cpp in Sources */,
+				B9FEBDF8126A59B60077A573 /* VideoRecorderImpl.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		36C2AF010CD7A2EB0054F99E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../dev_osx/lib\"";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = "-DVIDEO_USE_OF";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = video;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = macosx10.6;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../src/video $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include";
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		36C2AF020CD7A2EB0054F99E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../dev_osx/lib\"";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = "-DVIDEO_USE_OF";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = video;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = macosx10.6;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../src/video $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C2AF010CD7A2EB0054F99E /* Debug */,
+				36C2AF020CD7A2EB0054F99E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "video" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

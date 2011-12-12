@@ -1,0 +1,74 @@
+Shader {
+	name = "op.gt.shl",
+	description = [[ greater than operation ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter{
+			{0.5, 0.5, 0.5, 0.5},
+			name = "thresh", type = "vec4",
+			description = "threshold",
+		},
+		
+		Parameter{
+			1.,
+			name = "alpha", type = "float",
+			description = "threshold",
+		},
+		
+		Parameter{
+			0,
+			name = "tex0", type = "int",
+			description = "input data0",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program {
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord0;
+
+void main() {
+	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	gl_Position = ftransform();
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program {
+	type = "fragment",
+
+	[[
+
+uniform float alpha;
+uniform vec4 thresh;
+uniform sampler2D tex0;
+
+varying vec2 texcoord0;
+
+void main() {
+	vec4 v0 = texture2D(tex0, texcoord0);
+	gl_FragColor = vec4(
+		float(v0.r > thresh.r),
+		float(v0.g > thresh.g),
+		float(v0.b > thresh.b),
+		float(v0.a > thresh.a)
+	);
+	gl_FragColor.a = alpha;
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

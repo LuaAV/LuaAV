@@ -1,0 +1,2 @@
+Example Pd patches live in here.
+unittests/ holds Pd patches we use for unit testing.

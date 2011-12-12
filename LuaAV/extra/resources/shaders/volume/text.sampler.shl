@@ -1,0 +1,70 @@
+Shader
+{
+	name = "textSampler.shl",
+	description = [[ texture Sampler ]],
+	language = "GLSL",
+	
+	parameters =
+	{	
+		Parameter
+		{
+			0,
+			name = "image2D", type = "INT", 
+			description =  "2d texture data",
+		},
+				
+
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "vertex",
+	
+	[[
+
+
+varying vec4 TexCoord0; 
+
+void main (void)
+
+{
+	TexCoord0 = vec4(gl_TextureMatrix[0] * gl_MultiTexCoord0);  
+    gl_Position = ftransform();
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program
+{
+	type = "fragment",	--must be defined
+
+	[[
+
+
+uniform sampler2D text2D; 
+varying vec4 TexCoord0; 
+
+void main (void)
+{
+    vec4 col; 
+	col = texture2D(text2D, TexCoord0.xy);
+	col.xyz = col.xyz * 0.5;
+	
+	gl_FragColor =  col;
+
+  
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

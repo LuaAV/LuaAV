@@ -1,0 +1,223 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">gui.draw</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../gui.html">gui</a></li>
+							<li><a href="../gui/draw.html">draw</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>Common drawing state and routines</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#enter2d">
+				<span class="function_name">enter2d</span><span class="params">(dim)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Enter 2D, orthographic drawing (one-to-one pixels)</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#leave2d">
+				<span class="function_name">leave2d</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Leave 2D, orthographic drawing</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#rect">
+				<span class="function_name">rect</span><span class="params">(prim, x, y, w, h)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Draw a rectangle</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#rect_color">
+				<span class="function_name">rect_color</span><span class="params">(c1, c2, prim, x, y, w, h)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Draw 2-tone rectangle</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="enter2d"></a><span class="function_name">enter2d</span><span class="param">(dim)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Enter 2D, orthographic drawing (one-to-one pixels)</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">dim</td>
+							<td class="description">The dimensions of the view</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="leave2d"></a><span class="function_name">leave2d</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Leave 2D, orthographic drawing</p>
+		</div>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="rect"></a><span class="function_name">rect</span><span class="param">(prim, x, y, w, h)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Draw a rectangle</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">prim</td>
+							<td class="description">Primitive</td>
+						</tr>
+											<tr>
+							<td class="name">x</td>
+							<td class="description">x-start</td>
+						</tr>
+											<tr>
+							<td class="name">y</td>
+							<td class="description">y-start</td>
+						</tr>
+											<tr>
+							<td class="name">w</td>
+							<td class="description">Width</td>
+						</tr>
+											<tr>
+							<td class="name">h</td>
+							<td class="description">Height</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="rect_color"></a><span class="function_name">rect_color</span><span class="param">(c1, c2, prim, x, y, w, h)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Draw 2-tone rectangle</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">c1</td>
+							<td class="description">Color1</td>
+						</tr>
+											<tr>
+							<td class="name">c2</td>
+							<td class="description">Color2</td>
+						</tr>
+											<tr>
+							<td class="name">prim</td>
+							<td class="description">Primitive</td>
+						</tr>
+											<tr>
+							<td class="name">x</td>
+							<td class="description">x-start</td>
+						</tr>
+											<tr>
+							<td class="name">y</td>
+							<td class="description">y-start</td>
+						</tr>
+											<tr>
+							<td class="name">w</td>
+							<td class="description">Width</td>
+						</tr>
+											<tr>
+							<td class="name">h</td>
+							<td class="description">Height</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

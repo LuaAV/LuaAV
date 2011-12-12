@@ -1,0 +1,2 @@
+apt-get install  liblua5.1-filesystem0 libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libavcodec-dev libavformat-dev libavutil-dev libswscale-dev freeglut3-dev libasound2-dev libxmu-dev libxxf86vm-dev g++ libgl1-mesa-dev libglu1-mesa-dev libraw1394-dev liblua5.1-0-dev lua5.1 luarocks libfreeimage-dev libgtk2.0-dev libapr1-dev libmysqlclient15-dev libqt4-dev gstreamer0.10-ffmpeg libjack-dev libudev-dev libmjpegtools-dev libdts-dev libhal-dev gstreamer0.10-plugins-bad libsndfile1-dev portaudio19-dev libcsound64-dev libcsnd-dev
+

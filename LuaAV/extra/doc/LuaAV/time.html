@@ -1,0 +1,253 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">LuaAV.time</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../LuaAV.html">LuaAV</a></li>
+							<li><a href="../LuaAV/time.html">time</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>Interfacing with the LuaAV scheduler</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#cpu">
+				<span class="function_name">cpu</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>report the current CPU time</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#event">
+				<span class="function_name">event</span><span class="params">(e)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>resume all coroutines waiting on this event name</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#go">
+				<span class="function_name">go</span><span class="params">(w, func, ...)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>schedule a function</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#now">
+				<span class="function_name">now</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>report the current script scheduler time</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#scheduler">
+				<span class="function_name">scheduler</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>create a new independent scheduler (not connected to the real-time clock)</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#wait">
+				<span class="function_name">wait</span><span class="params">(w)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>yield the containing coroutine to the scheduler</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="cpu"></a><span class="function_name">cpu</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>report the current CPU time</p>
+		</div>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="event"></a><span class="function_name">event</span><span class="param">(e)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>resume all coroutines waiting on this event name</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">e</td>
+							<td class="description">event name (string)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="go"></a><span class="function_name">go</span><span class="param">(w, func, ...)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>schedule a function</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">w</td>
+							<td class="description">(optional) duration (seconds) or event name (string) to wait for before starting coroutine</td>
+						</tr>
+											<tr>
+							<td class="name">func</td>
+							<td class="description">function to form the body of the coroutine</td>
+						</tr>
+											<tr>
+							<td class="name">...</td>
+							<td class="description">args passed to the coroutine</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="now"></a><span class="function_name">now</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>report the current script scheduler time</p>
+		</div>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>time in seconds since script began</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="scheduler"></a><span class="function_name">scheduler</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>create a new independent scheduler (not connected to the real-time clock)</p>
+		</div>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>scheduler scheduler object</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="wait"></a><span class="function_name">wait</span><span class="param">(w)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>can be run in the main (top-level) script, but not safe within callbacks (such as Window:draw())</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">w</td>
+							<td class="description">duration (seconds) or event name (string)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

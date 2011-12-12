@@ -1,0 +1,81 @@
+Shader{
+	name = "td.shred.shl",
+	description = [[ Shredding Texture Displacements]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter {
+			{1, 1},
+			name = "width", type = "vec2", 
+			description =  "width of shred blocks",
+		},
+		
+		Parameter {
+			{0, 0},
+			name = "offset", type = "vec2",
+			description = "offset of shred blocks",
+		},
+		
+		Parameter {
+			0,
+			name = "tex0", type = "int",
+			description = "Input texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program {
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord0;
+varying vec2 texdim0;
+
+void main() {
+    gl_Position = ftransform();
+
+    texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+    texdim0 = vec2 (abs(gl_TextureMatrix[0][0][0]),abs(gl_TextureMatrix[0][1][1]));
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program {
+	type = "fragment",
+
+	[[
+
+uniform vec2 width;
+uniform vec2 offset;
+uniform sampler2DRect tex0;
+
+varying vec2 texcoord0;
+varying vec2 texdim0;
+
+void main (void) {
+	vec2 point = abs(mod((texcoord0/texdim0), 1.)); //normalize coordinates
+	vec2 normCoord = vec2(2.0) * point - vec2(1.0);
+	
+	vec2 s = sign(normCoord);
+	normCoord = abs(normCoord);
+	normCoord = mod(normCoord+offset,width);
+	normCoord = s * normCoord;
+	
+	vec2 texCoord = (normCoord*0.5 + 0.5) * texdim0;
+	gl_FragColor = texture2DRect(tex0, texCoord);
+	gl_FragColor.r = 0.;
+} 
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

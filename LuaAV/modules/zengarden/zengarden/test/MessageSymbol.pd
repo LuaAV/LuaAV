@@ -1,0 +1,18 @@
+#N canvas 607 190 450 300 10;
+#X obj 146 171 symbol;
+#X obj 146 44 loadbang;
+#X obj 208 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 146 76 t b b b b;
+#X obj 146 213 print;
+#X msg 233 127 symbol cat;
+#X msg 180 128 dog;
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 3 1 5 0;
+#X connect 3 2 0 0;
+#X connect 3 3 6 0;
+#X connect 5 0 0 1;
+#X connect 6 0 0 0;

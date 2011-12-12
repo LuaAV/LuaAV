@@ -1,0 +1,12 @@
+<html>
+	<head>
+		<title>$title</title>
+		<link href="$docroot{}$css" rel="stylesheet" type="text/css" /> 
+	</head>
+	<body>
+		<div id="tree">
+			<h2 class="module">Modules</h2>
+			$list_item
+		</div>
+	</body>
+</html> 

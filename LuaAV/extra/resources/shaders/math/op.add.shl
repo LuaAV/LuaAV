@@ -1,0 +1,80 @@
+Shader {
+	name = "op.add.shl",
+	description = [[ addition operation ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter{
+			{1, 1, 1, 1},
+			name = "in0scale", type = "vec4",
+			description = "input 0 scale factor",
+		},
+		
+		Parameter{
+			{1, 1, 1, 1},
+			name = "in1scale", type = "vec4",
+			description = "input 1 scale factor",
+		},
+		
+		Parameter{
+			0,
+			name = "tex0", type = "int",
+			description = "input data0",
+		},
+		
+		Parameter{
+			1,
+			name = "tex1", type = "int",
+			description = "input data1",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program {
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+void main() {
+	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	texcoord1 = vec2(gl_TextureMatrix[1] * gl_MultiTexCoord1);
+	gl_Position = ftransform();
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program {
+	type = "fragment",
+
+	[[
+
+uniform vec4 in0scale;
+uniform vec4 in1scale;
+
+uniform sampler2D tex0;
+uniform sampler2D tex1;
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+void main() {
+	vec4 v0 = texture2D(tex0, texcoord0);
+	vec4 v1 = texture2D(tex1, texcoord1);
+	gl_FragColor = in0scale*v0 + in1scale*v1;
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

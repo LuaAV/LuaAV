@@ -1,0 +1,73 @@
+Shader {
+	name = "op.absdiff.shl",
+	description = [[ absolute difference operation ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter{
+			{1, 1, 1, 1},
+			name = "outscale", type = "vec4",
+			description = "output scale factor",
+		},
+		
+		Parameter{
+			0,
+			name = "tex0", type = "int",
+			description = "input data 0",
+		},
+		
+		Parameter{
+			1,
+			name = "tex1", type = "int",
+			description = "input data 1",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program {
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+void main() {
+	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	texcoord1 = vec2(gl_TextureMatrix[1] * gl_MultiTexCoord1);
+	gl_Position = ftransform();
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program {
+	type = "fragment",
+
+	[[
+
+uniform vec4 outscale;
+
+uniform sampler2DRect tex0;
+uniform sampler2DRect tex1;
+
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+void main() {
+	vec4 v0 = texture2DRect(tex0, texcoord0);
+	vec4 v1 = texture2DRect(tex1, texcoord1);
+	gl_FragColor = outscale*abs(v0-v1);
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

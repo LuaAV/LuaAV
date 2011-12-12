@@ -1,0 +1,165 @@
+Shader{
+	name = "mat.bump.shl",
+	description = [[ per-pixel lighting model with bump map and texture]],
+	language = "GLSL",
+	
+	parameters = {
+		Attribute {
+			name = "tangent", type = "vec3",
+			description = "tangents"
+		},
+	
+		Parameter {
+			{0., 0., 0., 1.},
+			name = "La", type = "vec4",
+			description = "ambient light",
+		},
+		
+		Parameter {
+			{1., 1., 1., 1.},
+			name = "Li", type = "vec4",
+			description = "incident (diffuse and specular) light",
+		},
+		
+		Parameter {
+			{0., 0., 0., 1.},
+			name = "Ke", type = "vec4",
+			description = "emissive material",
+		},
+		
+		Parameter {
+			{1., 1., 1., 1.},
+			name = "Ka", type = "vec4",
+			description = "ambient material",
+		},
+		
+		Parameter {
+			{0.3, 0.3, 0.3, 1.},
+			name = "Kd", type = "vec4",
+			description = "diffuse material",
+		},
+		
+		Parameter {
+			{1., 1., 1., 1.},
+			name = "Ks", type = "vec4",
+			description = "specular material",
+		},
+		
+		Parameter {
+			10,
+			name = "Ns", type = "float",
+			description = "specular falloff",
+		},
+		
+		Parameter {
+			0,
+			name = "bump", type = "int",
+			description = "bump map texture",
+		},
+		
+		Parameter {
+			1,
+			name = "img", type = "int",
+			description = "image texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program{
+	type = "vertex",
+	
+	[[
+
+attribute vec3 tangent;
+
+varying vec3 P;
+varying vec3 T;
+varying vec3 B;
+varying vec3 N;
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+void main (void) {
+	//get the vertices into eye space
+	P = (gl_ModelViewMatrix*gl_Vertex).xyz;
+
+	//get the normals into eye space
+	//N = gl_NormalMatrix*normalize(gl_Normal);
+	N = gl_NormalMatrix*normalize(gl_Normal);
+	T = gl_NormalMatrix*normalize(tangent);
+	B = cross(N, T);
+	texcoord0 = vec2(gl_TextureMatrix[0]*gl_MultiTexCoord0);
+	texcoord1 = vec2(gl_TextureMatrix[1]*gl_MultiTexCoord0);
+	
+	gl_Position = ftransform();
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program{
+	type = "fragment",
+
+	[[
+	
+uniform sampler2D bump;
+uniform sampler2D img;
+
+uniform vec4 La;
+uniform vec4 Li;
+uniform vec4 Ke;
+uniform vec4 Ka;
+uniform vec4 Kd;
+uniform vec4 Ks;
+uniform float Ns;
+
+varying vec3 P;
+varying vec3 B;
+varying vec3 T;
+varying vec3 N;
+varying vec2 texcoord0;
+varying vec2 texcoord1;
+
+void main (void) {
+	vec3 Tn = normalize(T);
+	vec3 Bn = normalize(B);
+	vec3 Nn = normalize(N);
+	
+	vec3 Nb = normalize((texture2D(bump, texcoord0)*2.-1.).xyz);
+	mat3 local = mat3(Tn, Bn, Nn);
+	Nn = local*Nb;
+	
+	//ambient contribution
+	vec4 ambient = La*Ka;
+	
+	vec3 lightPosition = vec3(gl_LightSource[0].position);
+	
+	//diffuse contribution
+	vec3 L = normalize(lightPosition - P);
+	vec4 diffuse = Kd*Li*max(dot(Nn, L), 0.);
+	
+	//calculate specular contribution
+	vec3 V = normalize(-P);
+	//average of lighting and view vector)  not true reflection vector
+	vec3 H = normalize(L + V); 
+	vec4 specular = Ks*Li * pow(max(dot(Nn,H), 0.), Ns);
+	
+	vec4 cc = texture2D(img, texcoord1);
+	
+	gl_FragColor = Ke + (ambient + diffuse*cc) + specular;
+//	gl_FragColor = cc;
+//	gl_FragColor.rgb = Nn;
+//	gl_FragColor.rgb = Tn;
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

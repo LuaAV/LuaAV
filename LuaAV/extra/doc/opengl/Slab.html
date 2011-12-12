@@ -1,0 +1,221 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">opengl.Slab</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../opengl.html">opengl</a></li>
+							<li><a href="../opengl/Slab.html">Slab</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>Shaders are specified as .shl files, which are a Lua-based file format for describing shader  code and parameters.  Shader uniforms can be set via the Shader:param() method.   Shader attributes are accessed through internal ShaderAttribute objects that can be  retrieved by name from the Shader:attr() method.</p>
+			
+							<h3 class="see">See Also:</h3>
+					<ul class="see">
+													<li><a href="../opengl.html#opengl.Shader">Shader</a></li>
+						
+					</ul>
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Slab:draw">
+				<span class="function_name">Slab:draw</span><span class="params">(...)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Draw the slab to invoke processing</td>
+		
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Slab.file">
+				<span class="function_name">Slab.file</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> The shader file</td>
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Slab:param">
+				<span class="function_name">Slab:param</span><span class="params">(name, ...)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Set a parameter</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Slab:params">
+				<span class="function_name">Slab:params</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Get an iterator over the parameters</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Slab:texture">
+				<span class="function_name">Slab:texture</span><span class="params">([idx])</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Get an output texture</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Slab:draw"></a><span class="function_name">Slab:draw</span><span class="param">(...)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Draw the slab to invoke processing</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">...</td>
+							<td class="description">Either a table or unpacked list of Textures and Slab</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Slab.file"></a><span class="function_name">Slab.file</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> The shader file</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Slab:param"></a><span class="function_name">Slab:param</span><span class="param">(name, ...)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Set a parameter</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">name</td>
+							<td class="description">The parameter name</td>
+						</tr>
+											<tr>
+							<td class="name">...</td>
+							<td class="description">The parameter values as a table or unpacked</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Slab:params"></a><span class="function_name">Slab:params</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Get an iterator over the parameters</p>
+		</div>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>The iterator function</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Slab:texture"></a><span class="function_name">Slab:texture</span><span class="param">([idx])</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Get an output texture</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">[idx]</td>
+							<td class="description">The Texture idx (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>The Texture</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

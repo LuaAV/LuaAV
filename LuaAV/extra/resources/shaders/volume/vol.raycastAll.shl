@@ -1,0 +1,187 @@
+Shader{
+	name = "vol.test.shl",
+	description = [[ Volume rendering test shader ]],
+	language = "GLSL",
+	
+	parameters =
+	{
+		
+		Parameter {
+			0,
+			name = "front", type = "int",
+			description = "Front faces texture",
+		},
+		
+		Parameter {
+			1,
+			name = "back", type = "int",
+			description = "back faces texture",
+		},
+		
+		Parameter {
+			2,
+			name = "volume", type = "int",
+			description = "volume density data",
+		},
+		Parameter {
+			3,
+			name = "transfer", type = "int",
+			description = "transfer function 1d",
+		},
+		Parameter {
+			4,
+			name = "gradient", type = "int",
+			description = "3d gradient texture",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program{
+	type = "vertex",
+	
+	[[
+
+varying vec4 ftpos;
+varying vec4 ecPos;
+varying vec3 lightDir;
+varying vec3 look_dir;
+
+void main() {
+	ftpos = ftransform();
+	gl_Position = ftpos;
+	
+	ecPos = gl_ModelViewMatrix * gl_Vertex;
+	vec3 lg = vec3(gl_LightSource[0].position-ecPos);
+	lightDir = normalize(lg);
+	
+	vec4 viewVec = vec4(0.0, 0.0, -1.0, 0.0);
+	look_dir = (gl_ModelViewMatrixInverseTranspose * viewVec).xyz;
+	
+	look_dir= abs(look_dir);
+	
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program{
+	type = "fragment",	--must be defined
+
+	[[
+
+vec3 lighting( vec3 N, vec3 V, vec3 L) {
+   
+    vec3 Ka = vec3(0.1, 0.1, 0.1);
+    vec3 Kd = vec3(0.6, 0.6, 0.6);
+    vec3 Ks = vec3(0.4, 0.4, 0.4);
+    float shineness = 100.0;
+    
+    vec3 lightColor = vec3 (1.0, 1.0, 1.0);
+    vec3 ambientLight = vec3(0.1, 0.1, 0.1);
+    vec3 H = normalize(L+V);
+    
+    vec3 ambient = Ka * ambientLight;
+    
+    float diffuseLight = max( dot(L, N), 0.0);
+    vec3 diffuse = Kd * lightColor * diffuseLight;
+    
+    float specularLight = pow( max( dot(H, N), 0.0), shineness);
+    if(diffuseLight <= 0.0 ) specularLight = 0.0;
+    vec3 specular = Ks * lightColor * specularLight;
+    vec3 light = ambient + diffuse + specular;
+    return light;
+}
+
+
+varying vec4 ftpos;
+
+
+varying vec4 ecPos;
+varying vec3 lightDir;
+
+varying vec3 look_dir;
+
+
+uniform sampler2D front;
+uniform sampler2D back;
+uniform sampler3D volume;
+uniform sampler3D gradient;
+uniform sampler1D transfer;
+
+const float ds = 0.01;
+
+void main() {
+	vec2 texcoord = 0.5*((ftpos.xy/ftpos.w)+1.);
+
+	vec4 fpos = texture2D(front, texcoord);
+	vec4 bpos = texture2D(back, texcoord);
+
+	vec3 dir = bpos.xyz - fpos.xyz;
+	
+	
+	vec3 absDir;
+	absDir = abs(dir);
+	
+	float testDir = dot(absDir, look_dir);
+	if(testDir < 0.0){
+		gl_FragColor = vec4(1.0, 0.0, 0.0, 0.0);
+		
+	}
+	else{
+	
+		vec3 vstep = normalize(dir)*ds;
+		vec3 vpos = fpos.xyz;
+		vec4 col_acc = vec4(0.,0.,0.,0.);
+		float len = length(dir);
+		float lenaccum = 0.;
+		float alpha_acc = 0.0;
+	 
+		vec4 color_sample;
+		float alpha_sample;
+		
+		vec3 lightContr;
+		
+		for(int i=0; i < 450; i++) {
+		   
+		  float val = texture3D(volume, vpos).r;
+			color_sample = texture1D(transfer, val);
+			alpha_sample = color_sample.a * ds;
+			
+			
+			if(alpha_sample > 0.005){
+		  	vec3 nr = texture3D(gradient, vpos).rgb;
+			  vec3 N = normalize(nr);
+			  vec3 V = -1.0 * ecPos.xyz;
+			
+				lightContr += lighting(N, V, lightDir)*alpha_sample;
+			}
+			
+		  col_acc  += (1.0 - alpha_acc) * color_sample * alpha_sample;
+	      
+			vpos += vstep;
+			lenaccum += ds;
+			alpha_acc += alpha_sample;
+			
+			if(lenaccum > len) break;
+		}
+		
+		col_acc.xyz += lightContr*2.0;
+		gl_FragColor =  col_acc*5.0;
+	}
+	
+
+
+	
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

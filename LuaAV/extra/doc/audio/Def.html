@@ -1,0 +1,2575 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">audio.Def</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../audio.html">audio</a></li>
+							<li><a href="../audio/Def.html">Def</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>The Def module is a table containing a range of expression generators, and is also a callable function as a constructor of Synth definitions from trees of expressions. Better described by example: <pre><span class=whitespace>
+  </span><span class=keyword>local</span><span class=whitespace> </span><span class=identifier>Def</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=identifier>require</span><span class=whitespace> </span><span class=string>"audio.Def"</span><span class=whitespace>
+  </span><span class=keyword>local</span><span class=whitespace> </span><span class=identifier>P</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>Pan2</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>Lag</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>Env</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>SinOsc</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=identifier>Def.P</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>Def.Pan2</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>Def.Lag</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>Def.Env</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>Def.SinOsc</span><span class=whitespace>
+  </span><span class=comment>-- create a concrete synth definition (JIT-compiled), returns a constructor</span><span class=whitespace>
+  </span><span class=keyword>local</span><span class=whitespace> </span><span class=identifier>synth</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=identifier>Def</span><span class=operator>{</span><span class=whitespace>
+  	</span><span class=comment>-- parameters (settable, gettable) of the synth, and default values:</span><span class=whitespace>
+  	</span><span class=identifier>dur</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=number>1</span><span class=operator>,</span><span class=whitespace> 
+  	</span><span class=identifier>amp</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=number>0.5</span><span class=operator>,</span><span class=whitespace>
+  	</span><span class=comment>-- use lists for multi-channel parameters:</span><span class=whitespace>
+  	</span><span class=identifier>freq</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=operator>{</span><span class=whitespace> </span><span class=number>400</span><span class=operator>,</span><span class=whitespace> </span><span class=number>400</span><span class=whitespace> </span><span class=operator>}</span><span class=operator>,</span><span class=whitespace> 
+  	</span><span class=comment>-- compound expression describing a synthesis process</span><span class=whitespace>
+  	</span><span class=identifier>Pan2</span><span class=operator>{</span><span class=whitespace> 
+  		</span><span class=identifier>Lag</span><span class=operator>{</span><span class=whitespace> </span><span class=identifier>P</span><span class=string>"amp"</span><span class=whitespace> </span><span class=operator>*</span><span class=whitespace> </span><span class=identifier>Env</span><span class=operator>{</span><span class=whitespace> </span><span class=identifier>P</span><span class=string>"dur"</span><span class=whitespace> </span><span class=operator>}</span><span class=operator>,</span><span class=whitespace> </span><span class=number>0.9</span><span class=whitespace> </span><span class=operator>}</span><span class=whitespace> 
+  			</span><span class=operator>*</span><span class=whitespace> </span><span class=identifier>SinOsc</span><span class=operator>{</span><span class=whitespace> </span><span class=identifier>Lag</span><span class=operator>{</span><span class=whitespace> </span><span class=identifier>P</span><span class=string>"freq"</span><span class=operator>,</span><span class=whitespace> </span><span class=number>0.9</span><span class=whitespace> </span><span class=operator>}</span><span class=whitespace> </span><span class=operator>}</span><span class=operator>,</span><span class=whitespace> 
+  		</span><span class=identifier>pan</span><span class=operator>=</span><span class=identifier>SinOsc</span><span class=operator>{</span><span class=whitespace> </span><span class=identifier>freq</span><span class=operator>=</span><span class=number>8</span><span class=whitespace> </span><span class=operator>}</span><span class=whitespace> 
+  	</span><span class=operator>}</span><span class=operator>,</span><span class=whitespace>
+  </span><span class=operator>}</span><span class=whitespace>
+  </span><span class=comment>-- call the generated constructor to create a voice (genarating sound)</span><span class=whitespace>
+  </span><span class=keyword>local</span><span class=whitespace> </span><span class=identifier>synth</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=identifier>example</span><span class=operator>{</span><span class=whitespace> </span><span class=identifier>amp</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=number>0.2</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>dur</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=number>2</span><span class=operator>,</span><span class=whitespace> </span><span class=identifier>freq</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=number>800</span><span class=whitespace> </span><span class=operator>}</span><span class=whitespace>
+  </span><span class=comment>-- paramters become settable/gettable properties</span><span class=whitespace>
+  </span><span class=identifier>synth.freq</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=operator>{</span><span class=whitespace> </span><span class=number>500</span><span class=operator>,</span><span class=whitespace> </span><span class=number>600</span><span class=whitespace> </span><span class=operator>}</span><span class=whitespace>
+ </span></pre></p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Abs">
+				<span class="function_name">Abs</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> absolute value</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#ACos">
+				<span class="function_name">ACos</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Add">
+				<span class="function_name">Add</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic math</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#ASin">
+				<span class="function_name">ASin</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#ATan">
+				<span class="function_name">ATan</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#ATan2">
+				<span class="function_name">ATan2</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#biquad.AP">
+				<span class="function_name">biquad.AP</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>2-pole/2-zero IIR all-pass filter.</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#biquad.BP">
+				<span class="function_name">biquad.BP</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>2-pole/2-zero IIR band-pass filter.</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#biquad.BPC">
+				<span class="function_name">biquad.BPC</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>2-pole/2-zero IIR band-pass filter.</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#biquad.BR">
+				<span class="function_name">biquad.BR</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>2-pole/2-zero IIR band-reject filter.</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#biquad.HP">
+				<span class="function_name">biquad.HP</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>2-pole/2-zero IIR high-pass filter.</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#biquad.LP">
+				<span class="function_name">biquad.LP</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>2-pole/2-zero IIR low-pass filter.</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Bool">
+				<span class="function_name">Bool</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Convert input to 0 or 1</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Buzz">
+				<span class="function_name">Buzz</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Impulse anti-aliased oscillator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Ceil">
+				<span class="function_name">Ceil</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> round to next highest integer</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Channels">
+				<span class="function_name">Channels</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>select input channels from an input stream</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Clip">
+				<span class="function_name">Clip</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> clip signal between range of lo to hi</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Cos">
+				<span class="function_name">Cos</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Cosh">
+				<span class="function_name">Cosh</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Div">
+				<span class="function_name">Div</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic math</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Env">
+				<span class="function_name">Env</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> ramp envelope</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#EnvDriver">
+				<span class="function_name">EnvDriver</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> envelope driver (used to build envelopes)</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Eq">
+				<span class="function_name">Eq</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> equal operator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Exp">
+				<span class="function_name">Exp</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> compute e^input</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Floor">
+				<span class="function_name">Floor</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> round to next lowest integer</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#globalize">
+				<span class="function_name">globalize</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Push all audio.def functions into the globals scope table</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Gt">
+				<span class="function_name">Gt</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> greater than operator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Gte">
+				<span class="function_name">Gte</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> greater than or equal operator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Lag">
+				<span class="function_name">Lag</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> smoothing filter (running average lowpass)</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Log">
+				<span class="function_name">Log</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> compute natural logarithm</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Log10">
+				<span class="function_name">Log10</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> compute base 10 logarithm</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Lt">
+				<span class="function_name">Lt</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> less than operator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Lte">
+				<span class="function_name">Lte</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> less than or equal operator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Max">
+				<span class="function_name">Max</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> return greater of inputs</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mean">
+				<span class="function_name">Mean</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> return mean of inputs</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Min">
+				<span class="function_name">Min</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> return lesser of inputs</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mix">
+				<span class="function_name">Mix</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Aggregates input into a signal port (mixing overdub) </td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mod">
+				<span class="function_name">Mod</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic math</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mono">
+				<span class="function_name">Mono</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>mix input stream to mono</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Mul">
+				<span class="function_name">Mul</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic math</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Neq">
+				<span class="function_name">Neq</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> not equal operator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#noise.Brown">
+				<span class="function_name">noise.Brown</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> brown noise generator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#noise.Pink">
+				<span class="function_name">noise.Pink</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> pink noise generator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#noise.White">
+				<span class="function_name">noise.White</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>white noise generator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Not">
+				<span class="function_name">Not</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Convert input to 0 or 1</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Pan2">
+				<span class="function_name">Pan2</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Stereo panner</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Phasor">
+				<span class="function_name">Phasor</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Accumulating phasor wrapped in range [0, 1)</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Port">
+				<span class="function_name">Port</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>define an input port of the Def:</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Pow">
+				<span class="function_name">Pow</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic math</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Reverb">
+				<span class="function_name">Reverb</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Plate reverberation simulator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Saw">
+				<span class="function_name">Saw</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Saw-wave anti-aliased oscillator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Sign">
+				<span class="function_name">Sign</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> get sign of input</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Sin">
+				<span class="function_name">Sin</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Sinh">
+				<span class="function_name">Sinh</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#SinOsc">
+				<span class="function_name">SinOsc</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Sine-wave oscillator (polynomial approximation)</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Sqrt">
+				<span class="function_name">Sqrt</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> compute square root</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Square">
+				<span class="function_name">Square</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Square-wave anti-aliased oscillator</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Stereo">
+				<span class="function_name">Stereo</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>mix input stream to stereo</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Sub">
+				<span class="function_name">Sub</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic math</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Tan">
+				<span class="function_name">Tan</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Tanh">
+				<span class="function_name">Tanh</span><span class="params">(args)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> basic trigonometry</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Abs"></a><span class="function_name">Abs</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> absolute value</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="ACos"></a><span class="function_name">ACos</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Add"></a><span class="function_name">Add</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Also generated by Expr + Expr</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="ASin"></a><span class="function_name">ASin</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="ATan"></a><span class="function_name">ATan</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="ATan2"></a><span class="function_name">ATan2</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>ATan2 takes two arguments, with the same semantics as the standard cmath atan2 operator.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="biquad.AP"></a><span class="function_name">biquad.AP</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>2-pole/2-zero IIR all-pass filter.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[2]: cutoff frequency (default 1000)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1]: input signal</td>
+						</tr>
+											<tr>
+							<td class="name">args.res</td>
+							<td class="description">or args[3]: resonance (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="biquad.BP"></a><span class="function_name">biquad.BP</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>2-pole/2-zero IIR band-pass filter.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[2]: cutoff frequency (default 1000)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1]: input signal</td>
+						</tr>
+											<tr>
+							<td class="name">args.res</td>
+							<td class="description">or args[3]: resonance (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="biquad.BPC"></a><span class="function_name">biquad.BPC</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>2-pole/2-zero IIR band-pass filter.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[2]: cutoff frequency (default 1000)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1]: input signal</td>
+						</tr>
+											<tr>
+							<td class="name">args.res</td>
+							<td class="description">or args[3]: resonance (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="biquad.BR"></a><span class="function_name">biquad.BR</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>2-pole/2-zero IIR band-reject filter.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[2]: cutoff frequency (default 1000)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1]: input signal</td>
+						</tr>
+											<tr>
+							<td class="name">args.res</td>
+							<td class="description">or args[3]: resonance (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="biquad.HP"></a><span class="function_name">biquad.HP</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>2-pole/2-zero IIR high-pass filter.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[2]: cutoff frequency (default 1000)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1]: input signal</td>
+						</tr>
+											<tr>
+							<td class="name">args.res</td>
+							<td class="description">or args[3]: resonance (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="biquad.LP"></a><span class="function_name">biquad.LP</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>2-pole/2-zero IIR low-pass filter.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[2]: cutoff frequency (default 1000)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1]: input signal</td>
+						</tr>
+											<tr>
+							<td class="name">args.res</td>
+							<td class="description">or args[3]: resonance (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Bool"></a><span class="function_name">Bool</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>returns 0 if the input is 0, and 1 for any other value</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Buzz"></a><span class="function_name">Buzz</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>An audio oscillator. </p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[1]: frequency in Hertz (default 440)</td>
+						</tr>
+											<tr>
+							<td class="name">args.phase</td>
+							<td class="description">or args[2]: phase (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Ceil"></a><span class="function_name">Ceil</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> round to next highest integer</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Channels"></a><span class="function_name">Channels</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>select input channels from an input stream</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">input stream to select from</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Clip"></a><span class="function_name">Clip</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> clip signal between range of lo to hi</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.hi</td>
+							<td class="description">or args[3] hi limit (default 1)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1] value to clip (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args.lo</td>
+							<td class="description">or args[2] lo limit (default -1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Cos"></a><span class="function_name">Cos</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">angle in radians (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Cosh"></a><span class="function_name">Cosh</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Div"></a><span class="function_name">Div</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Also generated by Expr / Expr</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 1)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Env"></a><span class="function_name">Env</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>The simplest envelope: ramps from 1 to 0 over the duration.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties (same as EnvDriver)</td>
+						</tr>
+					
+				</table>
+		
+
+					<h3 class="see">See Also:</h3>
+				<ul class="see">
+											<li><a href="#EnvDriver">EnvDriver</a></li>
+					
+				</ul>
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="EnvDriver"></a><span class="function_name">EnvDriver</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Returns a signal ramp from 0 to 1 over the duration specified. If done == true (the default case), then the envelope will cause the removal of the containing synth at the end of the ramp.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.done</td>
+							<td class="description">boolean flag for removing the synth at envelope end (default true)</td>
+						</tr>
+											<tr>
+							<td class="name">args.dur</td>
+							<td class="description">or args[1]: envelope duration; a constant or variable expression (default auto-generated)</td>
+						</tr>
+											<tr>
+							<td class="name">args.hold</td>
+							<td class="description">or args[2]: envelope hold; while gate parameter is nonzero, the envelope will not progress.</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Eq"></a><span class="function_name">Eq</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>boolean operators return 1 for true, 0 for false</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Exp"></a><span class="function_name">Exp</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> compute e^input</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Floor"></a><span class="function_name">Floor</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> round to next lowest integer</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="globalize"></a><span class="function_name">globalize</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>A utility for quick-coding, to create global references for all audio.def functions</p>
+		</div>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Gt"></a><span class="function_name">Gt</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>boolean operators return 1 for true, 0 for false</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Gte"></a><span class="function_name">Gte</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>boolean operators return 1 for true, 0 for false</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Lag"></a><span class="function_name">Lag</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Smoothes input, initialized at init. </p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.init</td>
+							<td class="description">or args[3]: initial value of filter (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1]: input to smooth</td>
+						</tr>
+											<tr>
+							<td class="name">args.lag</td>
+							<td class="description">or args[2]: lag factor (0 for no lag, 1 for infinite lag)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Log"></a><span class="function_name">Log</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> compute natural logarithm</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Log10"></a><span class="function_name">Log10</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> compute base 10 logarithm</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Lt"></a><span class="function_name">Lt</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>boolean operators return 1 for true, 0 for false</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Lte"></a><span class="function_name">Lte</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>boolean operators return 1 for true, 0 for false</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Max"></a><span class="function_name">Max</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> return greater of inputs</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mean"></a><span class="function_name">Mean</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> return mean of inputs</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Min"></a><span class="function_name">Min</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> return lesser of inputs</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mix"></a><span class="function_name">Mix</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Adds src to dst, and returns src</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.dst</td>
+							<td class="description">or args[1]: mix destination (default V"out")</td>
+						</tr>
+											<tr>
+							<td class="name">args.src</td>
+							<td class="description">or args[2]: source to mix into destination (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mod"></a><span class="function_name">Mod</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Also generated by Expr % Expr</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 1)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mono"></a><span class="function_name">Mono</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>mix input stream to mono</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">input stream to mix</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Mul"></a><span class="function_name">Mul</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Also generated by Expr * Expr</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 1)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Neq"></a><span class="function_name">Neq</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>boolean operators return 1 for true, 0 for false</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="noise.Brown"></a><span class="function_name">noise.Brown</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Brownian noise has a power spectrum of 1/f^2. It is produced by integrating white (uniform) noise.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.seed</td>
+							<td class="description">or args[1]: seed for random number generator</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="noise.Pink"></a><span class="function_name">noise.Pink</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Pink noise has a power spectrum of 1/f. It is produced by summing together 12 octaves of white noise.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.seed</td>
+							<td class="description">or args[1]: seed for random number generator</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="noise.White"></a><span class="function_name">noise.White</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>White noise has a uniform power spectrum.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.seed</td>
+							<td class="description">or args[1]: seed for random number generator</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Not"></a><span class="function_name">Not</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>returns 1 if the input is 0, and 0 for any other value</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Pan2"></a><span class="function_name">Pan2</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Pan range is -1 to 1. Does a quadratic approximation of equal power pan. For stereo input signals, behaves like a balance control.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">or args.input: signal to be panned</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">or args.pan: signal to drive panner</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Phasor"></a><span class="function_name">Phasor</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>An audio oscillator. </p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[1]: frequency in Hertz (default 440)</td>
+						</tr>
+											<tr>
+							<td class="name">args.phase</td>
+							<td class="description">or args[2]: phase (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Port"></a><span class="function_name">Port</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Also generated by V"name"</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">name (string)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Pow"></a><span class="function_name">Pow</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Also generated by Expr ^ Expr</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 1)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 1)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Reverb"></a><span class="function_name">Reverb</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Based on: Dattorro, J. (1997). Effect design: Part 1: Reverberator and other filters. Journal of the Audio Engineering Society, 45(9):660–684</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.bandwidth</td>
+							<td class="description">or args[3]: bandwidth 0-1 (default 0.9995)</td>
+						</tr>
+											<tr>
+							<td class="name">args.damping</td>
+							<td class="description">or args[4]: damping 0-1 (default 0.4)</td>
+						</tr>
+											<tr>
+							<td class="name">args.decay</td>
+							<td class="description">or args[2]: decay 0-1 (default 0.85)</td>
+						</tr>
+											<tr>
+							<td class="name">args.diffusionDecay1</td>
+							<td class="description">or args[7]: diffusion decay 1 0-1 (default 0.707)</td>
+						</tr>
+											<tr>
+							<td class="name">args.diffusionDecay2</td>
+							<td class="description">or args[8]: diffusion decay 2 0-1 (default 0.571)</td>
+						</tr>
+											<tr>
+							<td class="name">args.diffusionIn1</td>
+							<td class="description">or args[5]: diffusion input 1 0-1 (default 0.76)</td>
+						</tr>
+											<tr>
+							<td class="name">args.diffusionIn2</td>
+							<td class="description">or args[6]: diffusion input 2 0-1 (default 0.666)</td>
+						</tr>
+											<tr>
+							<td class="name">args.input</td>
+							<td class="description">or args[1]: input</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Saw"></a><span class="function_name">Saw</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>An audio oscillator. </p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[1]: frequency in Hertz (default 440)</td>
+						</tr>
+											<tr>
+							<td class="name">args.phase</td>
+							<td class="description">or args[2]: phase (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Sign"></a><span class="function_name">Sign</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Returns 1 if input > 0, 0 if input == 0, and -1 otherwise.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Sin"></a><span class="function_name">Sin</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">angle in radians (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Sinh"></a><span class="function_name">Sinh</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="SinOsc"></a><span class="function_name">SinOsc</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>An audio oscillator. </p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[1]: frequency in Hertz (default 440)</td>
+						</tr>
+											<tr>
+							<td class="name">args.phase</td>
+							<td class="description">or args[2]: phase (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Sqrt"></a><span class="function_name">Sqrt</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> compute square root</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Square"></a><span class="function_name">Square</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>An audio oscillator. </p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args.freq</td>
+							<td class="description">or args[1]: frequency in Hertz (default 440)</td>
+						</tr>
+											<tr>
+							<td class="name">args.phase</td>
+							<td class="description">or args[2]: phase (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Stereo"></a><span class="function_name">Stereo</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>mix input stream to stereo</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">input stream to mix</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Sub"></a><span class="function_name">Sub</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Also generated by Expr - Expr. If second operand is omitted, is equivalent to (0-args[1]). </p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+											<tr>
+							<td class="name">args[2]</td>
+							<td class="description">second operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Tan"></a><span class="function_name">Tan</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">angle in radians (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Tanh"></a><span class="function_name">Tanh</span><span class="param">(args)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> basic trigonometry</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">args</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">args[1]</td>
+							<td class="description">first operand (default 0)</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

@@ -1,0 +1,1170 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">space.vec3</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../space.html">space</a></li>
+							<li><a href="../space/vec3.html">vec3</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>3-Component vector operations.  Vec3 methods operate on array triplets: {x, y, z}.</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#add">
+				<span class="function_name">add</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Addition</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#angle">
+				<span class="function_name">angle</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Angle</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#casteljau">
+				<span class="function_name">casteljau</span><span class="params">(v1, v2, v3, v4, t)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Casteljau Spline</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#cross">
+				<span class="function_name">cross</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Cross Product</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#div">
+				<span class="function_name">div</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Division</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#dot">
+				<span class="function_name">dot</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Dot Product</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#easein2">
+				<span class="function_name">easein2</span><span class="params">(v1, v2, t)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Quadtratic ease in</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#easeinout2">
+				<span class="function_name">easeinout2</span><span class="params">(v1, v2, t)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Quadtratic ease in/out</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#easeout2">
+				<span class="function_name">easeout2</span><span class="params">(v1, v2, t)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Quadtratic ease out</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#hermite">
+				<span class="function_name">hermite</span><span class="params">(v1, t1, v2, t2, t)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Hermite Tangent Spline</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#hermite2">
+				<span class="function_name">hermite2</span><span class="params">(v1, v2, v3, v4, t)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Hermite Spline</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#lerp">
+				<span class="function_name">lerp</span><span class="params">(v1, v2, t)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Linear Interpolation</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#mag">
+				<span class="function_name">mag</span><span class="params">(v)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Magnitude</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#mag_sqr">
+				<span class="function_name">mag_sqr</span><span class="params">(v)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Squared Magnitude</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#max">
+				<span class="function_name">max</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Maximum</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#min">
+				<span class="function_name">min</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Minimum</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#mod">
+				<span class="function_name">mod</span><span class="params">(v, m)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Modulo</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#mul">
+				<span class="function_name">mul</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Multiply</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#normal">
+				<span class="function_name">normal</span><span class="params">(v1, v2, v3)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Normal</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#normalize">
+				<span class="function_name">normalize</span><span class="params">(v)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Normalize</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#rotaxis">
+				<span class="function_name">rotaxis</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Rotation axis</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#scale">
+				<span class="function_name">scale</span><span class="params">(v, s)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Scale</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#slerp">
+				<span class="function_name">slerp</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Spherical Linear Interpolation</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#sub">
+				<span class="function_name">sub</span><span class="params">(v1, v2)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Subtraction</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#tangent">
+				<span class="function_name">tangent</span><span class="params">(v)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Tangent</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="add"></a><span class="function_name">add</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Adds 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="angle"></a><span class="function_name">angle</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Finds the angle between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="casteljau"></a><span class="function_name">casteljau</span><span class="param">(v1, v2, v3, v4, t)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Finds a point on a Casteljau spline</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+											<tr>
+							<td class="name">v3</td>
+							<td class="description">Third vector</td>
+						</tr>
+											<tr>
+							<td class="name">v4</td>
+							<td class="description">Fourth vector</td>
+						</tr>
+											<tr>
+							<td class="name">t</td>
+							<td class="description">Amount along spline [0, 1]</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="cross"></a><span class="function_name">cross</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Caluclates the cross product of 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="div"></a><span class="function_name">div</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Component-wise division of 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="dot"></a><span class="function_name">dot</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Dot product of 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Dot product</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="easein2"></a><span class="function_name">easein2</span><span class="param">(v1, v2, t)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Executes a quadratic ease in between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+											<tr>
+							<td class="name">t</td>
+							<td class="description">Ease amount [0, 1]</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="easeinout2"></a><span class="function_name">easeinout2</span><span class="param">(v1, v2, t)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Executes a quadratic ease in/out between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+											<tr>
+							<td class="name">t</td>
+							<td class="description">Ease amount [0, 1]</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="easeout2"></a><span class="function_name">easeout2</span><span class="param">(v1, v2, t)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Executes a quadratic ease out between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+											<tr>
+							<td class="name">t</td>
+							<td class="description">Ease amount [0, 1]</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="hermite"></a><span class="function_name">hermite</span><span class="param">(v1, t1, v2, t2, t)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Finds a point on a Hermite spline specified by points and tangents.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First point</td>
+						</tr>
+											<tr>
+							<td class="name">t1</td>
+							<td class="description">Tangent at first point</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second point</td>
+						</tr>
+											<tr>
+							<td class="name">t2</td>
+							<td class="description">Tangent at second point</td>
+						</tr>
+											<tr>
+							<td class="name">t</td>
+							<td class="description">Amount along spline [0, 1]</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="hermite2"></a><span class="function_name">hermite2</span><span class="param">(v1, v2, v3, v4, t)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Finds a point on a Hermite spline specified by points.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First point</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second point</td>
+						</tr>
+											<tr>
+							<td class="name">v3</td>
+							<td class="description">Third point</td>
+						</tr>
+											<tr>
+							<td class="name">v4</td>
+							<td class="description">Fourth point</td>
+						</tr>
+											<tr>
+							<td class="name">t</td>
+							<td class="description">Amount along spline [0, 1]</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="lerp"></a><span class="function_name">lerp</span><span class="param">(v1, v2, t)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Executes a linear interpolation between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+											<tr>
+							<td class="name">t</td>
+							<td class="description">Interpolation amount [0, 1]</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="mag"></a><span class="function_name">mag</span><span class="param">(v)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Gets the magnitude of a vector</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v</td>
+							<td class="description">Vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Magnitude</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="mag_sqr"></a><span class="function_name">mag_sqr</span><span class="param">(v)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Gets the squared magnitude of a vector</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v</td>
+							<td class="description">Vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Squared magnitude</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="max"></a><span class="function_name">max</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Component-wise maximum between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="min"></a><span class="function_name">min</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Component-wise minimum between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="mod"></a><span class="function_name">mod</span><span class="param">(v, m)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Component-wise modulo of a vector</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v</td>
+							<td class="description">Vector</td>
+						</tr>
+											<tr>
+							<td class="name">m</td>
+							<td class="description">Module factor</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="mul"></a><span class="function_name">mul</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Component-wise multiply of 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="normal"></a><span class="function_name">normal</span><span class="param">(v1, v2, v3)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Finds a normal to a triangle</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First point</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second point</td>
+						</tr>
+											<tr>
+							<td class="name">v3</td>
+							<td class="description">Third point</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="normalize"></a><span class="function_name">normalize</span><span class="param">(v)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Normalizes a vector</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v</td>
+							<td class="description">Vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="rotaxis"></a><span class="function_name">rotaxis</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Finds the rotation axis between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="scale"></a><span class="function_name">scale</span><span class="param">(v, s)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Scale a vector by a factor</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v</td>
+							<td class="description">Vector</td>
+						</tr>
+											<tr>
+							<td class="name">s</td>
+							<td class="description">Scale factor</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="slerp"></a><span class="function_name">slerp</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Executes a spherical linear interpolation between 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="sub"></a><span class="function_name">sub</span><span class="param">(v1, v2)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Subtracts 2 vectors</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v1</td>
+							<td class="description">First vector</td>
+						</tr>
+											<tr>
+							<td class="name">v2</td>
+							<td class="description">Second vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="tangent"></a><span class="function_name">tangent</span><span class="param">(v)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Finds an arbitrary tanget in the vector's tangent plane.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v</td>
+							<td class="description">Vector</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>Result vector</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

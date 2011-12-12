@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B90075E712CD4B8D0006FB10 /* e3ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B90075E512CD4B8D0006FB10 /* e3ga.cpp */; };
+		B90075E812CD4B8D0006FB10 /* e3ga.h in Headers */ = {isa = PBXBuildFile; fileRef = B90075E612CD4B8D0006FB10 /* e3ga.h */; };
+		B90075EC12CD4BB20006FB10 /* lua_e3ga.h in Headers */ = {isa = PBXBuildFile; fileRef = B90075EA12CD4BB20006FB10 /* lua_e3ga.h */; };
+		B90075ED12CD4BB20006FB10 /* lua_e3ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B90075EB12CD4BB20006FB10 /* lua_e3ga.cpp */; };
+		B900761A12CD50300006FB10 /* lua_e3ga_ops_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B900761912CD50300006FB10 /* lua_e3ga_ops_gen.cpp */; };
+		B900762F12CD534B0006FB10 /* lua_e3ga_ops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B900762E12CD534B0006FB10 /* lua_e3ga_ops.cpp */; };
+		B9008F4212D8E8730006FB10 /* c2ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9008F4012D8E8730006FB10 /* c2ga.cpp */; };
+		B9008F4312D8E8730006FB10 /* c2ga.h in Headers */ = {isa = PBXBuildFile; fileRef = B9008F4112D8E8730006FB10 /* c2ga.h */; };
+		B9008F4612D8E8B30006FB10 /* lua_c2ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9008F4512D8E8B30006FB10 /* lua_c2ga.cpp */; };
+		B9008F4A12D8E8D00006FB10 /* lua_c2ga.h in Headers */ = {isa = PBXBuildFile; fileRef = B9008F4912D8E8D00006FB10 /* lua_c2ga.h */; };
+		B9008FA312D9165D0006FB10 /* lua_c2ga_ops_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9008FA212D9165D0006FB10 /* lua_c2ga_ops_gen.cpp */; };
+		B9008FD312D922F40006FB10 /* c3ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9008FD112D922F40006FB10 /* c3ga.cpp */; };
+		B9008FD412D922F40006FB10 /* c3ga.h in Headers */ = {isa = PBXBuildFile; fileRef = B9008FD212D922F40006FB10 /* c3ga.h */; };
+		B900900212D955700006FB10 /* lua_c3ga.h in Headers */ = {isa = PBXBuildFile; fileRef = B900900012D955700006FB10 /* lua_c3ga.h */; };
+		B900900312D955700006FB10 /* lua_c3ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B900900112D955700006FB10 /* lua_c3ga.cpp */; };
+		B900902812D95B640006FB10 /* lua_c3ga_ops_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B900902712D95B640006FB10 /* lua_c3ga_ops_gen.cpp */; };
+		B90090F312DA40030006FB10 /* lua_c3ga_ops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B90090F212DA40030006FB10 /* lua_c3ga_ops.cpp */; };
+		B94BBADA12C286DA0014AB2D /* e2ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B94BBAD812C286DA0014AB2D /* e2ga.cpp */; };
+		B94BBADB12C286DA0014AB2D /* e2ga.h in Headers */ = {isa = PBXBuildFile; fileRef = B94BBAD912C286DA0014AB2D /* e2ga.h */; };
+		B94BBAE412C287BD0014AB2D /* lua_ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B94BBAE212C287BD0014AB2D /* lua_ga.cpp */; };
+		B94BBAE812C2882A0014AB2D /* lua_e2ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B94BBAE612C2882A0014AB2D /* lua_e2ga.cpp */; };
+		B94BBBDB12C2B2550014AB2D /* lua_e2ga.h in Headers */ = {isa = PBXBuildFile; fileRef = B94BBBDA12C2B2550014AB2D /* lua_e2ga.h */; };
+		B94BC17012CA49D20014AB2D /* lua_e2ga_ops_gen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B94BC16F12CA49D20014AB2D /* lua_e2ga_ops_gen.cpp */; };
+		B94BC1B112CA4F4C0014AB2D /* lua_e2ga_ops.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B94BBBD812C2B2400014AB2D /* lua_e2ga_ops.cpp */; };
+		B9DBEB5F12E2E87A004A7A39 /* test.c3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9DBEB5E12E2E87A004A7A39 /* test.c3.cpp */; };
+		B9DBEB7212E2E932004A7A39 /* c3ga.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9008FD112D922F40006FB10 /* c3ga.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36C2AEF20CD7A2DB0054F99E /* ga.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = ga.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90075E512CD4B8D0006FB10 /* e3ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = e3ga.cpp; sourceTree = "<group>"; };
+		B90075E612CD4B8D0006FB10 /* e3ga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = e3ga.h; sourceTree = "<group>"; };
+		B90075EA12CD4BB20006FB10 /* lua_e3ga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_e3ga.h; sourceTree = "<group>"; };
+		B90075EB12CD4BB20006FB10 /* lua_e3ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_e3ga.cpp; sourceTree = "<group>"; };
+		B900761912CD50300006FB10 /* lua_e3ga_ops_gen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_e3ga_ops_gen.cpp; sourceTree = "<group>"; };
+		B900762E12CD534B0006FB10 /* lua_e3ga_ops.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_e3ga_ops.cpp; sourceTree = "<group>"; };
+		B9008F4012D8E8730006FB10 /* c2ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = c2ga.cpp; sourceTree = "<group>"; };
+		B9008F4112D8E8730006FB10 /* c2ga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c2ga.h; sourceTree = "<group>"; };
+		B9008F4512D8E8B30006FB10 /* lua_c2ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_c2ga.cpp; sourceTree = "<group>"; };
+		B9008F4912D8E8D00006FB10 /* lua_c2ga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_c2ga.h; sourceTree = "<group>"; };
+		B9008FA212D9165D0006FB10 /* lua_c2ga_ops_gen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_c2ga_ops_gen.cpp; sourceTree = "<group>"; };
+		B9008FD112D922F40006FB10 /* c3ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = c3ga.cpp; sourceTree = "<group>"; };
+		B9008FD212D922F40006FB10 /* c3ga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = c3ga.h; sourceTree = "<group>"; };
+		B900900012D955700006FB10 /* lua_c3ga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_c3ga.h; sourceTree = "<group>"; };
+		B900900112D955700006FB10 /* lua_c3ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_c3ga.cpp; sourceTree = "<group>"; };
+		B900902712D95B640006FB10 /* lua_c3ga_ops_gen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_c3ga_ops_gen.cpp; sourceTree = "<group>"; };
+		B90090F212DA40030006FB10 /* lua_c3ga_ops.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_c3ga_ops.cpp; sourceTree = "<group>"; };
+		B94BBAD812C286DA0014AB2D /* e2ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = e2ga.cpp; sourceTree = "<group>"; };
+		B94BBAD912C286DA0014AB2D /* e2ga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = e2ga.h; sourceTree = "<group>"; };
+		B94BBAE212C287BD0014AB2D /* lua_ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_ga.cpp; sourceTree = "<group>"; };
+		B94BBAE612C2882A0014AB2D /* lua_e2ga.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_e2ga.cpp; sourceTree = "<group>"; };
+		B94BBBD812C2B2400014AB2D /* lua_e2ga_ops.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_e2ga_ops.cpp; sourceTree = "<group>"; };
+		B94BBBDA12C2B2550014AB2D /* lua_e2ga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_e2ga.h; sourceTree = "<group>"; };
+		B94BC16F12CA49D20014AB2D /* lua_e2ga_ops_gen.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_e2ga_ops_gen.cpp; sourceTree = "<group>"; };
+		B975137D123ACCDE00A932A1 /* dev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dev; path = ../../../dev; sourceTree = SOURCE_ROOT; };
+		B9DBEB5512E2E865004A7A39 /* testc3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = testc3; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9DBEB5E12E2E87A004A7A39 /* test.c3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test.c3.cpp; path = c3/test.c3.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36C2AEF00CD7A2DB0054F99E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9DBEB5312E2E865004A7A39 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C2AEF20CD7A2DB0054F99E /* ga.so */,
+				B9DBEB5512E2E865004A7A39 /* testc3 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* cocoa_ogl */ = {
+			isa = PBXGroup;
+			children = (
+				B975137D123ACCDE00A932A1 /* dev */,
+				B94BBAD612C286DA0014AB2D /* src */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = cocoa_ogl;
+			sourceTree = "<group>";
+		};
+		B90075E412CD4B8D0006FB10 /* e3 */ = {
+			isa = PBXGroup;
+			children = (
+				B90075E612CD4B8D0006FB10 /* e3ga.h */,
+				B90075E512CD4B8D0006FB10 /* e3ga.cpp */,
+				B90075EA12CD4BB20006FB10 /* lua_e3ga.h */,
+				B90075EB12CD4BB20006FB10 /* lua_e3ga.cpp */,
+				B900762E12CD534B0006FB10 /* lua_e3ga_ops.cpp */,
+				B900761912CD50300006FB10 /* lua_e3ga_ops_gen.cpp */,
+			);
+			path = e3;
+			sourceTree = "<group>";
+		};
+		B9008F3F12D8E8730006FB10 /* c2 */ = {
+			isa = PBXGroup;
+			children = (
+				B9008F4112D8E8730006FB10 /* c2ga.h */,
+				B9008F4012D8E8730006FB10 /* c2ga.cpp */,
+				B9008F4912D8E8D00006FB10 /* lua_c2ga.h */,
+				B9008F4512D8E8B30006FB10 /* lua_c2ga.cpp */,
+				B9008FA212D9165D0006FB10 /* lua_c2ga_ops_gen.cpp */,
+			);
+			path = c2;
+			sourceTree = "<group>";
+		};
+		B9008FD012D922F40006FB10 /* c3 */ = {
+			isa = PBXGroup;
+			children = (
+				B9008FD212D922F40006FB10 /* c3ga.h */,
+				B9008FD112D922F40006FB10 /* c3ga.cpp */,
+				B900900012D955700006FB10 /* lua_c3ga.h */,
+				B900900112D955700006FB10 /* lua_c3ga.cpp */,
+				B90090F212DA40030006FB10 /* lua_c3ga_ops.cpp */,
+				B900902712D95B640006FB10 /* lua_c3ga_ops_gen.cpp */,
+			);
+			path = c3;
+			sourceTree = "<group>";
+		};
+		B94BBAD612C286DA0014AB2D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B94BBAD712C286DA0014AB2D /* e2 */,
+				B90075E412CD4B8D0006FB10 /* e3 */,
+				B9008F3F12D8E8730006FB10 /* c2 */,
+				B9008FD012D922F40006FB10 /* c3 */,
+				B94BBAE212C287BD0014AB2D /* lua_ga.cpp */,
+				B9DBEB5E12E2E87A004A7A39 /* test.c3.cpp */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+		B94BBAD712C286DA0014AB2D /* e2 */ = {
+			isa = PBXGroup;
+			children = (
+				B94BBAD912C286DA0014AB2D /* e2ga.h */,
+				B94BBAD812C286DA0014AB2D /* e2ga.cpp */,
+				B94BBBDA12C2B2550014AB2D /* lua_e2ga.h */,
+				B94BBAE612C2882A0014AB2D /* lua_e2ga.cpp */,
+				B94BBBD812C2B2400014AB2D /* lua_e2ga_ops.cpp */,
+				B94BC16F12CA49D20014AB2D /* lua_e2ga_ops_gen.cpp */,
+			);
+			path = e2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36C2AEEE0CD7A2DB0054F99E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94BBADB12C286DA0014AB2D /* e2ga.h in Headers */,
+				B94BBBDB12C2B2550014AB2D /* lua_e2ga.h in Headers */,
+				B90075E812CD4B8D0006FB10 /* e3ga.h in Headers */,
+				B90075EC12CD4BB20006FB10 /* lua_e3ga.h in Headers */,
+				B9008F4312D8E8730006FB10 /* c2ga.h in Headers */,
+				B9008F4A12D8E8D00006FB10 /* lua_c2ga.h in Headers */,
+				B9008FD412D922F40006FB10 /* c3ga.h in Headers */,
+				B900900212D955700006FB10 /* lua_c3ga.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		36C2AEF10CD7A2DB0054F99E /* ga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "ga" */;
+			buildPhases = (
+				36C2AEEE0CD7A2DB0054F99E /* Headers */,
+				36C2AEEF0CD7A2DB0054F99E /* Sources */,
+				36C2AEF00CD7A2DB0054F99E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ga;
+			productName = testmod2;
+			productReference = 36C2AEF20CD7A2DB0054F99E /* ga.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		B9DBEB5412E2E865004A7A39 /* testc3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9DBEB5D12E2E869004A7A39 /* Build configuration list for PBXNativeTarget "testc3" */;
+			buildPhases = (
+				B9DBEB5212E2E865004A7A39 /* Sources */,
+				B9DBEB5312E2E865004A7A39 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = testc3;
+			productName = testc3;
+			productReference = B9DBEB5512E2E865004A7A39 /* testc3 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ga" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* cocoa_ogl */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36C2AEF10CD7A2DB0054F99E /* ga */,
+				B9DBEB5412E2E865004A7A39 /* testc3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36C2AEEF0CD7A2DB0054F99E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B94BBADA12C286DA0014AB2D /* e2ga.cpp in Sources */,
+				B94BBAE412C287BD0014AB2D /* lua_ga.cpp in Sources */,
+				B94BBAE812C2882A0014AB2D /* lua_e2ga.cpp in Sources */,
+				B94BC17012CA49D20014AB2D /* lua_e2ga_ops_gen.cpp in Sources */,
+				B94BC1B112CA4F4C0014AB2D /* lua_e2ga_ops.cpp in Sources */,
+				B90075E712CD4B8D0006FB10 /* e3ga.cpp in Sources */,
+				B90075ED12CD4BB20006FB10 /* lua_e3ga.cpp in Sources */,
+				B900761A12CD50300006FB10 /* lua_e3ga_ops_gen.cpp in Sources */,
+				B900762F12CD534B0006FB10 /* lua_e3ga_ops.cpp in Sources */,
+				B9008F4212D8E8730006FB10 /* c2ga.cpp in Sources */,
+				B9008F4612D8E8B30006FB10 /* lua_c2ga.cpp in Sources */,
+				B9008FA312D9165D0006FB10 /* lua_c2ga_ops_gen.cpp in Sources */,
+				B9008FD312D922F40006FB10 /* c3ga.cpp in Sources */,
+				B900900312D955700006FB10 /* lua_c3ga.cpp in Sources */,
+				B900902812D95B640006FB10 /* lua_c3ga_ops_gen.cpp in Sources */,
+				B90090F312DA40030006FB10 /* lua_c3ga_ops.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B9DBEB5212E2E865004A7A39 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9DBEB5F12E2E87A004A7A39 /* test.c3.cpp in Sources */,
+				B9DBEB7212E2E932004A7A39 /* c3ga.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		36C2AF010CD7A2EB0054F99E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../Support/Notifier/build/Debug\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../matrix/support/build/Debug\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/Modules";
+				LIBRARY_SEARCH_PATHS = "";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = (
+					"-no-cpp-precomp",
+					"-dynamic",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ga;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include";
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		36C2AF020CD7A2EB0054F99E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../Support/Notifier/build/Debug\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)/../matrix/support/build/Debug\"";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				LIBRARY_SEARCH_PATHS = "";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = (
+					"-no-cpp-precomp",
+					"-dynamic",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ga;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		B9DBEB5712E2E865004A7A39 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = testc3;
+			};
+			name = Debug;
+		};
+		B9DBEB5812E2E865004A7A39 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = testc3;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "ga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C2AF010CD7A2EB0054F99E /* Debug */,
+				36C2AF020CD7A2EB0054F99E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B9DBEB5D12E2E869004A7A39 /* Build configuration list for PBXNativeTarget "testc3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9DBEB5712E2E865004A7A39 /* Debug */,
+				B9DBEB5812E2E865004A7A39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "ga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

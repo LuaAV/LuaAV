@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B94149CB12389850009D436D /* ft2build.h in Headers */ = {isa = PBXBuildFile; fileRef = B94149CA12389850009D436D /* ft2build.h */; };
+		B9414A3C123915EF009D436D /* lua_font.h in Headers */ = {isa = PBXBuildFile; fileRef = B9414A3B123915EF009D436D /* lua_font.h */; };
+		B9414A8712392C88009D436D /* lua_font_udata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9414A8512392C88009D436D /* lua_font_udata.cpp */; };
+		B97532F812441AD600A932A1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B97532F712441AD600A932A1 /* OpenGL.framework */; };
+		B9E1888012AC82C5004343EA /* font_cocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E1887E12AC82C5004343EA /* font_cocoa.h */; };
+		B9E1888112AC82C5004343EA /* font_cocoa.mm in Sources */ = {isa = PBXBuildFile; fileRef = B9E1887F12AC82C5004343EA /* font_cocoa.mm */; };
+		B9E18A5E12ACD01B004343EA /* font_freetype.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E18A5C12ACD01B004343EA /* font_freetype.h */; };
+		B9E18A5F12ACD01B004343EA /* font_freetype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9E18A5D12ACD01B004343EA /* font_freetype.cpp */; };
+		B9F069FA0FAF5C5E0048BD95 /* Font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F069F60FAF5C5E0048BD95 /* Font.cpp */; };
+		B9F069FB0FAF5C5E0048BD95 /* Font.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F069F70FAF5C5E0048BD95 /* Font.h */; };
+		B9F06A530FAF6E9A0048BD95 /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F06A520FAF6E9A0048BD95 /* libfreetype.a */; };
+		B9F06A700FAF70060048BD95 /* lua_font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F06A6E0FAF70060048BD95 /* lua_font.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36C2AEF20CD7A2DB0054F99E /* font.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = font.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		B94149361235D308009D436D /* dev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dev; path = ../../../dev; sourceTree = SOURCE_ROOT; };
+		B941496F12389850009D436D /* freetype */ = {isa = PBXFileReference; lastKnownFileType = folder; name = freetype; path = include/freetype; sourceTree = "<group>"; };
+		B94149CA12389850009D436D /* ft2build.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ft2build.h; path = include/ft2build.h; sourceTree = "<group>"; };
+		B9414A3B123915EF009D436D /* lua_font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_font.h; sourceTree = "<group>"; };
+		B9414A8512392C88009D436D /* lua_font_udata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_font_udata.cpp; sourceTree = "<group>"; };
+		B97532F712441AD600A932A1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		B9E1887E12AC82C5004343EA /* font_cocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font_cocoa.h; sourceTree = "<group>"; };
+		B9E1887F12AC82C5004343EA /* font_cocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = font_cocoa.mm; sourceTree = "<group>"; };
+		B9E18A5C12ACD01B004343EA /* font_freetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = font_freetype.h; sourceTree = "<group>"; };
+		B9E18A5D12ACD01B004343EA /* font_freetype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = font_freetype.cpp; sourceTree = "<group>"; };
+		B9F069F60FAF5C5E0048BD95 /* Font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Font.cpp; sourceTree = "<group>"; };
+		B9F069F70FAF5C5E0048BD95 /* Font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Font.h; sourceTree = "<group>"; };
+		B9F06A520FAF6E9A0048BD95 /* libfreetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfreetype.a; sourceTree = "<group>"; };
+		B9F06A6E0FAF70060048BD95 /* lua_font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_font.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36C2AEF00CD7A2DB0054F99E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9F06A530FAF6E9A0048BD95 /* libfreetype.a in Frameworks */,
+				B97532F812441AD600A932A1 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C2AEF20CD7A2DB0054F99E /* font.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* cocoa_ogl */ = {
+			isa = PBXGroup;
+			children = (
+				B94149361235D308009D436D /* dev */,
+				B94149441238983D009D436D /* include */,
+				DF00B63C0E17FD4700E60A0B /* src */,
+				B9F06A520FAF6E9A0048BD95 /* libfreetype.a */,
+				B97532F712441AD600A932A1 /* OpenGL.framework */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = cocoa_ogl;
+			sourceTree = "<group>";
+		};
+		B94149441238983D009D436D /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B941496F12389850009D436D /* freetype */,
+				B94149CA12389850009D436D /* ft2build.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		DF00B63C0E17FD4700E60A0B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B9414A3B123915EF009D436D /* lua_font.h */,
+				B9F06A6E0FAF70060048BD95 /* lua_font.cpp */,
+				B9414A8512392C88009D436D /* lua_font_udata.cpp */,
+				B9F069F70FAF5C5E0048BD95 /* Font.h */,
+				B9F069F60FAF5C5E0048BD95 /* Font.cpp */,
+				B9E18A5C12ACD01B004343EA /* font_freetype.h */,
+				B9E18A5D12ACD01B004343EA /* font_freetype.cpp */,
+				B9E1887E12AC82C5004343EA /* font_cocoa.h */,
+				B9E1887F12AC82C5004343EA /* font_cocoa.mm */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36C2AEEE0CD7A2DB0054F99E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9F069FB0FAF5C5E0048BD95 /* Font.h in Headers */,
+				B94149CB12389850009D436D /* ft2build.h in Headers */,
+				B9414A3C123915EF009D436D /* lua_font.h in Headers */,
+				B9E1888012AC82C5004343EA /* font_cocoa.h in Headers */,
+				B9E18A5E12ACD01B004343EA /* font_freetype.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		36C2AEF10CD7A2DB0054F99E /* font */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "font" */;
+			buildPhases = (
+				36C2AEEE0CD7A2DB0054F99E /* Headers */,
+				36C2AEEF0CD7A2DB0054F99E /* Sources */,
+				36C2AEF00CD7A2DB0054F99E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = font;
+			productName = testmod2;
+			productReference = 36C2AEF20CD7A2DB0054F99E /* font.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "font" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* cocoa_ogl */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36C2AEF10CD7A2DB0054F99E /* font */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36C2AEEF0CD7A2DB0054F99E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9F069FA0FAF5C5E0048BD95 /* Font.cpp in Sources */,
+				B9F06A700FAF70060048BD95 /* lua_font.cpp in Sources */,
+				B9414A8712392C88009D436D /* lua_font_udata.cpp in Sources */,
+				B9E1888112AC82C5004343EA /* font_cocoa.mm in Sources */,
+				B9E18A5F12ACD01B004343EA /* font_freetype.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		36C2AF010CD7A2EB0054F99E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = font;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = macosx10.6;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/include $(SRCROOT) $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include $(SRCROOT)/../src/module";
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		36C2AF020CD7A2EB0054F99E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = font;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = macosx10.6;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/include $(SRCROOT) $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include $(SRCROOT)/../src/module";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "font" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C2AF010CD7A2EB0054F99E /* Debug */,
+				36C2AF020CD7A2EB0054F99E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "font" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

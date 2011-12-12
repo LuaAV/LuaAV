@@ -1,0 +1,40 @@
+
+----------------------------------------------------------------------
+How dependent libraries were built
+----------------------------------------------------------------------
+
+LuaAV on OSX is currently building against the 10.4 SDK, but is no longer supporting PPC.
+It currently builds for x86, not x64 (because of LuaJIT).
+
+prefix configure/make commands with:
+env MACOSX_DEPLOYMENT_TARGET=10.4 ./configure
+env MACOSX_DEPLOYMENT_TARGET=10.4 make
+
+add to build flags:
+-isysroot /Developer/SDKs/MacOSX10.4u.sdk -mmacosx-version-min=10.4 
+
+
+----------------------------------------------------------------------
+
+liblua (5.1.4)
+
+modified src/makefile:
+macosx:
+	$(MAKE) all MYCFLAGS="-DLUA_USE_LINUX -mmacosx-version-min=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch ppc -arch i386" "MYLDFLAGS=-Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk -arch ppc -arch i386"
+
+env MACOSX_DEPLOYMENT_TARGET=10.4 make macosx
+
+libluajit (2.0) beta5
+
+patch -p1 < beta5_hotfix1.patch
+make CC="gcc -m32"
+
+libapr (1.3.8)
+
+env MACOSX_DEPLOYMENT_TARGET=10.4 ./configure EXTRA_CFLAGS="-isysroot /Developer/SDKs/MacOSX10.4u.sdk -mmacosx-version-min=10.4" EXTRA_LDFLAGS="-isysroot /Developer/SDKs/MacOSX10.4u.sdk -mmacosx-version-min=10.4"
+edit apr.h, set APR_HAS_SENDFILE 0
+env MACOSX_DEPLOYMENT_TARGET=10.4 make
+
+libportaudio (1.9)
+
+

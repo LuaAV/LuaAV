@@ -1,0 +1,23 @@
+
+LuaAV3 
+
+Things left to do later in the 2->3 port:
+
+Change OSX target/SDK to 10.4.
+	- rebuild libapr against 10.4
+	
+Add error handling for coroutines
+	
+Launch all new scripts as coroutines
+	
+Optional switch between cputimer / audiotimer clock source for Delta.
+	+ Lua-settable, + Lua-settable latency. 
+	
+
+scheduler.debug to see what's in the current list (read only)
+	+ debug.* library on coroutines
+	
+coroutine:abort()
+
+OSC in library
+

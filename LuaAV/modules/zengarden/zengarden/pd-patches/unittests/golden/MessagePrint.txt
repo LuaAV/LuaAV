@@ -1,0 +1,9 @@
+print: test
+x1: 3.14
+x1: walk the dog
+x1: 234
+x1: bang
+1
+closing audio...
+closing MIDI...
+... done.

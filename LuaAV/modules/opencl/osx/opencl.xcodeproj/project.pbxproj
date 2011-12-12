@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B9C9748812270E0E00091F80 /* al_OpenCL.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746312270E0E00091F80 /* al_OpenCL.hpp */; };
+		B9C9748912270E0E00091F80 /* al_OpenCLCommandQueue.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746412270E0E00091F80 /* al_OpenCLCommandQueue.hpp */; };
+		B9C9748A12270E0E00091F80 /* al_OpenCLContext.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746512270E0E00091F80 /* al_OpenCLContext.hpp */; };
+		B9C9748B12270E0E00091F80 /* al_OpenCLDevice.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746612270E0E00091F80 /* al_OpenCLDevice.hpp */; };
+		B9C9748C12270E0E00091F80 /* al_OpenCLEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746712270E0E00091F80 /* al_OpenCLEngine.hpp */; };
+		B9C9748D12270E0E00091F80 /* al_OpenCLEvent.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746812270E0E00091F80 /* al_OpenCLEvent.hpp */; };
+		B9C9748E12270E0E00091F80 /* al_OpenCLExtensions.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746912270E0E00091F80 /* al_OpenCLExtensions.hpp */; };
+		B9C9748F12270E0E00091F80 /* al_OpenCLImage2D.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746A12270E0E00091F80 /* al_OpenCLImage2D.hpp */; };
+		B9C9749012270E0E00091F80 /* al_OpenCLImage3D.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746B12270E0E00091F80 /* al_OpenCLImage3D.hpp */; };
+		B9C9749112270E0E00091F80 /* al_OpenCLImageFormat.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746C12270E0E00091F80 /* al_OpenCLImageFormat.hpp */; };
+		B9C9749212270E0E00091F80 /* al_OpenCLInternal.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746D12270E0E00091F80 /* al_OpenCLInternal.hpp */; };
+		B9C9749312270E0E00091F80 /* al_OpenCLKernel.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746E12270E0E00091F80 /* al_OpenCLKernel.hpp */; };
+		B9C9749412270E0E00091F80 /* al_OpenCLMemoryBuffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9746F12270E0E00091F80 /* al_OpenCLMemoryBuffer.hpp */; };
+		B9C9749512270E0E00091F80 /* al_OpenCLPlatform.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9747012270E0E00091F80 /* al_OpenCLPlatform.hpp */; };
+		B9C9749612270E0E00091F80 /* al_OpenCLProgram.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9C9747112270E0E00091F80 /* al_OpenCLProgram.hpp */; };
+		B9C9749B12270E0E00091F80 /* al_OpenCLCommandQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9747B12270E0E00091F80 /* al_OpenCLCommandQueue.cpp */; };
+		B9C9749C12270E0E00091F80 /* al_OpenCLContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9747C12270E0E00091F80 /* al_OpenCLContext.cpp */; };
+		B9C9749D12270E0E00091F80 /* al_OpenCLDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9747D12270E0E00091F80 /* al_OpenCLDevice.cpp */; };
+		B9C9749E12270E0E00091F80 /* al_OpenCLEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9747E12270E0E00091F80 /* al_OpenCLEngine.cpp */; };
+		B9C9749F12270E0E00091F80 /* al_OpenCLEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9747F12270E0E00091F80 /* al_OpenCLEvent.cpp */; };
+		B9C974A012270E0E00091F80 /* al_OpenCLExtensions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9748012270E0E00091F80 /* al_OpenCLExtensions.cpp */; };
+		B9C974A112270E0E00091F80 /* al_OpenCLImage2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9748112270E0E00091F80 /* al_OpenCLImage2D.cpp */; };
+		B9C974A212270E0E00091F80 /* al_OpenCLImage3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9748212270E0E00091F80 /* al_OpenCLImage3D.cpp */; };
+		B9C974A312270E0E00091F80 /* al_OpenCLInternal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9748312270E0E00091F80 /* al_OpenCLInternal.cpp */; };
+		B9C974A412270E0E00091F80 /* al_OpenCLKernel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9748412270E0E00091F80 /* al_OpenCLKernel.cpp */; };
+		B9C974A512270E0E00091F80 /* al_OpenCLMemoryBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9748512270E0E00091F80 /* al_OpenCLMemoryBuffer.cpp */; };
+		B9C974A612270E0E00091F80 /* al_OpenCLPlatform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9748612270E0E00091F80 /* al_OpenCLPlatform.cpp */; };
+		B9C974A712270E0E00091F80 /* al_OpenCLProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C9748712270E0E00091F80 /* al_OpenCLProgram.cpp */; };
+		B9C974AD12270E4900091F80 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C974AB12270E4900091F80 /* OpenGL.framework */; };
+		B9C974AE12270E4900091F80 /* OpenCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9C974AC12270E4900091F80 /* OpenCL.framework */; };
+		B9C974CB12270FBD00091F80 /* lua_opencl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9C974CA12270FBD00091F80 /* lua_opencl.cpp */; };
+		B9C9760C122720B500091F80 /* lua_opencl_constants.h in Headers */ = {isa = PBXBuildFile; fileRef = B9C9760B122720B500091F80 /* lua_opencl_constants.h */; };
+		B9C977601227A6FF00091F80 /* lua_opencl_util.h in Headers */ = {isa = PBXBuildFile; fileRef = B9C9775F1227A6FF00091F80 /* lua_opencl_util.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		36C2AEF20CD7A2DB0054F99E /* opencl.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = opencl.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		B975143B123C373D00A932A1 /* dev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dev; path = ../../../dev; sourceTree = SOURCE_ROOT; };
+		B9C9746312270E0E00091F80 /* al_OpenCL.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCL.hpp; sourceTree = "<group>"; };
+		B9C9746412270E0E00091F80 /* al_OpenCLCommandQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLCommandQueue.hpp; sourceTree = "<group>"; };
+		B9C9746512270E0E00091F80 /* al_OpenCLContext.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLContext.hpp; sourceTree = "<group>"; };
+		B9C9746612270E0E00091F80 /* al_OpenCLDevice.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLDevice.hpp; sourceTree = "<group>"; };
+		B9C9746712270E0E00091F80 /* al_OpenCLEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLEngine.hpp; sourceTree = "<group>"; };
+		B9C9746812270E0E00091F80 /* al_OpenCLEvent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLEvent.hpp; sourceTree = "<group>"; };
+		B9C9746912270E0E00091F80 /* al_OpenCLExtensions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLExtensions.hpp; sourceTree = "<group>"; };
+		B9C9746A12270E0E00091F80 /* al_OpenCLImage2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLImage2D.hpp; sourceTree = "<group>"; };
+		B9C9746B12270E0E00091F80 /* al_OpenCLImage3D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLImage3D.hpp; sourceTree = "<group>"; };
+		B9C9746C12270E0E00091F80 /* al_OpenCLImageFormat.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLImageFormat.hpp; sourceTree = "<group>"; };
+		B9C9746D12270E0E00091F80 /* al_OpenCLInternal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLInternal.hpp; sourceTree = "<group>"; };
+		B9C9746E12270E0E00091F80 /* al_OpenCLKernel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLKernel.hpp; sourceTree = "<group>"; };
+		B9C9746F12270E0E00091F80 /* al_OpenCLMemoryBuffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLMemoryBuffer.hpp; sourceTree = "<group>"; };
+		B9C9747012270E0E00091F80 /* al_OpenCLPlatform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLPlatform.hpp; sourceTree = "<group>"; };
+		B9C9747112270E0E00091F80 /* al_OpenCLProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_OpenCLProgram.hpp; sourceTree = "<group>"; };
+		B9C9747B12270E0E00091F80 /* al_OpenCLCommandQueue.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLCommandQueue.cpp; sourceTree = "<group>"; };
+		B9C9747C12270E0E00091F80 /* al_OpenCLContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLContext.cpp; sourceTree = "<group>"; };
+		B9C9747D12270E0E00091F80 /* al_OpenCLDevice.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLDevice.cpp; sourceTree = "<group>"; };
+		B9C9747E12270E0E00091F80 /* al_OpenCLEngine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLEngine.cpp; sourceTree = "<group>"; };
+		B9C9747F12270E0E00091F80 /* al_OpenCLEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLEvent.cpp; sourceTree = "<group>"; };
+		B9C9748012270E0E00091F80 /* al_OpenCLExtensions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLExtensions.cpp; sourceTree = "<group>"; };
+		B9C9748112270E0E00091F80 /* al_OpenCLImage2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLImage2D.cpp; sourceTree = "<group>"; };
+		B9C9748212270E0E00091F80 /* al_OpenCLImage3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLImage3D.cpp; sourceTree = "<group>"; };
+		B9C9748312270E0E00091F80 /* al_OpenCLInternal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLInternal.cpp; sourceTree = "<group>"; };
+		B9C9748412270E0E00091F80 /* al_OpenCLKernel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLKernel.cpp; sourceTree = "<group>"; };
+		B9C9748512270E0E00091F80 /* al_OpenCLMemoryBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLMemoryBuffer.cpp; sourceTree = "<group>"; };
+		B9C9748612270E0E00091F80 /* al_OpenCLPlatform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLPlatform.cpp; sourceTree = "<group>"; };
+		B9C9748712270E0E00091F80 /* al_OpenCLProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_OpenCLProgram.cpp; sourceTree = "<group>"; };
+		B9C974AB12270E4900091F80 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		B9C974AC12270E4900091F80 /* OpenCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenCL.framework; path = /System/Library/Frameworks/OpenCL.framework; sourceTree = "<absolute>"; };
+		B9C974CA12270FBD00091F80 /* lua_opencl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opencl.cpp; sourceTree = "<group>"; };
+		B9C9760B122720B500091F80 /* lua_opencl_constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opencl_constants.h; sourceTree = "<group>"; };
+		B9C9775F1227A6FF00091F80 /* lua_opencl_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opencl_util.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36C2AEF00CD7A2DB0054F99E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9C974AD12270E4900091F80 /* OpenGL.framework in Frameworks */,
+				B9C974AE12270E4900091F80 /* OpenCL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C2AEF20CD7A2DB0054F99E /* opencl.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* cocoa_ogl */ = {
+			isa = PBXGroup;
+			children = (
+				B975143B123C373D00A932A1 /* dev */,
+				B9C9746012270E0E00091F80 /* include */,
+				B9C9747812270E0E00091F80 /* src */,
+				B9C974AA12270E2500091F80 /* libraries */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = cocoa_ogl;
+			sourceTree = "<group>";
+		};
+		B9C9746012270E0E00091F80 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B9C9746112270E0E00091F80 /* protocol */,
+			);
+			name = include;
+			path = ../include;
+			sourceTree = SOURCE_ROOT;
+		};
+		B9C9746112270E0E00091F80 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B9C9746212270E0E00091F80 /* opencl */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		B9C9746212270E0E00091F80 /* opencl */ = {
+			isa = PBXGroup;
+			children = (
+				B9C9746312270E0E00091F80 /* al_OpenCL.hpp */,
+				B9C9746412270E0E00091F80 /* al_OpenCLCommandQueue.hpp */,
+				B9C9746512270E0E00091F80 /* al_OpenCLContext.hpp */,
+				B9C9746612270E0E00091F80 /* al_OpenCLDevice.hpp */,
+				B9C9746712270E0E00091F80 /* al_OpenCLEngine.hpp */,
+				B9C9746812270E0E00091F80 /* al_OpenCLEvent.hpp */,
+				B9C9746912270E0E00091F80 /* al_OpenCLExtensions.hpp */,
+				B9C9746A12270E0E00091F80 /* al_OpenCLImage2D.hpp */,
+				B9C9746B12270E0E00091F80 /* al_OpenCLImage3D.hpp */,
+				B9C9746C12270E0E00091F80 /* al_OpenCLImageFormat.hpp */,
+				B9C9746D12270E0E00091F80 /* al_OpenCLInternal.hpp */,
+				B9C9746E12270E0E00091F80 /* al_OpenCLKernel.hpp */,
+				B9C9746F12270E0E00091F80 /* al_OpenCLMemoryBuffer.hpp */,
+				B9C9747012270E0E00091F80 /* al_OpenCLPlatform.hpp */,
+				B9C9747112270E0E00091F80 /* al_OpenCLProgram.hpp */,
+			);
+			path = opencl;
+			sourceTree = "<group>";
+		};
+		B9C9747812270E0E00091F80 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B9C9747912270E0E00091F80 /* protocol */,
+				B9C9760B122720B500091F80 /* lua_opencl_constants.h */,
+				B9C9775F1227A6FF00091F80 /* lua_opencl_util.h */,
+				B9C974CA12270FBD00091F80 /* lua_opencl.cpp */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+		B9C9747912270E0E00091F80 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B9C9747A12270E0E00091F80 /* opencl */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		B9C9747A12270E0E00091F80 /* opencl */ = {
+			isa = PBXGroup;
+			children = (
+				B9C9747B12270E0E00091F80 /* al_OpenCLCommandQueue.cpp */,
+				B9C9747C12270E0E00091F80 /* al_OpenCLContext.cpp */,
+				B9C9747D12270E0E00091F80 /* al_OpenCLDevice.cpp */,
+				B9C9747E12270E0E00091F80 /* al_OpenCLEngine.cpp */,
+				B9C9747F12270E0E00091F80 /* al_OpenCLEvent.cpp */,
+				B9C9748012270E0E00091F80 /* al_OpenCLExtensions.cpp */,
+				B9C9748112270E0E00091F80 /* al_OpenCLImage2D.cpp */,
+				B9C9748212270E0E00091F80 /* al_OpenCLImage3D.cpp */,
+				B9C9748312270E0E00091F80 /* al_OpenCLInternal.cpp */,
+				B9C9748412270E0E00091F80 /* al_OpenCLKernel.cpp */,
+				B9C9748512270E0E00091F80 /* al_OpenCLMemoryBuffer.cpp */,
+				B9C9748612270E0E00091F80 /* al_OpenCLPlatform.cpp */,
+				B9C9748712270E0E00091F80 /* al_OpenCLProgram.cpp */,
+			);
+			path = opencl;
+			sourceTree = "<group>";
+		};
+		B9C974AA12270E2500091F80 /* libraries */ = {
+			isa = PBXGroup;
+			children = (
+				B9C974AB12270E4900091F80 /* OpenGL.framework */,
+				B9C974AC12270E4900091F80 /* OpenCL.framework */,
+			);
+			name = libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36C2AEEE0CD7A2DB0054F99E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9C9748812270E0E00091F80 /* al_OpenCL.hpp in Headers */,
+				B9C9748912270E0E00091F80 /* al_OpenCLCommandQueue.hpp in Headers */,
+				B9C9748A12270E0E00091F80 /* al_OpenCLContext.hpp in Headers */,
+				B9C9748B12270E0E00091F80 /* al_OpenCLDevice.hpp in Headers */,
+				B9C9748C12270E0E00091F80 /* al_OpenCLEngine.hpp in Headers */,
+				B9C9748D12270E0E00091F80 /* al_OpenCLEvent.hpp in Headers */,
+				B9C9748E12270E0E00091F80 /* al_OpenCLExtensions.hpp in Headers */,
+				B9C9748F12270E0E00091F80 /* al_OpenCLImage2D.hpp in Headers */,
+				B9C9749012270E0E00091F80 /* al_OpenCLImage3D.hpp in Headers */,
+				B9C9749112270E0E00091F80 /* al_OpenCLImageFormat.hpp in Headers */,
+				B9C9749212270E0E00091F80 /* al_OpenCLInternal.hpp in Headers */,
+				B9C9749312270E0E00091F80 /* al_OpenCLKernel.hpp in Headers */,
+				B9C9749412270E0E00091F80 /* al_OpenCLMemoryBuffer.hpp in Headers */,
+				B9C9749512270E0E00091F80 /* al_OpenCLPlatform.hpp in Headers */,
+				B9C9749612270E0E00091F80 /* al_OpenCLProgram.hpp in Headers */,
+				B9C9760C122720B500091F80 /* lua_opencl_constants.h in Headers */,
+				B9C977601227A6FF00091F80 /* lua_opencl_util.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		36C2AEF10CD7A2DB0054F99E /* opencl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "opencl" */;
+			buildPhases = (
+				36C2AEEE0CD7A2DB0054F99E /* Headers */,
+				36C2AEEF0CD7A2DB0054F99E /* Sources */,
+				36C2AEF00CD7A2DB0054F99E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = opencl;
+			productName = testmod2;
+			productReference = 36C2AEF20CD7A2DB0054F99E /* opencl.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "opencl" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* cocoa_ogl */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36C2AEF10CD7A2DB0054F99E /* opencl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36C2AEEF0CD7A2DB0054F99E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9C9749B12270E0E00091F80 /* al_OpenCLCommandQueue.cpp in Sources */,
+				B9C9749C12270E0E00091F80 /* al_OpenCLContext.cpp in Sources */,
+				B9C9749D12270E0E00091F80 /* al_OpenCLDevice.cpp in Sources */,
+				B9C9749E12270E0E00091F80 /* al_OpenCLEngine.cpp in Sources */,
+				B9C9749F12270E0E00091F80 /* al_OpenCLEvent.cpp in Sources */,
+				B9C974A012270E0E00091F80 /* al_OpenCLExtensions.cpp in Sources */,
+				B9C974A112270E0E00091F80 /* al_OpenCLImage2D.cpp in Sources */,
+				B9C974A212270E0E00091F80 /* al_OpenCLImage3D.cpp in Sources */,
+				B9C974A312270E0E00091F80 /* al_OpenCLInternal.cpp in Sources */,
+				B9C974A412270E0E00091F80 /* al_OpenCLKernel.cpp in Sources */,
+				B9C974A512270E0E00091F80 /* al_OpenCLMemoryBuffer.cpp in Sources */,
+				B9C974A612270E0E00091F80 /* al_OpenCLPlatform.cpp in Sources */,
+				B9C974A712270E0E00091F80 /* al_OpenCLProgram.cpp in Sources */,
+				B9C974CB12270FBD00091F80 /* lua_opencl.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		36C2AF010CD7A2EB0054F99E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = opencl;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../include/protocol/opencl $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include";
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		36C2AF020CD7A2EB0054F99E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = opencl;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../include/protocol/opencl $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "opencl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C2AF010CD7A2EB0054F99E /* Debug */,
+				36C2AF020CD7A2EB0054F99E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "opencl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

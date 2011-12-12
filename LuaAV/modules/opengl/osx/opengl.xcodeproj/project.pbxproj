@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3607B2A912966A7F00A708FD /* al_Model.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3607B2A812966A7F00A708FD /* al_Model.hpp */; };
+		3607B374129670A500A708FD /* lua_opengl_glue.h in Headers */ = {isa = PBXBuildFile; fileRef = 3607B373129670A500A708FD /* lua_opengl_glue.h */; };
+		36C9247C12967364006FD1DB /* lua_opengl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF00B63D0E17FD4700E60A0B /* lua_opengl.cpp */; };
+		36C9247D12967364006FD1DB /* lua_openglu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF00B63E0E17FD4700E60A0B /* lua_openglu.cpp */; };
+		36C9247E12967364006FD1DB /* lua_opengl_camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9752C4512419AF400A932A1 /* lua_opengl_camera.cpp */; };
+		36C9247F12967364006FD1DB /* lua_opengl_extensions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B468122C0F6A0026D582 /* lua_opengl_extensions.cpp */; };
+		36C9248012967364006FD1DB /* lua_opengl_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3607B2D212966D3600A708FD /* lua_opengl_model.cpp */; };
+		36C9248112967364006FD1DB /* lua_opengl_mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9414B9C1239D2A5009D436D /* lua_opengl_mesh.cpp */; };
+		36C9248212967364006FD1DB /* lua_opengl_shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BC29122D0E410026D582 /* lua_opengl_shader.cpp */; };
+		36C9248312967364006FD1DB /* lua_opengl_slab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0C339122D70BF0026D582 /* lua_opengl_slab.cpp */; };
+		36C9248412967364006FD1DB /* lua_opengl_texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B590122C3A350026D582 /* lua_opengl_texture.cpp */; };
+		36C9248512967364006FD1DB /* lua_opengl_sketch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B97524E312413D7E00A932A1 /* lua_opengl_sketch.cpp */; };
+		36C9248612967364006FD1DB /* lua_opengl_tess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9753B1D1246044300A932A1 /* lua_opengl_tess.cpp */; };
+		36C924871296736F006FD1DB /* al_Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9414B5D1239CE87009D436D /* al_Mesh.cpp */; };
+		36C924881296736F006FD1DB /* al_Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3607B2AA12966A9000A708FD /* al_Model.cpp */; };
+		36C924891296736F006FD1DB /* al_Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BA71122C9C8D0026D582 /* al_Shader.cpp */; };
+		36C9248A1296736F006FD1DB /* al_ShaderAttribute.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BA72122C9C8D0026D582 /* al_ShaderAttribute.cpp */; };
+		36C9248B1296736F006FD1DB /* al_ShaderBackend.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BA73122C9C8D0026D582 /* al_ShaderBackend.cpp */; };
+		36C9248C1296736F006FD1DB /* al_ShaderBackendGLSL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BA74122C9C8D0026D582 /* al_ShaderBackendGLSL.cpp */; };
+		36C9248D1296736F006FD1DB /* al_ShaderParam.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BA75122C9C8D0026D582 /* al_ShaderParam.cpp */; };
+		36C9248E1296736F006FD1DB /* al_ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0BA76122C9C8D0026D582 /* al_ShaderProgram.cpp */; };
+		36C9248F1296736F006FD1DB /* al_Slab.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0C2B7122D5CEC0026D582 /* al_Slab.cpp */; };
+		36C924901296736F006FD1DB /* al_Surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B5A8122C3CCF0026D582 /* al_Surface.cpp */; };
+		36C924911296736F006FD1DB /* al_Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B5A9122C3CCF0026D582 /* al_Texture.cpp */; };
+		36C924921296736F006FD1DB /* al_Quat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B5DD122C3DAF0026D582 /* al_Quat.cpp */; };
+		36C924931296736F006FD1DB /* al_Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B5DF122C3DAF0026D582 /* al_Color.cpp */; };
+		36C924941296736F006FD1DB /* al_Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B5AB122C3CCF0026D582 /* al_Graphics.cpp */; };
+		36C924951296736F006FD1DB /* al_GraphicsBackendOpenGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B5AC122C3CCF0026D582 /* al_GraphicsBackendOpenGL.cpp */; };
+		36C924961296736F006FD1DB /* al_GraphicsBackendOpenGLPBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F37D991293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.cpp */; };
+		36C9249712967385006FD1DB /* glew.c in Sources */ = {isa = PBXBuildFile; fileRef = B9B0B32B122BDDF10026D582 /* glew.c */; };
+		B9414B5B1239CE06009D436D /* al_Mesh.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9414B5A1239CE06009D436D /* al_Mesh.hpp */; };
+		B9752C4812419AFC00A932A1 /* lua_opengl_camera.h in Headers */ = {isa = PBXBuildFile; fileRef = B9752C4712419AFC00A932A1 /* lua_opengl_camera.h */; };
+		B9752C4B12419BB300A932A1 /* quat.h in Headers */ = {isa = PBXBuildFile; fileRef = B9752C4912419BB300A932A1 /* quat.h */; };
+		B9752C4C12419BB300A932A1 /* vec3.h in Headers */ = {isa = PBXBuildFile; fileRef = B9752C4A12419BB300A932A1 /* vec3.h */; };
+		B9752C5012419BE900A932A1 /* mat4.h in Headers */ = {isa = PBXBuildFile; fileRef = B9752C4F12419BE900A932A1 /* mat4.h */; };
+		B9752C5212419C0E00A932A1 /* vec4.h in Headers */ = {isa = PBXBuildFile; fileRef = B9752C5112419C0E00A932A1 /* vec4.h */; };
+		B9B0B32C122BDDF10026D582 /* glew.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B328122BDDF10026D582 /* glew.h */; };
+		B9B0B32D122BDDF10026D582 /* glxew.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B329122BDDF10026D582 /* glxew.h */; };
+		B9B0B32E122BDDF10026D582 /* wglew.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B32A122BDDF10026D582 /* wglew.h */; };
+		B9B0B36E122BEAC00026D582 /* lua_opengl_enums.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B36D122BEAC00026D582 /* lua_opengl_enums.h */; };
+		B9B0B425122C09220026D582 /* lua_utility_opengl.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B424122C09220026D582 /* lua_utility_opengl.h */; };
+		B9B0B476122C10140026D582 /* lua_opengl_extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B475122C10140026D582 /* lua_opengl_extensions.h */; };
+		B9B0B5BB122C3CD80026D582 /* al_Common.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5B2122C3CD80026D582 /* al_Common.hpp */; };
+		B9B0B5BC122C3CD90026D582 /* al_Config.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5B3122C3CD80026D582 /* al_Config.h */; };
+		B9B0B5BD122C3CD90026D582 /* al_GPUObject.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5B4122C3CD80026D582 /* al_GPUObject.hpp */; };
+		B9B0B5BE122C3CD90026D582 /* al_Surface.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5B5122C3CD80026D582 /* al_Surface.hpp */; };
+		B9B0B5BF122C3CD90026D582 /* al_Texture.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5B6122C3CD80026D582 /* al_Texture.hpp */; };
+		B9B0B5C0122C3CD90026D582 /* al_Graphics.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5B8122C3CD80026D582 /* al_Graphics.hpp */; };
+		B9B0B5C1122C3CD90026D582 /* al_GraphicsBackend.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5B9122C3CD80026D582 /* al_GraphicsBackend.hpp */; };
+		B9B0B5C2122C3CD90026D582 /* al_GraphicsBackendOpenGL.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5BA122C3CD80026D582 /* al_GraphicsBackendOpenGL.hpp */; };
+		B9B0B5D6122C3D700026D582 /* al_Constants.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5D0122C3D700026D582 /* al_Constants.hpp */; };
+		B9B0B5D7122C3D700026D582 /* al_Frustum.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5D1122C3D700026D582 /* al_Frustum.hpp */; };
+		B9B0B5D8122C3D700026D582 /* al_Matrix4.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5D2122C3D700026D582 /* al_Matrix4.hpp */; };
+		B9B0B5D9122C3D700026D582 /* al_Quat.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5D3122C3D700026D582 /* al_Quat.h */; };
+		B9B0B5DA122C3D700026D582 /* al_Quat.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5D4122C3D700026D582 /* al_Quat.hpp */; };
+		B9B0B5DB122C3D700026D582 /* al_Vec.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B5D5122C3D700026D582 /* al_Vec.hpp */; };
+		B9B0B662122C496A0026D582 /* lua_opengl_texture.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B661122C496A0026D582 /* lua_opengl_texture.h */; };
+		B9B0B915122C80F40026D582 /* al_Buffer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B913122C80F40026D582 /* al_Buffer.hpp */; };
+		B9B0B916122C80F40026D582 /* al_Color.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0B914122C80F40026D582 /* al_Color.hpp */; };
+		B9B0BA6B122C9C390026D582 /* al_Shader.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BA65122C9C390026D582 /* al_Shader.hpp */; };
+		B9B0BA6C122C9C390026D582 /* al_ShaderAttribute.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BA66122C9C390026D582 /* al_ShaderAttribute.hpp */; };
+		B9B0BA6D122C9C390026D582 /* al_ShaderBackend.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BA67122C9C390026D582 /* al_ShaderBackend.hpp */; };
+		B9B0BA6E122C9C390026D582 /* al_ShaderBackendGLSL.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BA68122C9C390026D582 /* al_ShaderBackendGLSL.hpp */; };
+		B9B0BA6F122C9C390026D582 /* al_ShaderParam.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BA69122C9C390026D582 /* al_ShaderParam.hpp */; };
+		B9B0BA70122C9C390026D582 /* al_ShaderProgram.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0BA6A122C9C390026D582 /* al_ShaderProgram.hpp */; };
+		B9B0C2B6122D5CD90026D582 /* al_Slab.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0C2B5122D5CD90026D582 /* al_Slab.hpp */; };
+		B9B0C33C122D71370026D582 /* lua_opengl_shader.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0C33B122D71370026D582 /* lua_opengl_shader.h */; };
+		B9BF795713B578E9006A1F26 /* lua_opengl_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9BF795513B578E9006A1F26 /* lua_opengl_draw.cpp */; };
+		B9F37D9A1293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F37D981293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.h */; };
+		DF00B63F0E17FD4700E60A0B /* lua_opengl.h in Headers */ = {isa = PBXBuildFile; fileRef = DF00B6390E17FD4700E60A0B /* lua_opengl.h */; };
+		DF00B6400E17FD4700E60A0B /* lua_opengl_config.h in Headers */ = {isa = PBXBuildFile; fileRef = DF00B63A0E17FD4700E60A0B /* lua_opengl_config.h */; };
+		DF00B6410E17FD4700E60A0B /* lua_openglu.h in Headers */ = {isa = PBXBuildFile; fileRef = DF00B63B0E17FD4700E60A0B /* lua_openglu.h */; };
+		DFF0004A0D447BE50036930B /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF0FF2D0D44723B0036930B /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3607B2A812966A7F00A708FD /* al_Model.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Model.hpp; sourceTree = "<group>"; };
+		3607B2AA12966A9000A708FD /* al_Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Model.cpp; sourceTree = "<group>"; };
+		3607B2D212966D3600A708FD /* lua_opengl_model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_model.cpp; sourceTree = "<group>"; };
+		3607B373129670A500A708FD /* lua_opengl_glue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opengl_glue.h; sourceTree = "<group>"; };
+		36C2AEF20CD7A2DB0054F99E /* opengl.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = opengl.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9414B5A1239CE06009D436D /* al_Mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Mesh.hpp; sourceTree = "<group>"; };
+		B9414B5D1239CE87009D436D /* al_Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Mesh.cpp; sourceTree = "<group>"; };
+		B9414B9C1239D2A5009D436D /* lua_opengl_mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_mesh.cpp; sourceTree = "<group>"; };
+		B97524E312413D7E00A932A1 /* lua_opengl_sketch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_sketch.cpp; sourceTree = "<group>"; };
+		B9752C4512419AF400A932A1 /* lua_opengl_camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_camera.cpp; sourceTree = "<group>"; };
+		B9752C4712419AFC00A932A1 /* lua_opengl_camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opengl_camera.h; sourceTree = "<group>"; };
+		B9752C4912419BB300A932A1 /* quat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = quat.h; sourceTree = "<group>"; };
+		B9752C4A12419BB300A932A1 /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec3.h; sourceTree = "<group>"; };
+		B9752C4F12419BE900A932A1 /* mat4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mat4.h; sourceTree = "<group>"; };
+		B9752C5112419C0E00A932A1 /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec4.h; sourceTree = "<group>"; };
+		B9753B1D1246044300A932A1 /* lua_opengl_tess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_tess.cpp; sourceTree = "<group>"; };
+		B9B0AC1012296FFC0026D582 /* dev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = dev; path = ../../../dev; sourceTree = SOURCE_ROOT; };
+		B9B0B328122BDDF10026D582 /* glew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glew.h; sourceTree = "<group>"; };
+		B9B0B329122BDDF10026D582 /* glxew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = glxew.h; sourceTree = "<group>"; };
+		B9B0B32A122BDDF10026D582 /* wglew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wglew.h; sourceTree = "<group>"; };
+		B9B0B32B122BDDF10026D582 /* glew.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = glew.c; sourceTree = "<group>"; };
+		B9B0B36D122BEAC00026D582 /* lua_opengl_enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opengl_enums.h; sourceTree = "<group>"; };
+		B9B0B424122C09220026D582 /* lua_utility_opengl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_utility_opengl.h; sourceTree = "<group>"; };
+		B9B0B468122C0F6A0026D582 /* lua_opengl_extensions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_extensions.cpp; sourceTree = "<group>"; };
+		B9B0B475122C10140026D582 /* lua_opengl_extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opengl_extensions.h; sourceTree = "<group>"; };
+		B9B0B590122C3A350026D582 /* lua_opengl_texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_texture.cpp; sourceTree = "<group>"; };
+		B9B0B5A8122C3CCF0026D582 /* al_Surface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Surface.cpp; sourceTree = "<group>"; };
+		B9B0B5A9122C3CCF0026D582 /* al_Texture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Texture.cpp; sourceTree = "<group>"; };
+		B9B0B5AB122C3CCF0026D582 /* al_Graphics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Graphics.cpp; sourceTree = "<group>"; };
+		B9B0B5AC122C3CCF0026D582 /* al_GraphicsBackendOpenGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_GraphicsBackendOpenGL.cpp; sourceTree = "<group>"; };
+		B9B0B5B2122C3CD80026D582 /* al_Common.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Common.hpp; sourceTree = "<group>"; };
+		B9B0B5B3122C3CD80026D582 /* al_Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = al_Config.h; sourceTree = "<group>"; };
+		B9B0B5B4122C3CD80026D582 /* al_GPUObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_GPUObject.hpp; sourceTree = "<group>"; };
+		B9B0B5B5122C3CD80026D582 /* al_Surface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Surface.hpp; sourceTree = "<group>"; };
+		B9B0B5B6122C3CD80026D582 /* al_Texture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Texture.hpp; sourceTree = "<group>"; };
+		B9B0B5B8122C3CD80026D582 /* al_Graphics.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Graphics.hpp; sourceTree = "<group>"; };
+		B9B0B5B9122C3CD80026D582 /* al_GraphicsBackend.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_GraphicsBackend.hpp; sourceTree = "<group>"; };
+		B9B0B5BA122C3CD80026D582 /* al_GraphicsBackendOpenGL.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_GraphicsBackendOpenGL.hpp; sourceTree = "<group>"; };
+		B9B0B5D0122C3D700026D582 /* al_Constants.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Constants.hpp; sourceTree = "<group>"; };
+		B9B0B5D1122C3D700026D582 /* al_Frustum.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Frustum.hpp; sourceTree = "<group>"; };
+		B9B0B5D2122C3D700026D582 /* al_Matrix4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Matrix4.hpp; sourceTree = "<group>"; };
+		B9B0B5D3122C3D700026D582 /* al_Quat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = al_Quat.h; sourceTree = "<group>"; };
+		B9B0B5D4122C3D700026D582 /* al_Quat.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Quat.hpp; sourceTree = "<group>"; };
+		B9B0B5D5122C3D700026D582 /* al_Vec.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Vec.hpp; sourceTree = "<group>"; };
+		B9B0B5DD122C3DAF0026D582 /* al_Quat.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Quat.cpp; sourceTree = "<group>"; };
+		B9B0B5DF122C3DAF0026D582 /* al_Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Color.cpp; sourceTree = "<group>"; };
+		B9B0B661122C496A0026D582 /* lua_opengl_texture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opengl_texture.h; sourceTree = "<group>"; };
+		B9B0B913122C80F40026D582 /* al_Buffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Buffer.hpp; sourceTree = "<group>"; };
+		B9B0B914122C80F40026D582 /* al_Color.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Color.hpp; sourceTree = "<group>"; };
+		B9B0BA65122C9C390026D582 /* al_Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Shader.hpp; sourceTree = "<group>"; };
+		B9B0BA66122C9C390026D582 /* al_ShaderAttribute.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_ShaderAttribute.hpp; sourceTree = "<group>"; };
+		B9B0BA67122C9C390026D582 /* al_ShaderBackend.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_ShaderBackend.hpp; sourceTree = "<group>"; };
+		B9B0BA68122C9C390026D582 /* al_ShaderBackendGLSL.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_ShaderBackendGLSL.hpp; sourceTree = "<group>"; };
+		B9B0BA69122C9C390026D582 /* al_ShaderParam.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_ShaderParam.hpp; sourceTree = "<group>"; };
+		B9B0BA6A122C9C390026D582 /* al_ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_ShaderProgram.hpp; sourceTree = "<group>"; };
+		B9B0BA71122C9C8D0026D582 /* al_Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Shader.cpp; sourceTree = "<group>"; };
+		B9B0BA72122C9C8D0026D582 /* al_ShaderAttribute.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_ShaderAttribute.cpp; sourceTree = "<group>"; };
+		B9B0BA73122C9C8D0026D582 /* al_ShaderBackend.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_ShaderBackend.cpp; sourceTree = "<group>"; };
+		B9B0BA74122C9C8D0026D582 /* al_ShaderBackendGLSL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_ShaderBackendGLSL.cpp; sourceTree = "<group>"; };
+		B9B0BA75122C9C8D0026D582 /* al_ShaderParam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_ShaderParam.cpp; sourceTree = "<group>"; };
+		B9B0BA76122C9C8D0026D582 /* al_ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_ShaderProgram.cpp; sourceTree = "<group>"; };
+		B9B0BC29122D0E410026D582 /* lua_opengl_shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_shader.cpp; sourceTree = "<group>"; };
+		B9B0C2B5122D5CD90026D582 /* al_Slab.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Slab.hpp; sourceTree = "<group>"; };
+		B9B0C2B7122D5CEC0026D582 /* al_Slab.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_Slab.cpp; sourceTree = "<group>"; };
+		B9B0C339122D70BF0026D582 /* lua_opengl_slab.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_slab.cpp; sourceTree = "<group>"; };
+		B9B0C33B122D71370026D582 /* lua_opengl_shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opengl_shader.h; sourceTree = "<group>"; };
+		B9BF795513B578E9006A1F26 /* lua_opengl_draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_draw.cpp; sourceTree = "<group>"; };
+		B9F37D981293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = al_GraphicsBackendOpenGLPBO.h; sourceTree = "<group>"; };
+		B9F37D991293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_GraphicsBackendOpenGLPBO.cpp; sourceTree = "<group>"; };
+		DF00B6390E17FD4700E60A0B /* lua_opengl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = lua_opengl.h; sourceTree = "<group>"; };
+		DF00B63A0E17FD4700E60A0B /* lua_opengl_config.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = lua_opengl_config.h; sourceTree = "<group>"; };
+		DF00B63B0E17FD4700E60A0B /* lua_openglu.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = lua_openglu.h; sourceTree = "<group>"; };
+		DF00B63D0E17FD4700E60A0B /* lua_opengl.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl.cpp; sourceTree = "<group>"; };
+		DF00B63E0E17FD4700E60A0B /* lua_openglu.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; path = lua_openglu.cpp; sourceTree = "<group>"; };
+		DFF0FF2D0D44723B0036930B /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		36C2AEF00CD7A2DB0054F99E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFF0004A0D447BE50036930B /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36C2AEF20CD7A2DB0054F99E /* opengl.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* cocoa_ogl */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0AC1012296FFC0026D582 /* dev */,
+				DF00B6380E17FD4700E60A0B /* include */,
+				DF00B63C0E17FD4700E60A0B /* src */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = cocoa_ogl;
+			sourceTree = "<group>";
+		};
+		B9B0B326122BDDF10026D582 /* glew */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B327122BDDF10026D582 /* GL */,
+				B9B0B32B122BDDF10026D582 /* glew.c */,
+			);
+			path = glew;
+			sourceTree = "<group>";
+		};
+		B9B0B327122BDDF10026D582 /* GL */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B328122BDDF10026D582 /* glew.h */,
+				B9B0B329122BDDF10026D582 /* glxew.h */,
+				B9B0B32A122BDDF10026D582 /* wglew.h */,
+			);
+			path = GL;
+			sourceTree = "<group>";
+		};
+		B9B0B5A7122C3CCF0026D582 /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				B9414B5D1239CE87009D436D /* al_Mesh.cpp */,
+				3607B2AA12966A9000A708FD /* al_Model.cpp */,
+				B9B0BA71122C9C8D0026D582 /* al_Shader.cpp */,
+				B9B0BA72122C9C8D0026D582 /* al_ShaderAttribute.cpp */,
+				B9B0BA73122C9C8D0026D582 /* al_ShaderBackend.cpp */,
+				B9B0BA74122C9C8D0026D582 /* al_ShaderBackendGLSL.cpp */,
+				B9B0BA75122C9C8D0026D582 /* al_ShaderParam.cpp */,
+				B9B0BA76122C9C8D0026D582 /* al_ShaderProgram.cpp */,
+				B9B0C2B7122D5CEC0026D582 /* al_Slab.cpp */,
+				B9B0B5A8122C3CCF0026D582 /* al_Surface.cpp */,
+				B9B0B5A9122C3CCF0026D582 /* al_Texture.cpp */,
+			);
+			path = graphics;
+			sourceTree = "<group>";
+		};
+		B9B0B5AA122C3CCF0026D582 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B5AB122C3CCF0026D582 /* al_Graphics.cpp */,
+				B9B0B5AC122C3CCF0026D582 /* al_GraphicsBackendOpenGL.cpp */,
+				B9F37D991293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.cpp */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		B9B0B5B1122C3CD80026D582 /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B5B2122C3CD80026D582 /* al_Common.hpp */,
+				B9B0B5B3122C3CD80026D582 /* al_Config.h */,
+				B9B0B5B4122C3CD80026D582 /* al_GPUObject.hpp */,
+				B9414B5A1239CE06009D436D /* al_Mesh.hpp */,
+				3607B2A812966A7F00A708FD /* al_Model.hpp */,
+				B9B0BA65122C9C390026D582 /* al_Shader.hpp */,
+				B9B0BA67122C9C390026D582 /* al_ShaderBackend.hpp */,
+				B9B0BA68122C9C390026D582 /* al_ShaderBackendGLSL.hpp */,
+				B9B0BA69122C9C390026D582 /* al_ShaderParam.hpp */,
+				B9B0BA66122C9C390026D582 /* al_ShaderAttribute.hpp */,
+				B9B0BA6A122C9C390026D582 /* al_ShaderProgram.hpp */,
+				B9B0C2B5122D5CD90026D582 /* al_Slab.hpp */,
+				B9B0B5B5122C3CD80026D582 /* al_Surface.hpp */,
+				B9B0B5B6122C3CD80026D582 /* al_Texture.hpp */,
+			);
+			path = graphics;
+			sourceTree = "<group>";
+		};
+		B9B0B5B7122C3CD80026D582 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B5B8122C3CD80026D582 /* al_Graphics.hpp */,
+				B9B0B5B9122C3CD80026D582 /* al_GraphicsBackend.hpp */,
+				B9B0B5BA122C3CD80026D582 /* al_GraphicsBackendOpenGL.hpp */,
+				B9F37D981293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.h */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		B9B0B5CF122C3D700026D582 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B5D0122C3D700026D582 /* al_Constants.hpp */,
+				B9B0B5D1122C3D700026D582 /* al_Frustum.hpp */,
+				B9B0B5D2122C3D700026D582 /* al_Matrix4.hpp */,
+				B9B0B5D3122C3D700026D582 /* al_Quat.h */,
+				B9B0B5D4122C3D700026D582 /* al_Quat.hpp */,
+				B9B0B5D5122C3D700026D582 /* al_Vec.hpp */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		B9B0B5DC122C3DAF0026D582 /* math */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B5DD122C3DAF0026D582 /* al_Quat.cpp */,
+			);
+			path = math;
+			sourceTree = "<group>";
+		};
+		B9B0B5DE122C3DAF0026D582 /* types */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B5DF122C3DAF0026D582 /* al_Color.cpp */,
+			);
+			path = types;
+			sourceTree = "<group>";
+		};
+		B9B0B912122C80F40026D582 /* types */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B913122C80F40026D582 /* al_Buffer.hpp */,
+				B9B0B914122C80F40026D582 /* al_Color.hpp */,
+			);
+			path = types;
+			sourceTree = "<group>";
+		};
+		DF00B6380E17FD4700E60A0B /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B5B1122C3CD80026D582 /* graphics */,
+				B9B0B5CF122C3D700026D582 /* math */,
+				B9B0B5B7122C3CD80026D582 /* protocol */,
+				B9B0B912122C80F40026D582 /* types */,
+				DF00B63A0E17FD4700E60A0B /* lua_opengl_config.h */,
+				B9B0B424122C09220026D582 /* lua_utility_opengl.h */,
+				B9B0B36D122BEAC00026D582 /* lua_opengl_enums.h */,
+				DF00B6390E17FD4700E60A0B /* lua_opengl.h */,
+				DF00B63B0E17FD4700E60A0B /* lua_openglu.h */,
+				B9752C4712419AFC00A932A1 /* lua_opengl_camera.h */,
+				B9B0B475122C10140026D582 /* lua_opengl_extensions.h */,
+				B9B0C33B122D71370026D582 /* lua_opengl_shader.h */,
+				B9B0B661122C496A0026D582 /* lua_opengl_texture.h */,
+				3607B373129670A500A708FD /* lua_opengl_glue.h */,
+				B9752C4912419BB300A932A1 /* quat.h */,
+				B9752C4A12419BB300A932A1 /* vec3.h */,
+				B9752C5112419C0E00A932A1 /* vec4.h */,
+				B9752C4F12419BE900A932A1 /* mat4.h */,
+			);
+			name = include;
+			path = ../include;
+			sourceTree = SOURCE_ROOT;
+		};
+		DF00B63C0E17FD4700E60A0B /* src */ = {
+			isa = PBXGroup;
+			children = (
+				B9B0B326122BDDF10026D582 /* glew */,
+				B9B0B5A7122C3CCF0026D582 /* graphics */,
+				B9B0B5DC122C3DAF0026D582 /* math */,
+				B9B0B5DE122C3DAF0026D582 /* types */,
+				B9B0B5AA122C3CCF0026D582 /* protocol */,
+				DF00B63D0E17FD4700E60A0B /* lua_opengl.cpp */,
+				DF00B63E0E17FD4700E60A0B /* lua_openglu.cpp */,
+				B9752C4512419AF400A932A1 /* lua_opengl_camera.cpp */,
+				B9B0B468122C0F6A0026D582 /* lua_opengl_extensions.cpp */,
+				3607B2D212966D3600A708FD /* lua_opengl_model.cpp */,
+				B9414B9C1239D2A5009D436D /* lua_opengl_mesh.cpp */,
+				B9B0BC29122D0E410026D582 /* lua_opengl_shader.cpp */,
+				B9B0C339122D70BF0026D582 /* lua_opengl_slab.cpp */,
+				B9B0B590122C3A350026D582 /* lua_opengl_texture.cpp */,
+				B97524E312413D7E00A932A1 /* lua_opengl_sketch.cpp */,
+				B9753B1D1246044300A932A1 /* lua_opengl_tess.cpp */,
+				B9BF795513B578E9006A1F26 /* lua_opengl_draw.cpp */,
+				DFF0FF2D0D44723B0036930B /* OpenGL.framework */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		36C2AEEE0CD7A2DB0054F99E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF00B63F0E17FD4700E60A0B /* lua_opengl.h in Headers */,
+				DF00B6400E17FD4700E60A0B /* lua_opengl_config.h in Headers */,
+				DF00B6410E17FD4700E60A0B /* lua_openglu.h in Headers */,
+				B9B0B32C122BDDF10026D582 /* glew.h in Headers */,
+				B9B0B32D122BDDF10026D582 /* glxew.h in Headers */,
+				B9B0B32E122BDDF10026D582 /* wglew.h in Headers */,
+				B9B0B36E122BEAC00026D582 /* lua_opengl_enums.h in Headers */,
+				B9B0B425122C09220026D582 /* lua_utility_opengl.h in Headers */,
+				B9B0B476122C10140026D582 /* lua_opengl_extensions.h in Headers */,
+				B9B0B5BB122C3CD80026D582 /* al_Common.hpp in Headers */,
+				B9B0B5BC122C3CD90026D582 /* al_Config.h in Headers */,
+				B9B0B5BD122C3CD90026D582 /* al_GPUObject.hpp in Headers */,
+				B9B0B5BE122C3CD90026D582 /* al_Surface.hpp in Headers */,
+				B9B0B5BF122C3CD90026D582 /* al_Texture.hpp in Headers */,
+				B9B0B5C0122C3CD90026D582 /* al_Graphics.hpp in Headers */,
+				B9B0B5C1122C3CD90026D582 /* al_GraphicsBackend.hpp in Headers */,
+				B9B0B5C2122C3CD90026D582 /* al_GraphicsBackendOpenGL.hpp in Headers */,
+				B9B0B5D6122C3D700026D582 /* al_Constants.hpp in Headers */,
+				B9B0B5D7122C3D700026D582 /* al_Frustum.hpp in Headers */,
+				B9B0B5D8122C3D700026D582 /* al_Matrix4.hpp in Headers */,
+				B9B0B5D9122C3D700026D582 /* al_Quat.h in Headers */,
+				B9B0B5DA122C3D700026D582 /* al_Quat.hpp in Headers */,
+				B9B0B5DB122C3D700026D582 /* al_Vec.hpp in Headers */,
+				B9B0B662122C496A0026D582 /* lua_opengl_texture.h in Headers */,
+				B9B0B915122C80F40026D582 /* al_Buffer.hpp in Headers */,
+				B9B0B916122C80F40026D582 /* al_Color.hpp in Headers */,
+				B9B0BA6B122C9C390026D582 /* al_Shader.hpp in Headers */,
+				B9B0BA6C122C9C390026D582 /* al_ShaderAttribute.hpp in Headers */,
+				B9B0BA6D122C9C390026D582 /* al_ShaderBackend.hpp in Headers */,
+				B9B0BA6E122C9C390026D582 /* al_ShaderBackendGLSL.hpp in Headers */,
+				B9B0BA6F122C9C390026D582 /* al_ShaderParam.hpp in Headers */,
+				B9B0BA70122C9C390026D582 /* al_ShaderProgram.hpp in Headers */,
+				B9B0C2B6122D5CD90026D582 /* al_Slab.hpp in Headers */,
+				B9B0C33C122D71370026D582 /* lua_opengl_shader.h in Headers */,
+				B9414B5B1239CE06009D436D /* al_Mesh.hpp in Headers */,
+				B9752C4812419AFC00A932A1 /* lua_opengl_camera.h in Headers */,
+				B9752C4B12419BB300A932A1 /* quat.h in Headers */,
+				B9752C4C12419BB300A932A1 /* vec3.h in Headers */,
+				B9752C5012419BE900A932A1 /* mat4.h in Headers */,
+				B9752C5212419C0E00A932A1 /* vec4.h in Headers */,
+				B9F37D9A1293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.h in Headers */,
+				3607B2A912966A7F00A708FD /* al_Model.hpp in Headers */,
+				3607B374129670A500A708FD /* lua_opengl_glue.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		36C2AEF10CD7A2DB0054F99E /* opengl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "opengl" */;
+			buildPhases = (
+				36C2AEEE0CD7A2DB0054F99E /* Headers */,
+				36C2AEEF0CD7A2DB0054F99E /* Sources */,
+				36C2AEF00CD7A2DB0054F99E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = opengl;
+			productName = testmod2;
+			productReference = 36C2AEF20CD7A2DB0054F99E /* opengl.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "opengl" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* cocoa_ogl */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				36C2AEF10CD7A2DB0054F99E /* opengl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		36C2AEEF0CD7A2DB0054F99E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36C9249712967385006FD1DB /* glew.c in Sources */,
+				36C924871296736F006FD1DB /* al_Mesh.cpp in Sources */,
+				36C924881296736F006FD1DB /* al_Model.cpp in Sources */,
+				36C924891296736F006FD1DB /* al_Shader.cpp in Sources */,
+				36C9248A1296736F006FD1DB /* al_ShaderAttribute.cpp in Sources */,
+				36C9248B1296736F006FD1DB /* al_ShaderBackend.cpp in Sources */,
+				36C9248C1296736F006FD1DB /* al_ShaderBackendGLSL.cpp in Sources */,
+				36C9248D1296736F006FD1DB /* al_ShaderParam.cpp in Sources */,
+				36C9248E1296736F006FD1DB /* al_ShaderProgram.cpp in Sources */,
+				36C9248F1296736F006FD1DB /* al_Slab.cpp in Sources */,
+				36C924901296736F006FD1DB /* al_Surface.cpp in Sources */,
+				36C924911296736F006FD1DB /* al_Texture.cpp in Sources */,
+				36C924921296736F006FD1DB /* al_Quat.cpp in Sources */,
+				36C924931296736F006FD1DB /* al_Color.cpp in Sources */,
+				36C924941296736F006FD1DB /* al_Graphics.cpp in Sources */,
+				36C924951296736F006FD1DB /* al_GraphicsBackendOpenGL.cpp in Sources */,
+				36C924961296736F006FD1DB /* al_GraphicsBackendOpenGLPBO.cpp in Sources */,
+				36C9247C12967364006FD1DB /* lua_opengl.cpp in Sources */,
+				36C9247D12967364006FD1DB /* lua_openglu.cpp in Sources */,
+				36C9247E12967364006FD1DB /* lua_opengl_camera.cpp in Sources */,
+				36C9247F12967364006FD1DB /* lua_opengl_extensions.cpp in Sources */,
+				36C9248012967364006FD1DB /* lua_opengl_model.cpp in Sources */,
+				36C9248112967364006FD1DB /* lua_opengl_mesh.cpp in Sources */,
+				36C9248212967364006FD1DB /* lua_opengl_shader.cpp in Sources */,
+				36C9248312967364006FD1DB /* lua_opengl_slab.cpp in Sources */,
+				36C9248412967364006FD1DB /* lua_opengl_texture.cpp in Sources */,
+				36C9248512967364006FD1DB /* lua_opengl_sketch.cpp in Sources */,
+				36C9248612967364006FD1DB /* lua_opengl_tess.cpp in Sources */,
+				B9BF795713B578E9006A1F26 /* lua_opengl_draw.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		36C2AF010CD7A2EB0054F99E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = opengl;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = macosx10.6;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../include $(SRCROOT)/../src/glew $(SRCROOT)/../src/glew/GL $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include";
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		36C2AF020CD7A2EB0054F99E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_EXTENSION = so;
+				EXECUTABLE_PREFIX = "";
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GENERATE_MASTER_OBJECT_FILE = YES;
+				HEADER_SEARCH_PATHS = /Library/Frameworks/LuaAV.framework/Headers/;
+				INSTALL_PATH = "$(PROJECT_DIR)/../../../sysbuild/$(CONFIGURATION)/modules";
+				MACH_O_TYPE = mh_bundle;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = opengl;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = YES;
+				SDKROOT = macosx10.6;
+				SHARED_PRECOMPS_DIR = "";
+				STRIP_STYLE = "non-global";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../include $(SRCROOT)/../src/glew $(SRCROOT)/../src/glew/GL $(SRCROOT)/../../../dev/include $(SRCROOT)/../../../dev_osx/include";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36C2AF000CD7A2EB0054F99E /* Build configuration list for PBXNativeTarget "opengl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C2AF010CD7A2EB0054F99E /* Debug */,
+				36C2AF020CD7A2EB0054F99E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "opengl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

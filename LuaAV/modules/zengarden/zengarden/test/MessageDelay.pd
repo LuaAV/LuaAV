@@ -1,0 +1,18 @@
+#N canvas 754 307 450 300 10;
+#X obj 135 12 loadbang;
+#X obj 108 13 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 166 117 delay 1000;
+#X obj 147 191 print;
+#X msg 147 156 hello;
+#X obj 108 43 t b b b;
+#X msg 223 87 2000;
+#X connect 0 0 5 0;
+#X connect 1 0 5 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 5 1 6 0;
+#X connect 5 2 2 0;
+#X connect 5 2 4 0;
+#X connect 6 0 2 1;

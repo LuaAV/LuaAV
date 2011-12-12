@@ -1,0 +1,64 @@
+Shader {
+	name = "op.pow.shl",
+	description = [[ pow operation ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter{
+			1,
+			name = "val", type = "float",
+			description = "exponent value",
+		},
+		
+		Parameter{
+			0,
+			name = "tex0", type = "int",
+			description = "input data",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program {
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord0;
+
+void main() {
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+	
+	//get normals into eye space
+	texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program {
+	type = "fragment",
+
+	[[
+
+uniform float val;
+uniform sampler2DRect tex0;
+
+varying vec2 texcoord0;
+
+void main() {
+	vec4 v = texture2DRect(tex0, texcoord0);
+	gl_FragColor = pow(v, vec4(val));
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

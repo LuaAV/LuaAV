@@ -1,0 +1,257 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">Image</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="home.html">Home</a></li>
+							<li><a href="Image.html">Image</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p> Supported formats include: bmp, chead, cut, dcx, dds, doom, doomFlat, exif, gif, hdr, ico, jasc_pal, jpg, lbm, lif, mdl, pcd, pcx, pic, pix, png, pnm, psd, psp, pxr, raw, sgi, tgo, tif, wal, xpm as well as OpenEXR and rgb</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Image:array">
+				<span class="function_name">Image:array</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Get the internal Array data</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Image:fromarray">
+				<span class="function_name">Image:fromarray</span><span class="params">(array)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Set the internal data with an Array</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Image:load">
+				<span class="function_name">Image:load</span><span class="params">(filename)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Load an image file</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Image:load_threaded">
+				<span class="function_name">Image:load_threaded</span><span class="params">(filename)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Load an image file in its own thread</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Image:loading">
+				<span class="function_name">Image:loading</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Check to see if the the image file has loaded</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Image:save">
+				<span class="function_name">Image:save</span><span class="params">(filename)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Save the internal image data to a file</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Image:array"></a><span class="function_name">Image:array</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Get the internal Array data</p>
+		</div>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>The array</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Image:fromarray"></a><span class="function_name">Image:fromarray</span><span class="param">(array)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Set the internal data with an Array</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">array</td>
+							<td class="description">The array</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Image:load"></a><span class="function_name">Image:load</span><span class="param">(filename)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Load an image file</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">filename</td>
+							<td class="description">The image filename</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Image:load_threaded"></a><span class="function_name">Image:load_threaded</span><span class="param">(filename)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>load_threaded should be used with care.  Only try to access the internal  matrix after the image file is fully loaded by using Image.loaded.</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">filename</td>
+							<td class="description">The image filename</td>
+						</tr>
+					
+				</table>
+		
+
+					<h3 class="see">See Also:</h3>
+				<ul class="see">
+											<li><a href="#Image:loading">Image:loading</a></li>
+					
+				</ul>
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Image:loading"></a><span class="function_name">Image:loading</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Check to see if the the image file has loaded</p>
+		</div>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>True/False for whether the file has loaded</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Image:save"></a><span class="function_name">Image:save</span><span class="param">(filename)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Supported formats for saving are JPEG (.jpg), JPEG2000 (.jp2), PNG (.png),  TIFF (.tif), BMP (.bmp), and GIF (.gif)</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">filename</td>
+							<td class="description">The filename to use when saving the internal image data</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

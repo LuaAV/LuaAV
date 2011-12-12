@@ -1,0 +1,289 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">gui.Layer</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../gui.html">gui</a></li>
+							<li><a href="../gui/Layer.html">Layer</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>Within a gui.context, there are several layers for  distinguising between different classes of widgets. Layers are typically overlaid on top of each other  with the context testing them in order of priority for  whether widgets in any particular layer receive an event.   For example popup menus are usually high priority and  would be the top-most layer with standard widgets  getting events only if something in the popup layer doesn't take it.</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Layer">
+				<span class="function_name">Layer</span><span class="params">(init)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Constructor</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Layer:add_view">
+				<span class="function_name">Layer:add_view</span><span class="params">(v)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Add a view to the layer</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Layer:draw">
+				<span class="function_name">Layer:draw</span><span class="params">()</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Draw the layer</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Layer:draw_subviews">
+				<span class="function_name">Layer:draw_subviews</span><span class="params">(vv, dim, wx, wy)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Draw subviews of a view</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Layer:subview_at_point">
+				<span class="function_name">Layer:subview_at_point</span><span class="params">(v, x, y)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Get the subview of a view at a particular point</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Layer:view_at_point">
+				<span class="function_name">Layer:view_at_point</span><span class="params">(x, y)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap>Get the view at a particular point</td>
+		
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Layer"></a><span class="function_name">Layer</span><span class="param">(init)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Constructor</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">init</td>
+							<td class="description">Constructor properties</td>
+						</tr>
+											<tr>
+							<td class="name">init.context</td>
+							<td class="description">The layer's context</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Layer:add_view"></a><span class="function_name">Layer:add_view</span><span class="param">(v)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Add a view to the layer</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v</td>
+							<td class="description">The view to add</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Layer:draw"></a><span class="function_name">Layer:draw</span><span class="param">()</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Draw the layer</p>
+		</div>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Layer:draw_subviews"></a><span class="function_name">Layer:draw_subviews</span><span class="param">(vv, dim, wx, wy)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Draw subviews of a view</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">vv</td>
+							<td class="description">The view</td>
+						</tr>
+											<tr>
+							<td class="name">dim</td>
+							<td class="description">The dimensions of the context</td>
+						</tr>
+											<tr>
+							<td class="name">wx</td>
+							<td class="description">The containing widget's width</td>
+						</tr>
+											<tr>
+							<td class="name">wy</td>
+							<td class="description">The containing widget's height</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Layer:subview_at_point"></a><span class="function_name">Layer:subview_at_point</span><span class="param">(v, x, y)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Get the subview of a view at a particular point</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">v</td>
+							<td class="description">[NO DESCRIPTION]</td>
+						</tr>
+											<tr>
+							<td class="name">x</td>
+							<td class="description">x-coordinate</td>
+						</tr>
+											<tr>
+							<td class="name">y</td>
+							<td class="description">y-coodinate</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>The subview</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Layer:view_at_point"></a><span class="function_name">Layer:view_at_point</span><span class="param">(x, y)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>Get the view at a particular point</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">x</td>
+							<td class="description">x-coordinate</td>
+						</tr>
+											<tr>
+							<td class="name">y</td>
+							<td class="description">y-coodinate</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+					<h3 class="return">Return:</h3>
+				<ul class="return">
+											<li>The view</li>
+					
+				</ul>
+		
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

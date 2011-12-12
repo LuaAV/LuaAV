@@ -1,0 +1,3 @@
+edit /etc/ld.so.conf to add /usr/local/lib
+then run sudo ldconfig
+ldconfig -p to test

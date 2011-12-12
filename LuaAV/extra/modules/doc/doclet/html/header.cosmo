@@ -1,0 +1,35 @@
+<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="$docroot{}images/$image" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">$name</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+			$do_breadcrumbs[=[
+				<li><a href="$link">$name</a></li>
+			]=]
+			</ul>
+		</div>
+		
+		<div id="info">
+			$description
+			
+			$if_has_see[====[
+				<h3 class="see">See Also:</h3>
+					<ul class="see">
+						$do_see[=[
+							<li><a href="$link">$name</a></li>
+						]=]
+					</ul>
+			]====]
+		</div>
+	</div>
+</div>

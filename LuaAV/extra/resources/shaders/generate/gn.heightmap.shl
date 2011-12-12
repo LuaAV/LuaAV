@@ -1,0 +1,69 @@
+Shader{
+	name = "gn.heightmap.shl",
+	description = [[ 2D Perlin Noise ]],
+	language = "GLSL",
+	
+	parameters = {
+		
+		Parameter {
+			{0., 0.},
+			name = "offset", type = "vec2",
+			description = "offset",
+		},
+		
+		Parameter {
+			{1., 1.},
+			name = "scale", type = "vec2",
+			description = "scale factor",
+		},
+		
+		Parameter {
+			0,
+			name = "tex0", type = "int",
+			description = "heightfield",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program {
+	type = "vertex",
+	
+	[[
+
+varying vec2 texcoord0;
+
+void main() {
+    gl_Position = ftransform();
+    texcoord0 = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program {
+	type = "fragment",
+
+	[[
+
+varying vec2 texcoord0;
+uniform vec2 offset;
+uniform vec2 scale;
+uniform sampler2D tex0;
+
+void main() {
+	vec2 pos = scale*texcoord0+offset;
+	float height = texture2D(tex0, texcoord0).g;
+	gl_FragColor = vec4(pos, height, 1.);
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

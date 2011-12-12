@@ -1,0 +1,56 @@
+Shader{
+	name = "viz.texcoords.shl",
+	description = [[ Visualize the geomtry's surface normals ]],
+	language = "GLSL",
+	
+	parameters = {
+		Parameter{
+			1,
+			name = "scale", type = "float",
+			description = "scale the normal values",
+		},
+	},
+
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Vertex Program
+--------------------------------------------------------------------------
+Program{
+	type = "vertex",
+	
+	[[
+
+varying vec4 texcoord0;
+
+void main()
+{
+	// perform standard transform on vertex
+	gl_Position = ftransform();
+	
+	//get normals into eye space
+	texcoord0 = gl_TextureMatrix[0] * gl_MultiTexCoord0;
+}
+
+	]]
+},
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+--	Fragment Program
+--------------------------------------------------------------------------
+Program{
+	type = "fragment",
+
+	[[
+
+uniform float scale;
+varying vec4 texcoord0;
+
+void main() {
+	gl_FragColor = texcoord0*scale;
+}
+
+	]],
+},
+
+--------------------------------------------------------------------------
+}

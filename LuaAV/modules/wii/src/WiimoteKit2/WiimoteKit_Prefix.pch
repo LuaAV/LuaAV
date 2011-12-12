@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'WiimoteKit' target in the 'WiimoteKit' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

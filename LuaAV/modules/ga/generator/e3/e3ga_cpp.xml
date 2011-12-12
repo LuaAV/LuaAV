@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<g25spec 
+    license="gpl" 
+    language="cpp"
+    namespace="e3ga"
+    coordStorage="variables"
+    defaultOperatorBindings="true"
+    dimension="3"
+    reportUsage="false" 
+    gmvCode="expand"
+    parser="builtin"
+    testSuite="true"
+    copyright="Gaigen 2.5 Test Suite"
+>
+
+
+
+<inline 
+	constructors="true" 
+	set="true" 
+	assign="true" 
+	operators="true" 
+	functions="true"
+	/>
+
+
+<floatType type="double"/>
+
+<basisVectorNames 
+	name1="e1"
+	name2="e2"
+	name3="e3"
+	/>
+	
+<metric name="default">e1.e1=e2.e2=e3.e3=1</metric>
+
+  <mv name="mv" compress="byGrade" coordinateOrder="default" memAlloc="full"/>
+
+<smv name="e1" const="true" type="blade">e1=1</smv>
+<smv name="e2" const="true" type="blade">e2=1</smv>
+<smv name="e3" const="true" type="blade">e3=1</smv>
+<smv name="I3" const="true" type="blade">e1^e2^e3=1</smv>
+
+  <smv name="vector" type="blade">e1 e2 e3</smv>
+  <smv name="bivector" type="blade">e1^e2 e2^e3 e3^e1</smv>
+  <smv name="trivector" type="blade">e1^e2^e3</smv>
+  <smv name="rotor" type="versor">scalar e1^e2 e2^e3 e3^e1</smv>
+  <smv name="oddVersor" type="versor">e1 e2 e3 e1^e2^e3</smv>
+
+  <om name="om" coordinateOrder="default" />
+
+  <som name="grade1OM">
+    <domain>e1 e2 e3</domain>
+  </som>
+
+  <som name="grade2OM">
+    <domain>e1^e2 e2^e3 e3^e1</domain>
+  </som>
+
+  <som name="grade3OM">
+    <domain>e1^e2^e3</domain>
+  </som>
+  
+  <constant name="vectorE1" type="vector">e1=1</constant>
+  <constant name="vectorE2" type="vector">e2=2</constant>
+  <constant name="vectorE3" type="vector">e3=3</constant>
+  <constant name="someBivectorConstant" type="bivector">e1^e2=1 e2^e3=2 e1^e3=3</constant>
+  <constant name="rotor90" type="rotor">scalar=0.707111 e1^e2=0.707111 <comment>rotor which rotates by 90 degrees in e1^e2 plane.</comment></constant>
+  
+  <function name="random_double" outputName="genrand" optionGen="libc"/>
+  
+  <function name="_bivector" arg1="rotor" argName1="R" comment="Extracts the bivector part of a rotor"/>
+  <function name="_vector" arg1="oddVersor" argName1="V" comment="Extracts the vector part of an oddVersor"/>
+  <function name="_trivector" arg1="oddVersor" argName1="V" comment="Extracts the trivector part of an oddVersor"/>
+  
+  <function name="add" arg1="mv" arg2="mv" />
+  <function name="add" arg1="vector" arg2="vector" />
+  <function name="add" arg1="bivector" arg2="bivector" />
+  <function name="add" arg1="vector" arg2="trivector" />
+  <function name="add" arg1="rotor" arg2="bivector" />
+  <function name="add" arg1="e1" arg2="e2" />
+  <function name="add" arg1="e1" arg2="I3" />
+  
+  <function name="subtract" arg1="mv" arg2="mv"/>
+  <function name="subtract" arg1="vector" arg2="vector" />
+  <function name="subtract" arg1="bivector" arg2="bivector" />
+  <function name="subtract" arg1="bivector" arg2="rotor" />
+  <function name="subtract" arg1="vector" arg2="trivector" />
+
+  <function name="applyVersor" arg1="mv" arg2="mv"/>
+  <function name="applyUnitVersor" arg1="mv" arg2="mv"/>
+  <function name="applyVersorWI" arg1="mv" arg2="mv" arg3="mv"/>
+
+  <function name="applyVersor" arg1="rotor" arg2="vector"/>
+  <function name="applyUnitVersor" arg1="rotor" arg2="vector"/>
+  <function name="applyVersorWI" arg1="rotor" arg2="vector" arg3="rotor"/>
+
+  <function name="applyVersor" arg1="rotor" arg2="bivector"/>
+  <function name="applyUnitVersor" arg1="rotor" arg2="bivector"/>
+  <function name="applyVersorWI" arg1="rotor" arg2="bivector" arg3="rotor"/>
+
+  <function name="applyVersor" arg1="rotor" arg2="trivector"/>
+  <function name="applyUnitVersor" arg1="rotor" arg2="trivector"/>
+  <function name="applyVersorWI" arg1="rotor" arg2="trivector" arg3="rotor"/>
+  
+  
+  <function name="applyVersor" arg1="rotor" arg2="e1"/>
+  <function name="applyUnitVersor" arg1="rotor" arg2="e2"/>
+  
+  <function name="applyVersor" arg1="rotor" arg2="I3"/>
+  <function name="applyUnitVersor" arg1="rotor" arg2="I3"/>
+  <function name="applyVersorWI" arg1="rotor" arg2="I3" arg3="rotor"/>
+  
+
+
+  <function name="applyOM" arg1="om" arg2="mv"/>
+  <function name="applyOM" arg1="om" arg2="vector"/>
+  <function name="applyOM" arg1="om" arg2="bivector"/>
+  <function name="applyOM" arg1="om" arg2="trivector"/>
+  
+  <function name="applyOM" arg1="grade1OM" arg2="vector"/>
+  <function name="applyOM" arg1="grade2OM" arg2="bivector"/>
+  <function name="applyOM" arg1="grade3OM" arg2="trivector"/>
+  
+  <function name="applyOM" arg1="grade1OM" arg2="e1"/>
+  <function name="applyOM" arg1="grade1OM" arg2="e2"/>
+  <function name="applyOM" arg1="grade1OM" arg2="e3"/>
+  <function name="applyOM" arg1="grade3OM" arg2="I3"/>
+  
+  <function name="div" arg1="mv" arg2="double" floatType="double"/>
+  <function name="div" arg1="vector" arg2="double" floatType="double"/>
+  <function name="div" arg1="bivector" arg2="double" floatType="double"/>
+  <function name="div" arg1="trivector" arg2="double" floatType="double"/>
+  <function name="div" arg1="rotor" arg2="double" floatType="double"/>
+  <function name="div" arg1="e1" arg2="double" floatType="double"/>
+  <function name="div" arg1="I3" arg2="double" floatType="double"/>
+  
+  <function name="dual" arg1="mv" />
+  <function name="undual" arg1="mv" />
+  <function name="dual" arg1="double" floatType="double" />
+  <function name="undual" arg1="double" floatType="double" />
+  <function name="dual" arg1="vector" />
+  <function name="undual" arg1="vector" />
+  <function name="dual" arg1="bivector" />
+  <function name="undual" arg1="bivector" />
+  <function name="dual" arg1="rotor" />
+  <function name="undual" arg1="rotor" />
+  <function name="dual" arg1="oddVersor" />
+  <function name="undual" arg1="oddVersor" />
+  <function name="dual" arg1="trivector" />
+  <function name="undual" arg1="trivector" />
+  <function name="dual" arg1="e1" />
+  <function name="undual" arg1="e2" />
+  <function name="dual" arg1="I3" />
+  <function name="undual" arg1="I3" />
+  
+  <function name="equals" arg1="mv" arg2="mv" arg3="double" floatType="double"/>
+  <function name="equals" arg1="vector" arg2="vector" arg3="double" floatType="double"/>
+  <function name="equals" arg1="bivector" arg2="bivector" arg3="double" floatType="double"/>
+  <function name="equals" arg1="rotor" arg2="rotor" arg3="double" floatType="double"/>
+  <function name="equals" arg1="bivector" arg2="rotor" arg3="double" floatType="double"/>
+  <function name="equals" arg1="trivector" arg2="trivector" arg3="double" floatType="double"/>
+  <function name="equals" arg1="rotor" arg2="bivector" arg3="double" floatType="double"/>
+  <function name="equals" arg1="e1" arg2="e1" arg3="double" floatType="double"/>
+  <function name="equals" arg1="e2" arg2="I3" arg3="double" floatType="double"/>
+  
+  
+  <function name="extractGrade" arg1="mv"/>
+  <function name="extractGrade2" arg1="mv"/>
+  <function name="extractGrade0" arg1="rotor"/>
+  <function name="extractGrade2" arg1="rotor"/>
+  <function name="extractGrade0" arg1="oddVersor"/>
+  <function name="extractGrade1" arg1="oddVersor"/>
+  <function name="extractGrade2" arg1="oddVersor"/>
+  <function name="extractGrade3" arg1="oddVersor"/>
+  <function name="extractGrade0" arg1="e1"/>
+  <function name="extractGrade1" arg1="e2"/>
+  <function name="extractGrade2" arg1="e3"/>
+  <function name="extractGrade3" arg1="e1"/>
+  
+  <function name="extractGrade0" arg1="I3"/>
+  <function name="extractGrade1" arg1="I3"/>
+  <function name="extractGrade2" arg1="I3"/>
+  <function name="extractGrade3" arg1="I3"/>
+
+  <function name="gp" arg1="mv" arg2="mv"/>
+  
+  <function name="gp" arg1="vector" arg2="vector"/>
+  <function name="gp" arg1="rotor" arg2="vector"/>
+  <function name="gp" arg1="vector" arg2="rotor"/>
+  <function name="gp" arg1="rotor" arg2="rotor"/>
+  <function name="gp" arg1="bivector" arg2="bivector"/>
+  <function name="gp" arg1="e1" arg2="rotor"/>
+  <function name="gp" arg1="I3" arg2="rotor"/>
+  <function name="gp" arg1="bivector" arg2="e1"/>
+
+  <function name="gradeBitmap" arg1="mv" arg2="double" floatType="double"/>
+  <function name="gradeBitmap" arg1="rotor" arg2="double" floatType="double"/>
+  <function name="gradeBitmap" arg1="vector" arg2="double" floatType="double"/>
+  <function name="gradeBitmap" arg1="bivector" arg2="double" floatType="double"/>
+  <function name="gradeBitmap" arg1="trivector" arg2="double" floatType="double"/>
+  <function name="gradeBitmap" arg1="e1" arg2="double" floatType="double"/>
+  <function name="gradeBitmap" arg1="e2" arg2="double" floatType="double"/>
+  <function name="gradeBitmap" arg1="I3" arg2="double" floatType="double"/>
+  
+  <function name="hp" arg1="mv" arg2="mv"/>
+  <function name="hp" arg1="vector" arg2="vector"/>
+  <function name="hp" arg1="bivector" arg2="bivector"/>
+  <function name="hp" arg1="rotor" arg2="rotor"/>
+  <function name="hp" arg1="bivector" arg2="rotor"/>
+  <function name="hp" arg1="trivector" arg2="trivector"/>
+  <function name="hp" arg1="trivector" arg2="oddVersor"/>
+  <function name="hp" arg1="rotor" arg2="bivector"/>
+  <function name="hp" arg1="e1" arg2="e1"/>
+  <function name="hp" arg1="e2" arg2="e3"/>
+  <function name="hp" arg1="oddVersor" arg2="I3"/>
+
+  <function name="ihp" arg1="mv" arg2="mv"/>
+  <function name="ihp" arg1="vector" arg2="vector"/>
+  <function name="ihp" arg1="bivector" arg2="bivector"/>
+  <function name="ihp" arg1="rotor" arg2="rotor"/>
+  <function name="ihp" arg1="bivector" arg2="rotor"/>
+  <function name="ihp" arg1="rotor" arg2="bivector"/>
+  <function name="ihp" arg1="trivector" arg2="oddVersor"/>
+  <function name="ihp" arg1="vector" arg2="e1"/>
+  <function name="ihp" arg1="e2" arg2="e3"/>
+  <function name="ihp" arg1="trivector" arg2="I3"/>
+
+  <function name="increment" arg1="mv"/>
+  <function name="increment" arg1="bivector"/>
+  <function name="increment" arg1="rotor"/>
+
+  <function name="decrement" arg1="mv"/>
+  <function name="decrement" arg1="bivector"/>
+  <function name="decrement" arg1="rotor"/>
+
+  <function name="sp" arg1="mv" arg2="mv"/>
+  <function name="lc" arg1="mv" arg2="mv"/>
+  <function name="rc" arg1="mv" arg2="mv"/>
+  <function name="hip" arg1="mv" arg2="mv"/>
+  <function name="mhip" arg1="mv" arg2="mv"/>
+  
+  <function name="sp" arg1="vector" arg2="vector"/>
+  <function name="lc" arg1="vector" arg2="vector"/>
+  <function name="rc" arg1="vector" arg2="vector"/>
+  <function name="hip" arg1="vector" arg2="vector"/>
+  <function name="mhip" arg1="vector" arg2="vector"/>
+  
+  <function name="sp" arg1="bivector" arg2="vector"/>
+  <function name="lc" arg1="bivector" arg2="vector"/>
+  <function name="rc" arg1="bivector" arg2="vector"/>
+  <function name="hip" arg1="bivector" arg2="vector"/>
+  <function name="mhip" arg1="bivector" arg2="vector"/>
+  
+  <function name="sp" arg1="trivector" arg2="trivector"/>
+  <function name="lc" arg1="trivector" arg2="trivector"/>
+  <function name="rc" arg1="trivector" arg2="trivector"/>
+  <function name="hip" arg1="trivector" arg2="trivector"/>
+  <function name="mhip" arg1="trivector" arg2="trivector"/>
+  
+  <function name="sp" arg1="vector" arg2="bivector"/>
+  <function name="lc" arg1="vector" arg2="bivector"/>
+  <function name="rc" arg1="vector" arg2="bivector"/>
+  <function name="hip" arg1="vector" arg2="bivector"/>
+  <function name="mhip" arg1="vector" arg2="bivector"/>
+  
+  <function name="sp" arg1="vector" arg2="rotor"/>
+  <function name="lc" arg1="vector" arg2="rotor"/>
+  <function name="rc" arg1="vector" arg2="rotor"/>
+  <function name="hip" arg1="vector" arg2="rotor"/>
+  <function name="mhip" arg1="vector" arg2="rotor"/>
+  
+  <function name="sp" arg1="rotor" arg2="bivector"/>
+  <function name="lc" arg1="rotor" arg2="bivector"/>
+  <function name="rc" arg1="rotor" arg2="bivector"/>
+  <function name="hip" arg1="rotor" arg2="bivector"/>
+  <function name="mhip" arg1="rotor" arg2="bivector"/>
+  
+  <function name="sp" arg1="rotor" arg2="trivector"/>
+  <function name="lc" arg1="rotor" arg2="trivector"/>
+  <function name="rc" arg1="rotor" arg2="trivector"/>
+  <function name="hip" arg1="rotor" arg2="trivector"/>
+  <function name="mhip" arg1="rotor" arg2="trivector"/>
+  
+  <function name="sp" arg1="e1" arg2="I3"/>
+  <function name="lc" arg1="I3" arg2="e3"/>
+  <function name="rc" arg1="e1" arg2="e1"/>
+  <function name="hip" arg1="e2" arg2="I3"/>
+  <function name="mhip" arg1="I3" arg2="I3"/>
+  
+  
+  
+  <function name="norm" arg1="mv"/>
+  <function name="norm" arg1="vector"/>
+  <function name="norm" arg1="bivector"/>
+  <function name="norm" arg1="trivector"/>
+  <function name="norm" arg1="rotor"/>
+
+  <function name="norm" arg1="e1"/>
+  <function name="norm" arg1="e3"/>
+  <function name="norm" arg1="I3"/>
+  
+  <function name="norm2" arg1="mv"/>
+  <function name="norm2" arg1="vector"/>
+  <function name="norm2" arg1="bivector"/>
+  <function name="norm2" arg1="trivector"/>
+  <function name="norm2" arg1="rotor"/>
+  
+  <function name="norm2" arg1="e1"/>
+  <function name="norm2" arg1="e3"/>
+  <function name="norm2" arg1="I3"/>
+  
+  
+  <function name="op" arg1="mv" arg2="mv"/>
+  <function name="op" arg1="vector" arg2="vector"/>
+  <function name="op" arg1="bivector" arg2="bivector"/>
+  <function name="op" arg1="vector" arg2="rotor"/>
+  <function name="op" arg1="vector" arg2="trivector"/>
+  
+  <function name="op" arg1="e1" arg2="e1"/>
+  <function name="op" arg1="e1" arg2="e2"/>
+  <function name="op" arg1="e2" arg2="e3"/>
+  
+
+  <function name="gp" arg1="mv" arg2="double" floatType="double"/>
+  <function name="sas" arg1="mv" arg2="double" arg3="double" floatType="double"/>
+
+
+
+  <function name="exp" arg1="mv" />
+  <function name="exp" arg1="bivector" />
+  <function name="cosh" arg1="mv" />
+  <function name="cosh" arg1="bivector" />
+  <function name="sinh" arg1="mv" />
+  <function name="sinh" arg1="bivector" />
+  <function name="cos" arg1="mv" />
+  <function name="cos" arg1="bivector" />
+  <function name="sin" arg1="mv" />
+  <function name="sin" arg1="bivector" />
+
+  <function name="negate" arg1="mv"/>
+  <function name="cliffordConjugate" arg1="mv"/>
+  <function name="gradeInvolution" arg1="mv"/>
+  <function name="reverse" arg1="mv"/>
+  
+
+  <function name="negate" arg1="vector"/>
+  <function name="cliffordConjugate" arg1="vector"/>
+  <function name="gradeInvolution" arg1="vector"/>
+  <function name="reverse" arg1="vector"/>
+  
+  <function name="negate" arg1="bivector"/>
+  <function name="cliffordConjugate" arg1="bivector"/>
+  <function name="gradeInvolution" arg1="bivector"/>
+  <function name="reverse" arg1="bivector"/>
+  
+  <function name="negate" arg1="trivector"/>
+  <function name="cliffordConjugate" arg1="trivector"/>
+  <function name="gradeInvolution" arg1="trivector"/>
+  <function name="reverse" arg1="trivector"/>
+  
+  <function name="negate" arg1="rotor"/>
+  <function name="cliffordConjugate" arg1="rotor"/>
+  <function name="gradeInvolution" arg1="rotor"/>
+  <function name="reverse" arg1="rotor"/>
+  
+  <function name="negate" arg1="e1"/>
+  <function name="cliffordConjugate" arg1="e2"/>
+  <function name="gradeInvolution" arg1="e3"/>
+  <function name="reverse" arg1="I3"/>
+  
+  <function name="negate" arg1="double" floatType="double"/>
+  <function name="cliffordConjugate" arg1="double" floatType="double"/>
+  <function name="gradeInvolution" arg1="double" floatType="double"/>
+  <function name="reverse" arg1="double" floatType="double"/>
+  
+
+  <function name="unit" arg1="mv"/>
+  <function name="unit" arg1="vector"/>
+  <function name="unit" arg1="bivector"/>
+  <function name="unit" arg1="trivector"/>
+  <function name="unit" arg1="rotor"/>
+  <function name="unit" arg1="oddVersor"/>
+
+  <function name="unit" arg1="e1"/>
+  <function name="unit" arg1="e2"/>
+  <function name="unit" arg1="I3"/>
+  
+  <function name="versorInverse" arg1="mv" />
+  
+  <function name="versorInverse" arg1="vector" />
+  <function name="versorInverse" arg1="bivector" />
+  <function name="versorInverse" arg1="trivector" />
+  <function name="versorInverse" arg1="rotor" />
+  
+  <function name="versorInverse" arg1="e1" />
+  <function name="versorInverse" arg1="e3" />
+  <function name="versorInverse" arg1="I3" />
+  
+  <function name="zero" arg1="mv" arg2="double" floatType="double"/>
+  <function name="zero" arg1="vector" arg2="double" floatType="double"/>
+  <function name="zero" arg1="bivector" arg2="double" floatType="double"/>
+  <function name="zero" arg1="trivector" arg2="double" floatType="double"/>
+  <function name="zero" arg1="rotor" arg2="double" floatType="double"/>
+  
+  <function name="zero" arg1="I3" arg2="double" floatType="double"/>
+  <function name="zero" arg1="e1" arg2="double" floatType="double"/>
+  
+</g25spec>
+

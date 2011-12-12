@@ -1,0 +1,387 @@
+<html>
+<head>
+	<title>Documentation</title>
+	<link href="../luadoc.css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		<div id="header">
+	<div id="masthead">
+		<div id="branding" role="banner">
+			<table class="logo_title" border="0">
+				<tr>
+					<td> <img src="../images/LuaAV.96.png" /> </td>
+					<td> <h1>Reference Pages</h1> </td>
+				</tr>
+			</table>
+			
+			<h1 class="title">box2d.Body</h1>
+		</div>
+		
+		<div id="access" role="navigation">
+			<ul class="breadcrumbs">
+							<li><a href="../home.html">Home</a></li>
+							<li><a href="../box2d.html">box2d</a></li>
+							<li><a href="../box2d/Body.html">Body</a></li>
+			
+			</ul>
+		</div>
+		
+		<div id="info">
+			<p>A body is an object in a World responding to dynamics and phyiscs.  It  can take on different shapes, including shape composites.</p>
+			
+			
+		</div>
+	</div>
+</div>
+<div id="container">
+	<div id="content" role="main">
+	
+	<div id="overview">
+<h2 class="functions">Functions</h2>
+<table class="function_list">
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.angle">
+				<span class="function_name">Body.angle</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> Angle</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.angularDamping">
+				<span class="function_name">Body.angularDamping</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Angular damping</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.angularVelocity">
+				<span class="function_name">Body.angularVelocity</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Angular velocity</td>
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Body:applyForce">
+				<span class="function_name">Body:applyForce</span><span class="params">(force, point)</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Apply a force</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Body:box">
+				<span class="function_name">Body:box</span><span class="params">(size, center, [angle])</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Add a box to a body</td>
+		
+	</tr>
+		<tr>
+				
+		<td class="name" nowrap>
+			<a href="#Body:circle">
+				<span class="function_name">Body:circle</span><span class="params">(size, center, [angle])</span>
+			</a>
+		</td>
+		<td class="summary" nowrap> Add a circle to a body</td>
+		
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.inertia">
+				<span class="function_name">Body.inertia</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> Intertia</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.linearDamping">
+				<span class="function_name">Body.linearDamping</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Linear damping</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.mass">
+				<span class="function_name">Body.mass</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Mass</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.position">
+				<span class="function_name">Body.position</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> Position</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.size">
+				<span class="function_name">Body.size</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> Size</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.velocity">
+				<span class="function_name">Body.velocity</span> <span class="ATTR">GETSET</span>
+			</a>
+		</td>
+		<td class="summary"> Velocity</td>
+	</tr>
+		<tr>
+				<td class="name" nowrap>
+			<a href="#Body.worldCenter">
+				<span class="function_name">Body.worldCenter</span> <span class="ATTR">GET</span>
+			</a>
+		</td>
+		<td class="summary"> World center</td>
+	</tr>
+	
+</table>
+</div>
+
+<div id="details">
+<h2 class="functions">Functions</h2>
+<dl class="function">
+		<dt>
+		<a name="Body.angle"></a><span class="function_name">Body.angle</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Angle</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.angularDamping"></a><span class="function_name">Body.angularDamping</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Angular damping</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.angularVelocity"></a><span class="function_name">Body.angularVelocity</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Angular velocity</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Body:applyForce"></a><span class="function_name">Body:applyForce</span><span class="param">(force, point)</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p> Apply a force</p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">force</td>
+							<td class="description">The force vecotr</td>
+						</tr>
+											<tr>
+							<td class="name">point</td>
+							<td class="description">The point at which to apply the force</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Body:box"></a><span class="function_name">Body:box</span><span class="param">(size, center, [angle])</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>A box can be created with the parameters below or a table of  parameters.  Valid parameters are center, size, angle,  friction, restitution, density, isSensor.  Size is a required parameter.</p><p> <pre><span class=whitespace>
+ </span><span class=comment>-- the following are equivalent:</span><span class=whitespace>
+ </span><span class=identifier>body1</span><span class=operator>:</span><span class=identifier>box</span><span class=operator>(</span><span class=operator>{</span><span class=number>1</span><span class=operator>,</span><span class=whitespace> </span><span class=number>1</span><span class=operator>}</span><span class=operator>,</span><span class=whitespace> </span><span class=operator>{</span><span class=number>0</span><span class=operator>,</span><span class=whitespace> </span><span class=number>0</span><span class=operator>}</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>body2</span><span class=operator>:</span><span class=identifier>box</span><span class=operator>{</span><span class=whitespace>
+ </span><span class=identifier>size</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=operator>{</span><span class=number>1</span><span class=operator>,</span><span class=whitespace> </span><span class=number>1</span><span class=operator>}</span><span class=operator>,</span><span class=whitespace>
+ </span><span class=identifier>center</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=operator>{</span><span class=number>0</span><span class=operator>,</span><span class=whitespace> </span><span class=number>0</span><span class=operator>}</span><span class=operator>,</span><span class=whitespace>
+ </span><span class=operator>}</span><span class=whitespace>
+ </span></pre></p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">size</td>
+							<td class="description">The size of the box</td>
+						</tr>
+											<tr>
+							<td class="name">center</td>
+							<td class="description">The center of the box</td>
+						</tr>
+											<tr>
+							<td class="name">[angle]</td>
+							<td class="description">The box angle</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt class="function_signature">
+		<a name="Body:circle"></a><span class="function_name">Body:circle</span><span class="param">(size, center, [angle])</span>
+	</dt>
+	<dd class="function_information">
+		<div id="description">
+			<p>A circle can be created with the parameters below or a table of  parameters.  Valid parameters are center, radius, angle,  friction, restitution, density, isSensor.  Radius is a required parameter.</p><p> <pre><span class=whitespace>
+ </span><span class=comment>-- the following are equivalent:</span><span class=whitespace>
+ </span><span class=identifier>body1</span><span class=operator>:</span><span class=identifier>circle</span><span class=operator>(</span><span class=number>3</span><span class=operator>)</span><span class=whitespace>
+ </span><span class=identifier>body2</span><span class=operator>:</span><span class=identifier>circle</span><span class=operator>{</span><span class=whitespace>
+ </span><span class=identifier>radius</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=number>3</span><span class=whitespace>
+ </span><span class=operator>}</span><span class=whitespace>
+ </span></pre></p>
+		</div>
+					<h3 class="param">Parameters:</h3>
+				<table class="param">
+											<tr>
+							<td class="name">size</td>
+							<td class="description">The size of the box</td>
+						</tr>
+											<tr>
+							<td class="name">center</td>
+							<td class="description">The center of the box</td>
+						</tr>
+											<tr>
+							<td class="name">[angle]</td>
+							<td class="description">The box angle</td>
+						</tr>
+					
+				</table>
+		
+
+		
+		
+		
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.inertia"></a><span class="function_name">Body.inertia</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Intertia</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.linearDamping"></a><span class="function_name">Body.linearDamping</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Linear damping</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.mass"></a><span class="function_name">Body.mass</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p>Mass can be set with either a numerical value or a table.   If the value is a table, it can have parameters mass and center.</p><p> <pre><span class=whitespace>
+ </span><span class=identifier>body.mass</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=operator>{</span><span class=whitespace>
+ </span><span class=identifier>mass</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=number>1.</span><span class=operator>,</span><span class=whitespace>
+ </span><span class=identifier>center</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=operator>{</span><span class=number>0.1</span><span class=operator>,</span><span class=whitespace> </span><span class=number>0</span><span class=operator>}</span><span class=operator>,</span><span class=whitespace>
+ </span><span class=operator>}</span><span class=whitespace>
+ </span><span class=comment>-- or simply</span><span class=whitespace>
+ </span><span class=identifier>body.mass</span><span class=whitespace> </span><span class=operator>=</span><span class=whitespace> </span><span class=number>1.</span><span class=whitespace>
+ </span></pre></p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.position"></a><span class="function_name">Body.position</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Position</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.size"></a><span class="function_name">Body.size</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p>This attribute is only valid if the body's  first shape is a box.</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.velocity"></a><span class="function_name">Body.velocity</span> <span class="ATTR">GETSET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> Velocity</p>
+		</div>
+	</dd>
+	
+</dl>
+<dl class="function">
+		<dt>
+		<a name="Body.worldCenter"></a><span class="function_name">Body.worldCenter</span> <span class="ATTR">GET</span>
+	</dt>
+	<dd>
+		<div id="description">
+			<p> World center</p>
+		</div>
+	</dd>
+	
+</dl>
+
+
+</div>
+	
+	</div>
+</div>
+	</body>
+</html>

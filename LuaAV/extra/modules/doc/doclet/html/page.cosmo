@@ -1,0 +1,9 @@
+<html>
+<head>
+	<title>$title</title>
+	<link href="$docroot{}$css" rel="stylesheet" type="text/css" />
+</head>
+	<body class="doc">
+		$body
+	</body>
+</html>
