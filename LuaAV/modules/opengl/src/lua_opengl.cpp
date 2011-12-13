@@ -1686,14 +1686,17 @@ int gl_GetMaterial(lua_State *L) {
 			case GL_SPECULAR:
 			case GL_EMISSION:
 				n = 4;
+				break;
 			
 			// 3 float
 			case GL_COLOR_INDEXES:
 				n = 3;
+				break;
 			
 			// 1 float
 			case GL_SHININESS:
 				n = 1;
+				break;
 				
 			default:
 				break;
