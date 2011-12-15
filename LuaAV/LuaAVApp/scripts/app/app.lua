@@ -228,6 +228,7 @@ function M:fileopen(filename)
 	end
 	
 	local child
+	local alreadyloaded = false
 	local live_reload = false
 	if(self.scripts[filename]) then
 		child = self.scripts[filename]
@@ -240,9 +241,11 @@ function M:fileopen(filename)
 		]])
 	
 		if(not live_reload) then
-			self:fileclose(filename)
+			self:fileclose(filename, true)
 			child = nil
 		end
+		
+		alreadyloaded = true
 	end
 	
 	print(string.rep("-", 40))
@@ -284,13 +287,16 @@ function M:fileopen(filename)
 	
 	-- update configuration and menus
 	configuration.add_recentfile(self.config, filename)
-	self:add_open_recent(self.mainmenu, filename)
-	self:add_close_file(self.mainmenu, filename)
-	self:add_edit_file(self.mainmenu, filename)
 	
-	-- update console
-	if(not live_reload) then
-		app.console.addscript(filename, child)
+	if(not alreadyloaded) then
+		self:add_open_recent(self.mainmenu, filename)
+		self:add_close_file(self.mainmenu, filename)
+		self:add_edit_file(self.mainmenu, filename)
+		
+		-- update console
+		if(not live_reload) then
+			app.console.addscript(filename, child)
+		end
 	end
 	
 	-- watch file
@@ -305,19 +311,21 @@ function M:fileopen(filename)
 	end
 end
 
-function M:fileclose(filename)
+function M:fileclose(filename, willreopen)
 	local child = self.scripts[filename]
 	if(child) then
 		self.scripts[filename] = nil
 		self.scripts[child] = nil
 		child:close()
 		
-		-- update menus
-		self:remove_close_file(self.mainmenu, filename)
-		self:remove_edit_file(self.mainmenu, filename)
-		
-		-- update console
-		app.console.removescript(filename)
+		if(not willreopen) then
+			-- update menus
+			self:remove_close_file(self.mainmenu, filename)
+			self:remove_edit_file(self.mainmenu, filename)
+			
+			-- update console
+			app.console.removescript(filename)
+		end
 		
 		-- unwatch file
 		if app.file.watching(filename) then

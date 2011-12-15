@@ -526,7 +526,7 @@ extern const char * luaav_app_path();
 				}
 				else {
 					int idx = (row-1) < 0 ? 0 : row-1;
-					[scriptsTable selectColumnIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
+					[scriptsTable selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
 				}
 			}
 			[scriptsTable reloadData];
@@ -538,12 +538,12 @@ extern const char * luaav_app_path();
 - (void)addScript:(NSString *)name withPath:(NSString *)path withObject:(luaav_state *)ptr {
 	// Append a newly created data object, then reload the table contents.
 	ScriptData * scriptData = [[ScriptData alloc] initWithName:name withPath:path withObject:ptr ];
-	[scripts insertObject:scriptData atIndex:0];
+	[scripts addObject:scriptData];
 	[scriptData release];
 	[scriptsTable reloadData];
-
-	int idx = 0;
-	[scriptsTable selectColumnIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
+	
+	int idx = [scripts count]-1;
+	[scriptsTable selectRowIndexes:[NSIndexSet indexSetWithIndex:idx] byExtendingSelection:NO];
 }
 
 - (NSString *)selectedScriptPath {
