@@ -421,8 +421,9 @@ function M:generate_menus()
 		--local Save = menufield(MenuItem, "Save")
 	
 	local Help = menufield(Menu, "Help")
-		local Docs = menufield(MenuItem, "LuaAV Help")
+		--local Docs = menufield(MenuItem, "LuaAV Help")
 		local Site = menufield(MenuItem, "LuaAV Site")
+		local Reference = menufield(MenuItem, "LuaAV Reference")
 
 		
 	-- Menu structure and generation
@@ -649,6 +650,11 @@ function M:generate_menus()
 				action = function()
 					app.openurl("http://lua-av.mat.ucsb.edu/");
 				end,
+			},
+			Reference{
+				action = function()
+					app.openurl("file://"..app.apppath.."/extra/doc/index.html");
+				end,
 			}
 		}
 		--]==]
@@ -656,9 +662,9 @@ function M:generate_menus()
 
 	---[[
 	local TemplateMenu = Menus.findmenuitem(mainmenu, "(File).(New From Template)")
-	local template_folder = findfileinpath(app.apppath .. "/../../extra", "templates")
+	local template_folder = findfileinpath(app.apppath .. "/extra", "templates")
 	if(not template_folder) then
-		template_folder = findfileinpath(app.apppath .. "/extra", "templates")
+		template_folder = findfileinpath(app.apppath .. "/../../extra", "templates")
 	end
 	
 	if template_folder then

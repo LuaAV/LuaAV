@@ -18,7 +18,7 @@ local LuaAV_rocks_server = "http://lua-av.mat.ucsb.edu/luarocks"
 module(...)
 
 -- ensure a local repository exists
-apputils.ensurepath(local_tree)
+--apputils.ensurepath(local_tree)
 
 
 -- setup luarocks

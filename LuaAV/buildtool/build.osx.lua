@@ -211,11 +211,12 @@ function loadproject(name)
 end
 
 local projects = {
-	"cairo",
+	--"cairo",
 	"color",
 	"font",
 	"image",
 	"opencl",
+	"opencv",
 	"opengl",
 	"socket",
 	"space",
@@ -230,6 +231,7 @@ local projects = {
 	image = { target = "Image" },
 	clang = { target = "osx" },
 	opencl = { target = "opencl" },
+	opencv = { target = "opencv" },
 	opengl = { target = "opengl" },
 	socket = { target = "socket" },
 	space = { target = "space" },

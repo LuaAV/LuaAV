@@ -4105,7 +4105,7 @@
 		36FFDE6F10B766D100718E3A /* luaav_app_menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luaav_app_menu.h; sourceTree = "<group>"; };
 		36FFDE7010B766D100718E3A /* luaav_app_menu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_app_menu.cpp; sourceTree = "<group>"; };
 		36FFDE7210B766E900718E3A /* luaav_app_menu_cocoa.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = luaav_app_menu_cocoa.mm; sourceTree = "<group>"; };
-		36FFDEBC10B769C800718E3A /* preferences.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = preferences.lua; sourceTree = "<group>"; };
+		36FFDEBC10B769C800718E3A /* preferences.lua */ = {isa = PBXFileReference; explicitFileType = sourcecode.lua; fileEncoding = 4; path = preferences.lua; sourceTree = "<group>"; };
 		36FFDECA10B76A0B00718E3A /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
 		36FFDED210B76A1200718E3A /* LuaAV.lua */ = {isa = PBXFileReference; explicitFileType = sourcecode.lua; fileEncoding = 4; path = LuaAV.lua; sourceTree = "<group>"; };
 		36FFDFF410B779A500718E3A /* luaav_midi.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_midi.cpp; sourceTree = "<group>"; };
