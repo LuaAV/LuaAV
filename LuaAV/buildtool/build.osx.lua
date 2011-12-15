@@ -211,6 +211,7 @@ function loadproject(name)
 end
 
 local projects = {
+	"box2d",
 	--"cairo",
 	"color",
 	"font",
@@ -225,6 +226,7 @@ local projects = {
 	"LuaAV",
 
 	-- modules
+	box2d = { target = "box2d" },
 	cairo = { target = "lcairo" },
 	color = { target = "color" },
 	font = { target = "font" },
