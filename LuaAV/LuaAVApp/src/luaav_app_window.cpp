@@ -739,7 +739,7 @@ using luaav::Window;
 		Window:create()
 		Window:init()
 		Window:closing()
-		Window:key(event, btn)
+		Window:key(event, key)
 		Window:modifiers()
 		Window:mouse(event, btn, x, y, nclicks)
 		Window:scroll(x, y, dx, dy)
