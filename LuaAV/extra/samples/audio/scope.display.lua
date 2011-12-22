@@ -20,7 +20,7 @@ beep = Def{
 	dur = 0.25,
 	amp = 0.25,
 	
-	Env{ "dur" } * Square{
+	Env{ "dur" } * SinOsc{
 		freq = P"freq"*(
 			0.5+0.5*P"jump"*
 			SinOsc{
