@@ -12,7 +12,7 @@ local assert = assert
 local ipairs = ipairs
 local pairs = pairs
 
-local Chunk = require("codegen.chunk")
+local Chunk = require("chunk")
 local templates = require("templates")
 local utils = require("utilities")
 local substitute = utils.substitute

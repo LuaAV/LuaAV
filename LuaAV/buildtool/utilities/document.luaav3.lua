@@ -11,7 +11,7 @@ local utils = require("utilities")
 
 local navtree = require("navtree")
 local search = require("search")
-local Chunk = require("codegen.chunk")
+local Chunk = require("chunk")
 local format = string.format
 
 local substitute = utils.substitute
@@ -69,7 +69,7 @@ function generate_manual()
 	<li><a href="$link"><h3>$title</h3></li>
 ]], {
 		title = page.content.title,
-		link = docroot.."/"..page.filename,
+		link = page.filename,
 	})
 	end
 	return format("<ul>\n%s\n</ul>", text)

@@ -7,7 +7,7 @@ local print = print
 local table = table
 local utils = require("utilities")
 local substitute = utils.substitute
-local Chunk = require("codegen.chunk")
+local Chunk = require("chunk")
 
 local templates = require("templates")
 
