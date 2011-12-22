@@ -10,13 +10,13 @@
 /*!	Read in a soundfile.
 	The Array returned is one dimensional. Multi-channel soundfiles return multi-component arrays.
 	
-	<pre>
+	<luacode>
 	local sf = audio.soundfile(LuaAV.findfile("gong.wav"))
 	print(sf)							--> Array
 	print(sf.components)				--> 2 (stereo)
 	print(sf.dim[1])					--> 265776 (sample frames)
 	print(sf.dim[1]/audio.samplerate)	--> 6.03 (seconds)
-	</pre>
+	</luacode>
 		
 	@param soundfile path (string)
 	@ret Array containing the soundfile data

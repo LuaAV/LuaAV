@@ -303,14 +303,14 @@ static int recv_iter(lua_State * L) {
 	
 	Example: 
 	
-	<pre>
+	<luacode>
 	for m in r:recv() do
 		print(m.addr, m.types, unpack(m))
 	end
-	</pre>
+	</luacode>
 	
 	Example of how to poll:
-	<pre>
+	<luacode>
 	go(function()
 		while(true) do
 			for m in r:recv() do
@@ -320,7 +320,7 @@ static int recv_iter(lua_State * L) {
 			wait(/1/30)	-- polling interval
 		end
 	end)
-	</pre>
+	</luacode>
 	
 	@ret iterator
 	@name M:recv
@@ -506,6 +506,7 @@ int add_bundle_or_message(lua_State * L, int idx, osc::OutboundPacketStream& pac
 
 /*!	Send an OSC message
 
+	<luacode>
 	-- list form:
 	sender:send("/address", 1, 2., "three", true)
 	
@@ -521,6 +522,7 @@ int add_bundle_or_message(lua_State * L, int idx, osc::OutboundPacketStream& pac
 			{ addr="/address3", true, },
 		}
 	}
+	</luacode>
 
 	@param message or bundle (table) address (string OSC address)
 	@param ... (numbers, strings, booleans, nils) arguments for single message 

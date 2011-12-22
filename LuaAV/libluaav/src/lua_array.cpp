@@ -58,14 +58,14 @@ setall
 	Arrays are constructed by setting their header.  When the header is set, the Array's 
 	memory will be accordinly formatted.  A header consists of a number of required and optional 
 	fields.  For example:
-	<pre>
+	<luacode>
 	Array{
 		components = 4,			-- The number of components (samples per-cell)
 		type = array.Float32,	-- The data type
 		dim = {512, 512},		-- The dimensions
 		align = 4,				-- Optional byte-alignment
 	}
-	</pre>
+	</luacode>
 	will create a 4-channel float buffer 512x512 pixels in size that is 4-byte aligned.
 	
 	@module Array

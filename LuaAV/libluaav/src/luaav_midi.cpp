@@ -378,11 +378,11 @@ static int lua_midi_input_iter(lua_State * L) {
 	<br />Other message events include: reset, sysex_begin, sysex_end, mtc, song_position, 
 	song_select, tune_request, clock, tick, start, continue, stop, active_sense
 	Example: 
-	<pre>
+	<luacode>
 	for m in input:poll() do
 		print(m.event, unpack(m))
 	end
-	</pre>
+	</luacode>
 	
 	@ret iterator
 	@name M:poll
