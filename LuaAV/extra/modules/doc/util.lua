@@ -1,8 +1,11 @@
+local lexer = require("doc.lexer")
 local lfs = require "lfs"
 local table, string, io, assert = table, string, io, assert
 local package = package
 local print = print
 local format = string.format
+local unpack = unpack
+local ipairs = ipairs
 
 
 --- Documentation utility functions
@@ -10,6 +13,22 @@ local format = string.format
 -- file io routines used across the doc modules.
 -- @name doc.util
 module(...)
+
+function highlight(src)
+	-- convert quotes
+	local src = src:gsub("&quot;", '"')
+	
+	local lexed = lexer(src)
+	local str = {}
+	for i, v in ipairs(lexed) do
+		if(v[1] == "whitespace") then
+			table.insert(str, v[2])
+		else
+			table.insert(str, string.format([[<span class="lua-%s">%s</span>]], unpack(v)))
+		end
+	end
+	return table.concat(str)
+end
 
 --- Write source text to a file
 -- @param DOC The documentation logger

@@ -89,17 +89,20 @@ local operator = token('operator', P '==' + P '~=' + P '<=' + P '>=' + P '...'
 local ident = token('identifier', idsafe * (idsafe + digit + P '.') ^ 0)
 
 -- keywords
-local keyword = token('keyword', (P 'and' + P 'break' + P 'do' + P 'else' +
-   P 'elseif' + P 'end' + P 'false' + P 'for' + P 'function' + P 'if' +
+local keyword = token('keyword', (P 'and' + P 'break' + P 'do' + P 'elseif' +
+   P 'else' + P 'end' + P 'false' + P 'for' + P 'function' + P 'if' +
    P 'in' + P 'local' + P 'nil' + P 'not' + P 'or' + P 'repeat' + P 'return' +
    P 'then' + P 'true' + P 'until' + P 'while') * -(idsafe + digit))
 
 -- numbers
 local number_sign = S'+-'^-1
-local number_decimal = digit ^ 1
+local number_decimal = digit ^ 1 * (S'eE' * number_sign * digit^1)^-1
 local number_hexadecimal = P '0' * S 'xX' * R('09', 'AF', 'af') ^ 1
-local number_float = (digit^1 * P'.' * digit^0 + P'.' * digit^1) *
-                     (S'eE' * number_sign * digit^1)^-1
+local number_float = (
+		digit^1 * P'.' * digit^0 + 
+		P'.' * digit^1
+	) *
+	(S'eE' * number_sign * digit^1)^-1
 local number = token('number', number_hexadecimal +
                                number_float +
                                number_decimal)

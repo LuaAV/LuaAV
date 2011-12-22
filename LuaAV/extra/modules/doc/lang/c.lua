@@ -17,9 +17,12 @@ local c99 = require("ceg.c99")
 local ceg = require("ceg")
 local m = require("lpeg")
 local serializer = require("serializer")
+local util = require("doc.util")
 ----------------------------------------------------------
 local format = string.format
 local P, V, R, S, C = m.P, m.V, m.R, m.S, m.C
+local Cmt = m.Cmt
+local Cs = m.Cs
 ----------------------------------------------------------
 module(...)
 ----------------------------------------------------------
@@ -143,9 +146,9 @@ function document_from_comments(t, comments)
 	for line in comments:gmatch("([^\n]*)\n?") do
 		line = line:gsub("\t", tab)
 	
-		if(line:match(".*(<pre>)")) then
-			npre = line:match("(.*)<pre>"):len()
-			line = "\n"..line:match(".*(<pre>.*)").."\n"
+		if(line:match(".*(<pre[^>]*>)")) then
+			npre = line:match("(.*)<pre[^>]*>"):len()
+			line = "\n"..line:match(".*(<pre[^>]*>.*)").."\n"
 			within_pre = true
 		elseif(line:match(".*(</pre>)")) then
 			line = line:match("%s*([^<]*</pre>.*)").."\n"
@@ -161,6 +164,23 @@ function document_from_comments(t, comments)
 	end
 	
 	lang.finalize_documentation(t)
+end
+
+local highlight_start = P"<luacode>"
+local highlight_end = P"</luacode>"
+
+local highlight_patt = Cmt(highlight_start *Cmt(
+		(1-highlight_end)^0, function(s, i, t)
+			return i, util.highlight(t)
+		end
+	)* highlight_end, function(s, i, t)
+		return i, format([[<pre class="fragment">%s</pre>]], t)
+	end)
+	highlight_patt = Cs((highlight_patt + 1)^0)
+
+local
+function highlight_luacode(comment)
+	return highlight_patt:match(comment)
 end
 
 local
@@ -190,6 +210,16 @@ function preprocess_comment_block(comment)
 			pcomment = pcomment..line.."\n"
 		end
 	end
+	
+	local patt = Cmt(highlight_start *Cmt(
+		(1-highlight_end)^0, function(s, i, t)
+			return i, util.highlight(t)
+		end
+	)* highlight_end, function(s, i, t)
+		return i, format([[<pre class="fragment">%s</pre>]], t)
+	end)
+	patt = Cs((patt + 1)^0)
+	pcomment = highlight_luacode(pcomment)
 	
 	return pcomment
 end
@@ -289,7 +319,8 @@ function module(code)
 		summary = summary,
 		description = "",
 	}
-	
+
+	rest = highlight_luacode(rest)	
 	document_from_comments(mod, rest)
 
 	mod.functions = lang.canonicalize_listing(
