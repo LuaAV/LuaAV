@@ -99,7 +99,7 @@ void vec3_tangent(float *res, const float *v) {
 	spans [-1, -1] x [1, 1] with [-1, -1] in the <b>lower left</b> corner.  Pixel is defined as a view that 
 	spans [0, 0] x [w, h] with [0, 0] in the <b>upper left</b> corner.
 	
-	<pre>
+	<luacode>
 		-- no arguments, uses the default (-1, -1, 2, 2) normalized mode
 		-- glOrtho(-1, 1, -1, 1, -100, 100)
 		enter_ortho()
@@ -111,7 +111,7 @@ void vec3_tangent(float *res, const float *v) {
 		-- 4 arguments, sets an arbitrary mode (x, y, w, h)
 		-- glOrtho(x, x+w, y, y+h, -100, 100)
 		enter_ortho(x, y, w, h)
-	</pre>
+	</luacode>
 
 	@param ... Either a table or unpacked list of up to 4 values.  If 
 				2 values are given, they set the width of the orthographic 
@@ -185,7 +185,7 @@ int opengl_sketch_leave_ortho(lua_State *L) {
 	Draw a quad in <i>normalized</i> orthographic mode.  Depending on the number of 
 	arguments, different parameters of the quad's position and dimension will be set:
 	
-	<pre>
+	<luacode>
 		-- no arguments, uses (-1, -1, 2, 2) for coordinates [-1, -1] x [1, 1]
 		quad() 
 		
@@ -195,7 +195,7 @@ int opengl_sketch_leave_ortho(lua_State *L) {
 		
 		-- 4 arguments, uses (x, y, w, h) for coordinates [x, y] x [x+w, y+h]
 		quad(x, y, w, h)
-	</pre>
+	</luacode>
 
 	@param ... Either a table or list of up to 4 unpacked values.  If 2 
 				arguments are given, they set the width and height of the 
@@ -235,7 +235,7 @@ int opengl_sketch_quad(lua_State *L) {
 	Draw a quad in <i>pixel</i> orthographic mode.  Depending on the number of 
 	arguments, different parameters of the quad's position and dimension will be set:
 	
-	<pre>
+	<luacode>
 		-- no arguments, uses (0, 0, 512, 512) for coordinates [0, 0] x [512, 512]
 		quad() 
 		
@@ -245,7 +245,7 @@ int opengl_sketch_quad(lua_State *L) {
 		
 		-- 4 arguments, uses (x, y, w, h) for coordinates [x, y] x [x+w, y+h]
 		quad(x, y, w, h)
-	</pre>
+	</luacode>
 
 	@param ... Either a table or list of up to 4 unpacked values.  If 2 
 				arguments are given, they set the width and height of the 
@@ -315,11 +315,11 @@ int opengl_sketch_axes(lua_State *L) {
 	vertices, not the primitive used to actually draw the circle.  circle 
 	should be wrapped in glBegin/glEnd calls.
 	
-	<pre>
+	<luacode>
 		gl.Begin(GL.LINE_LOOP)
 			sketch.circle(30)
 		gl.End()
-	</pre>
+	</luacode>
 	
 	@param n Optional number of divisions in the circle (default 20)
 	@name circle
@@ -347,12 +347,12 @@ int opengl_sketch_circle(lua_State *L) {
 	vertices, not the primitive used to actually draw the arc.  arc 
 	should be wrapped in glBegin/glEnd calls.
 	
-	<pre>
+	<luacode>
 		-- draw an arc from -10 degrees to 80 degress in 30 steps
 		gl.Begin(GL.LINE_LOOP)
 			sketch.arc(-10, 80, 30)
 		gl.End()
-	</pre>
+	</luacode>
 	
 	@param a1 The starting angle
 	@param a2 The stopping angle
@@ -383,13 +383,13 @@ int opengl_sketch_arc(lua_State *L) {
 /*! Draw a cone
 	Draw a cone with a specified radius and direction. The cone function 
 	
-	<pre>
+	<luacode>
 		-- cone at the origin pointing along the y-axis
 		-- with radius 0.5 and 30 divisions
 		gl.Begin(GL.TRIANGLES)
 			sketch.cone({0, 0, 0}, {0, 1, 0}, 0.5, 30)
 		gl.End()
-	</pre>
+	</luacode>
 	
 	@param apex The apex
 	@param dir The direction
@@ -493,14 +493,14 @@ int opengl_sketch_cone(lua_State *L) {
 	calculating the correct rotation and applying it with glRotate.  This 
 	function explicitly calculates the vertices in 3D
 	
-	<pre>
+	<luacode>
 		-- disc at the origin pointing along the y-axis
 		-- with radius 0.5 and 30 divisions
 		gl.Begin(GL.POLYGON)
 			gl.Normal(0, 1, 0)
 			sketch.disc({0, 0, 0}, {0, 1, 0}, 0.5, 30)
 		gl.End()
-	</pre>
+	</luacode>
 	
 	@param pos The position
 	@param dir The direction
@@ -561,14 +561,14 @@ int opengl_sketch_disc(lua_State *L) {
 /*! Draw a tube
 	Draw a tube in 3D with a specified radius, direction, and thickness.
 	
-	<pre>
+	<luacode>
 		-- tube at the origin pointing along the y-axis
 		-- with radius 0.5, 30 divisions, and 0.25 thickness
 		gl.Begin(GL.QUAD_STRIP)
 			gl.Normal(0, 1, 0)
 			sketch.tube({0, 0, 0}, {0, 1, 0}, 0.5, 30, 0.25)
 		gl.End()
-	</pre>
+	</luacode>
 	
 	@param pos The position
 	@param dir The direction

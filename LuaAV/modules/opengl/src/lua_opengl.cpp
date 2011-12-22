@@ -574,10 +574,10 @@ int gl_CopyPixels(lua_State *L) {
 	If no height argument is given, glCopyTexImage1D will be used, otherwise, glCopyTexImage2D 
 	be used. Example usage:
 	
-	<pre>
+	<luacode>
 	1D case: gl.CopyTexImage(GL.TEXTURE_1D, 0, GL.RGBA, 0, 0, 128, 0)
 	2D case: gl.CopyTexImage(GL.TEXTURE_2D, 0, GL.RGBA, 0, 0, 128, 128, 0)
-	</pre>
+	</luacode>
 	
 	OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyTexImage1D.xml">glCopyTexImage1D</a>, 
 	<a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyTexImage2D.xml">glCopyTexImage2D</a>
@@ -644,10 +644,10 @@ int gl_CopyTexImage(lua_State *L) {
 	If no yoffset or height argument is given, glCopyTexSubImage1D will be used, otherwise, glCopyTexSubImage2D 
 	be used. Example usage:
 	
-	<pre>
+	<luacode>
 	1D case: gl.glCopyTexSubImage(GL.TEXTURE_1D, 0, 32, 0, 0, 64)
 	2D case: gl.glCopyTexSubImage(GL.TEXTURE_2D, 0, 16, 24, 0, 0, 128, 128)
-	</pre>
+	</luacode>
 	
 	OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyTexSubImage1D.xml">glCopyTexSubImage1D</a>, 
 	<a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyTexSubImage2D.xml">glCopyTexSubImage2D</a>

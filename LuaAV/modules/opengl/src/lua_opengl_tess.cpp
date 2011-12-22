@@ -223,30 +223,84 @@ void Tesselator :: geometry(AlloArray *vertex, AlloArray *index) {
 	}
 }
 
+
+/*! Polygon tesselator for filling in complex 2D shapes
+	The Tesselator module translates complex 2D shape outlines into 
+	triangles, filling in the shapes.  It handles both concave and 
+	convex shapes.
+	
+	<luacode>
+	local tess = Tesselator()
+	tess:BeginPolygon()
+
+	-- first contour
+	tess:BeginContour()
+		tess:Vertex(0, 0)
+		tess:Vertex(1, 0)
+		tess:Vertex(1, 1)
+		tess:Vertex(0.5, 1.5)
+		tess:Vertex(0, 1)
+	tess:EndContour()
+
+	-- second contour
+	tess:BeginContour()
+		tess:Vertex(0.25, 0.25)
+		tess:Vertex(0.75, 0.25)
+		tess:Vertex(0.75, 0.75)
+		tess:Vertex(0.25, 0.75)
+	tess:EndContour()
+
+	tess:EndPolygon()
+	</luacode>
+	
+	@module opengl.Tesselator
+*/
+
+
+/*! Begin a polygon
+	
+	@name Tesselator:BeginPolygon
+*/
 int lua_tess_BeginPolygon(lua_State *L) {
 	Tesselator *s = Glue<Tesselator>::checkto(L, 1);
 	s->BeginPolygon();
 	return 0;
 }
 
+/*! End a polygon
+	
+	@name Tesselator:EndPolygon
+*/
 int lua_tess_EndPolygon(lua_State *L) {
 	Tesselator *s = Glue<Tesselator>::checkto(L, 1);
 	s->EndPolygon();
 	return 0;
 }
 
+/*! Begin a contour within a polygon
+	
+	@name Tesselator:BeginContour
+*/
 int lua_tess_BeginContour(lua_State *L) {
 	Tesselator *s = Glue<Tesselator>::checkto(L, 1);
 	s->BeginContour();
 	return 0;
 }
 
+/*! End a contour within a polygon
+	
+	@name Tesselator:EndContour
+*/
 int lua_tess_EndContour(lua_State *L) {
 	Tesselator *s = Glue<Tesselator>::checkto(L, 1);
 	s->EndContour();
 	return 0;
 }
 
+/*! Set a contour vertex
+	@param pos The position
+	@name Tesselator:Vertex
+*/
 int lua_tess_Vertex(lua_State *L) {
 	Tesselator *s = Glue<Tesselator>::checkto(L, 1);
 	vec2 v;
@@ -259,6 +313,32 @@ int lua_tess_Vertex(lua_State *L) {
 	return 0;
 }
 
+/*! Get the tesselated shape as arrays of vertices and indices
+	The geometry function extracts the triangle information from 
+	the tesselated contours.  It fills an array of vertices and an 
+	array of indices with the tesselation data, which can be used 
+	with a Mesh to draw it to screen.
+	
+	<luacode>
+	local vertex = Array()
+	local index = Array()
+
+	tess:geometry(vertex, index)
+
+	local mesh = Mesh(ctx)
+	mesh:vertex(vertex)
+	mesh:index(index)
+	mesh.primitive = GL.TRIANGLES
+	</luacode>
+	
+	@param vertices The vertex array
+	@param indices The indices array
+	
+	@name Tesselator:geometry
+	
+	@see Array
+	@see opengl.Mesh
+*/
 int lua_tess_geometry(lua_State *L) {
 	Tesselator *s = Glue<Tesselator>::checkto(L, 1);
 	AlloArray *vertex = lua_array_checkto(L, 2);

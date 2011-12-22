@@ -433,12 +433,12 @@ void Camera :: getProjection(double w, double h, Vec3 * corners) {
 	further internal paramers need to be calculated before actually entering the viewing transformation.
 	
 	Typical usage:
-	<pre>
+	<luacode>
 	cam:update()
 	cam:enter()
 		-- draw scene
 	cam:leave()
-	</pre>
+	</luacode>
 	
 	@module opengl.Camera
 */
