@@ -2,11 +2,11 @@
 -- 
 -- Move the mouse to position the shape. 
 -- Press the mouse button to invert the color. 
+--
+-- Note that we use isMousePressed instead of mousePressed as you can't have the same symbol be both an event
+-- handler and a variable in Lua
 
 require "processing"
-
-local gl = require("opengl")
-local GL = gl
 
 function setup()
 	size(200, 200)  -- Size must be the first statement
@@ -14,17 +14,16 @@ function setup()
 	background(156)
 end
 
---strokeCap(ROUND)
---strokeWeight(10)
-
 function draw()
-	if(mousePressed) then
+	background(156)
+	
+	if(isMousePressed) then
 		stroke(255)
 	else
 		stroke(0)
 	end
-	--line(mouseX-66, mouseY, mouseX+66, mouseY)
-	--line(mouseX, mouseY-66, mouseX, mouseY+66)
-	ellipse(50,50,80,80)
+	
+	line(mouseX-66, mouseY, mouseX+66, mouseY)
+	line(mouseX, mouseY-66, mouseX, mouseY+66)
 end
 
