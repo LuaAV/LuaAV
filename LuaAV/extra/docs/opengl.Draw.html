@@ -1,0 +1,2328 @@
+<!-- 
+Template Variables:
+	$ title
+	$ header_image
+	$ filename
+	$ relpath
+	$ tabs
+	$ content
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+
+<title>opengl.Draw</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+<div id="titlearea">
+	<div id="header">
+		<img src="LuaAV.header.png" height="200" />
+	</div>
+</div>
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+
+<!-- Tabs Begin -->
+<div id="navrow1" class="tabs">
+	<ul class="tablist">
+		<!-- Tab List note: the current page is marked with class="current", spaces get nbsp-->
+		<li><a href="index.html"><span>Main&#160;Page</span></a></li>
+<li><a href="manual.html"><span>Manual</span></a></li>
+<li><a href="reference.html"><span>Reference</span></a></li>
+		<!--
+		<li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+		<li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+		<li><a href="modules.html"><span>Modules</span></a></li>
+		<li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+		-->
+		
+		<!-- Search Field -->
+		<li>
+			<div id="MSearchBox" class="MSearchBoxInactive">
+        	<span class="left">
+			<img id="MSearchSelect" src="search/mag_sel.png"
+				onmouseover="return searchBox.OnSearchSelectShow()"
+				onmouseout="return searchBox.OnSearchSelectHide()"
+				alt=""/>
+			<input type="text" id="MSearchField" value="Search" accesskey="S"
+				onfocus="searchBox.OnSearchFieldFocus(true)" 
+				onblur="searchBox.OnSearchFieldFocus(false)" 
+				onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          	</span>
+          	<span class="right">
+				<a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+				<img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          	</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Tabs End -->
+
+
+<!-- Sidebar Tree Begin -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+
+<script type="text/javascript">
+  initNavTree('opengl.Draw.html','');
+</script>
+<!-- Sidebar Tree End -->
+<!-- End of Common Header -->
+
+<!--
+Template Variables:
+	$ title
+	$ text
+-->
+<div id="doc-content">
+	<div class="header">
+		<div class="headertitle">
+		<table>
+		<tr>
+			<td><div class="title"><a href="#details">opengl.Draw</a></div></td>
+			<td><div class="title-summary">&nbsp;High-level&nbsp;graphics&nbsp;interface&nbsp;for&nbsp;2D&nbsp;drawing</div></td>
+		</tr>
+		</table>
+		</div>
+	</div> <!-- header -->
+	<div class="contents">
+		<div class="textblock">
+
+<!-- Pane Contents -->
+<div class="contents">
+
+<table class="memberdecls">
+ 
+<tr><td colspan="2">
+	<h2>
+		<!-- TOC Anchor -->
+		<a name="Attributes"></a>Attributes
+	</h2>
+</td></tr>
+
+ 
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.bezierDetail">Draw.bezierDetail</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Bezier detail<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.curveDetail">Draw.curveDetail</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Curve detail<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.curveTightness">Draw.curveTightness</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Curve tightness<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.ellipseMode">Draw.ellipseMode</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Ellipse drawing mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.fill">Draw.fill</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Fill flag<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.rectMode">Draw.rectMode</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Rect drawing mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.stroke">Draw.stroke</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Stroke flag<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.strokeCap">Draw.strokeCap</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Stroke cap<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.strokeJoin">Draw.strokeJoin</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Stroke join<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw.strokeWeight">Draw.strokeWeight</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Stroke weight<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:colorMode">Draw:colorMode</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> The color mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:colorRange">Draw:colorRange</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> The color range<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:fillColor">Draw:fillColor</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Fill color<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:strokeColor">Draw:strokeColor</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Stroke color<br/></td>
+</tr>
+
+
+<tr><td colspan="2">
+	<h2>
+		<!-- TOC Anchor -->
+		<a name="Functions"></a>Functions
+	</h2>
+</td></tr>
+
+ 
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:arc">Draw:arc</a>(pos, size)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw an arc<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:beginShape">Draw:beginShape</a>([mode])</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Begin drawing a shape<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:bezier">Draw:bezier</a>(p1, c1, c2, p2)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a Bezier curve<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:bezierPoint">Draw:bezierPoint</a>(p1, c1, c2, p2, t)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Bezier point<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:bezierTangent">Draw:bezierTangent</a>(p1, c1, c2, p2, t)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Bezier tangent<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:bezierVertex">Draw:bezierVertex</a>(c1, c2, v)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Add a Bezier vertex to a shape<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:curve">Draw:curve</a>(p1, p2, p3, p4)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a curve<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:curvePoint">Draw:curvePoint</a>(p1, p2, p3, p4, t)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Curve point<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:curveTangent">Draw:curveTangent</a>(p1, p2, p3, p4, t)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Curve tangent<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:curveVertex">Draw:curveVertex</a>(v)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Add a curve vertex to a shape<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:ellipse">Draw:ellipse</a>(pos, size)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw an ellipse<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:endShape">Draw:endShape</a>([close])</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> End a shape<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:line">Draw:line</a>(p1, p2)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a line<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:point">Draw:point</a>(pos)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a point<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:quad">Draw:quad</a>(p1, p2, p3, p4)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a quad<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:rect">Draw:rect</a>(pos, size)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a rectangle<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:triangle">Draw:triangle</a>(p1, p2, p3)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a triangle<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Draw:vertex">Draw:vertex</a>(v)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Add a vertex to a shape<br/></td>
+</tr>
+
+
+
+</table>
+
+
+<!-- Details -->
+
+<a name="details" id="details"></a>
+<h2>Detailed Description</h2>
+<p>Draw is a high-level graphics interface for 2D drawing.  It has a number of modes for  filling and stroking common 2D shapes and curves that includes line cap and join  styles.</p>
+
+ 
+<hr/>
+<!-- Section Details -->
+<h2>Attributes</h2>
+ 
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.bezierDetail"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.bezierDetail</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Bezier detail</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.curveDetail"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.curveDetail</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Curve detail</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.curveTightness"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.curveTightness</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Curve tightness</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.ellipseMode"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.ellipseMode</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible values are Draw.CENTER, Draw.RADIUS, Draw.CORNER, Draw.CORNERS</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.fill"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.fill</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Sets whether or not to fill shapes</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.rectMode"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.rectMode</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible values are Draw.CENTER, Draw.RADIUS, Draw.CORNER, Draw.CORNERS</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.stroke"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.stroke</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Sets whether or not to stroke shapes</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.strokeCap"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.strokeCap</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible values are Draw.SQUARE, Draw.PROJECT, Draw.ROUND</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.strokeJoin"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.strokeJoin</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible values are Draw.MITER, Draw.BEVEL, Draw.ROUND</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw.strokeWeight"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw.strokeWeight</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>The weight of a stroked path.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:colorMode"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:colorMode</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible values are Draw.RGB and draw.HSB</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:colorRange"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:colorRange</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> The color range</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:fillColor"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:fillColor</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Fill color</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:strokeColor"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:strokeColor</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Stroke color</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+
+
+<hr/>
+<!-- Section Details -->
+<h2>Functions</h2>
+ 
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:arc"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:arc</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pos</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>size</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Arc drawing is affected by ellipseMode.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pos</td><td>The position of the arc</td></tr>
+
+		<tr><td class="paramname">size</td><td>The size of the arc</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:beginShape"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:beginShape</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>[mode]</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible values for mode are no argument, Draw.NONE, Draw.POINTS, Draw.LINES, Draw.TRIANGLES, Draw.TRIANGLE_STRIP, Draw.TRIANGLE_FAN, Draw.QUADS</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">[mode]</td><td>The drawing mode</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:bezier"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:bezier</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>c1</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>c2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Draw a Bezier curve</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>The first point</td></tr>
+
+		<tr><td class="paramname">c1</td><td>The first control point</td></tr>
+
+		<tr><td class="paramname">c2</td><td>The second control point</td></tr>
+
+		<tr><td class="paramname">p2</td><td>The second point</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:bezierPoint"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:bezierPoint</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>c1</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>c2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>t</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Bezier point</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>The first point</td></tr>
+
+		<tr><td class="paramname">c1</td><td>The first control point</td></tr>
+
+		<tr><td class="paramname">c2</td><td>The second control point</td></tr>
+
+		<tr><td class="paramname">p2</td><td>The second point</td></tr>
+
+		<tr><td class="paramname">t</td><td>The position along the curve [0, 1]</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:bezierTangent"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:bezierTangent</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>c1</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>c2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>t</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Bezier tangent</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>The first point</td></tr>
+
+		<tr><td class="paramname">c1</td><td>The first control point</td></tr>
+
+		<tr><td class="paramname">c2</td><td>The second control point</td></tr>
+
+		<tr><td class="paramname">p2</td><td>The second point</td></tr>
+
+		<tr><td class="paramname">t</td><td>The position along the curve [0, 1]</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:bezierVertex"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:bezierVertex</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>c1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>c2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>v</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>This function must be preceeded by a call to vertex.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">c1</td><td>The first control point</td></tr>
+
+		<tr><td class="paramname">c2</td><td>The second control point</td></tr>
+
+		<tr><td class="paramname">v</td><td>The vertex</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:curve"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:curve</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p3</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p4</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Draw a curve</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>The first point</td></tr>
+
+		<tr><td class="paramname">p2</td><td>The second point</td></tr>
+
+		<tr><td class="paramname">p3</td><td>The third point</td></tr>
+
+		<tr><td class="paramname">p4</td><td>The fourth point</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:curvePoint"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:curvePoint</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p3</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p4</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>t</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Curve point</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>The first point</td></tr>
+
+		<tr><td class="paramname">p2</td><td>The second point</td></tr>
+
+		<tr><td class="paramname">p3</td><td>The third point</td></tr>
+
+		<tr><td class="paramname">p4</td><td>The fourth point</td></tr>
+
+		<tr><td class="paramname">t</td><td>The position along the curve [0, 1]</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:curveTangent"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:curveTangent</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p3</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p4</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>t</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Curve tangent</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>The first point</td></tr>
+
+		<tr><td class="paramname">p2</td><td>The second point</td></tr>
+
+		<tr><td class="paramname">p3</td><td>The third point</td></tr>
+
+		<tr><td class="paramname">p4</td><td>The fourth point</td></tr>
+
+		<tr><td class="paramname">t</td><td>The position along the curve [0, 1]</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:curveVertex"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:curveVertex</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>v</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Add a curve vertex to a shape</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">v</td><td>The vertex</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:ellipse"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:ellipse</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pos</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>size</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Arc drawing is affected by ellipseMode.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pos</td><td>The position of the ellipse</td></tr>
+
+		<tr><td class="paramname">size</td><td>The size of the ellipse</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:endShape"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:endShape</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>[close]</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible arguments are no arugment or Draw.CLOSE</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">[close]</td><td>The close flag</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:line"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:line</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Draw a line</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>The first point</td></tr>
+
+		<tr><td class="paramname">p2</td><td>The second point</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:point"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:point</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pos</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Draw a point</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pos</td><td>The position of the point</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:quad"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:quad</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p3</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p4</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Draw a quad</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>First position</td></tr>
+
+		<tr><td class="paramname">p2</td><td>Second position</td></tr>
+
+		<tr><td class="paramname">p3</td><td>Third position</td></tr>
+
+		<tr><td class="paramname">p4</td><td>Fourth position</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:rect"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:rect</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pos</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>size</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Rectangle drawing is affected by rectMode</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pos</td><td>The position of the rectangle</td></tr>
+
+		<tr><td class="paramname">size</td><td>The size of the rectangle</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:triangle"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Draw:triangle</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>p1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>p3</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Draw a triangle</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">p1</td><td>First position</td></tr>
+
+		<tr><td class="paramname">p2</td><td>Second position</td></tr>
+
+		<tr><td class="paramname">p3</td><td>Third position</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Draw:vertex"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Draw:vertex</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>v</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Add a vertex to a shape</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">v</td><td>The vertex</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+
+
+
+
+</div> <!-- contents -->
+
+
+		</div> <!-- textblock -->
+	</div> <!-- contents -->
+</div> <!-- doc-content -->
+
+
+	<div id="nav-path" class="navpath">
+		<ul>
+		<!-- window showing the filter options -->
+		<div id="MSearchSelectWindow"
+			 onmouseover="return searchBox.OnSearchSelectShow()"
+			 onmouseout="return searchBox.OnSearchSelectHide()"
+			 onkeydown="return searchBox.OnSearchSelectKey(event)">
+	
+		<!-- This stuff pops up a menu that "kind of" works -->
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)">
+			<span class="SelectionMark">&#160;</span>All
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)">
+			<span class="SelectionMark">&#160;</span>Data Structures
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)">
+			<span class="SelectionMark">&#160;</span>Variables</a>
+	</div>
+	
+	<!-- iframe showing the search results (closed by default) -->
+	<div id="MSearchResultsWindow">
+		<iframe src="javascript:void(0)" frameborder="0" 
+				name="MSearchResults" id="MSearchResults">
+		</iframe>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;<a href="http://lua-av.mat.ucsb.edu/">LuaAV</a>: Audiovisual Scripting
+	</div>
+</body>
+</html>

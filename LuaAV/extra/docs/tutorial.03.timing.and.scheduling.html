@@ -1,0 +1,242 @@
+<!-- 
+Template Variables:
+	$ title
+	$ header_image
+	$ filename
+	$ relpath
+	$ tabs
+	$ content
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+
+<title>Timing and Scheduling</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+<div id="titlearea">
+	<div id="header">
+		<img src="LuaAV.header.png" height="200" />
+	</div>
+</div>
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+
+<!-- Tabs Begin -->
+<div id="navrow1" class="tabs">
+	<ul class="tablist">
+		<!-- Tab List note: the current page is marked with class="current", spaces get nbsp-->
+		<li><a href="index.html"><span>Main&#160;Page</span></a></li>
+<li><a href="manual.html"><span>Manual</span></a></li>
+<li><a href="reference.html"><span>Reference</span></a></li>
+		<!--
+		<li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+		<li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+		<li><a href="modules.html"><span>Modules</span></a></li>
+		<li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+		-->
+		
+		<!-- Search Field -->
+		<li>
+			<div id="MSearchBox" class="MSearchBoxInactive">
+        	<span class="left">
+			<img id="MSearchSelect" src="search/mag_sel.png"
+				onmouseover="return searchBox.OnSearchSelectShow()"
+				onmouseout="return searchBox.OnSearchSelectHide()"
+				alt=""/>
+			<input type="text" id="MSearchField" value="Search" accesskey="S"
+				onfocus="searchBox.OnSearchFieldFocus(true)" 
+				onblur="searchBox.OnSearchFieldFocus(false)" 
+				onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          	</span>
+          	<span class="right">
+				<a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+				<img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          	</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Tabs End -->
+
+
+<!-- Sidebar Tree Begin -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+
+<script type="text/javascript">
+  initNavTree('tutorial.03.timing.and.scheduling.html','');
+</script>
+<!-- Sidebar Tree End -->
+<!-- End of Common Header -->
+
+<!--
+Template Variables:
+	$ title
+	$ text
+-->
+<div id="doc-content">
+	<div class="header">
+		<div class="headertitle">
+		<table>
+		<tr>
+			<td><div class="title">Timing and Scheduling</div></td>
+			<td><div class="title-summary"></div></td>
+		</tr>
+		</table>
+		</div>
+	</div> <!-- header -->
+	<div class="contents">
+		<div class="textblock">
+
+<p>LuaAV has a powerful timing system, using on an internal scheduler that preserves deterministic ordering and logical timestamps to nanosecond accuracy. The deterministic ordering and accuracy is preserved in many messages to the audio system, such as adding/removing synths.</p>
+
+<p>The main scheduler follows the cpu clock as closely as possible, usually within and accuracy of around 10 milliseconds; however when slow functions are called (such as loading files and creating complex resources such as windows), the scheduler may experience a temporary drop-out, from which it will attempt to recover as soon as possible.</p>
+
+<p>The Lua language itself does not have means to control time, however this has been added in LuaAV via the <a href="http://lua-av.mat.ucsb.edu/doc/LuaAV/time.html" target="_blank">LuaAV.time</a> module. Several of the functions in this module are so useful that they are pre-loaded as globals in every script:</p>
+<ol>
+	<li>now()</li>
+	<li>wait()</li>
+	<li>go()</li>
+	<li>event()</li>
+</ol>
+<p>Printing out now() in a new script will return the logical time (in seconds) since the script was loaded. Until we start scheduling with time, all script actions occur immediately, so now() will return 0.</p>
+
+<p>The <em>wait()</em> function allows us to pause the execution of the script for a number of seconds, after which it will continue. The following script will print out the current logical time every 0.1 seconds (100 ms):</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">period</span> <span class="lua-operator">=</span> <span class="lua-number">0.1</span>
+<span class="lua-keyword">while</span> <span class="lua-keyword">true</span> <span class="lua-keyword">do</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">now</span><span class="lua-operator">(</span><span class="lua-operator">)</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">wait</span><span class="lua-operator">(</span><span class="lua-identifier">period</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+</pre>
+
+<p>This is ok, but there's nothing we can do in between each wait, so this kind of control over time is still quite minor.</p>
+
+<p>Fortunately, Lua provides a way to create parallelism within a script, using a coroutines. One way of thinking about a coroutines is that it is like a parallel function or script state; another way to think about it is as a function that can be paused in mid execution, while Lua goes off to execute some other code, and to later returned to (resume) at the point at which it paused (yielded).</p>
+
+<p>LuaAV adds more power to coroutines by connecting them with the scheduler. A convenience function <em>go()</em> will take a function and arguments, create a coroutine based on that function and arguments, and schedule this coroutine within the scheduler. Now we can create many parallel copies of the same function that can be scheduled alongside each other, each with potentially distinct timing, but without losing deterministic accuracy:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">function</span> <span class="lua-identifier">clockprinter</span><span class="lua-operator">(</span><span class="lua-identifier">name</span><span class="lua-operator">,</span> <span class="lua-identifier">period</span><span class="lua-operator">)</span> 
+    <span class="lua-keyword">while</span> <span class="lua-keyword">true</span> <span class="lua-keyword">do</span>
+        <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">now</span><span class="lua-operator">(</span><span class="lua-operator">)</span><span class="lua-operator">,</span> <span class="lua-identifier">name</span><span class="lua-operator">)</span> 
+        <span class="lua-identifier">wait</span><span class="lua-operator">(</span><span class="lua-identifier">period</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-identifier">go</span><span class="lua-operator">(</span><span class="lua-identifier">clockprinter</span><span class="lua-operator">,</span> <span class="lua-string">"T O C K!"</span><span class="lua-operator">,</span> <span class="lua-number">4</span><span class="lua-operator">)</span> 
+<span class="lua-identifier">go</span><span class="lua-operator">(</span><span class="lua-identifier">clockprinter</span><span class="lua-operator">,</span> <span class="lua-string">"...tick..."</span><span class="lua-operator">,</span> <span class="lua-number">1</span><span class="lua-operator">)</span>
+</pre>
+
+<p>The <em>go()</em> function can also take an optional first argument (delay in seconds), which allows us to schedule it to occur at some point in the future:</p>
+
+<pre class="inling-fragment"><span class="lua-identifier">go</span><span class="lua-operator">(</span><span class="lua-number">2</span><span class="lua-operator">,</span> <span class="lua-identifier">clockprinter</span><span class="lua-operator">,</span> <span class="lua-string">"...tick..."</span><span class="lua-operator">,</span> <span class="lua-number">1</span><span class="lua-operator">)</span> <span class="lua-comment">-- will start 2 seconds later</span></pre>
+
+<p>Note that the even if the delay is 0, or is not given, the coroutine will not run immediately; <em>go()</em> simply adds the coroutine to the internal scheduler. (Lua is single-threaded by design, which means that only one actual function is executing at any time.) The scheduled function will not begin running until the context in which it was launched using <em>go()</em> yields with a <em>wait()</em> command, or reaches the end of the script.</p>
+
+<h3>Scheduling with events</h3>
+<p>Sometimes we want to schedule activity to occur not at a given time, but when a given situation occurs. To support this, the <em>go()</em> and <em>wait()</em> functions can also take a string argument in place of a duration. The string represents a unique event.</p>
+
+<p>The <em>event()</em> function can then be used to resume ALL coroutines that were scheduled against or waiting upon a particular event. A classic use-case of this is to make sure that OpenGL rendering commands only execute during a window's <em>draw()</em> method. The following example shows how a function <em>drawstuff() </em>is scheduled to execute only when the <em>draw</em> event occurs, and once it does, to wait until subsequent <em>draw</em> events to continue rendering:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">gl</span> <span class="lua-operator">=</span> <span class="lua-identifier">require</span><span class="lua-operator">(</span><span class="lua-string">"opengl"</span><span class="lua-operator">)</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">GL</span> <span class="lua-operator">=</span> <span class="lua-identifier">gl</span>
+
+<span class="lua-identifier">win</span> <span class="lua-operator">=</span> <span class="lua-identifier">Window</span><span class="lua-operator">(</span><span class="lua-string">"test"</span><span class="lua-operator">)</span>
+
+<span class="lua-keyword">function</span> <span class="lua-identifier">drawstuff</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">while</span> <span class="lua-keyword">true</span> <span class="lua-keyword">do</span>
+        <span class="lua-identifier">gl.Begin</span><span class="lua-operator">(</span><span class="lua-identifier">gl.LINES</span><span class="lua-operator">)</span>
+            <span class="lua-identifier">gl.Vertex</span><span class="lua-operator">(</span><span class="lua-operator">-</span><span class="lua-identifier">math.cos</span><span class="lua-operator">(</span><span class="lua-identifier">now</span><span class="lua-operator">(</span><span class="lua-operator">)</span><span class="lua-operator">)</span><span class="lua-operator">,</span> <span class="lua-identifier">math.sin</span><span class="lua-operator">(</span><span class="lua-identifier">now</span><span class="lua-operator">(</span><span class="lua-operator">)</span><span class="lua-operator">)</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">)</span>
+            <span class="lua-identifier">gl.Vertex</span><span class="lua-operator">(</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">gl.End</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">wait</span><span class="lua-operator">(</span><span class="lua-string">"draw"</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-identifier">go</span><span class="lua-operator">(</span><span class="lua-string">"draw"</span><span class="lua-operator">,</span> <span class="lua-identifier">drawstuff</span><span class="lua-operator">)</span>
+
+<span class="lua-keyword">function</span> <span class="lua-identifier">win</span><span class="lua-operator">:</span><span class="lua-identifier">draw</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+    <span class="lua-comment">-- resume any functions waiting on the draw event</span>
+    <span class="lua-identifier">event</span><span class="lua-operator">(</span><span class="lua-string">"draw"</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+</pre>
+
+<p>The <em>event()</em> function can also take additional arguments; these arguments are returned by any corresponding wait(). Using this feature quite powerful event-based programming systems are possible.</p>
+
+<h3>Script-controlled schedulers</h3>
+<p>Users can create their own schedulers, which are independent of CPU clock, using the L<em>uaAV.time.scheduler()</em> function. A scheduler is an object that provides its own <em>scheduler.now()</em>, <em>scheduler.wait()</em> and <em>scheduler.go()</em> functions. The logical time of this user-controlled scheduler is not tied to the CPU clock, but instead is advanced within the script using the <em>scheduler.advance()</em> or <em>scheduler.update()</em> functions. For more information, see the <a href="LuaAV.time.html">LuaAV.time</a> module.</p>
+
+<h3>Timing and the OpenGL Window</h3>
+<p>Callbacks to draw the OpenGL window might not be scheduled with this tight accuracy, since they are dependent on timing factors outside their control (such as graphics drivers and GPU load). However, they will occur as closely as possible to the rate specified by the win.fps attribute.</p>
+
+		</div> <!-- textblock -->
+	</div> <!-- contents -->
+</div> <!-- doc-content -->
+
+
+	<div id="nav-path" class="navpath">
+		<ul>
+		<!-- window showing the filter options -->
+		<div id="MSearchSelectWindow"
+			 onmouseover="return searchBox.OnSearchSelectShow()"
+			 onmouseout="return searchBox.OnSearchSelectHide()"
+			 onkeydown="return searchBox.OnSearchSelectKey(event)">
+	
+		<!-- This stuff pops up a menu that "kind of" works -->
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)">
+			<span class="SelectionMark">&#160;</span>All
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)">
+			<span class="SelectionMark">&#160;</span>Data Structures
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)">
+			<span class="SelectionMark">&#160;</span>Variables</a>
+	</div>
+	
+	<!-- iframe showing the search results (closed by default) -->
+	<div id="MSearchResultsWindow">
+		<iframe src="javascript:void(0)" frameborder="0" 
+				name="MSearchResults" id="MSearchResults">
+		</iframe>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;<a href="http://lua-av.mat.ucsb.edu/">LuaAV</a>: Audiovisual Scripting
+	</div>
+</body>
+</html>

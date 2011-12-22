@@ -1,0 +1,1044 @@
+<!-- 
+Template Variables:
+	$ title
+	$ header_image
+	$ filename
+	$ relpath
+	$ tabs
+	$ content
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+
+<title>opengl.sketch</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+<div id="titlearea">
+	<div id="header">
+		<img src="LuaAV.header.png" height="200" />
+	</div>
+</div>
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+
+<!-- Tabs Begin -->
+<div id="navrow1" class="tabs">
+	<ul class="tablist">
+		<!-- Tab List note: the current page is marked with class="current", spaces get nbsp-->
+		<li><a href="index.html"><span>Main&#160;Page</span></a></li>
+<li><a href="manual.html"><span>Manual</span></a></li>
+<li><a href="reference.html"><span>Reference</span></a></li>
+		<!--
+		<li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+		<li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+		<li><a href="modules.html"><span>Modules</span></a></li>
+		<li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+		-->
+		
+		<!-- Search Field -->
+		<li>
+			<div id="MSearchBox" class="MSearchBoxInactive">
+        	<span class="left">
+			<img id="MSearchSelect" src="search/mag_sel.png"
+				onmouseover="return searchBox.OnSearchSelectShow()"
+				onmouseout="return searchBox.OnSearchSelectHide()"
+				alt=""/>
+			<input type="text" id="MSearchField" value="Search" accesskey="S"
+				onfocus="searchBox.OnSearchFieldFocus(true)" 
+				onblur="searchBox.OnSearchFieldFocus(false)" 
+				onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          	</span>
+          	<span class="right">
+				<a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+				<img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          	</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Tabs End -->
+
+
+<!-- Sidebar Tree Begin -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+
+<script type="text/javascript">
+  initNavTree('opengl.sketch.html','');
+</script>
+<!-- Sidebar Tree End -->
+<!-- End of Common Header -->
+
+<!--
+Template Variables:
+	$ title
+	$ text
+-->
+<div id="doc-content">
+	<div class="header">
+		<div class="headertitle">
+		<table>
+		<tr>
+			<td><div class="title"><a href="#details">opengl.sketch</a></div></td>
+			<td><div class="title-summary">&nbsp;Handy&nbsp;sketching&nbsp;functions&nbsp;for&nbsp;OpenGL</div></td>
+		</tr>
+		</table>
+		</div>
+	</div> <!-- header -->
+	<div class="contents">
+		<div class="textblock">
+
+<!-- Pane Contents -->
+<div class="contents">
+
+<table class="memberdecls">
+ 
+<tr><td colspan="2">
+	<h2>
+		<!-- TOC Anchor -->
+		<a name="Functions"></a>Functions
+	</h2>
+</td></tr>
+
+ 
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#arc">arc</a>(a1, a2, n)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw an arc<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#axes">axes</a>(alpha)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw xyz axes<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#circle">circle</a>(n)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a circle<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#cone">cone</a>(apex, dir, r, n)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a cone<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#disc">disc</a>(pos, dir, r, n)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a disc<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#enter_ortho">enter_ortho</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Enter orthographic drawing mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#leave_ortho">leave_ortho</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Leave orthographic drawing mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#pixquad">pixquad</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a quad with texture coordinates in pixel mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#quad">quad</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a quad with texture coordinates in normalized mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#tube">tube</a>(pos, dir, r, n, thickness)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a tube<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#viewalign">viewalign</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the current matrix to be view-aligned<br/></td>
+</tr>
+
+
+
+</table>
+
+
+<!-- Details -->
+
+<a name="details" id="details"></a>
+<h2>Detailed Description</h2>
+<p>The sketch module contains functions for commonly used drawing  actions such as setting up orthographic drawing or drawing a textured  quad.</p>
+
+ 
+<hr/>
+<!-- Section Details -->
+<h2>Functions</h2>
+ 
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="arc"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">arc</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>a1</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>a2</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>n</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Draw an arc of radius 1.  The arc function only specifies the  vertices, not the primitive used to actually draw the arc.  arc  should be wrapped in glBegin/glEnd calls.</p><p> 
+<pre class="fragment">
+     <span class="lua-comment">-- draw an arc from -10 degrees to 80 degress in 30 steps</span>
+     <span class="lua-identifier">gl.Begin</span><span class="lua-operator">(</span><span class="lua-identifier">GL.LINE_LOOP</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">sketch.arc</span><span class="lua-operator">(</span><span class="lua-operator">-</span><span class="lua-number">10</span><span class="lua-operator">,</span> <span class="lua-number">80</span><span class="lua-operator">,</span> <span class="lua-number">30</span><span class="lua-operator">)</span>
+     <span class="lua-identifier">gl.End</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+ </pre>
+</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">a1</td><td>The starting angle</td></tr>
+
+		<tr><td class="paramname">a2</td><td>The stopping angle</td></tr>
+
+		<tr><td class="paramname">n</td><td>Optional number of divisions in the arc (default 20)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="axes"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">axes</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>alpha</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>The axes have unit length, identity rotation and are  centered at the origin.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">alpha</td><td>The alpha (default 1)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="circle"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">circle</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>n</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Draw a circle of radius 1.  The circle function only specifies the  vertices, not the primitive used to actually draw the circle.  circle  should be wrapped in glBegin/glEnd calls.</p><p> 
+<pre class="fragment">
+     <span class="lua-identifier">gl.Begin</span><span class="lua-operator">(</span><span class="lua-identifier">GL.LINE_LOOP</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">sketch.circle</span><span class="lua-operator">(</span><span class="lua-number">30</span><span class="lua-operator">)</span>
+     <span class="lua-identifier">gl.End</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+ </pre>
+</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">n</td><td>Optional number of divisions in the circle (default 20)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="cone"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">cone</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>apex</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>dir</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>r</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>n</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Draw a cone with a specified radius and direction. The cone function </p><p> 
+<pre class="fragment">
+     <span class="lua-comment">-- cone at the origin pointing along the y-axis</span>
+     <span class="lua-comment">-- with radius 0.5 and 30 divisions</span>
+     <span class="lua-identifier">gl.Begin</span><span class="lua-operator">(</span><span class="lua-identifier">GL.TRIANGLES</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">sketch.cone</span><span class="lua-operator">(</span><span class="lua-operator">{</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">}</span><span class="lua-operator">,</span> <span class="lua-operator">{</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">1</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">}</span><span class="lua-operator">,</span> <span class="lua-number">0.5</span><span class="lua-operator">,</span> <span class="lua-number">30</span><span class="lua-operator">)</span>
+     <span class="lua-identifier">gl.End</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+ </pre>
+</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">apex</td><td>The apex</td></tr>
+
+		<tr><td class="paramname">dir</td><td>The direction</td></tr>
+
+		<tr><td class="paramname">r</td><td>The radius</td></tr>
+
+		<tr><td class="paramname">n</td><td>The number of divisions (default 20)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="disc"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">disc</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pos</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>dir</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>r</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>n</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Draw a disc in 3D with a specified radius and direction.  The circle  function could be used to achieve the same result, but it requires  calculating the correct rotation and applying it with glRotate.  This  function explicitly calculates the vertices in 3D</p><p> 
+<pre class="fragment">
+     <span class="lua-comment">-- disc at the origin pointing along the y-axis</span>
+     <span class="lua-comment">-- with radius 0.5 and 30 divisions</span>
+     <span class="lua-identifier">gl.Begin</span><span class="lua-operator">(</span><span class="lua-identifier">GL.POLYGON</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">gl.Normal</span><span class="lua-operator">(</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">1</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">sketch.disc</span><span class="lua-operator">(</span><span class="lua-operator">{</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">}</span><span class="lua-operator">,</span> <span class="lua-operator">{</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">1</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">}</span><span class="lua-operator">,</span> <span class="lua-number">0.5</span><span class="lua-operator">,</span> <span class="lua-number">30</span><span class="lua-operator">)</span>
+     <span class="lua-identifier">gl.End</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+ </pre>
+</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pos</td><td>The position</td></tr>
+
+		<tr><td class="paramname">dir</td><td>The direction</td></tr>
+
+		<tr><td class="paramname">r</td><td>The radius (default 1)</td></tr>
+
+		<tr><td class="paramname">n</td><td>The number of divisions (default 20)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="enter_ortho"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">enter_ortho</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Orthographic modes can be descibed as <b>normalized</b>, <b>pixel</b>, or <b>arbitrary</b>.  The  two most common are noramlized and pixel.  In the sketch module, normalized is defined as a view that  spans [-1, -1] x [1, 1] with [-1, -1] in the <b>lower left</b> corner.  Pixel is defined as a view that  spans [0, 0] x [w, h] with [0, 0] in the <b>upper left</b> corner.</p><p> 
+<pre class="fragment">
+     <span class="lua-comment">-- no arguments, uses the default (-1, -1, 2, 2) normalized mode</span>
+     <span class="lua-comment">-- glOrtho(-1, 1, -1, 1, -100, 100)</span>
+     <span class="lua-identifier">enter_ortho</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+     
+     <span class="lua-comment">-- 2 arguments, sets up a pixel mode (0, 0, w, h)</span>
+     <span class="lua-comment">-- glOrtho(0, w, h, 0, -100, 100);</span>
+     <span class="lua-identifier">enter_ortho</span><span class="lua-operator">(</span><span class="lua-identifier">w</span><span class="lua-operator">,</span> <span class="lua-identifier">h</span><span class="lua-operator">)</span>
+     
+     <span class="lua-comment">-- 4 arguments, sets an arbitrary mode (x, y, w, h)</span>
+     <span class="lua-comment">-- glOrtho(x, x+w, y, y+h, -100, 100)</span>
+     <span class="lua-identifier">enter_ortho</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">,</span> <span class="lua-identifier">y</span><span class="lua-operator">,</span> <span class="lua-identifier">w</span><span class="lua-operator">,</span> <span class="lua-identifier">h</span><span class="lua-operator">)</span>
+ </pre>
+</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Either a table or unpacked list of up to 4 values.  If  2 values are given, they set the width of the orthographic  drawing area with the upper left corner being (0, 0). If 4 values  are given, they set the (x, y, w, h) of the orthographic view. If no values are given, the view is set to a normalized drawing area  of (-1, -1, 2, 2) with a drawing area of [-1, -1] x [1, 1].</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="leave_ortho"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">leave_ortho</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Pop the GL_MODELVIEW and GL_PROJECTION matrices set when entering  orthographic drawing.  The glMatrixMode will be GL_MODELVIEW after  the function is called.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="pixquad"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">pixquad</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Draw a quad in <i>pixel</i> orthographic mode.  Depending on the number of  arguments, different parameters of the quad's position and dimension will be set:</p><p> 
+<pre class="fragment">
+     <span class="lua-comment">-- no arguments, uses (0, 0, 512, 512) for coordinates [0, 0] x [512, 512]</span>
+     <span class="lua-identifier">quad</span><span class="lua-operator">(</span><span class="lua-operator">)</span> 
+     
+     <span class="lua-comment">-- 2 arguments, uses (0, 0, w, h) for coordinates [0, 0] x [w/2, h/2]</span>
+     <span class="lua-comment">-- The quad will be centered on (0, 0)</span>
+     <span class="lua-identifier">quad</span><span class="lua-operator">(</span><span class="lua-identifier">w</span><span class="lua-operator">,</span> <span class="lua-identifier">h</span><span class="lua-operator">)</span> 
+     
+     <span class="lua-comment">-- 4 arguments, uses (x, y, w, h) for coordinates [x, y] x [x+w, y+h]</span>
+     <span class="lua-identifier">quad</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">,</span> <span class="lua-identifier">y</span><span class="lua-operator">,</span> <span class="lua-identifier">w</span><span class="lua-operator">,</span> <span class="lua-identifier">h</span><span class="lua-operator">)</span>
+ </pre>
+</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Either a table or list of up to 4 unpacked values.  If 2  arguments are given, they set the width and height of the  quad.  If 4 arguments are given, they set the (x, y, w, h) of  the quad.  No arguments uses the default (0, 0, 512, 512).</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="quad"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">quad</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Draw a quad in <i>normalized</i> orthographic mode.  Depending on the number of  arguments, different parameters of the quad's position and dimension will be set:</p><p> 
+<pre class="fragment">
+     <span class="lua-comment">-- no arguments, uses (-1, -1, 2, 2) for coordinates [-1, -1] x [1, 1]</span>
+     <span class="lua-identifier">quad</span><span class="lua-operator">(</span><span class="lua-operator">)</span> 
+     
+     <span class="lua-comment">-- 2 arguments, uses (-w/2, -h/2, w, h) for coordinates [-w/2, -h/2] x [w/2, h/2]</span>
+     <span class="lua-comment">-- The quad will be centered on (0, 0)</span>
+     <span class="lua-identifier">quad</span><span class="lua-operator">(</span><span class="lua-identifier">w</span><span class="lua-operator">,</span> <span class="lua-identifier">h</span><span class="lua-operator">)</span> 
+     
+     <span class="lua-comment">-- 4 arguments, uses (x, y, w, h) for coordinates [x, y] x [x+w, y+h]</span>
+     <span class="lua-identifier">quad</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">,</span> <span class="lua-identifier">y</span><span class="lua-operator">,</span> <span class="lua-identifier">w</span><span class="lua-operator">,</span> <span class="lua-identifier">h</span><span class="lua-operator">)</span>
+ </pre>
+</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Either a table or list of up to 4 unpacked values.  If 2  arguments are given, they set the width and height of the  quad.  If 4 arguments are given, they set the (x, y, w, h) of  the quad.  No arguments uses the default (-1, -1, 2, 2).</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="tube"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">tube</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pos</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>dir</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>r</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>n</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>thickness</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Draw a tube in 3D with a specified radius, direction, and thickness.</p><p> 
+<pre class="fragment">
+     <span class="lua-comment">-- tube at the origin pointing along the y-axis</span>
+     <span class="lua-comment">-- with radius 0.5, 30 divisions, and 0.25 thickness</span>
+     <span class="lua-identifier">gl.Begin</span><span class="lua-operator">(</span><span class="lua-identifier">GL.QUAD_STRIP</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">gl.Normal</span><span class="lua-operator">(</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">1</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">sketch.tube</span><span class="lua-operator">(</span><span class="lua-operator">{</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">}</span><span class="lua-operator">,</span> <span class="lua-operator">{</span><span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">1</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">}</span><span class="lua-operator">,</span> <span class="lua-number">0.5</span><span class="lua-operator">,</span> <span class="lua-number">30</span><span class="lua-operator">,</span> <span class="lua-number">0.25</span><span class="lua-operator">)</span>
+     <span class="lua-identifier">gl.End</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+ </pre>
+</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pos</td><td>The position</td></tr>
+
+		<tr><td class="paramname">dir</td><td>The direction</td></tr>
+
+		<tr><td class="paramname">r</td><td>The radius (default 1)</td></tr>
+
+		<tr><td class="paramname">n</td><td>The number of divisions (default 20)</td></tr>
+
+		<tr><td class="paramname">thickness</td><td>The thickness (default 0.1)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="viewalign"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">viewalign</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Setting a view-aligned matrix only works when glMatrixMode is set  to GL_MODELVIEW and the matrix has unit scale (i.e. no glScale functions  have been called).</p><p> After this function has been called, any 3D drawing confined to the xy-plane  will be orthogonal to the viewport.</p><p> View-alignment is useful when drawing sprites or 2D shapes associated with a  3D rotation frame.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+
+
+
+
+</div> <!-- contents -->
+
+
+		</div> <!-- textblock -->
+	</div> <!-- contents -->
+</div> <!-- doc-content -->
+
+
+	<div id="nav-path" class="navpath">
+		<ul>
+		<!-- window showing the filter options -->
+		<div id="MSearchSelectWindow"
+			 onmouseover="return searchBox.OnSearchSelectShow()"
+			 onmouseout="return searchBox.OnSearchSelectHide()"
+			 onkeydown="return searchBox.OnSearchSelectKey(event)">
+	
+		<!-- This stuff pops up a menu that "kind of" works -->
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)">
+			<span class="SelectionMark">&#160;</span>All
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)">
+			<span class="SelectionMark">&#160;</span>Data Structures
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)">
+			<span class="SelectionMark">&#160;</span>Variables</a>
+	</div>
+	
+	<!-- iframe showing the search results (closed by default) -->
+	<div id="MSearchResultsWindow">
+		<iframe src="javascript:void(0)" frameborder="0" 
+				name="MSearchResults" id="MSearchResults">
+		</iframe>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;<a href="http://lua-av.mat.ucsb.edu/">LuaAV</a>: Audiovisual Scripting
+	</div>
+</body>
+</html>

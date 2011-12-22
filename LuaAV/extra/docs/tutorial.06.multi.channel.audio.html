@@ -1,0 +1,266 @@
+<!-- 
+Template Variables:
+	$ title
+	$ header_image
+	$ filename
+	$ relpath
+	$ tabs
+	$ content
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+
+<title>Multi-Channel Audio</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+<div id="titlearea">
+	<div id="header">
+		<img src="LuaAV.header.png" height="200" />
+	</div>
+</div>
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+
+<!-- Tabs Begin -->
+<div id="navrow1" class="tabs">
+	<ul class="tablist">
+		<!-- Tab List note: the current page is marked with class="current", spaces get nbsp-->
+		<li><a href="index.html"><span>Main&#160;Page</span></a></li>
+<li><a href="manual.html"><span>Manual</span></a></li>
+<li><a href="reference.html"><span>Reference</span></a></li>
+		<!--
+		<li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+		<li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+		<li><a href="modules.html"><span>Modules</span></a></li>
+		<li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+		-->
+		
+		<!-- Search Field -->
+		<li>
+			<div id="MSearchBox" class="MSearchBoxInactive">
+        	<span class="left">
+			<img id="MSearchSelect" src="search/mag_sel.png"
+				onmouseover="return searchBox.OnSearchSelectShow()"
+				onmouseout="return searchBox.OnSearchSelectHide()"
+				alt=""/>
+			<input type="text" id="MSearchField" value="Search" accesskey="S"
+				onfocus="searchBox.OnSearchFieldFocus(true)" 
+				onblur="searchBox.OnSearchFieldFocus(false)" 
+				onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          	</span>
+          	<span class="right">
+				<a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+				<img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          	</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Tabs End -->
+
+
+<!-- Sidebar Tree Begin -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+
+<script type="text/javascript">
+  initNavTree('tutorial.06.multi.channel.audio.html','');
+</script>
+<!-- Sidebar Tree End -->
+<!-- End of Common Header -->
+
+<!--
+Template Variables:
+	$ title
+	$ text
+-->
+<div id="doc-content">
+	<div class="header">
+		<div class="headertitle">
+		<table>
+		<tr>
+			<td><div class="title">Multi-Channel Audio</div></td>
+			<td><div class="title-summary"></div></td>
+		</tr>
+		</table>
+		</div>
+	</div> <!-- header -->
+	<div class="contents">
+		<div class="textblock">
+
+<h3>Multi-channel expressions</h3>
+
+<p>LuaAV's <em>audio.Def</em> expressions can handle multi-channel streams quite easily. To expand an expression into multiple channels is a matter of replacing a singular argument with a list. Taking this simple sine tone:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">mono</span> <span class="lua-operator">=</span> <span class="lua-identifier">Def</span><span class="lua-operator">{</span>
+    <span class="lua-identifier">SinOsc</span><span class="lua-operator">{</span> <span class="lua-identifier">freq</span><span class="lua-operator">=</span><span class="lua-number">440</span> <span class="lua-operator">}</span> <span class="lua-operator">*</span> <span class="lua-identifier">Env</span><span class="lua-operator">{</span> <span class="lua-identifier">dur</span><span class="lua-operator">=</span><span class="lua-number">1</span> <span class="lua-operator">}</span>
+<span class="lua-operator">}</span>
+</pre>
+
+<p>We can replace the <em>freq</em> argument of <em>SinOsc</em> with a list, to produce a stereo version:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">stereo</span> <span class="lua-operator">=</span> <span class="lua-identifier">Def</span><span class="lua-operator">{</span>
+    <span class="lua-identifier">SinOsc</span><span class="lua-operator">{</span> <span class="lua-identifier">freq</span><span class="lua-operator">=</span><span class="lua-operator">{</span><span class="lua-number">440</span><span class="lua-operator">,</span> <span class="lua-number">550</span><span class="lua-operator">}</span> <span class="lua-operator">}</span> <span class="lua-operator">*</span> <span class="lua-identifier">Env</span><span class="lua-operator">{</span> <span class="lua-identifier">dur</span><span class="lua-operator">=</span><span class="lua-number">1</span> <span class="lua-operator">}</span>
+<span class="lua-operator">}</span>
+</pre>
+
+<p>In this case, the multiply expression implicitly becomes stereo also, since the first input (the sinewave) is stereo.</p>
+
+<p>For most expression objects, including mathematical operators, the number of output channels will match the greatest number of input channels for any of its inputs, in order to prevent loss of information. Some expression operators calculate their number of output channels differently - for example spatialization expressions such as <em>Pan2</em>.</p>
+
+<p>Where an input stream doesn't have enough channels for the output stream, input stream channels cycle back again. So, for example, if an expression outputs a four-channel stream, but an input is only two-channel, these inputs will map to outputs as 1, 2, 1, 2. If you've used SuperCollider before, this should all seem familiar.</p>
+
+<p>To select individual channels or re-map channels, the <em>Channels</em> expression generator can be used. Very simply, it takes a multi-channel expression as first argument, and one or more channel number arguments to determine which channels of the input stream will be output. For example, to select only the right channel:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">osc</span> <span class="lua-operator">=</span> <span class="lua-identifier">SinOsc</span><span class="lua-operator">{</span> <span class="lua-identifier">freq</span><span class="lua-operator">=</span><span class="lua-operator">{</span><span class="lua-number">440</span><span class="lua-operator">,</span> <span class="lua-number">550</span><span class="lua-operator">}</span> <span class="lua-operator">}</span>    <span class="lua-comment">-- stereo</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">right</span> <span class="lua-operator">=</span> <span class="lua-identifier">Channels</span><span class="lua-operator">{</span> <span class="lua-identifier">osc</span><span class="lua-operator">,</span> <span class="lua-number">2</span> <span class="lua-operator">}</span>        <span class="lua-comment">-- mono</span>
+</pre>
+
+<p>And to swap left and right channels:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">swapped</span> <span class="lua-operator">=</span> <span class="lua-identifier">Channels</span><span class="lua-operator">{</span> <span class="lua-identifier">osc</span><span class="lua-operator">,</span> <span class="lua-number">2</span><span class="lua-operator">,</span> <span class="lua-number">1</span> <span class="lua-operator">}</span>
+</pre>
+
+<p>A more common need is to mix a multi-channel stream down to mono or stereo; the Mono and Stereo expressions make this easy:</p>
+
+<pre class="fragment">
+<span class="lua-comment">-- a four-channel stream:</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">expr</span> <span class="lua-operator">=</span> <span class="lua-identifier">SinOsc</span><span class="lua-operator">{</span> <span class="lua-identifier">freq</span><span class="lua-operator">=</span><span class="lua-operator">{</span><span class="lua-number">440</span><span class="lua-operator">,</span> <span class="lua-number">550</span><span class="lua-operator">,</span> <span class="lua-number">660</span><span class="lua-operator">,</span> <span class="lua-number">770</span><span class="lua-operator">}</span> <span class="lua-operator">}</span> <span class="lua-operator">*</span> <span class="lua-identifier">Env</span><span class="lua-operator">{</span> <span class="lua-identifier">dur</span><span class="lua-operator">=</span><span class="lua-number">1</span> <span class="lua-operator">}</span> <span class="lua-operator">*</span> <span class="lua-number">0.25</span>
+
+<span class="lua-comment">-- no mix; on a stereo system, you will only hear the first 2 channels:</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">mono</span> <span class="lua-operator">=</span> <span class="lua-identifier">Def</span><span class="lua-operator">{</span> <span class="lua-identifier">expr</span> <span class="lua-operator">}</span>
+
+<span class="lua-comment">-- mix to mono (all channels summed):</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">mono</span> <span class="lua-operator">=</span> <span class="lua-identifier">Def</span><span class="lua-operator">{</span> <span class="lua-identifier">Mono</span><span class="lua-operator">{</span> <span class="lua-identifier">expr</span> <span class="lua-operator">}</span> <span class="lua-operator">}</span>
+
+<span class="lua-comment">-- mix to stereo (left gets channels 1 & 3, right gets channels 2 & 4):</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">stereo</span> <span class="lua-operator">=</span> <span class="lua-identifier">Def</span><span class="lua-operator">{</span> <span class="lua-identifier">Stereo</span><span class="lua-operator">{</span> <span class="lua-identifier">expr</span> <span class="lua-operator">}</span> <span class="lua-operator">}</span>
+</pre>
+
+<h3>Multi-channel parameters</h3>
+
+<p>Parameters can also be expanded in a similar way. In the following example, the <em>freq</em> parameter is implicitly set to be stereo by assigning a list of two default values. Consequently any use of <em>P"freq"</em> in the expression is interpreted as a stereo stream:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">pstereo</span> <span class="lua-operator">=</span> <span class="lua-identifier">Def</span><span class="lua-operator">{</span>
+    <span class="lua-identifier">dur</span> <span class="lua-operator">=</span> <span class="lua-number">1</span><span class="lua-operator">,</span>
+    <span class="lua-identifier">freq</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-number">440</span><span class="lua-operator">,</span> <span class="lua-number">550</span> <span class="lua-operator">}</span><span class="lua-operator">,</span> 
+    <span class="lua-identifier">SinOsc</span><span class="lua-operator">{</span> <span class="lua-identifier">freq</span><span class="lua-operator">=</span><span class="lua-identifier">P</span><span class="lua-string">"freq"</span> <span class="lua-operator">}</span> <span class="lua-operator">*</span> <span class="lua-identifier">Env</span><span class="lua-operator">{</span> <span class="lua-identifier">dur</span><span class="lua-operator">=</span><span class="lua-identifier">P</span><span class="lua-string">"dur"</span> <span class="lua-operator">}</span>
+<span class="lua-operator">}</span>
+</pre>
+
+<p>Since the parameter is multi-channel, we can assign multi-channel values to it; again, by assigning a list of values.</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">voice</span> <span class="lua-operator">=</span> <span class="lua-identifier">pstereo</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+<span class="lua-keyword">for</span> <span class="lua-identifier">i</span> <span class="lua-operator">=</span> <span class="lua-number">1</span><span class="lua-operator">,</span> <span class="lua-number">10</span> <span class="lua-keyword">do</span>
+    <span class="lua-identifier">voice.freq</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-identifier">i</span> <span class="lua-operator">*</span> <span class="lua-number">110</span><span class="lua-operator">,</span> <span class="lua-operator">(</span><span class="lua-number">10</span><span class="lua-operator">-</span><span class="lua-identifier">i</span><span class="lua-operator">)</span> <span class="lua-operator">*</span> <span class="lua-number">110</span> <span class="lua-operator">}</span> <span class="lua-comment">-- set left & right channels to different frequencies</span>
+    <span class="lua-identifier">wait</span><span class="lua-operator">(</span><span class="lua-number">0.1</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+</pre>
+
+<p>If the list is too long, extra values will be ignored (it is not possible to change the number of channels of a parameter). If the list contains nils, these channels will not be updated (the previous parameter value for that channel will still hold). In the following example, left and right frequency parameters are updated alternately:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">voice</span> <span class="lua-operator">=</span> <span class="lua-identifier">pstereo</span><span class="lua-operator">{</span> <span class="lua-identifier">dur</span><span class="lua-operator">=</span><span class="lua-number">2</span> <span class="lua-operator">}</span>
+<span class="lua-keyword">for</span> <span class="lua-identifier">i</span> <span class="lua-operator">=</span> <span class="lua-number">1</span><span class="lua-operator">,</span> <span class="lua-number">10</span> <span class="lua-keyword">do</span>
+    <span class="lua-identifier">voice.freq</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-keyword">nil</span><span class="lua-operator">,</span> <span class="lua-operator">(</span><span class="lua-number">10</span><span class="lua-operator">-</span><span class="lua-identifier">i</span><span class="lua-operator">)</span> <span class="lua-operator">*</span> <span class="lua-number">110</span> <span class="lua-operator">}</span> <span class="lua-comment">-- set right channel only</span>
+    <span class="lua-identifier">wait</span><span class="lua-operator">(</span><span class="lua-number">0.1</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">voice.freq</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-identifier">i</span> <span class="lua-operator">*</span> <span class="lua-number">110</span><span class="lua-operator">,</span> <span class="lua-keyword">nil</span> <span class="lua-operator">}</span> <span class="lua-comment">-- set left channel only</span>
+    <span class="lua-identifier">wait</span><span class="lua-operator">(</span><span class="lua-number">0.1</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+</pre>
+
+<p>Setting a multi-channel parameter with a single number however will apply that value to all channels:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">voice</span> <span class="lua-operator">=</span> <span class="lua-identifier">pstereo</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+<span class="lua-identifier">voice.freq</span> <span class="lua-operator">=</span> <span class="lua-number">550</span> <span class="lua-comment">-- sets all channels to 550Hz</span>
+</pre>
+
+
+<h3>Panning</h3>
+
+<p>Distributing channels can be more rich though the use of panning laws and spatialization techniques. More will be added to this tutorial soon, but for now, here's the simplest example of a panning oscillator:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">panning</span> <span class="lua-operator">=</span> <span class="lua-identifier">Def</span><span class="lua-operator">{</span>
+    <span class="lua-identifier">Pan2</span><span class="lua-operator">{</span> 
+        <span class="lua-identifier">SinOsc</span><span class="lua-operator">{</span>  <span class="lua-number">440</span> <span class="lua-operator">}</span> <span class="lua-operator">*</span> <span class="lua-identifier">Env</span><span class="lua-operator">{</span> <span class="lua-identifier">dur</span><span class="lua-operator">=</span><span class="lua-number">1</span> <span class="lua-operator">}</span><span class="lua-operator">,</span>
+        <span class="lua-identifier">pan</span> <span class="lua-operator">=</span> <span class="lua-identifier">SinOsc</span><span class="lua-operator">{</span> <span class="lua-number">4</span> <span class="lua-operator">}</span>
+    <span class="lua-operator">}</span>
+<span class="lua-operator">}</span>
+</pre>
+
+		</div> <!-- textblock -->
+	</div> <!-- contents -->
+</div> <!-- doc-content -->
+
+
+	<div id="nav-path" class="navpath">
+		<ul>
+		<!-- window showing the filter options -->
+		<div id="MSearchSelectWindow"
+			 onmouseover="return searchBox.OnSearchSelectShow()"
+			 onmouseout="return searchBox.OnSearchSelectHide()"
+			 onkeydown="return searchBox.OnSearchSelectKey(event)">
+	
+		<!-- This stuff pops up a menu that "kind of" works -->
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)">
+			<span class="SelectionMark">&#160;</span>All
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)">
+			<span class="SelectionMark">&#160;</span>Data Structures
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)">
+			<span class="SelectionMark">&#160;</span>Variables</a>
+	</div>
+	
+	<!-- iframe showing the search results (closed by default) -->
+	<div id="MSearchResultsWindow">
+		<iframe src="javascript:void(0)" frameborder="0" 
+				name="MSearchResults" id="MSearchResults">
+		</iframe>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;<a href="http://lua-av.mat.ucsb.edu/">LuaAV</a>: Audiovisual Scripting
+	</div>
+</body>
+</html>

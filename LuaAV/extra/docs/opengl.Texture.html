@@ -1,0 +1,1423 @@
+<!-- 
+Template Variables:
+	$ title
+	$ header_image
+	$ filename
+	$ relpath
+	$ tabs
+	$ content
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+
+<title>opengl.Texture</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+<div id="titlearea">
+	<div id="header">
+		<img src="LuaAV.header.png" height="200" />
+	</div>
+</div>
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+
+<!-- Tabs Begin -->
+<div id="navrow1" class="tabs">
+	<ul class="tablist">
+		<!-- Tab List note: the current page is marked with class="current", spaces get nbsp-->
+		<li><a href="index.html"><span>Main&#160;Page</span></a></li>
+<li><a href="manual.html"><span>Manual</span></a></li>
+<li><a href="reference.html"><span>Reference</span></a></li>
+		<!--
+		<li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+		<li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+		<li><a href="modules.html"><span>Modules</span></a></li>
+		<li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+		-->
+		
+		<!-- Search Field -->
+		<li>
+			<div id="MSearchBox" class="MSearchBoxInactive">
+        	<span class="left">
+			<img id="MSearchSelect" src="search/mag_sel.png"
+				onmouseover="return searchBox.OnSearchSelectShow()"
+				onmouseout="return searchBox.OnSearchSelectHide()"
+				alt=""/>
+			<input type="text" id="MSearchField" value="Search" accesskey="S"
+				onfocus="searchBox.OnSearchFieldFocus(true)" 
+				onblur="searchBox.OnSearchFieldFocus(false)" 
+				onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          	</span>
+          	<span class="right">
+				<a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+				<img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          	</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Tabs End -->
+
+
+<!-- Sidebar Tree Begin -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+
+<script type="text/javascript">
+  initNavTree('opengl.Texture.html','');
+</script>
+<!-- Sidebar Tree End -->
+<!-- End of Common Header -->
+
+<!--
+Template Variables:
+	$ title
+	$ text
+-->
+<div id="doc-content">
+	<div class="header">
+		<div class="headertitle">
+		<table>
+		<tr>
+			<td><div class="title"><a href="#details">opengl.Texture</a></div></td>
+			<td><div class="title-summary">&nbsp;An&nbsp;object&nbsp;for&nbsp;manipulating&nbsp;buffers&nbsp;of&nbsp;data&nbsp;on&nbsp;the&nbsp;GPU</div></td>
+		</tr>
+		</table>
+		</div>
+	</div> <!-- header -->
+	<div class="contents">
+		<div class="textblock">
+
+<!-- Pane Contents -->
+<div class="contents">
+
+<table class="memberdecls">
+ 
+<tr><td colspan="2">
+	<h2>
+		<!-- TOC Anchor -->
+		<a name="Attributes"></a>Attributes
+	</h2>
+</td></tr>
+
+ 
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.autoclear">Texture.autoclear</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Flag for clearing Texture on startcapture()<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.bordercolor">Texture.bordercolor</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture border color<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.clearcolor">Texture.clearcolor</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Clear color<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.cleardepth">Texture.cleardepth</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Depth clear value<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.dim">Texture.dim</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Dimensions<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.format">Texture.format</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture format<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.magfilter">Texture.magfilter</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture magnification filter<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.minfilter">Texture.minfilter</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture minification filter<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.single_channel">Texture.single_channel</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture format for single channel images<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.target">Texture.target</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture target<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.texid">Texture.texid</a>&nbsp;GET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture ID<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.type">Texture.type</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture type<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.wrap">Texture.wrap</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> OpenGL Texture wrap mode<br/></td>
+</tr>
+
+
+<tr><td colspan="2">
+	<h2>
+		<!-- TOC Anchor -->
+		<a name="Functions"></a>Functions
+	</h2>
+</td></tr>
+
+ 
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture.array">Texture.array</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Get the Texture's internal Array<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:allocate">Texture:allocate</a>(components, type, ...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Allocate internal texture data<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:bind">Texture:bind</a>([unit])</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Bind a texture to a texture unit<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:clear">Texture:clear</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Clear the texture<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:copy">Texture:copy</a>(tex)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Copy a Texture<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:endcapture">Texture:endcapture</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> End rendering to the Texture<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:fromarray">Texture:fromarray</a>([offset], array)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Send a array to the GPU<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:startcapture">Texture:startcapture</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Start rendering to the Texture<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:toarray">Texture:toarray</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Grab the Texture data from the GPU and store it in the Texture's Array<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Texture:unbind">Texture:unbind</a>([unit])</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Unbind a texture from a texture unit<br/></td>
+</tr>
+
+
+
+</table>
+
+
+<!-- Details -->
+
+<a name="details" id="details"></a>
+<h2>Detailed Description</h2>
+<p>Texture can be used to upload buffers of data to the GPU as well as allocate new  buffers that reside solely on the GPU for offscreen rendering.  Additionally, data  can be read from the GPU using a fast-path readback based on Pixel Buffer Objects  by calling Texture:toarray().</p>
+
+ 
+<hr/>
+<!-- Section Details -->
+<h2>Attributes</h2>
+ 
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.autoclear"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.autoclear</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Flag for clearing Texture on startcapture()</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.bordercolor"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.bordercolor</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>The RGBA values as a table</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.clearcolor"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.clearcolor</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>The RGBA values as a table</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.cleardepth"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.cleardepth</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>The depth value on clear</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.dim"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.dim</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Dimensions</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.format"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.format</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible formats GL_COLOR_INDEX, GL_RED, GL_GREEN, GL_BLUE, GL_ALPHA, GL_RGB, GL_RGBA, GL_LUMINANCE,  GL_LUMINANCE_ALPHA, or GL_DEPTH_COMPONENT</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.magfilter"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.magfilter</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible magfilters GL_NEAREST or GL_LINEAR</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.minfilter"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.minfilter</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible minfilters GL_NEAREST, GL_LINEAR, GL_NEAREST_MIPMAP_NEAREST, GL_LINEAR_MIPMAP_NEAREST, GL_NEAREST_MIPMAP_LINEAR,  or GL_LINEAR_MIPMAP_LINEAR</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.single_channel"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.single_channel</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible formats GL_ALPHA, GL_LUMINANCE</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.target"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.target</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible targets GL_TEXTURE_1D, GL_TEXTURE_2D,  GL_TEXTURE_RECTANGLE_ARB, or GL_TEXTURE_3D</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.texid"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.texid</td>
+		<td></td>
+		<td>GET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> OpenGL Texture ID</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.type"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.type</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible types type GL_UNSIGNED_BYTE, GL_BYTE, GL_BITMAP, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT,  GL_INT, and GL_FLOAT</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.wrap"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.wrap</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>Possible wrap modesGL_CLAMP_TO_EDGE, GL_CLAMP, GL_CLAMP_TO_BORDER,  GL_MIRRORED_REPEAT (2D only), or GL_REPEAT (2D only)</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+
+
+<hr/>
+<!-- Section Details -->
+<h2>Functions</h2>
+ 
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture.array"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture.array</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Get the Texture's internal Array</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:allocate"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Texture:allocate</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>components</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>type</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>...</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Allocate internal texture data</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">components</td><td>The number of components </td></tr>
+
+		<tr><td class="paramname">type</td><td>The data type</td></tr>
+
+		<tr><td class="paramname">...</td><td>The x, y, z dimensions as a table or unpacked</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:bind"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture:bind</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>[unit]</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Bind a texture to a texture unit</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">[unit]</td><td>The index of the texture unit (default is 0)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:clear"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture:clear</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Clear the texture</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:copy"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture:copy</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>tex</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Copy a Texture</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">tex</td><td>The Texture to copy</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:endcapture"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture:endcapture</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> End rendering to the Texture</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:fromarray"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Texture:fromarray</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>[offset]</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>array</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Send a array to the GPU</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">[offset]</td><td>The offset into the internal texture buffer</td></tr>
+
+		<tr><td class="paramname">array</td><td>The array</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:startcapture"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture:startcapture</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Start rendering to the Texture</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:toarray"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture:toarray</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Grab the Texture data from the GPU and store it in the Texture's Array</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Texture:unbind"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Texture:unbind</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>[unit]</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Unbind a texture from a texture unit</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">[unit]</td><td>The index of the texture unit (default is 0)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+
+
+
+
+</div> <!-- contents -->
+
+
+		</div> <!-- textblock -->
+	</div> <!-- contents -->
+</div> <!-- doc-content -->
+
+
+	<div id="nav-path" class="navpath">
+		<ul>
+		<!-- window showing the filter options -->
+		<div id="MSearchSelectWindow"
+			 onmouseover="return searchBox.OnSearchSelectShow()"
+			 onmouseout="return searchBox.OnSearchSelectHide()"
+			 onkeydown="return searchBox.OnSearchSelectKey(event)">
+	
+		<!-- This stuff pops up a menu that "kind of" works -->
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)">
+			<span class="SelectionMark">&#160;</span>All
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)">
+			<span class="SelectionMark">&#160;</span>Data Structures
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)">
+			<span class="SelectionMark">&#160;</span>Variables</a>
+	</div>
+	
+	<!-- iframe showing the search results (closed by default) -->
+	<div id="MSearchResultsWindow">
+		<iframe src="javascript:void(0)" frameborder="0" 
+				name="MSearchResults" id="MSearchResults">
+		</iframe>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;<a href="http://lua-av.mat.ucsb.edu/">LuaAV</a>: Audiovisual Scripting
+	</div>
+</body>
+</html>

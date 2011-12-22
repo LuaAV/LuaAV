@@ -1,0 +1,680 @@
+<!-- 
+Template Variables:
+	$ title
+	$ header_image
+	$ filename
+	$ relpath
+	$ tabs
+	$ content
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+
+<title>Introduction to Lua</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+<div id="titlearea">
+	<div id="header">
+		<img src="LuaAV.header.png" height="200" />
+	</div>
+</div>
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+
+<!-- Tabs Begin -->
+<div id="navrow1" class="tabs">
+	<ul class="tablist">
+		<!-- Tab List note: the current page is marked with class="current", spaces get nbsp-->
+		<li><a href="index.html"><span>Main&#160;Page</span></a></li>
+<li><a href="manual.html"><span>Manual</span></a></li>
+<li><a href="reference.html"><span>Reference</span></a></li>
+		<!--
+		<li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+		<li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+		<li><a href="modules.html"><span>Modules</span></a></li>
+		<li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+		-->
+		
+		<!-- Search Field -->
+		<li>
+			<div id="MSearchBox" class="MSearchBoxInactive">
+        	<span class="left">
+			<img id="MSearchSelect" src="search/mag_sel.png"
+				onmouseover="return searchBox.OnSearchSelectShow()"
+				onmouseout="return searchBox.OnSearchSelectHide()"
+				alt=""/>
+			<input type="text" id="MSearchField" value="Search" accesskey="S"
+				onfocus="searchBox.OnSearchFieldFocus(true)" 
+				onblur="searchBox.OnSearchFieldFocus(false)" 
+				onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          	</span>
+          	<span class="right">
+				<a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+				<img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          	</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Tabs End -->
+
+
+<!-- Sidebar Tree Begin -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+
+<script type="text/javascript">
+  initNavTree('tutorial.02.introduction.to.Lua.html','');
+</script>
+<!-- Sidebar Tree End -->
+<!-- End of Common Header -->
+
+<!--
+Template Variables:
+	$ title
+	$ text
+-->
+<div id="doc-content">
+	<div class="header">
+		<div class="headertitle">
+		<table>
+		<tr>
+			<td><div class="title">Introduction to Lua</div></td>
+			<td><div class="title-summary"></div></td>
+		</tr>
+		</table>
+		</div>
+	</div> <!-- header -->
+	<div class="contents">
+		<div class="textblock">
+
+<h2>What is Lua?</h2>
+
+<p>
+From wikipedia:
+</p>
+<blockquote><em>Lua ( /ˈluː.ə/ LOO-ə) is a lightweight, reflective, imperative and functional programming language, designed as a scripting language with extensible semantics as a primary goal. The name comes from the Portuguese word lua meaning "moon".</em></blockquote>
+
+<p>
+What's the difference between a static language (like C or C++) and a dynamic language like Lua?
+</p>
+
+<blockquote><em>Dynamic programming language is a term used broadly in computer science to describe a class of high-level programming languages that execute at runtime many common behaviors that other languages might perform during compilation, if at all. (<a href="http://en.wikipedia.org/wiki/Dynamic_programming_language" target="_blank">wikipedia</a>)</em></blockquote>
+
+<p>
+For example, where a variable in C has a type bound to it which cannot change (static typing), a variable in Lua is just a name under which any type of value can be stored. (In a way, all variables in Lua behave like pointers.) More interestingly, any string of valid Lua code can be executed from within another script; opening the possibilty of generating new functions at run-time. Data structures can change size and layout during execution, and functions can be passed around just like any other object, all according to the vagaries of user input. (Some of these features are possible in C/C++ with a lot of clever coding, but the cleverer that code gets, the more it becomes like the virual machine of an interpreted langauge anyway...)
+</p>
+
+<h3>What's exciting about Lua?</h3>
+<p><strong>Fast (one of the fastest dynamic languages).</strong> "Several benchmarks show Lua as the fastest language in the realm of interpreted scripting languages." For this reason in particular, it is perhaps most widely used for game scripting. In addition, the <a href="http://luajit.org/" target="_blank">LuaJIT</a> project uses a trace compiler to convert hot code paths and loops into i386 or x86_64 machine code, with performance often on par with C/C++.</p>
+
+<p><strong>Expressive. </strong>Lua began as a data-description language, and continues to benefit from a universal and flexible array/hash data structure. The syntax is largely procedural, however it supports fully functional programming features such as first-class functions, closures and coroutines, and lexically scoped upvalues (granting capabilities similar to <a href="http://en.wikipedia.org/wiki/Scheme_(programming_language)" target="_blank">Scheme</a>). It also supports various models of inheritence through a prototype inheritence chain (similar to <a href="http://en.wikipedia.org/wiki/Self_(programming_language)" target="_blank">Self</a> and <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>). The runtime is also fully re-entrant.</p>
+
+<p><strong>Easy to learn.</strong> Really, the majority of the language's grammar/syntax/typical usage can be learned in one day.</p>
+
+<p><strong>Extensible. </strong>These expressive features, plus a dynamic library module system (binary or Lua code) make it easy to extend Lua for a particular project or task.</p>
+
+<p><strong>Small. </strong>Lua as a static library is just a few hundred K, making it ideal for embedding within a host program.</p>
+
+<p><strong>Simpler C API. </strong>The simplicity of binding Lua to C code is often mentioned as a key attraction of Lua (as opposed to alternative embeddable langauges such as <a href="http://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank">Python</a> and<a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)" target="_blank">Ruby</a>).</p>
+
+<p><strong>Portability.</strong> The Lua core is ANSI C compliant: that means it should run on almost any system these days. A lot of effort is currently going into improving Lua on microcontrollers.</p>
+
+<p>Lua is licensed under the <a href="http://www.opensource.org/licenses/mit-license.php" target="_blank">MIT license</a>, so there are basically no restrictions on embedding, deriving or modifying it.</p>
+
+<h3>What's not so exciting?</h3>
+<p><strong>Limited set of standard libraries.</strong> Compared to Perl or Python, Lua has very few built-in libraries, and a reasonable but not outstanding set of third-party libraries. The chances of your favourite C library being bound to Lua are much less...</p>
+
+<p><strong>No built-in threading.</strong> Deterministic multi-tasking is fully supported using coroutines, but if you want to make use of your processors, you need to make use of third party libraries that might not always be so stable.</p>
+
+<p><strong>Array indexing starts from 1.</strong> A feature inherited from its background in data-description, but a gotcha for programmers coming from a background in C...</p>
+
+<h2>Documentation and Resources</h2>
+<h3>Programming in Lua</h3>
+<p>This book is *excellent*. Get it from here:</p>
+
+<a href="http://www.amazon.com/exec/obidos/ASIN/8590379825/lua-docs-20"><img class="alignnone" src="http://www.lua.org/images/pil2.jpg" alt="" width="75" height="97" /></a>
+
+<p><strong>Programming in Lua (second edition) </strong><br />
+by Roberto Ierusalimschy<br />
+Lua.org, March 2006<br />
+ISBN 85-903798-2-5 (also available as an e-book)</p>
+
+<p><a href="http://www.lua.org/docs.html#books" target="_blank">Programming in Lua is also available in German, Korean, Chinese, and Japanese</a>.</p>
+
+<h3>The Lua 5.1 Reference Manual</h3>
+<p>Another excellent resource. Fortunately, it is available online: <a href="http://www.lua.org/manual/5.1/" target="_blank">http://www.lua.org/manual/5.1/</a>.</p>
+
+<a href="http://www.amazon.com/exec/obidos/ASIN/8590379833/lua-indexmanual-20"><img class="alignnone" src="http://www.lua.org/manual/5.1/cover.png" alt="" width="69" height="94" /></a>
+
+<p><strong>Lua 5.1 Reference Manual </strong><br />
+by R. Ierusalimschy, L. H. de Figueiredo, W. Celes<br />
+Lua.org, August 2006<br />
+ISBN 85-903798-3-3</p>
+
+<p>In particular, this is the URL that should be bookmarked: <a href="http://www.lua.org/manual/5.1/index.html#index" target="_blank">http://www.lua.org/manual/5.1/index.html#index</a></p>
+
+<h3>The lua-l Mailing List</h3>
+<p><a href="http://vlists.pepperfish.net/cgi-bin/mailman/listinfo/lua-l-lists.lua.org" target="_blank">http://vlists.pepperfish.net/cgi-bin/mailman/listinfo/lua-l-lists.lua.org</a></p>
+
+<p>Archive here: <a href="http://lua-users.org/lists/lua-l/" target="_blank">http://lua-users.org/lists/lua-l/</a></p>
+
+<p>Quite a diversity of low to high level discussion, but 500-1000 messages per month!</p>
+
+<h3>Lua Wiki</h3>
+<p>Some tutorials here: <a href="http://lua-users.org/wiki/TutorialDirectory" target="_blank">http://lua-users.org/wiki/TutorialDirectory</a></p>
+
+<p>This unofficial FAQ may also be useful: <a href="http://www.luafaq.org/">Steve Donovan's unofficial Lua FAQ</a></p>
+
+<h2>The Lua Language</h2>
+<h3>Hello World</h3>
+<pre class="fragment">
+<span class="lua-comment">--[[ this is a multi-line comment--]]</span>
+<span class="lua-comment">-- this is a single-line comment</span>
+
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"hello world"</span><span class="lua-operator">)</span>
+</pre>
+
+<h3>Basic Types</h3>
+<p>All values in Lua are one of the following types; however unlike C, the type does not belong to the variable, but to the value itself. That means that a variable can change type (<em>dynamic typing)</em>.</p>
+
+<h4>Numbers</h4>
+<p>All numbers in Lua are 64-bit floating point type (aka 'double' for C programmers). There is no distinction between integers and non-integers.</p>
+
+<pre class="fragment">
+<span class="lua-comment">-- these lines are all equivalent:</span>
+<span class="lua-comment">-- they assign the number value 1 to the variable name x:</span>
+<span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-number">1</span>
+<span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-number">1.0</span>
+<span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-number">100e-2</span>    <span class="lua-comment">-- e base10 format</span>
+<span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-number">0x1</span>    <span class="lua-comment">--hexadecimal format</span>
+</pre>
+
+<h3>Strings</h3>
+<p>Lua strings are immutable: each string operation creates a new string.<em> (strings are hashed internally very efficiently, and garbage collected).</em></p>
+
+<pre class="fragment">
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"a simple string"</span><span class="lua-operator">)</span>
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">'a simple string'</span><span class="lua-operator">)</span>
+
+<span class="lua-comment">-- embedding special characters and multi-line strings:</span>
+<span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-string">"a string isn't stopped by \n a new line"</span><span class="lua-operator">;</span>
+<span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-string">'a string isn\'t stopped by \n a new line'</span>
+<span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-string">[[a string isn't stopped by
+a new line]]</span>
+</pre>
+
+<h3>Boolean and nil</h3>
+<p>Boolean values are the keywords <strong>true</strong> and <strong>false</strong>. The <strong>nil</strong> value indicates the absence of a value. Assigning nil to a variable effectively marks the variable for garbage collection.</p>
+
+<pre class="fragment">
+<span class="lua-identifier">t</span> <span class="lua-operator">=</span> <span class="lua-keyword">true</span>
+<span class="lua-identifier">f</span> <span class="lua-operator">=</span> <span class="lua-keyword">false</span>
+<span class="lua-identifier">n</span> <span class="lua-operator">=</span> <span class="lua-keyword">nil</span>
+
+<span class="lua-comment">-- nil evaluates to false for a predicate:</span>
+<span class="lua-keyword">if</span> <span class="lua-identifier">t</span> <span class="lua-keyword">then</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"t!"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>    <span class="lua-comment">-- prints t!</span>
+<span class="lua-keyword">if</span> <span class="lua-identifier">f</span> <span class="lua-keyword">then</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"f!"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>    <span class="lua-comment">-- prints nothing</span>
+<span class="lua-keyword">if</span> <span class="lua-identifier">n</span> <span class="lua-keyword">then</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"n!"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>    <span class="lua-comment">-- prints nothing</span>
+</pre>
+
+<h3>Tables</h3>
+<p>Table is the only structural type in Lua: all data structures are made from tables, and even a large part of Lua's own implementation relies upon them.</p>
+
+<p>Tables in Lua are associative arrays, mapping <strong>keys</strong> to <strong>values</strong>. Both keys and values can be any valid Lua type except nil (booleans, numbers, strings, other tables (or even the same table!), functions, coroutines and so on.)</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">t</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span><span class="lua-operator">}</span>    <span class="lua-comment">-- empty table constructor</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-number">1</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-string">"one"</span>    <span class="lua-comment">-- assignment</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-string">"two"</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-number">2</span>    <span class="lua-comment">-- keys and values can be any types</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-keyword">true</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-operator">)</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"true!"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- except nil:</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-identifier">x</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-keyword">nil</span>    <span class="lua-comment">-- removes t[x] reference</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-keyword">nil</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-number">1</span>    <span class="lua-comment">-- error!</span>
+<span class="lua-identifier">In</span> <span class="lua-identifier">particular</span><span class="lua-operator">,</span> <span class="lua-identifier">string</span> <span class="lua-identifier">key</span> <span class="lua-identifier">lookup</span> <span class="lua-identifier">on</span> <span class="lua-identifier">a</span> <span class="lua-identifier">table</span> <span class="lua-identifier">has</span> <span class="lua-identifier">a</span> <span class="lua-identifier">useful</span> <span class="lua-identifier">short</span><span class="lua-operator">-</span><span class="lua-identifier">hand</span> <span class="lua-identifier">form</span><span class="lua-operator">:</span>
+
+<span class="lua-keyword">local</span> <span class="lua-identifier">t</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span><span class="lua-operator">}</span>    <span class="lua-comment">-- empty table constructor</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-number">1</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-string">"one"</span>    <span class="lua-comment">-- assignment</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-string">"two"</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-number">2</span>    <span class="lua-comment">-- keys and values can be any types</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-keyword">true</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-operator">)</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"true!"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- except nil:</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-identifier">x</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-keyword">nil</span>    <span class="lua-comment">-- removes t[x] reference</span>
+<span class="lua-identifier">t</span><span class="lua-operator">[</span><span class="lua-keyword">nil</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-number">1</span>    <span class="lua-comment">-- error!</span>
+</pre>
+
+<p>It's important to note that a Lua table has two parts; an <strong>array</strong> portion and a <strong>hashtable</strong> portion. The array portion is indexed with integer keys, starting from 1 upwards while the integer keys are contiguous. All other keys are stored in the hash (or record) portion.</p>
+
+<h4>Array Portion</h4>
+<p>The <strong>array</strong> portion gives Lua tables the capability to act as ordered lists, and can grow/shrink as needed (similar to C++ vectors). Sometimes the array portion is called the <strong>list</strong> portion, because it is useful for creating lists similarly to LISP. In particular, the table constructor will insert numeric keys in order for any values that are not explicitly keyed:</p>
+
+<pre class="fragment">
+<span class="lua-comment">-- these two lines are equivalent</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">mylist</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-operator">[</span><span class="lua-number">1</span><span class="lua-operator">]</span><span class="lua-operator">=</span><span class="lua-string">"foo"</span><span class="lua-operator">,</span> <span class="lua-operator">[</span><span class="lua-number">2</span><span class="lua-operator">]</span><span class="lua-operator">=</span><span class="lua-string">"bar"</span><span class="lua-operator">,</span> <span class="lua-operator">[</span><span class="lua-number">3</span><span class="lua-operator">]</span><span class="lua-operator">=</span><span class="lua-string">"baz"</span> <span class="lua-operator">}</span><span class="lua-operator">:</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">mylist</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-string">"foo"</span><span class="lua-operator">,</span> <span class="lua-string">"bar"</span><span class="lua-operator">,</span> <span class="lua-string">"baz"</span> <span class="lua-operator">}</span>
+
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">mylist</span><span class="lua-operator">[</span><span class="lua-number">2</span><span class="lua-operator">]</span><span class="lua-operator">)</span> <span class="lua-comment">-- prints bar</span>
+</pre>
+
+<p>To walk over every key/value in the table, there is the <strong>pairs</strong> form. Note however, that the order of traversal cannot be predicted:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">t</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-string">"foo"</span><span class="lua-operator">,</span> <span class="lua-string">"bar"</span><span class="lua-operator">,</span> <span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-number">1</span><span class="lua-operator">,</span> <span class="lua-identifier">y</span> <span class="lua-operator">=</span> <span class="lua-number">2</span> <span class="lua-operator">}</span>
+<span class="lua-keyword">for</span> <span class="lua-identifier">key</span><span class="lua-operator">,</span> <span class="lua-identifier">value</span> <span class="lua-keyword">in</span> <span class="lua-identifier">pairs</span><span class="lua-operator">(</span><span class="lua-identifier">t</span><span class="lua-operator">)</span> <span class="lua-keyword">do</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">key</span><span class="lua-operator">,</span> <span class="lua-identifier">value</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints all keys and values</span>
+<span class="lua-keyword">end</span>
+</pre>
+
+<h3>Functions</h3>
+<p>Unlike C, functions are first-class values, just like numbers, strings and tables. That means that functions can be keys and values in tables, functions can take functions as arguments, and return functions as return values. This might seem exotic at first, but can be very valuable.</p>
+
+<p>A simple function:</p>
+
+<pre class="fragment">
+<span class="lua-comment">-- these are equivalent:</span>
+<span class="lua-identifier">sayhello</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-identifier">message</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"hello"</span><span class="lua-operator">,</span> <span class="lua-identifier">message</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-keyword">function</span> <span class="lua-identifier">sayhello</span><span class="lua-operator">(</span><span class="lua-identifier">message</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"hello"</span><span class="lua-operator">,</span> <span class="lua-identifier">message</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- using the function:</span>
+<span class="lua-identifier">sayhello</span><span class="lua-operator">(</span><span class="lua-string">"me"</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: hello me</span>
+<span class="lua-identifier">sayhello</span><span class="lua-operator">(</span><span class="lua-string">"you"</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: hello you</span>
+
+<span class="lua-comment">-- replacing the function</span>
+<span class="lua-identifier">sayhello</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-identifier">message</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"hi"</span><span class="lua-operator">,</span> <span class="lua-identifier">message</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-identifier">sayhello</span><span class="lua-operator">(</span><span class="lua-string">"me"</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: hi me</span>
+</pre>
+
+<p>Of course, a function can have more than one argument... but it can also have more than one return value:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">function</span> <span class="lua-identifier">minmax</span><span class="lua-operator">(</span><span class="lua-identifier">a</span><span class="lua-operator">,</span> <span class="lua-identifier">b</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">return</span> <span class="lua-identifier">math.min</span><span class="lua-operator">(</span><span class="lua-identifier">a</span><span class="lua-operator">,</span> <span class="lua-identifier">b</span><span class="lua-operator">)</span><span class="lua-operator">,</span> <span class="lua-identifier">math.max</span><span class="lua-operator">(</span><span class="lua-identifier">a</span><span class="lua-operator">,</span> <span class="lua-identifier">b</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">minmax</span><span class="lua-operator">(</span><span class="lua-number">42</span><span class="lua-operator">,</span> <span class="lua-number">13</span><span class="lua-operator">)</span><span class="lua-operator">)</span> <span class="lua-comment">-- prints: 13 14</span>
+</pre>
+
+<p>A special syntax is available for a table's member functions that are intended to be used as methods. The use of a colon (:) instead of a period (.) to index the table passes the table itself through as a special 'hidden' variable <strong>self</strong> (similar to the hidden variable <em>this</em> in C++).</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">t</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-identifier">value</span> <span class="lua-operator">=</span> <span class="lua-number">10</span> <span class="lua-operator">}</span>
+
+<span class="lua-comment">-- define a method:</span>
+<span class="lua-identifier">t.printvalue</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-identifier">self</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">self.value</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- equivalent:</span>
+<span class="lua-keyword">function</span> <span class="lua-identifier">t</span><span class="lua-operator">:</span><span class="lua-identifier">printvalue</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">self.value</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- use the method:</span>
+<span class="lua-identifier">t.printvalue</span><span class="lua-operator">(</span><span class="lua-identifier">t</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 10</span>
+
+<span class="lua-comment">-- equivalent:</span>
+<span class="lua-identifier">t</span><span class="lua-operator">:</span><span class="lua-identifier">printvalue</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 10</span>
+</pre>
+
+<h3>Control Flow</h3>
+<p>Lua includes a standard set of control flow structures.</p>
+
+<pre class="fragment">
+<span class="lua-comment">-- if blocks:</span>
+
+<span class="lua-keyword">if</span> <span class="lua-identifier">x</span> <span class="lua-operator">==</span> <span class="lua-number">1</span> <span class="lua-keyword">then</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"one"</span><span class="lua-operator">)</span>
+<span class="lua-comment">-- as many elseifs as desired can be chained</span>
+<span class="lua-keyword">elseif</span> <span class="lua-identifier">x</span> <span class="lua-operator">==</span> <span class="lua-number">2</span> <span class="lua-keyword">then</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"two"</span><span class="lua-operator">)</span>
+<span class="lua-keyword">elseif</span> <span class="lua-identifier">x</span> <span class="lua-operator">==</span> <span class="lua-number">3</span> <span class="lua-keyword">then</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"three"</span><span class="lua-operator">)</span>
+<span class="lua-keyword">else</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"many"</span><span class="lua-operator">)</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- while loops:</span>
+<span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-number">10</span>
+<span class="lua-keyword">while</span> <span class="lua-identifier">x</span> <span class="lua-operator">></span> <span class="lua-number">0</span> <span class="lua-keyword">do</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-identifier">x</span> <span class="lua-operator">-</span> <span class="lua-number">1</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-keyword">repeat</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-identifier">x</span> <span class="lua-operator">+</span> <span class="lua-number">1</span>
+<span class="lua-keyword">until</span> <span class="lua-identifier">x</span> <span class="lua-operator">==</span> <span class="lua-number">10</span>
+</pre>
+
+<h4>Logical Operators</h4>
+<ul>
+	<li>Equals: <strong>==</strong></li>
+	<li>Not-equals: <strong>~=</strong></li>
+	<li>Comparatives: <strong>&lt; &lt;= &gt;= &gt;</strong></li>
+	<li>Logical combinators: <strong>and or not</strong></li>
+</ul>
+<pre class="fragment">
+    <span class="lua-keyword">if</span> <span class="lua-identifier">x</span> <span class="lua-operator">></span> <span class="lua-number">12</span> <span class="lua-keyword">and</span> <span class="lua-identifier">x</span> <span class="lua-operator"><=</span> <span class="lua-number">20</span> <span class="lua-keyword">then</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"teen"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+</pre>
+
+<h3>Variables and Scoping</h3>
+<p>Variable names in Lua can be any string of letters, digits, and underscores, not beginning with a digit (the same as most other languages). Some names are reserved in the language itself, including:</p>
+<pre>and       break     do        else      elseif
+end       false     for       function  if
+in        local     nil       not       or
+repeat    return    then      true      until     while</pre>
+
+<h4>Local and global; lexical scoping</h4>
+<p>New identifiers (variables) can be defined to be local to a particular block (code chunk), or global. Defining an identifier as local is done using the <strong>local</strong> keyword. Local identifiers are not visible outside the block in which they were declared, but are visible inside sub-blocks. This is called <em>lexical scoping</em>.</p>
+
+<pre class="fragment">
+<span class="lua-keyword">function</span> <span class="lua-identifier">foo</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">)</span>
+    <span class="lua-comment">-- a function body is a new block</span>
+    <span class="lua-keyword">local</span> <span class="lua-identifier">y</span> <span class="lua-operator">=</span> <span class="lua-string">"mylocal"</span>
+    <span class="lua-keyword">if</span> <span class="lua-identifier">x</span> <span class="lua-operator">==</span> <span class="lua-identifier">y</span> <span class="lua-keyword">then</span>
+        <span class="lua-comment">-- this is a sub-block of the function</span>
+        <span class="lua-comment">-- y is still visible here</span>
+        <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">y</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: mylocal</span>
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span>
+<span class="lua-comment">-- y is not visible here:</span>
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">y</span><span class="lua-operator">)</span>        <span class="lua-comment">-- prints: nil</span>
+</pre>
+
+<p>Assigning to a variable that has not been declared locally within the current block will search for that name in parent blocks, recursively, up to the top-level. If the name is found, the assignment is made to that variable. If the name is not found, the assignment becomes a global (either creating a new variable, or replacing an existing global). Global identifiers are stored in the implict globals table, which can be explicitly accessed through the name <strong>_G</strong>.</p>
+
+<pre class="fragment">
+<span class="lua-comment">-- an outer variable:</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-string">"outside"</span>
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">)</span> <span class="lua-comment">-- prints: outside</span>
+
+<span class="lua-comment">-- sub-block uses a local, which does not affect the outer variable:</span>
+
+<span class="lua-keyword">function</span> <span class="lua-identifier">safe</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">local</span> <span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-string">"inside"</span>
+<span class="lua-keyword">end</span>
+<span class="lua-identifier">safe</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">)</span> <span class="lua-comment">-- prints: outside</span>
+
+<span class="lua-comment">-- sub-block does not use a local, and overwrites the outer variable:</span>
+<span class="lua-keyword">function</span> <span class="lua-identifier">unsafe</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-string">"inside"</span>
+<span class="lua-keyword">end</span>
+<span class="lua-identifier">unsafe</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">)</span> <span class="lua-comment">-- prints: inside</span>
+</pre>
+
+<p>It is good practice to make as many variables local as possible since it greatly improves performance. More importantly, unexpected assignment to non-local variables is probably the most common cause of Lua scripting errors!</p>
+
+<h4>Garbage Collection</h4>
+<p>Objects are never explicitly deleted in Lua (though sometimes resources such as files might have explicit close() methods). Lua has an fast incremental garbage collector that runs in the background, which silently recycles the memory for any values to which no more references remain. For most built-in types (strings, tables etc) this need never concern us. When binding C/C++ objects as full userdata types, the garbage collect event can be handled through a special metamethod.</p>
+
+<h2>Going Deeper</h2>
+<h3>Higher Order Functions</h3>
+<p>Functions as return values:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">function</span> <span class="lua-identifier">operate</span><span class="lua-operator">(</span><span class="lua-identifier">operator</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">if</span> <span class="lua-identifier">operator</span> <span class="lua-operator">==</span> <span class="lua-string">"add"</span> <span class="lua-keyword">then</span>
+        <span class="lua-keyword">return</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-identifier">a</span><span class="lua-operator">,</span> <span class="lua-identifier">b</span><span class="lua-operator">)</span>
+            <span class="lua-keyword">return</span> <span class="lua-identifier">a</span> <span class="lua-operator">+</span> <span class="lua-identifier">b</span>
+        <span class="lua-keyword">end</span>
+    <span class="lua-keyword">elseif</span> <span class="lua-identifier">operator</span> <span class="lua-operator">==</span> <span class="lua-string">"mul"</span> <span class="lua-keyword">then</span>
+        <span class="lua-keyword">return</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-identifier">a</span><span class="lua-operator">,</span> <span class="lua-identifier">b</span><span class="lua-operator">)</span>
+            <span class="lua-keyword">return</span> <span class="lua-identifier">a</span> <span class="lua-operator">*</span> <span class="lua-identifier">b</span>
+        <span class="lua-keyword">end</span>
+    <span class="lua-keyword">end</span>    <span class="lua-comment">-- end if</span>
+<span class="lua-keyword">end</span> <span class="lua-comment">-- end function operate</span>
+
+<span class="lua-keyword">local</span> <span class="lua-identifier">f</span> <span class="lua-operator">=</span> <span class="lua-identifier">operate</span><span class="lua-operator">(</span><span class="lua-string">"mul"</span><span class="lua-operator">)</span>
+<span class="lua-identifier">f</span><span class="lua-operator">(</span><span class="lua-number">2</span><span class="lua-operator">,</span> <span class="lua-number">10</span><span class="lua-operator">)</span> <span class="lua-comment">-- prints: 20</span>
+</pre>
+
+<p>Functions as table values:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">t</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span>
+    <span class="lua-identifier">add</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-identifier">a</span><span class="lua-operator">,</span> <span class="lua-identifier">b</span><span class="lua-operator">)</span>
+        <span class="lua-keyword">return</span> <span class="lua-identifier">a</span> <span class="lua-operator">+</span> <span class="lua-identifier">b</span>
+    <span class="lua-keyword">end</span><span class="lua-operator">,</span>
+    <span class="lua-identifier">mul</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-identifier">a</span><span class="lua-operator">,</span> <span class="lua-identifier">b</span><span class="lua-operator">)</span>
+        <span class="lua-keyword">return</span> <span class="lua-identifier">a</span> <span class="lua-operator">+</span> <span class="lua-identifier">b</span>
+    <span class="lua-keyword">end</span><span class="lua-operator">,</span>
+<span class="lua-operator">}</span>
+
+<span class="lua-identifier">t.mul</span><span class="lua-operator">(</span><span class="lua-number">2</span><span class="lua-operator">,</span> <span class="lua-number">10</span><span class="lua-operator">)</span> <span class="lua-comment">-- prints: 20</span>
+</pre>
+
+<p>In fact, when a function is declared as a global variable, it is in fact just an assignment to an implicit globals table. This table can be explicitly accessed using the special name <strong>_G</strong>:</p>
+
+<pre class="fragment">
+<span class="lua-comment">-- these are all equivalent:</span>
+<span class="lua-keyword">function</span> <span class="lua-identifier">foo</span><span class="lua-operator">(</span><span class="lua-operator">)</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"foo"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+<span class="lua-identifier">foo</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-operator">)</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"foo"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+<span class="lua-identifier">_G.foo</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-operator">)</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"foo"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+
+<span class="lua-identifier">_G</span><span class="lua-operator">[</span><span class="lua-string">"foo"</span><span class="lua-operator">]</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-operator">)</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"foo"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+</pre>
+
+<h3>Closures</h3>
+<p>Closures can arise from the mixed use of lexically scoped local variables, and higher order functions. Any function that makes use of non-local variables effectively keeps those variable references alive within it. An example explains this better:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">function</span> <span class="lua-identifier">make_counter</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">local</span> <span class="lua-identifier">count</span> <span class="lua-operator">=</span> <span class="lua-number">0</span>
+    <span class="lua-keyword">return</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+        <span class="lua-identifier">count</span> <span class="lua-operator">=</span> <span class="lua-identifier">count</span> <span class="lua-operator">+</span> <span class="lua-number">1</span>
+        <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">count</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- call to make_counter() returns a function;</span>
+<span class="lua-comment">-- and 'captures' the local count as an 'upvalue' specific to it</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">c1</span> <span class="lua-operator">=</span> <span class="lua-identifier">make_counter</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+<span class="lua-identifier">c1</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 1</span>
+<span class="lua-identifier">c1</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 2</span>
+<span class="lua-identifier">c1</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 3</span>
+
+<span class="lua-comment">-- another call to make_counter() creates a new function,</span>
+<span class="lua-comment">-- with a new count upvalue</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">c2</span> <span class="lua-operator">=</span> <span class="lua-identifier">make_counter</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+<span class="lua-identifier">c2</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 1</span>
+<span class="lua-identifier">c2</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 2</span>
+
+<span class="lua-comment">-- the two function's upvalues are independent of each other:</span>
+<span class="lua-identifier">c1</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 4</span>
+</pre>
+
+<p>This technique can be incredibly powerful. An object constructor and its private data can be entirely ecapsulated through the use of upvalues, for example.</p>
+
+<h3>Coroutines</h3>
+<p>Coroutines are a form of collaborative multi-tasking. You can think of them as functions that can be paused in mid execution, to be resumed at that position at a later time.</p>
+
+<p>The C programmer can think of them as similar to threads, however they are explicitly paused and resumed from within a script (rather than by the operating system), and do not make use of CPU multithreading capabilities.</p>
+
+<p>A coroutine is created from an existing function using coroutine.create(), and is resumed using coroutine.resume(). It can pause itself with coroutine.yield(). In addition, values can be passed back and forth via the arguments to coroutine.resume() and coroutine.yield().</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">resume</span><span class="lua-operator">,</span> <span class="lua-identifier">yield</span> <span class="lua-operator">=</span> <span class="lua-identifier">coroutine.resume</span><span class="lua-operator">,</span> <span class="lua-identifier">coroutine.yield</span>
+
+<span class="lua-comment">-- this function will be used to create a coroutine:</span>
+
+<span class="lua-keyword">local</span> <span class="lua-keyword">function</span> <span class="lua-identifier">loop</span><span class="lua-operator">(</span><span class="lua-operator">)</span>
+    <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"hello!"</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">local</span> <span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-number">0</span>
+    <span class="lua-keyword">while</span> <span class="lua-keyword">true</span> <span class="lua-keyword">do</span>
+        <span class="lua-comment">-- pause function here:</span>
+        <span class="lua-identifier">yield</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">)</span>
+        <span class="lua-comment">-- continues here:</span>
+        <span class="lua-identifier">x</span> <span class="lua-operator">=</span> <span class="lua-identifier">x</span> <span class="lua-operator">+</span> <span class="lua-number">1</span>
+        <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">end</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- create the coroutine:</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">c</span> <span class="lua-operator">=</span> <span class="lua-identifier">coroutine.create</span><span class="lua-operator">(</span><span class="lua-identifier">loop</span><span class="lua-operator">)</span>
+
+<span class="lua-comment">-- the first resume runs from the start of the loop() function to the first yield():</span>
+<span class="lua-identifier">coroutine.resume</span><span class="lua-operator">(</span><span class="lua-identifier">c</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: hello!</span>
+
+<span class="lua-comment">-- each subsequent resume runs from the last paused yield() to the next yield():</span>
+<span class="lua-identifier">coroutine.resume</span><span class="lua-operator">(</span><span class="lua-identifier">c</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 1</span>
+<span class="lua-identifier">coroutine.resume</span><span class="lua-operator">(</span><span class="lua-identifier">c</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 2</span>
+</pre>
+
+<p>In LuaAV, coroutines are extended for accurate temporal scheduling, using the <strong>go</strong>, <strong>wait</strong> and <strong>now</strong> functions.</p>
+
+<h2>Advanced Topics</h2>
+<h3>Metatables</h3>
+<p>Lua does not provide a class-based object-oriented system by default; instead it provides the meta-mechanisms with which many different kinds of object-oriented programming styles can be implemented.</p>
+
+<p>There are several special events that can apply to objects (usually tables and userdata); the default behavior for these events can be overridden by means of a metatable. A metatable is just an ordinary table with some reserved key names bound to functions (<em>metamethods</em>) to specify this variant behavior. Any table or userdata can have its metatable set; some objects may share a metatable.</p>
+
+<p>For example, the __add metamethod defines what happens when two objects are added to each other:</p>
+
+<pre class="fragment">
+<span class="lua-comment">-- a metatable for pairs</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">pair_meta</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span><span class="lua-operator">}</span>
+
+<span class="lua-comment">-- a metamethod function for how to add two pairs together:</span>
+<span class="lua-identifier">pair_meta.__add</span> <span class="lua-operator">=</span> <span class="lua-keyword">function</span><span class="lua-operator">(</span><span class="lua-identifier">a</span><span class="lua-operator">,</span> <span class="lua-identifier">b</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">local</span> <span class="lua-identifier">p</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span>
+        <span class="lua-identifier">a</span><span class="lua-operator">[</span><span class="lua-number">1</span><span class="lua-operator">]</span><span class="lua-operator">+</span><span class="lua-identifier">b</span><span class="lua-operator">[</span><span class="lua-number">1</span><span class="lua-operator">]</span><span class="lua-operator">,</span>
+        <span class="lua-identifier">a</span><span class="lua-operator">[</span><span class="lua-number">2</span><span class="lua-operator">]</span><span class="lua-operator">+</span><span class="lua-identifier">b</span><span class="lua-operator">[</span><span class="lua-number">2</span><span class="lua-operator">]</span><span class="lua-operator">,</span>
+    <span class="lua-operator">}</span>
+    <span class="lua-comment">-- result is also a pair:</span>
+    <span class="lua-identifier">setmetatable</span><span class="lua-operator">(</span><span class="lua-identifier">p</span><span class="lua-operator">,</span> <span class="lua-identifier">pair_meta</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">return</span> <span class="lua-identifier">p</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- a constructor for pairs:</span>
+<span class="lua-keyword">function</span> <span class="lua-identifier">make_pair</span><span class="lua-operator">(</span><span class="lua-identifier">x</span><span class="lua-operator">,</span> <span class="lua-identifier">y</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">local</span> <span class="lua-identifier">p</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-identifier">x</span><span class="lua-operator">,</span> <span class="lua-identifier">y</span> <span class="lua-operator">}</span>
+    <span class="lua-comment">-- tell p to look in pair_meta for how to handle metamethod events:</span>
+    <span class="lua-identifier">setmetatable</span><span class="lua-operator">(</span><span class="lua-identifier">p</span><span class="lua-operator">,</span> <span class="lua-identifier">pair_meta</span><span class="lua-operator">)</span>
+    <span class="lua-keyword">return</span> <span class="lua-identifier">p</span>
+<span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- create two pairs:</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">p1</span> <span class="lua-operator">=</span> <span class="lua-identifier">make_pair</span><span class="lua-operator">(</span><span class="lua-number">2</span><span class="lua-operator">,</span> <span class="lua-number">3</span><span class="lua-operator">)</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">p2</span> <span class="lua-operator">=</span> <span class="lua-identifier">make_pair</span><span class="lua-operator">(</span><span class="lua-number">4</span><span class="lua-operator">,</span> <span class="lua-number">5</span><span class="lua-operator">)</span>
+
+<span class="lua-comment">-- add them (creates a new pair):</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">p3</span> <span class="lua-operator">=</span> <span class="lua-identifier">p1</span> <span class="lua-operator">+</span> <span class="lua-identifier">p2</span>
+<span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-identifier">p3</span><span class="lua-operator">[</span><span class="lua-number">1</span><span class="lua-operator">]</span><span class="lua-operator">,</span> <span class="lua-identifier">p3</span><span class="lua-operator">[</span><span class="lua-number">2</span><span class="lua-operator">]</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: 6 8</span>
+</pre>
+
+<p>Arithmetic operator metamethods also exist for __mul, __sub, __div, __mod, __pow, __unm (unary negation).</p>
+
+<p>The __index metamethod is important: if a key cannot be found in a given table, it will try again in whichever object the __index field points to; or call the function if __index points to a function. This is the principal way that inheritence (of both class data and methods) is supported:</p>
+
+<pre class="fragment">
+<span class="lua-keyword">local</span> <span class="lua-identifier">animal</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span><span class="lua-operator">}</span>
+
+<span class="lua-keyword">function</span> <span class="lua-identifier">animal</span><span class="lua-operator">:</span><span class="lua-identifier">isalive</span><span class="lua-operator">(</span><span class="lua-operator">)</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"yes!"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+
+<span class="lua-keyword">local</span> <span class="lua-identifier">dog</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span><span class="lua-operator">}</span>
+<span class="lua-keyword">function</span> <span class="lua-identifier">dog</span><span class="lua-operator">:</span><span class="lua-identifier">talk</span><span class="lua-operator">(</span><span class="lua-operator">)</span> <span class="lua-identifier">print</span><span class="lua-operator">(</span><span class="lua-string">"bark!"</span><span class="lua-operator">)</span> <span class="lua-keyword">end</span>
+
+<span class="lua-comment">-- create metatable for dog, that refers to animal for unknown keys:</span>
+<span class="lua-keyword">local</span> <span class="lua-identifier">dog_meta</span> <span class="lua-operator">=</span> <span class="lua-operator">{</span> <span class="lua-identifier">__index</span> <span class="lua-operator">=</span> <span class="lua-identifier">animal</span> <span class="lua-operator">}</span>
+
+<span class="lua-comment">-- apply metatable to dog:</span>
+<span class="lua-identifier">setmetatable</span><span class="lua-operator">(</span><span class="lua-identifier">dog</span><span class="lua-operator">,</span> <span class="lua-identifier">dog_meta</span><span class="lua-operator">)</span>
+
+<span class="lua-comment">-- test it:</span>
+<span class="lua-identifier">dog</span><span class="lua-operator">:</span><span class="lua-identifier">talk</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: bark!</span>
+<span class="lua-identifier">dog</span><span class="lua-operator">:</span><span class="lua-identifier">isalive</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- prints: yes!</span>
+
+<span class="lua-identifier">animal</span><span class="lua-operator">:</span><span class="lua-identifier">talk</span><span class="lua-operator">(</span><span class="lua-operator">)</span>    <span class="lua-comment">-- error!</span>
+</pre>
+
+<p>A corresponding __newindex metamethod exists to handle assignments of new keys to an object.</p>
+
+<p>Other metamethods include __tostring to convert an object to a string (in the print() and tostring() functions), __eq, __lt and __le for logical comparisons, __concat for the .. operator, __len for the # operator, and __call for the () operator.</p>
+
+<p>By combining all of these metamethods, and smart use metatables, various forms of class based inheritance can be designed. Several examples can be found <a href="http://loop.luaforge.net/" target="_blank">here.</a></p>
+
+<h3>Userdata and the C API</h3>
+<p>Userdata are objects that encapsulate arbitrary C/C++ data within a Lua interface. Many Lua modules extend the capabilities of Lua by binding external libraries, including the creation of new types as userdata. For example, the built-in module <strong>io</strong> includes means to create, and modify files on the system, which are represented as userdata.</p>
+
+<p>There are two kinds of userdata: lightuserdata are simply raw pointers, and there is nothing that can be done with them (they have no methods, and are immutable), except for passing them into other C functions. They are rarely used. Full userdata on the other hand behave more like tables, with possible metatables, and local environment data; they are also subject to garbage collection and have a special __gc metamethod for it.</p>
+
+<p>Binding C functions and objects to Lua is done via the C API only, and cannot be done from within Lua itself. It is a complex subject and beyond the scope of this tutorial!</p>
+
+		</div> <!-- textblock -->
+	</div> <!-- contents -->
+</div> <!-- doc-content -->
+
+
+	<div id="nav-path" class="navpath">
+		<ul>
+		<!-- window showing the filter options -->
+		<div id="MSearchSelectWindow"
+			 onmouseover="return searchBox.OnSearchSelectShow()"
+			 onmouseout="return searchBox.OnSearchSelectHide()"
+			 onkeydown="return searchBox.OnSearchSelectKey(event)">
+	
+		<!-- This stuff pops up a menu that "kind of" works -->
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)">
+			<span class="SelectionMark">&#160;</span>All
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)">
+			<span class="SelectionMark">&#160;</span>Data Structures
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)">
+			<span class="SelectionMark">&#160;</span>Variables</a>
+	</div>
+	
+	<!-- iframe showing the search results (closed by default) -->
+	<div id="MSearchResultsWindow">
+		<iframe src="javascript:void(0)" frameborder="0" 
+				name="MSearchResults" id="MSearchResults">
+		</iframe>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;<a href="http://lua-av.mat.ucsb.edu/">LuaAV</a>: Audiovisual Scripting
+	</div>
+</body>
+</html>

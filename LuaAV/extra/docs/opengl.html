@@ -1,0 +1,7140 @@
+<!-- 
+Template Variables:
+	$ title
+	$ header_image
+	$ filename
+	$ relpath
+	$ tabs
+	$ content
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+
+<title>opengl</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+<div id="titlearea">
+	<div id="header">
+		<img src="LuaAV.header.png" height="200" />
+	</div>
+</div>
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+
+<!-- Tabs Begin -->
+<div id="navrow1" class="tabs">
+	<ul class="tablist">
+		<!-- Tab List note: the current page is marked with class="current", spaces get nbsp-->
+		<li><a href="index.html"><span>Main&#160;Page</span></a></li>
+<li><a href="manual.html"><span>Manual</span></a></li>
+<li><a href="reference.html"><span>Reference</span></a></li>
+		<!--
+		<li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+		<li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+		<li><a href="modules.html"><span>Modules</span></a></li>
+		<li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+		-->
+		
+		<!-- Search Field -->
+		<li>
+			<div id="MSearchBox" class="MSearchBoxInactive">
+        	<span class="left">
+			<img id="MSearchSelect" src="search/mag_sel.png"
+				onmouseover="return searchBox.OnSearchSelectShow()"
+				onmouseout="return searchBox.OnSearchSelectHide()"
+				alt=""/>
+			<input type="text" id="MSearchField" value="Search" accesskey="S"
+				onfocus="searchBox.OnSearchFieldFocus(true)" 
+				onblur="searchBox.OnSearchFieldFocus(false)" 
+				onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          	</span>
+          	<span class="right">
+				<a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+				<img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          	</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Tabs End -->
+
+
+<!-- Sidebar Tree Begin -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+
+<script type="text/javascript">
+  initNavTree('opengl.html','');
+</script>
+<!-- Sidebar Tree End -->
+<!-- End of Common Header -->
+
+<!--
+Template Variables:
+	$ title
+	$ text
+-->
+<div id="doc-content">
+	<div class="header">
+		<div class="headertitle">
+		<table>
+		<tr>
+			<td><div class="title"><a href="#details">opengl</a></div></td>
+			<td><div class="title-summary">&nbsp;OpenGL&nbsp;bindings</div></td>
+		</tr>
+		</table>
+		</div>
+	</div> <!-- header -->
+	<div class="contents">
+		<div class="textblock">
+
+<!-- Pane Contents -->
+<div class="contents">
+
+<table class="memberdecls">
+ 
+<tr><td colspan="2">
+	<h2>
+		<!-- TOC Anchor -->
+		<a name="Functions"></a>Functions
+	</h2>
+</td></tr>
+
+ 
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Accum">Accum</a>(op, value)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Operate on the accumulation buffer<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#AlphaFunc">AlphaFunc</a>(func, ref)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the alpha test function<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Begin">Begin</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Delimit the vertices of a primitive or a group of like primitives<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#BlendEquation">BlendEquation</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the equation used for both the RGB blend equation and the Alpha blend equation<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#BlendFunc">BlendFunc</a>(sfactor, dfactor)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify pixel arithmetic<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#CallList">CallList</a>(list)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Execute a display list<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Clear">Clear</a>(mask)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Clear buffers to preset values<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ClearAccum">ClearAccum</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify clear values for the accumulation buffer<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ClearColor">ClearColor</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify clear values for the color buffers<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ClearDepth">ClearDepth</a>(depth)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the clear value for the depth buffer<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ClearIndex">ClearIndex</a>(c)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the clear value for the color index buffers<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ClearStencil">ClearStencil</a>(c)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the clear value for the stencil buffer<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ClipPlane">ClipPlane</a>(plane, equation)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify a plane against which all geometry is clipped<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Color">Color</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the current color<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ColorMask">ColorMask</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Enable and disable writing of frame buffer color components<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ColorMaterial">ColorMaterial</a>(face, mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Cause a material color to track the current color<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#CopyPixels">CopyPixels</a>(x, y, width, height, type)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Copy pixels in the frame buffer<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#CopyTexImage">CopyTexImage</a>(target, level, internalformat, x, y, width, [height], border)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Copy pixels into a 1D or 2D texture image<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#CopyTexSubImage">CopyTexSubImage</a>(target, level, xoffset, [yoffset], x, y, width, [height])</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Copy a 1D or 2D texture subimage<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#CullFace">CullFace</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify whether front- or back-facing facets can be culled<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#DeleteLists">DeleteLists</a>(list, range)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Delete a contiguous group of display lists<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#DepthFunc">DepthFunc</a>(func)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the value used for depth buffer comparisons<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#DepthMask">DepthMask</a>(flag)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Enable or disable writing into the depth buffer<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#DepthRange">DepthRange</a>(near, far)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify mapping of depth values from normalized device coordinates to window coordinates<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Disable">Disable</a>(cap)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Disable server-side GL capabilities<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#DrawBuffer">DrawBuffer</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify which color buffers are to be drawn into<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#EdgeFlag">EdgeFlag</a>(flag)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Flag edges as either boundary or nonboundary<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Enable">Enable</a>(cap)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Enable server-side GL capabilities<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#End">End</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Delimit the vertices of a primitive or a group of like primitives<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#EndList">EndList</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> End the creation or replacement of a display list<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Finish">Finish</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Block until all GL execution is complete<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Flush">Flush</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Force execution of GL commands in finite time<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Fog">Fog</a>(pname, ...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify fog parameters<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#FrontFace">FrontFace</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Define front- and back-facing polygons<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Frustum">Frustum</a>(left, right, bottom, top, near, far)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Multiply the current matrix by a perspective matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GenLists">GenLists</a>(range)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Generate a contiguous set of empty display lists<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Get">Get</a>(pname)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return the value or values of a selected parameter<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetClipPlane">GetClipPlane</a>(plane)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return the coefficients of the specified clipping plane<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetError">GetError</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return error information<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetLight">GetLight</a>(light, pname)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return light source parameter values<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetMaterial">GetMaterial</a>(target, pname)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return material parameters<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetString">GetString</a>(name)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return a string describing the current GL connection<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetTexEnv">GetTexEnv</a>(target, pname)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return texture environment parameters<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetTexGen">GetTexGen</a>(coord, pname)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return texture coordinate generation parameters<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetTexLevelParameter">GetTexLevelParameter</a>(target, level, pname)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return texture parameter values for a specific level of detail<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#GetTexParameter">GetTexParameter</a>(target, pname)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Return texture parameter values<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Hint">Hint</a>(target, mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify implementation-specific hints<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Index">Index</a>(c)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the current color index<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#IndexMask">IndexMask</a>(mask)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Control the writing of individual bits in the color index buffers<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#InitNames">InitNames</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Initialize the name stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#IsEnabled">IsEnabled</a>(cap)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Test whether a capability is enabled<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#IsList">IsList</a>(list)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Determine if a name corresponds to a display list<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#IsTexture">IsTexture</a>(texture)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Determine if a name corresponds to a texture<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Light">Light</a>(light, pname, params)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set light source parameters<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#LightModel">LightModel</a>(pname, params)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the lighting model parameters<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#LineStipple">LineStipple</a>(factor, pattern)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the line stipple pattern<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#LineWidth">LineWidth</a>(width)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the width of rasterized lines<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ListBase">ListBase</a>(base)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the display-list base for glCallLists<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#LoadIdentity">LoadIdentity</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Replace the current matrix with the identity matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#LoadMatrix">LoadMatrix</a>(m)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Replace the current matrix with the specified matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#LoadName">LoadName</a>(name)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Load a name onto the name stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#LogicOp">LogicOp</a>(opcode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify a logical pixel operation for color index rendering<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Material">Material</a>(face, pname, params)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify material parameters for the lighting model<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#MatrixMode">MatrixMode</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify which matrix is the current matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#MultMatrix">MultMatrix</a>(m)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Multiply the current matrix with the specified matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#NewList">NewList</a>(list, mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Create or replace a display list<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Normal">Normal</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the current normal vector<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Ortho">Ortho</a>(left, right, bottom, top, near, far)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Multiply the current matrix with an orthographic matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PassThrough">PassThrough</a>(token)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Place a marker in the feedback buffer<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PixelStore">PixelStore</a>(pname, param)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set pixel storage modes<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PixelTransfer">PixelTransfer</a>(pname, param)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set pixel transfer modes<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PixelZoom">PixelZoom</a>(xfactor, yfactor)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the pixel zoom factors<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PointSize">PointSize</a>(size)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the diameter of rasterized points<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PolygonMode">PolygonMode</a>(face, mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Select a polygon rasterization mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PolygonOffset">PolygonOffset</a>(factor, units)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the scale and units used to calculate depth values<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PopAttrib">PopAttrib</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Pop the server attribute stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PopClientAttrib">PopClientAttrib</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Pop the client attribute stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PopMatrix">PopMatrix</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Pop the current matrix stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PopName">PopName</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Pop the name stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PushAttrib">PushAttrib</a>(mask)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Push the server attribute stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PushClientAttrib">PushClientAttrib</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Push the client attribute stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PushMatrix">PushMatrix</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Push the current matrix stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#PushName">PushName</a>(name)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Push the name stack<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#RasterPos">RasterPos</a>(..)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify the raster position for pixel operations<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ReadBuffer">ReadBuffer</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Select a color buffer source for pixels<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Rect">Rect</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Draw a rectangle<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#RenderMode">RenderMode</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set rasterization mode<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Rotate">Rotate</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Multiply the current matrix by a rotation matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Scale">Scale</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Multiply the current matrix by a general scaling matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Scissor">Scissor</a>(x, y, width, height)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Define the scissor box<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#ShadeModel">ShadeModel</a>(mode)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Select flat or smooth shading<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#StencilFunc">StencilFunc</a>(func, ref, mask)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set front and back function and reference value for stencil testing<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#StencilMask">StencilMask</a>(mask)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Control the front and back writing of individual bits in the stencil planes<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#StencilOp">StencilOp</a>(sfail, dpfail, dppass)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set front and back stencil test actions<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#TexCoord">TexCoord</a>(..)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the current texture coordinates<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#TexEnv">TexEnv</a>(target, pname, param)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set texture environment parameters<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#TexGen">TexGen</a>(coord, pname, param)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Control the generation of texture coordinates<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#TexParameter">TexParameter</a>(target, pname, param)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set texture parameters<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Translate">Translate</a>(...)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Multiply the current matrix by a translation matrix<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Vertex">Vertex</a>(..)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Specify a vertex<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Viewport">Viewport</a>(x, y, width, height)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Set the viewport<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#closectx">closectx</a>(ctx)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Signal the module to destroy OpenGL resources<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#initctx">initctx</a>(ctx)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Signal the module to initialize OpenGL resources<br/></td>
+</tr>
+
+
+
+</table>
+
+
+<!-- Details -->
+
+<a name="details" id="details"></a>
+<h2>Detailed Description</h2>
+<p>OpenGL bindings are low-level functions mapping directly to the OpenGL API.  Nearly all functions  have a binding with the exception of functions that deal with large buffers of data.  These functions  (e.g. glTexImage2D, glReadPixels, ...) are more approriately handled with a higher-level interface,  and so are left out.</p><p> In addition to the basic OpenGL functions, the opengl module has the <b>initctx</b> and <b>closectx</b>  functions.  These functions are for performing resource initialization and teardown on context creation and  destruction.  In particular, the OpenGL module uses GLEW for managing OpenGL extensions.  initctx is used to signal GLEW to load the extensions when the context is ready.  initctx and closectx are also used to  signal to Texture, Mesh, and other high-level objects that the context their resources are attached to  are being created and destroyed.</p><p> initctx and closectx are automatically called when using a app.Window.  When app.Window creates a context,  it will look for an opengl module and call opengl.initctx.  Similarly, when the window gets destroyed, it will  look for opengl.closectx.</p>
+
+ 
+<hr/>
+<!-- Section Details -->
+<h2>Functions</h2>
+ 
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Accum"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Accum</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>op</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>value</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glAccum.xml">glAccum</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">op</td><td>Specifies the accumulation buffer operation. Symbolic constants GL_ACCUM, GL_LOAD,  GL_ADD, GL_MULT, and GL_RETURN are accepted.</td></tr>
+
+		<tr><td class="paramname">value</td><td>Specifies a floating-point value used in the accumulation buffer operation.  op determines how value is used.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="AlphaFunc"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">AlphaFunc</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>func</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>ref</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glAlphaFunc.xml">glAlphaFunc</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">func</td><td>Specifies the alpha comparison function.  Symbolic constants GL_NEVER, GL_LESS, GL_EQUAL, GL_LEQUAL,  GL_GREATER, GL_NOTEQUAL, GL_GEQUAL, and GL_ALWAYS are accepted.  The initial value is GL_ALWAYS</td></tr>
+
+		<tr><td class="paramname">ref</td><td>Specifies the reference value that incoming alpha values are compared to.  This value is clamped to the range 0 1 , where 0 represents the lowest  possible alpha value and 1 the highest possible value. The initial  reference value is 0</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Begin"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Begin</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glBegin.xml">glBegin</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies the primitive or primitives that will be created from vertices  presented between glBegin and the subsequent glEnd. Ten symbolic constants  are accepted: GL_POINTS, GL_LINES, GL_LINE_STRIP, GL_LINE_LOOP,  GL_TRIANGLES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN, GL_QUADS, GL_QUAD_STRIP,  and GL_POLYGON.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="BlendEquation"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">BlendEquation</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glBlendEquation.xml">glBlendEquation</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies how source and destination colors are combined. It must be GL_FUNC_ADD,  GL_FUNC_SUBTRACT, GL_FUNC_REVERSE_SUBTRACT, GL_MIN, GL_MAX.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="BlendFunc"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">BlendFunc</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>sfactor</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>dfactor</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glBlendFunc.xml">glBlendFunc</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">sfactor</td><td>Specifies how the red, green, blue, and alpha source blending factors  are computed. The following symbolic constants are accepted: GL_ZERO,  GL_ONE, GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR, GL_DST_COLOR,  GL_ONE_MINUS_DST_COLOR, GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA,  GL_DST_ALPHA, GL_ONE_MINUS_DST_ALPHA, GL_CONSTANT_COLOR,  GL_ONE_MINUS_CONSTANT_COLOR, GL_CONSTANT_ALPHA,  GL_ONE_MINUS_CONSTANT_ALPHA, and GL_SRC_ALPHA_SATURATE.  The initial value is GL_ONE.</td></tr>
+
+		<tr><td class="paramname">dfactor</td><td>Specifies how the red, green, blue, and alpha destination blending  factors are computed.  The same constants are accepted as for sfactor.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="CallList"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">CallList</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>list</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCallList.xml">glCallList</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">list</td><td>Specifies the integer name of the display list to be executed.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Clear"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Clear</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mask</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glClear.xml">glClear</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mask</td><td>Bitwise OR of masks that indicate the buffers to be cleared.  The four masks are GL_COLOR_BUFFER_BIT, GL_DEPTH_BUFFER_BIT,  GL_ACCUM_BUFFER_BIT, and GL_STENCIL_BUFFER_BIT.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ClearAccum"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ClearAccum</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glClearAccum.xml">glClearAccum</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Either a 4 numbers or a table specifying the red, green, blue, and  alpha values used when the accumulation buffer is cleared.  The initial values are all 0.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ClearColor"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ClearColor</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glClearColor.xml">glClearColor</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Either a 4 numbers or a table specifying the red, green, blue, and  alpha values used when the color buffers are cleared.  The initial values are all 0.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ClearDepth"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ClearDepth</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>depth</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glClearDepth.xml">glClearDepth</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">depth</td><td>Specifies the depth value used when the depth buffer is cleared.  The initial value is 1.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ClearIndex"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ClearIndex</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>c</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glClearIndex.xml">glClearIndex</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">c</td><td>Specifies the index used when the color index buffers are cleared.  The initial value is 0.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ClearStencil"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ClearStencil</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>c</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glClearStencil.xml">glClearStencil</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">c</td><td>Specifies the index used when the stencil buffer is cleared.  The initial value is 0.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ClipPlane"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">ClipPlane</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>plane</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>equation</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glClipPlane.xml">glClipPlane</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">plane</td><td>Specifies which clipping plane is being positioned. Symbolic  names of the form GL_CLIP_PLANEi, where i is an integer  between 0 and GL_MAX_CLIP_PLANES -1 , are accepted.</td></tr>
+
+		<tr><td class="paramname">equation</td><td>Specifies the address of an array of four double-precision  floating-point values. These values are interpreted as a  plane equation.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Color"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Color</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glColor.xml">glColor</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Specify either 3 or 4 numbers or a table for new red, green,  blue and [alpha] values for the current color.  The default  value is (0, 0, 0, 1).</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ColorMask"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ColorMask</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glColorMask.xml">glColorMask</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Either 4 numbers or a table specifying whether red, green, blue,  and alpha can or cannot be written into the frame buffer. The  initial values are all GL_TRUE, indicating that the color  components can be written.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ColorMaterial"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">ColorMaterial</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>face</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>mode</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glColorMaterial.xml">glColorMaterial</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">face</td><td>Specifies whether front, back, or both front and back material parameters  should track the current color. Accepted values are GL_FRONT, GL_BACK, and  GL_FRONT_AND_BACK. The initial value is GL_FRONT_AND_BACK.</td></tr>
+
+		<tr><td class="paramname">mode</td><td>Specifies which of several material parameters track the current color.  Accepted values are GL_EMISSION, GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, and  GL_AMBIENT_AND_DIFFUSE. The initial value is GL_AMBIENT_AND_DIFFUSE.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="CopyPixels"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">CopyPixels</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>x</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>y</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>width</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>height</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>type</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyPixels.xml">glCopyPixels</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">x</td><td>Specify the x window coordinate of the lower left  corner of the rectangular region of pixels to be copied.</td></tr>
+
+		<tr><td class="paramname">y</td><td>Specify the y window coordinate of the lower left  corner of the rectangular region of pixels to be copied.</td></tr>
+
+		<tr><td class="paramname">width</td><td>Specify the horizontal dimensions of the rectangular region of pixels  to be copied. Both must be nonnegative.</td></tr>
+
+		<tr><td class="paramname">height</td><td>Specify the vertical dimensions of the rectangular region of pixels  to be copied. Both must be nonnegative.</td></tr>
+
+		<tr><td class="paramname">type</td><td>Specifies whether color values, depth values, or stencil values  are to be copied. Symbolic constants GL_COLOR, GL_DEPTH, and  GL_STENCIL are accepted.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="CopyTexImage"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">CopyTexImage</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>level</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>internalformat</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>x</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>y</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>width</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>[height]</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>border</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>If no height argument is given, glCopyTexImage1D will be used, otherwise, glCopyTexImage2D  be used. Example usage:</p><p> 
+<pre class="fragment">
+  <span class="lua-number">1</span><span class="lua-identifier">D</span> <span class="lua-identifier">case</span><span class="lua-operator">:</span> <span class="lua-identifier">gl.CopyTexImage</span><span class="lua-operator">(</span><span class="lua-identifier">GL.TEXTURE_1D</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-identifier">GL.RGBA</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">128</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">)</span>
+  <span class="lua-number">2</span><span class="lua-identifier">D</span> <span class="lua-identifier">case</span><span class="lua-operator">:</span> <span class="lua-identifier">gl.CopyTexImage</span><span class="lua-operator">(</span><span class="lua-identifier">GL.TEXTURE_2D</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-identifier">GL.RGBA</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">128</span><span class="lua-operator">,</span> <span class="lua-number">128</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">)</span>
+ </pre>
+</p><p> OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyTexImage1D.xml">glCopyTexImage1D</a>,  <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyTexImage2D.xml">glCopyTexImage2D</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Only relevant in the 2D case.  Specifies the target texture.  Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X,  GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y,  GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or  GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.</td></tr>
+
+		<tr><td class="paramname">level</td><td>Specifies the level-of-detail number. Level 0 is the base image level.  Level n is the nth mipmap reduction image.</td></tr>
+
+		<tr><td class="paramname">internalformat</td><td>Specifies the internal format of the texture. See OpenGL documentation for  accepted values.</td></tr>
+
+		<tr><td class="paramname">x</td><td>Specify the x window coordinate of the left corner of the row of pixels to be copied.</td></tr>
+
+		<tr><td class="paramname">y</td><td>Specify the y window coordinate of the left corner of the row of pixels to be copied.</td></tr>
+
+		<tr><td class="paramname">width</td><td>Specifies the width of the texture image. Must be 0 or 2 n + 2 border for some  integer n.</td></tr>
+
+		<tr><td class="paramname">[height]</td><td>Specifies the height of the texture image. Must be 0 or 2 m + 2 border for some  integer m. The height of the texture image in the 1D case is 1.</td></tr>
+
+		<tr><td class="paramname">border</td><td>Specifies the width of the border. Must be either 0 or 1.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="CopyTexSubImage"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">CopyTexSubImage</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>level</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>xoffset</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>[yoffset]</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>x</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>y</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>width</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>[height]</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>If no yoffset or height argument is given, glCopyTexSubImage1D will be used, otherwise, glCopyTexSubImage2D  be used. Example usage:</p><p> 
+<pre class="fragment">
+  <span class="lua-number">1</span><span class="lua-identifier">D</span> <span class="lua-identifier">case</span><span class="lua-operator">:</span> <span class="lua-identifier">gl.glCopyTexSubImage</span><span class="lua-operator">(</span><span class="lua-identifier">GL.TEXTURE_1D</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">32</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">64</span><span class="lua-operator">)</span>
+  <span class="lua-number">2</span><span class="lua-identifier">D</span> <span class="lua-identifier">case</span><span class="lua-operator">:</span> <span class="lua-identifier">gl.glCopyTexSubImage</span><span class="lua-operator">(</span><span class="lua-identifier">GL.TEXTURE_2D</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">16</span><span class="lua-operator">,</span> <span class="lua-number">24</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">0</span><span class="lua-operator">,</span> <span class="lua-number">128</span><span class="lua-operator">,</span> <span class="lua-number">128</span><span class="lua-operator">)</span>
+ </pre>
+</p><p> OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyTexSubImage1D.xml">glCopyTexSubImage1D</a>,  <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCopyTexSubImage2D.xml">glCopyTexSubImage2D</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Only relevant in the 2D case.  Specifies the target texture.  Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X,  GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y,  GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or  GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.</td></tr>
+
+		<tr><td class="paramname">level</td><td>Specifies the level-of-detail number. Level 0 is the base image level.  Level n is the nth mipmap reduction image.</td></tr>
+
+		<tr><td class="paramname">xoffset</td><td>Specifies a texel offset in the x direction within the texture array..</td></tr>
+
+		<tr><td class="paramname">[yoffset]</td><td>Specifies a texel offset in the y direction within the texture array..</td></tr>
+
+		<tr><td class="paramname">x</td><td>Specify the x window coordinate of the left corner of the row of pixels to be copied.</td></tr>
+
+		<tr><td class="paramname">y</td><td>Specify the y window coordinate of the left corner of the row of pixels to be copied.</td></tr>
+
+		<tr><td class="paramname">width</td><td>Specifies the width of the texture subimage.</td></tr>
+
+		<tr><td class="paramname">[height]</td><td>Specifies the height of the texture subimage.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="CullFace"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">CullFace</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glCullFace.xml">glCullFace</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies whether front- or back-facing facets are candidates for culling.  Symbolic constants GL_FRONT, GL_BACK, and GL_FRONT_AND_BACK are accepted.  The initial value is GL_BACK.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="DeleteLists"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">DeleteLists</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>list</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>range</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glDeleteLists.xml">glDeleteLists</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">list</td><td>Specifies the integer name of the first display list to delete.</td></tr>
+
+		<tr><td class="paramname">range</td><td>Specifies the number of display lists to delete.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="DepthFunc"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">DepthFunc</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>func</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glDepthFunc.xml">glDepthFunc</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">func</td><td>Specifies the depth comparison function. Symbolic constants GL_NEVER,  GL_LESS, GL_EQUAL, GL_LEQUAL, GL_GREATER, GL_NOTEQUAL, GL_GEQUAL,  and GL_ALWAYS are accepted. The initial value is GL_LESS.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="DepthMask"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">DepthMask</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>flag</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glDepthMask.xml">glDepthMask</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">flag</td><td>Specifies whether the depth buffer is enabled for writing. If flag is  GL_FALSE, depth buffer writing is disabled. Otherwise, it is enabled.  Initially, depth buffer writing is enabled.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="DepthRange"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">DepthRange</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>near</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>far</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glDepthRange.xml">glDepthRange</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">near</td><td>Specifies the mapping of the near clipping plane to window coordinates.  The initial value is 0.</td></tr>
+
+		<tr><td class="paramname">far</td><td>Specifies the mapping of the far clipping plane to window coordinates.  The initial value is 1.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Disable"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Disable</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>cap</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glEnable.xml">glDisable</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">cap</td><td>Specifies a symbolic constant indicating a GL capability.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="DrawBuffer"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">DrawBuffer</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glDrawBuffer.xml">glDrawBuffer</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies up to four color buffers to be drawn into. Symbolic constants  GL_NONE, GL_FRONT_LEFT, GL_FRONT_RIGHT, GL_BACK_LEFT, GL_BACK_RIGHT,  GL_FRONT, GL_BACK, GL_LEFT, GL_RIGHT, GL_FRONT_AND_BACK, and GL_AUXi,  where i is between 0 and the value of GL_AUX_BUFFERS minus 1, are  accepted. (GL_AUX_BUFFERS is not the upper limit; use glGet to query  the number of available aux buffers.) The initial value is GL_FRONT  for single-buffered contexts, and GL_BACK for double-buffered contexts</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="EdgeFlag"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">EdgeFlag</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>flag</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glEdgeFlag.xml">glEdgeFlag</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">flag</td><td>Specifies the current edge flag value, either GL_TRUE or GL_FALSE.  The initial value is GL_TRUE.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Enable"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Enable</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>cap</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glEnable.xml">glEnable</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">cap</td><td>Specifies a symbolic constant indicating a GL capability.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="End"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">End</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glBegin.xml">glEnd</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="EndList"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">EndList</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glNewList.xml">glEndList</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Finish"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Finish</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glFinish.xml">glFinish</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Flush"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Flush</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glFlush.xml">glFlush</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Fog"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Fog</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pname</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>...</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glFog.xml">glFog</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pname</td><td>Specifies a single-valued fog parameter. GL_FOG_MODE, GL_FOG_DENSITY,  GL_FOG_START, GL_FOG_END, GL_FOG_INDEX, and GL_FOG_COORD_SRC are  accepted.</td></tr>
+
+		<tr><td class="paramname">...</td><td>Specifies the value that pname will be set to.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="FrontFace"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">FrontFace</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glFrontFace.xml">glFrontFace</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies the orientation of front-facing polygons. GL_CW and GL_CCW  are accepted. The initial value is GL_CCW.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Frustum"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Frustum</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>left</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>right</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>bottom</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>top</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>near</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>far</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glFrustum.xml">glFrustum</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">left</td><td>Specify the coordinates for the left vertical clipping plane.</td></tr>
+
+		<tr><td class="paramname">right</td><td>Specify the coordinates for the right vertical clipping plane.</td></tr>
+
+		<tr><td class="paramname">bottom</td><td>Specify the coordinates for the top horizontal clipping plane.</td></tr>
+
+		<tr><td class="paramname">top</td><td>Specify the coordinates for the bottom horizontal clipping plane.</td></tr>
+
+		<tr><td class="paramname">near</td><td>Specify the distance to the near depth clipping plane. Must be positive.</td></tr>
+
+		<tr><td class="paramname">far</td><td>Specify the distance to the far depth clipping plane. Must be positive.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GenLists"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">GenLists</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>range</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGenLists.xml">glGenLists</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">range</td><td>Specifies the number of contiguous empty display lists to be generated.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Get"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Get</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pname</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGet.xml">glGet</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pname</td><td>Specifies the parameter value to be returned.  See documentation for the list of accepted values.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetClipPlane"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">GetClipPlane</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>plane</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetClipPlane.xml">glGetClipPlane</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">plane</td><td>Specifies a clipping plane. The number of clipping planes depends on the  implementation, but at least six clipping planes are supported. They are  identified by symbolic names of the form GL_CLIP_PLANE i where i ranges  from 0 to the value of GL_MAX_CLIP_PLANES - 1.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetError"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">GetError</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetError.xml">glGetError</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetLight"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">GetLight</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>light</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetLight.xml">glGetLight</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">light</td><td>Specifies a light source. The number of possible lights depends  on the implementation, but at least eight lights are supported.  They are identified by symbolic names of the form GL_LIGHTi  where i ranges from 0 to the value of GL_MAX_LIGHTS - 1.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies a light source parameter for light. Accepted symbolic  names are GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_POSITION,  GL_SPOT_DIRECTION, GL_SPOT_EXPONENT, GL_SPOT_CUTOFF,  GL_CONSTANT_ATTENUATION, GL_LINEAR_ATTENUATION, and  GL_QUADRATIC_ATTENUATION.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetMaterial"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">GetMaterial</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetMaterial.xml">glGetMaterial</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Specifies which of the two materials is being queried. GL_FRONT or GL_BACK  are accepted, representing the front and back materials, respectively.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the material parameter to return. GL_AMBIENT, GL_DIFFUSE,  GL_SPECULAR, GL_EMISSION, GL_SHININESS, and GL_COLOR_INDEXES are  accepted.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetString"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">GetString</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>name</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetString.xml">glGetString</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">name</td><td>Specifies a symbolic constant, one of GL_VENDOR, GL_RENDERER, GL_VERSION,  GL_SHADING_LANGUAGE_VERSION, or GL_EXTENSIONS.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetTexEnv"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">GetTexEnv</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetTexEnv.xml">glGetTexEnv</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Specifies a texture environment. May be GL_TEXTURE_ENV,  GL_TEXTURE_FILTER_CONTROL, or GL_POINT_SPRITE.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of a texture environment parameter. Accepted  values are GL_TEXTURE_ENV_MODE, GL_TEXTURE_ENV_COLOR, GL_TEXTURE_LOD_BIAS,  GL_COMBINE_RGB, GL_COMBINE_ALPHA, GL_SRC0_RGB, GL_SRC1_RGB, GL_SRC2_RGB,  GL_SRC0_ALPHA, GL_SRC1_ALPHA, GL_SRC2_ALPHA, GL_OPERAND0_RGB,  GL_OPERAND1_RGB, GL_OPERAND2_RGB, GL_OPERAND0_ALPHA, GL_OPERAND1_ALPHA,  GL_OPERAND2_ALPHA, GL_RGB_SCALE, GL_ALPHA_SCALE, or GL_COORD_REPLACE.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetTexGen"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">GetTexGen</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>coord</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetTexGen.xml">glGetTexGen</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">coord</td><td>Specifies a texture coordinate. Must be GL_S, GL_T, GL_R, or GL_Q.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of the value(s) to be returned. Must be  either GL_TEXTURE_GEN_MODE or the name of one of the texture generation  plane equations: GL_OBJECT_PLANE or GL_EYE_PLANE.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetTexLevelParameter"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">GetTexLevelParameter</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>level</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetTexLevelParameter.xml">glGetTexLevelParameter</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Specifies the symbolic name of the target texture, either GL_TEXTURE_1D, GL_TEXTURE_2D,  GL_TEXTURE_3D, GL_PROXY_TEXTURE_1D, GL_PROXY_TEXTURE_2D, GL_PROXY_TEXTURE_3D,  GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X,  GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,  GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, or  GL_PROXY_TEXTURE_CUBE_MAP.</td></tr>
+
+		<tr><td class="paramname">level</td><td>Specifies the level-of-detail number of the desired image. Level 0 is the base image level.  Level n is the nth mipmap reduction image.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of a texture parameter. GL_TEXTURE_WIDTH, GL_TEXTURE_HEIGHT,  GL_TEXTURE_DEPTH, GL_TEXTURE_INTERNAL_FORMAT, GL_TEXTURE_BORDER, GL_TEXTURE_RED_SIZE,  GL_TEXTURE_GREEN_SIZE, GL_TEXTURE_BLUE_SIZE, GL_TEXTURE_ALPHA_SIZE,  GL_TEXTURE_LUMINANCE_SIZE, GL_TEXTURE_INTENSITY_SIZE, GL_TEXTURE_DEPTH_SIZE,  GL_TEXTURE_COMPRESSED, and GL_TEXTURE_COMPRESSED_IMAGE_SIZE are accepted.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="GetTexParameter"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">GetTexParameter</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glGetTexParameter.xml">glGetTexParameter</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Specifies the symbolic name of the target texture. GL_TEXTURE_1D, GL_TEXTURE_2D,  GL_TEXTURE_3D, and GL_TEXTURE_CUBE_MAP are accepted.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of a texture parameter. GL_TEXTURE_MAG_FILTER,  GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MIN_LOD, GL_TEXTURE_MAX_LOD,  GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_WRAP_S,  GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_BORDER_COLOR,  GL_TEXTURE_PRIORITY, GL_TEXTURE_RESIDENT, GL_TEXTURE_COMPARE_MODE,  GL_TEXTURE_COMPARE_FUNC, GL_DEPTH_TEXTURE_MODE, and GL_GENERATE_MIPMAP  are accepted.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Hint"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Hint</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>mode</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glHint.xml">glHint</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Specifies a symbolic constant indicating the behavior to be controlled.  GL_FOG_HINT, GL_GENERATE_MIPMAP_HINT, GL_LINE_SMOOTH_HINT,  GL_PERSPECTIVE_CORRECTION_HINT, GL_POINT_SMOOTH_HINT,  GL_POLYGON_SMOOTH_HINT, GL_TEXTURE_COMPRESSION_HINT, and  GL_FRAGMENT_SHADER_DERIVATIVE_HINT are accepted.</td></tr>
+
+		<tr><td class="paramname">mode</td><td>Specifies a symbolic constant indicating the desired behavior.  GL_FASTEST, GL_NICEST, and GL_DONT_CARE are accepted.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Index"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Index</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>c</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glIndex.xml">glIndex</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">c</td><td>Specifies the new value for the current color index.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="IndexMask"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">IndexMask</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mask</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glIndex.xml">glIndexMask</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mask</td><td>Specifies a bit mask to enable and disable the writing of individual  bits in the color index buffers. Initially, the mask is all 1's.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="InitNames"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">InitNames</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glInitNames.xml">glInitNames</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="IsEnabled"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">IsEnabled</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>cap</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glIsEnabled.xml">glIsEnabled</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">cap</td><td>Specifies a symbolic constant indicating a GL capability.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="IsList"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">IsList</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>list</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glIsList.xml">glIsList</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">list</td><td>Specifies a symbolic constant indicating a GL capability.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="IsTexture"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">IsTexture</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>texture</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glIsTexture.xml">glIsTexture</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">texture</td><td>Specifies a value that may be the name of a texture.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Light"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Light</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>light</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>params</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glLight.xml">glLight</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">light</td><td>Specifies a light. The number of lights depends on the implementation,  but at least eight lights are supported. They are identified by symbolic  names of the form GL_LIGHTi, where i ranges from 0 to the value of  GL_MAX_LIGHTS - 1.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies a light source parameter for light. GL_AMBIENT, GL_DIFFUSE,  GL_SPECULAR, GL_POSITION, GL_SPOT_CUTOFF, GL_SPOT_DIRECTION, GL_SPOT_EXPONENT,  GL_CONSTANT_ATTENUATION, GL_LINEAR_ATTENUATION, and GL_QUADRATIC_ATTENUATION are  accepted.</td></tr>
+
+		<tr><td class="paramname">params</td><td>Specifies the value that parameter pname of light source light will be set to.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="LightModel"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">LightModel</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pname</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>params</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glLightModel.xml">glLightModel</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pname</td><td>Specifies a single-valued lighting model parameter. GL_LIGHT_MODEL_LOCAL_VIEWER,  GL_LIGHT_MODEL_COLOR_CONTROL, and GL_LIGHT_MODEL_TWO_SIDE are accepted.</td></tr>
+
+		<tr><td class="paramname">params</td><td>Specifies the value that param will be set to.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="LineStipple"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">LineStipple</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>factor</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pattern</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glLineStipple.xml">glLineStipple</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">factor</td><td>Specifies a multiplier for each bit in the line stipple pattern. If factor is  3, for example, each bit in the pattern is used three times before the next  bit in the pattern is used. factor is clamped to the range [1, 256] and  defaults to 1.</td></tr>
+
+		<tr><td class="paramname">pattern</td><td>Specifies a 16-bit integer whose bit pattern determines which fragments of a  line will be drawn when the line is rasterized. Bit zero is used first; the  default pattern is all 1's.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="LineWidth"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">LineWidth</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>width</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glLineWidth.xml">glLineWidth</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">width</td><td>Specifies the width of rasterized lines. The initial value is 1.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ListBase"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ListBase</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>base</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glListBase.xml">glListBase</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">base</td><td>Specifies an integer offset that will be added to glCallLists offsets  to generate display-list names. The initial value is 0.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="LoadIdentity"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">LoadIdentity</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glLoadIdentity.xml">glLoadIdentity</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="LoadMatrix"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">LoadMatrix</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>m</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glLoadMatrix.xml">glLoadMatrix</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">m</td><td>Specifies 16 consecutive values, which are used as the elements of a  4×4 column-major matrix.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="LoadName"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">LoadName</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>name</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glLoadName.xml">glLoadName</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">name</td><td>Specifies a name that will replace the top value on the name stack.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="LogicOp"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">LogicOp</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>opcode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glLogicOp.xml">glLogicOp</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">opcode</td><td>Specifies a symbolic constant that selects a logical operation.  The following symbols are accepted: GL_CLEAR, GL_SET, GL_COPY,  GL_COPY_INVERTED, GL_NOOP, GL_INVERT, GL_AND, GL_NAND, GL_OR,  GL_NOR, GL_XOR, GL_EQUIV, GL_AND_REVERSE, GL_AND_INVERTED,  GL_OR_REVERSE, and GL_OR_INVERTED. The initial value is GL_COPY.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Material"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Material</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>face</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>params</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glMaterial.xml">glMaterial</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">face</td><td>Specifies which face or faces are being updated. Must be one of GL_FRONT,  GL_BACK, or GL_FRONT_AND_BACK.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the material parameter of the face or faces that is being updated. Must  be one of GL_AMBIENT, GL_DIFFUSE, GL_SPECULAR, GL_EMISSION, GL_SHININESS,  GL_AMBIENT_AND_DIFFUSE, or GL_COLOR_INDEXES.</td></tr>
+
+		<tr><td class="paramname">params</td><td>Specifies a pointer to the value or values that pname will be set to.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="MatrixMode"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">MatrixMode</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glMatrixMode.xml">glMatrixMode</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies which matrix stack is the target for subsequent  matrix operations. Three values are accepted: GL_MODELVIEW,  GL_PROJECTION, and GL_TEXTURE. The initial value is GL_MODELVIEW.  Additionally, if the ARB_imaging extension is supported, GL_COLOR  is also accepted.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="MultMatrix"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">MultMatrix</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>m</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glMultMatrix.xml">glMultMatrix</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">m</td><td>Specifies 16 consecutive values, which are used as the elements of a  4×4 column-major matrix.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="NewList"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">NewList</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>list</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>mode</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glNewList.xml">glNewList</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">list</td><td>Specifies the display-list name.</td></tr>
+
+		<tr><td class="paramname">mode</td><td>Specifies the compilation mode, which can be GL_COMPILE or GL_COMPILE_AND_EXECUTE.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Normal"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Normal</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glNormal.xml">glNormal</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Either a 3 numbers or a table specifying the x, y, and z coordinates  of the new current normal. The initial value of the current normal  is the unit vector, (0, 0, 1).</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Ortho"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Ortho</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>left</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>right</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>bottom</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>top</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>near</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>far</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glOrtho.xml">glOrtho</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">left</td><td>Specify the coordinates for the left vertical clipping plane.</td></tr>
+
+		<tr><td class="paramname">right</td><td>Specify the coordinates for the right vertical clipping plane.</td></tr>
+
+		<tr><td class="paramname">bottom</td><td>Specify the coordinates for the bottom horizontal clipping plane.</td></tr>
+
+		<tr><td class="paramname">top</td><td>Specify the coordinates for the top horizontal clipping plane.</td></tr>
+
+		<tr><td class="paramname">near</td><td>Specify the distances to the nearer depth clipping plane.  This value is negative if the plane is to be behind the viewer.</td></tr>
+
+		<tr><td class="paramname">far</td><td>Specify the distances to the farther depth clipping plane.  This value is negative if the plane is to be behind the viewer.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PassThrough"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PassThrough</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>token</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPassThrough.xml">glPassThrough</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">token</td><td>Specifies a marker value to be placed in the feedback buffer  following a GL_PASS_THROUGH_TOKEN.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PixelStore"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">PixelStore</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pname</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>param</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPixelStore.xml">glPixelStore</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of the parameter to be set. Six values affect  the packing of pixel data into memory: GL_PACK_SWAP_BYTES, GL_PACK_LSB_FIRST,  GL_PACK_ROW_LENGTH, GL_PACK_IMAGE_HEIGHT, GL_PACK_SKIP_PIXELS, GL_PACK_SKIP_ROWS,  GL_PACK_SKIP_IMAGES, and GL_PACK_ALIGNMENT. Six more affect the unpacking of  pixel data from memory: GL_UNPACK_SWAP_BYTES, GL_UNPACK_LSB_FIRST,  GL_UNPACK_ROW_LENGTH, GL_UNPACK_IMAGE_HEIGHT, GL_UNPACK_SKIP_PIXELS,  GL_UNPACK_SKIP_ROWS, GL_UNPACK_SKIP_IMAGES, and GL_UNPACK_ALIGNMENT.</td></tr>
+
+		<tr><td class="paramname">param</td><td>Specifies the value that pname is set to.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PixelTransfer"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">PixelTransfer</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>pname</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>param</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPixelTransfer.xml">glPixelTransfer</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of the pixel transfer parameter to be set. Must be  one of the following: GL_MAP_COLOR, GL_MAP_STENCIL, GL_INDEX_SHIFT,  GL_INDEX_OFFSET, GL_RED_SCALE, GL_RED_BIAS, GL_GREEN_SCALE, GL_GREEN_BIAS,  GL_BLUE_SCALE, GL_BLUE_BIAS, GL_ALPHA_SCALE, GL_ALPHA_BIAS, GL_DEPTH_SCALE,  or GL_DEPTH_BIAS.</td></tr>
+
+		<tr><td class="paramname">param</td><td>Specifies the value that pname is set to.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PixelZoom"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">PixelZoom</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>xfactor</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>yfactor</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPixelZoom.xml">glPixelZoom</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">xfactor</td><td>Specify the x zoom factor for pixel write operations.</td></tr>
+
+		<tr><td class="paramname">yfactor</td><td>Specify the y zoom factor for pixel write operations.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PointSize"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PointSize</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>size</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPointSize.xml">glPointSize</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">size</td><td>Specifies the diameter of rasterized points. The initial value is 1.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PolygonMode"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">PolygonMode</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>face</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>mode</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPolygonMode.xml">glPolygonMode</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">face</td><td>Specifies the polygons that mode applies to. Must be GL_FRONT for front-facing polygons,  GL_BACK for back-facing polygons, or GL_FRONT_AND_BACK for front- and back-facing polygons.</td></tr>
+
+		<tr><td class="paramname">mode</td><td>Specifies how polygons will be rasterized. Accepted values are GL_POINT, GL_LINE, and GL_FILL.  The initial value is GL_FILL for both front- and back-facing polygons.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PolygonOffset"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">PolygonOffset</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>factor</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>units</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPolygonOffset.xml">glPolygonOffset</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">factor</td><td>Specifies a scale factor that is used to create a variable depth offset for each  polygon. The initial value is 0.</td></tr>
+
+		<tr><td class="paramname">units</td><td>Is multiplied by an implementation-specific value to create a constant depth  offset. The initial value is 0.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PopAttrib"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PopAttrib</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPushAttrib.xml">glPopAttrib</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PopClientAttrib"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PopClientAttrib</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPushClientAttrib.xml">glPopClientAttrib</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PopMatrix"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PopMatrix</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPushMatrix.xml">glPopMatrix</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PopName"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PopName</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPushName.xml">glPopName</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PushAttrib"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PushAttrib</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mask</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPushAttrib.xml">glPushAttrib</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mask</td><td>Specifies a mask that indicates which attributes to save.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PushClientAttrib"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PushClientAttrib</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPushClientAttrib.xml">glPushClientAttrib</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PushMatrix"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PushMatrix</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPushMatrix.xml">glPushMatrix</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="PushName"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">PushName</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>name</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glPushName.xml">glPushName</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">name</td><td>Specifies a name that will be pushed onto the name stack.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="RasterPos"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">RasterPos</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>..</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glRasterPos.xml">glRasterPos</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">..</td><td>Specifies an array or list of values of two, three, or four elements,  specifying x, y, z, and w coordinates, respectively.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ReadBuffer"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ReadBuffer</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glReadBuffer.xml">glReadBuffer</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies a color buffer. Accepted values are GL_FRONT_LEFT, GL_FRONT_RIGHT,  GL_BACK_LEFT, GL_BACK_RIGHT, GL_FRONT, GL_BACK, GL_LEFT, GL_RIGHT, and  GL_AUXi, where i is between 0 and the value of GL_AUX_BUFFERS minus 1.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Rect"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Rect</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glReadBuffer.xml">glRect</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Specify the vertices of a rectangle as an array or list of 4 values.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="RenderMode"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">RenderMode</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glRenderMode.xml">glRenderMode</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies the rasterization mode. Three values are accepted: GL_RENDER,  GL_SELECT, and GL_FEEDBACK. The initial value is GL_RENDER.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Rotate"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Rotate</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glRotate.xml">glRotate</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Specify an array or list of 4 values with the order being  the angle of rotation in degrees and then the the x, y, and z  coordinates of a vector, respectively</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Scale"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Scale</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glScale.xml">glScale</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Specify an array or list of 3 values of scale factors along  the x, y, and z axes, respectively</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Scissor"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Scissor</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>x</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>y</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>width</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>height</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glScissor.xml">glScissor</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">x</td><td>Specify the x-coordinate of the lower left corner of the scissor box.</td></tr>
+
+		<tr><td class="paramname">y</td><td>Specify the y-coordinate of the lower left corner of the scissor box.</td></tr>
+
+		<tr><td class="paramname">width</td><td>Specify the width of the scissor box.</td></tr>
+
+		<tr><td class="paramname">height</td><td>Specify the height of the scissor box.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="ShadeModel"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">ShadeModel</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mode</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glShadeModel.xml">glShadeModel</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mode</td><td>Specifies a symbolic value representing a shading technique. Accepted  values are GL_FLAT and GL_SMOOTH. The initial value is GL_SMOOTH.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="StencilFunc"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">StencilFunc</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>func</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>ref</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>mask</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glStencilFunc.xml">glStencilFunc</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">func</td><td>Specifies the test function. Eight symbolic constants are valid: GL_NEVER,  GL_LESS, GL_LEQUAL, GL_GREATER, GL_GEQUAL, GL_EQUAL, GL_NOTEQUAL, and GL_ALWAYS.  The initial value is GL_ALWAYS.</td></tr>
+
+		<tr><td class="paramname">ref</td><td>Specifies the reference value for the stencil test. ref is clamped to the range 0  2 n-1 , where n is the number of bitplanes in the stencil buffer. The initial value is 0.</td></tr>
+
+		<tr><td class="paramname">mask</td><td>Specifies a mask that is ANDed with both the reference value and the stored stencil  value when the test is done. The initial value is all 1's.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="StencilMask"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">StencilMask</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>mask</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glStencilMask.xml">glStencilMask</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">mask</td><td>Specifies a bit mask to enable and disable writing of individual bits in the  stencil planes. Initially, the mask is all 1's.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="StencilOp"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">StencilOp</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>sfail</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>dpfail</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>dppass</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glStencilOp.xml">glStencilOp</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">sfail</td><td>Specifies the action to take when the stencil test fails. Eight symbolic  constants are accepted: GL_KEEP, GL_ZERO, GL_REPLACE, GL_INCR, GL_INCR_WRAP,  GL_DECR, GL_DECR_WRAP, and GL_INVERT. The initial value is GL_KEEP.</td></tr>
+
+		<tr><td class="paramname">dpfail</td><td>Specifies the stencil action when the stencil test passes, but the depth test  fails. dpfail accepts the same symbolic constants as sfail. The initial  value is GL_KEEP.</td></tr>
+
+		<tr><td class="paramname">dppass</td><td>Specifies the stencil action when both the stencil test and the depth test pass,  or when the stencil test passes and either there is no depth buffer or depth  testing is not enabled. dppass accepts the same symbolic constants as sfail.  The initial value is GL_KEEP.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="TexCoord"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">TexCoord</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>..</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glTexCoord.xml">glTexCoord</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">..</td><td>Specifies an array or list of one, two, three, or four elements,  which in turn specify the s, t, r, and q texture coordinates.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="TexEnv"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">TexEnv</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>param</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glTexEnv.xml">glTexEnv</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Specifies a texture environment. May be GL_TEXTURE_ENV,  GL_TEXTURE_FILTER_CONTROL or GL_POINT_SPRITE.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of a single-valued texture environment parameter.  May be either GL_TEXTURE_ENV_MODE, GL_TEXTURE_LOD_BIAS, GL_COMBINE_RGB,  GL_COMBINE_ALPHA, GL_SRC0_RGB, GL_SRC1_RGB, GL_SRC2_RGB, GL_SRC0_ALPHA,  GL_SRC1_ALPHA, GL_SRC2_ALPHA, GL_OPERAND0_RGB, GL_OPERAND1_RGB,  GL_OPERAND2_RGB, GL_OPERAND0_ALPHA, GL_OPERAND1_ALPHA, GL_OPERAND2_ALPHA,  GL_RGB_SCALE, GL_ALPHA_SCALE, or GL_COORD_REPLACE.</td></tr>
+
+		<tr><td class="paramname">param</td><td>Specifies a single symbolic constant, one of GL_ADD, GL_ADD_SIGNED, GL_INTERPOLATE,  GL_MODULATE, GL_DECAL, GL_BLEND, GL_REPLACE, GL_SUBTRACT, GL_COMBINE, GL_TEXTURE,  GL_CONSTANT, GL_PRIMARY_COLOR, GL_PREVIOUS, GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR,  GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, a single boolean value for the point sprite  texture coordinate replacement, a single floating-point value for the texture  level-of-detail bias, or 1.0, 2.0, or 4.0 when specifying the GL_RGB_SCALE or  GL_ALPHA_SCALE.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="TexGen"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">TexGen</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>coord</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>param</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glTexGen.xml">glTexGen</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">coord</td><td>Specifies a texture coordinate. Must be one of GL_S, GL_T, GL_R, or GL_Q.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of the texture-coordinate generation function.  Must be GL_TEXTURE_GEN_MODE.</td></tr>
+
+		<tr><td class="paramname">param</td><td>Specifies a single-valued texture generation parameter, one of GL_OBJECT_LINEAR,  GL_EYE_LINEAR, GL_SPHERE_MAP, GL_NORMAL_MAP, or GL_REFLECTION_MAP.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="TexParameter"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">TexParameter</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>target</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>pname</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>param</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glTexParameter.xml">glTexParameter</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">target</td><td>Specifies the target texture, which must be either GL_TEXTURE_1D, GL_TEXTURE_2D,  GL_TEXTURE_3D, or GL_TEXTURE_CUBE_MAP.</td></tr>
+
+		<tr><td class="paramname">pname</td><td>Specifies the symbolic name of a single-valued texture parameter. pname can be one  of the following: GL_TEXTURE_MIN_FILTER, GL_TEXTURE_MAG_FILTER, GL_TEXTURE_MIN_LOD,  GL_TEXTURE_MAX_LOD, GL_TEXTURE_BASE_LEVEL, GL_TEXTURE_MAX_LEVEL, GL_TEXTURE_WRAP_S,  GL_TEXTURE_WRAP_T, GL_TEXTURE_WRAP_R, GL_TEXTURE_PRIORITY, GL_TEXTURE_COMPARE_MODE,  GL_TEXTURE_COMPARE_FUNC, GL_DEPTH_TEXTURE_MODE, or GL_GENERATE_MIPMAP.</td></tr>
+
+		<tr><td class="paramname">param</td><td>Specifies the value of pname.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Translate"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Translate</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>...</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glTranslate.xml">glTranslate</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">...</td><td>Specify an array or list of 3 values of translation vector</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Vertex"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Vertex</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>..</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glVertex.xml">glVertex</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">..</td><td>Specifies an array or list of two, three, or four elements,  which in turn specify the x, y, z, and w vertex coordinates.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Viewport"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+		<table class="memname">
+	<tr>
+		<td class="memname">Viewport</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>x</em>, </td>
+
+	</tr>
+ 
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>y</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>width</em>, </td>
+
+</tr>
+
+	<tr>
+	<td class="paramkey"></td>
+	<td></td>
+	<td class="paramname"><em>height</em></td>
+
+</tr>
+
+	<tr>
+		<td></td>
+		<td>)</td>
+		<td></td>
+	</tr>
+</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glViewport.xml">glViewport</a></p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">x</td><td>Specify the x-coordinate of the lower left corner of the viewport rectangle.</td></tr>
+
+		<tr><td class="paramname">y</td><td>Specify the y-coordinate of the lower left corner of the viewport rectangle.</td></tr>
+
+		<tr><td class="paramname">width</td><td>Specify the width of the viewport rectangle.</td></tr>
+
+		<tr><td class="paramname">height</td><td>Specify the height of the viewport rectangle.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="closectx"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">closectx</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>ctx</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>closectx should only be called when a valid OpenGL context is present.  Typically, it is  called right before a context is destroyed. It should only be called once on  context destruction.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">ctx</td><td>The name of the context.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="initctx"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">initctx</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>ctx</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p>initctx should only be called when a valid OpenGL context is present.  Otherwise, it will  likely cause an invalid access error and crash.  Typically, it is called before any frames  are drawn and the context has just been initialized.  It should only be called once on  context creation.</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">ctx</td><td>The name of the context.</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+
+
+
+
+</div> <!-- contents -->
+
+
+		</div> <!-- textblock -->
+	</div> <!-- contents -->
+</div> <!-- doc-content -->
+
+
+	<div id="nav-path" class="navpath">
+		<ul>
+		<!-- window showing the filter options -->
+		<div id="MSearchSelectWindow"
+			 onmouseover="return searchBox.OnSearchSelectShow()"
+			 onmouseout="return searchBox.OnSearchSelectHide()"
+			 onkeydown="return searchBox.OnSearchSelectKey(event)">
+	
+		<!-- This stuff pops up a menu that "kind of" works -->
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)">
+			<span class="SelectionMark">&#160;</span>All
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)">
+			<span class="SelectionMark">&#160;</span>Data Structures
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)">
+			<span class="SelectionMark">&#160;</span>Variables</a>
+	</div>
+	
+	<!-- iframe showing the search results (closed by default) -->
+	<div id="MSearchResultsWindow">
+		<iframe src="javascript:void(0)" frameborder="0" 
+				name="MSearchResults" id="MSearchResults">
+		</iframe>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;<a href="http://lua-av.mat.ucsb.edu/">LuaAV</a>: Audiovisual Scripting
+	</div>
+</body>
+</html>

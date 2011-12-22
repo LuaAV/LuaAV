@@ -1,0 +1,769 @@
+<!-- 
+Template Variables:
+	$ title
+	$ header_image
+	$ filename
+	$ relpath
+	$ tabs
+	$ content
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+
+<title>video.Video</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+<div id="titlearea">
+	<div id="header">
+		<img src="LuaAV.header.png" height="200" />
+	</div>
+</div>
+
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+</script>
+<script type="text/javascript" src="dynsections.js"></script>
+
+<!-- Tabs Begin -->
+<div id="navrow1" class="tabs">
+	<ul class="tablist">
+		<!-- Tab List note: the current page is marked with class="current", spaces get nbsp-->
+		<li><a href="index.html"><span>Main&#160;Page</span></a></li>
+<li><a href="manual.html"><span>Manual</span></a></li>
+<li><a href="reference.html"><span>Reference</span></a></li>
+		<!--
+		<li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+		<li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+		<li><a href="modules.html"><span>Modules</span></a></li>
+		<li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
+		-->
+		
+		<!-- Search Field -->
+		<li>
+			<div id="MSearchBox" class="MSearchBoxInactive">
+        	<span class="left">
+			<img id="MSearchSelect" src="search/mag_sel.png"
+				onmouseover="return searchBox.OnSearchSelectShow()"
+				onmouseout="return searchBox.OnSearchSelectHide()"
+				alt=""/>
+			<input type="text" id="MSearchField" value="Search" accesskey="S"
+				onfocus="searchBox.OnSearchFieldFocus(true)" 
+				onblur="searchBox.OnSearchFieldFocus(false)" 
+				onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          	</span>
+          	<span class="right">
+				<a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+				<img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          	</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- Tabs End -->
+
+
+<!-- Sidebar Tree Begin -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+
+<script type="text/javascript">
+  initNavTree('video.Video.html','');
+</script>
+<!-- Sidebar Tree End -->
+<!-- End of Common Header -->
+
+<!--
+Template Variables:
+	$ title
+	$ text
+-->
+<div id="doc-content">
+	<div class="header">
+		<div class="headertitle">
+		<table>
+		<tr>
+			<td><div class="title"><a href="#details">video.Video</a></div></td>
+			<td><div class="title-summary">&nbsp;Video&nbsp;file&nbsp;player</div></td>
+		</tr>
+		</table>
+		</div>
+	</div> <!-- header -->
+	<div class="contents">
+		<div class="textblock">
+
+<!-- Pane Contents -->
+<div class="contents">
+
+<table class="memberdecls">
+ 
+<tr><td colspan="2">
+	<h2>
+		<!-- TOC Anchor -->
+		<a name="Attributes"></a>Attributes
+	</h2>
+</td></tr>
+
+ 
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video.dim">Video.dim</a>&nbsp;GET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Video dimensions<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video.dur">Video.dur</a>&nbsp;GET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Video duration<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video.frame">Video.frame</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Video frame<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video.nframes">Video.nframes</a>&nbsp;GET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Total number of video frames<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video.pos">Video.pos</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Video position (as a percentage)<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video.speed">Video.speed</a>&nbsp;GETSET</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Video speed<br/></td>
+</tr>
+
+
+<tr><td colspan="2">
+	<h2>
+		<!-- TOC Anchor -->
+		<a name="Functions"></a>Functions
+	</h2>
+</td></tr>
+
+ 
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video:array">Video:array</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Get the internal Array data<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video:open">Video:open</a>(filename)</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Openg a video file<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video:pause">Video:pause</a>([flag])</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Toggle pausing the video file<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video:play">Video:play</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Play the video file<br/></td>
+</tr>
+
+<!-- A Documented Item -->
+<tr>
+	<!-- Item Name / Function or Macro Signature + link to specific page or expanded description on current page -->
+	<td class="memItemRight" valign="bottom"><a href="#Video:stop">Video:stop</a>()</td>
+</tr>
+<!-- Short Description, cutoff at a certain point (first sentence) -->
+<tr>
+	<td class="mdescRight"> Stop the video file<br/></td>
+</tr>
+
+
+
+</table>
+
+
+<!-- Details -->
+
+<a name="details" id="details"></a>
+<h2>Detailed Description</h2>
+<p> Video file player</p>
+
+ 
+<hr/>
+<!-- Section Details -->
+<h2>Attributes</h2>
+ 
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video.dim"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video.dim</td>
+		<td></td>
+		<td>GET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Video dimensions</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video.dur"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video.dur</td>
+		<td></td>
+		<td>GET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Video duration</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video.frame"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video.frame</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Video frame</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video.nframes"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video.nframes</td>
+		<td></td>
+		<td>GET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Total number of video frames</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video.pos"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video.pos</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Video position (as a percentage)</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video.speed"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video.speed</td>
+		<td></td>
+		<td>GETSET</td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Video speed</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+
+
+<hr/>
+<!-- Section Details -->
+<h2>Functions</h2>
+ 
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video:array"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video:array</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Get the internal Array data</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video:open"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video:open</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>filename</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Openg a video file</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">filename</td><td>The file to open</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video:pause"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video:pause</td>
+		<td>(</td>
+ 
+		<td class="paramname"><em>[flag]</em></td>
+
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Toggle pausing the video file</p>
+	
+	<!-- Parameter Documentation -->
+ 
+	<dl><dt><b>Parameters:</b></dt><dd>
+	<table class="params">
+ 
+		<tr><td class="paramname">[flag]</td><td>Optional flag to pause / unpause the video (default true)</td></tr>
+
+	</table>
+</dd>
+</dl>
+
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video:play"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video:play</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Play the video file</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+<!-- Detailed Item (Complex Function Example) -->
+
+<a class="anchor" id="Video:stop"></a>
+<div class="memitem">
+	<div class="memproto">
+
+ 
+			<table class="memname">
+	<tr>
+		<td class="memname">Video:stop</td>
+		<td>(</td>
+ 
+		<td>)</td>
+		<td></td>
+	</tr>
+	</table>
+
+
+	</div>
+	<div class="memdoc">
+
+	<!-- Text About Item -->
+	<p> Stop the video file</p>
+	
+	<!-- Parameter Documentation -->
+ 
+
+	<!-- Return Values -->
+ 
+	
+	<!-- Remarks -->
+ 
+	
+	<!-- See Also -->
+ 
+
+	</div>
+</div>
+
+
+
+
+
+
+</div> <!-- contents -->
+
+
+		</div> <!-- textblock -->
+	</div> <!-- contents -->
+</div> <!-- doc-content -->
+
+
+	<div id="nav-path" class="navpath">
+		<ul>
+		<!-- window showing the filter options -->
+		<div id="MSearchSelectWindow"
+			 onmouseover="return searchBox.OnSearchSelectShow()"
+			 onmouseout="return searchBox.OnSearchSelectHide()"
+			 onkeydown="return searchBox.OnSearchSelectKey(event)">
+	
+		<!-- This stuff pops up a menu that "kind of" works -->
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)">
+			<span class="SelectionMark">&#160;</span>All
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)">
+			<span class="SelectionMark">&#160;</span>Data Structures
+		</a>
+		<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)">
+			<span class="SelectionMark">&#160;</span>Variables</a>
+	</div>
+	
+	<!-- iframe showing the search results (closed by default) -->
+	<div id="MSearchResultsWindow">
+		<iframe src="javascript:void(0)" frameborder="0" 
+				name="MSearchResults" id="MSearchResults">
+		</iframe>
+	</div>
+	
+	<div>
+		&nbsp;&nbsp;<a href="http://lua-av.mat.ucsb.edu/">LuaAV</a>: Audiovisual Scripting
+	</div>
+</body>
+</html>
