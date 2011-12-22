@@ -817,12 +817,11 @@ template <typename T> bool Glue<T>::usr_attr_is_prototype(lua_State *L, int idx)
 
 template <typename T> int Glue<T>::usr_attr_prototype(lua_State *L) {
 	int ud_idx = lua_gettop(L);
-	int pidx = ud_idx;
+	int pidx = ud_idx-1;
 	if(pidx > 1) {
-		pidx = 1;
+	//	pidx = 1;
 	}
 	if(usr_attr_is_prototype(L, pidx)) {
-
 		// iterate through the prototype table
 		lua_getmetatable(L, -1);
 		lua_pushstring(L, "__newindex");
