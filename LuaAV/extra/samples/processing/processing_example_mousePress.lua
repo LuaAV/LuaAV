@@ -15,7 +15,7 @@ function setup()
 end
 
 function draw()
-	background(156)
+	--background(156)
 	
 	if(isMousePressed) then
 		stroke(255)

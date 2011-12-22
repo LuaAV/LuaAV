@@ -23,6 +23,9 @@ module("processing")
 
 local ctx = "LuaAV meets processing"
 
+-- shift to center of pixel for sharp rendering
+local fudge = 0.5
+
 -- make window:
 local win = Window{
 	title = ctx,
@@ -277,37 +280,37 @@ function int(v) return math.floor(v) end
 ---------------------------------
 --- 2D Primitives
 function arc(x, y, width, height, start, stop)
-	draw:arc({x, y}, {width, height}, start, stop)
+	draw:arc({x+fudge, y+fudge}, {width, height}, start, stop)
 end
 
 function ellipse(x, y, width, height)
-	draw:ellipse({x, y}, {width, height})
+	draw:ellipse({x+fudge, y+fudge}, {width, height})
 end
 
 function line(x0, y0, x1, y1)
-	draw:line({x0, y0}, {x1, y1})
+	draw:line({x0+fudge, y0+fudge}, {x1+fudge, y1+fudge})
 end
 
 function point(x,y)
-	 draw:point{x, y}
+	 draw:point{x+fudge, y+fudge}
 end
 
 function quad(x0, y0, x1, y1, x2, y2, x3, y3)
-    draw:quad({x0, y0}, {x1, y1}, {x2, y2}, {x3, y3})
+    draw:quad({x0+fudge, y0+fudge}, {x1+fudge, y1+fudge}, {x2+fudge, y2+fudge}, {x3+fudge, y3+fudge})
 end
 
 function rect(x, y, width, height)
-    draw:rect({x, y}, {width, height})
+    draw:rect({x+fudge, y+fudge}, {width, height})
 end
 
 function triangle(x0, y0, x1, y1, x2, y2)
- 	draw:triangle({x0, y0}, {x1, y1}, {x2, y2})
+ 	draw:triangle({x0+fudge, y0+fudge}, {x1+fudge, y1+fudge}, {x2+fudge, y2+fudge})
 end
 
 ---------------------------------
 --- Curves
 function bezier(x1, y1, cx1, cy1, cx2, cy2, x2, y2)
-	draw:bezier({x1, y1}, {cx1, cy1}, {cx2, cy2}, {x2, y2})
+	draw:bezier({x1+fudge, y1+fudge}, {cx1, cy1}, {cx2, cy2}, {x2+fudge, y2+fudge})
 end
 
 function bezierDetail(n)
@@ -323,7 +326,7 @@ function bezierTangent(a, b, c, d, t)
 end
 
 function curve(x1, y1, x2, y2, x3, y3, x4, y4)
-	draw:curve({x1, y1}, {x2, y2}, {x3, y3}, {x4, y4})
+	draw:curve({x1+fudge, y1+fudge}, {x2+fudge, y2+fudge}, {x3+fudge, y3+fudge}, {x4+fudge, y4+fudge})
 end
 
 function curverDetail(n)
@@ -385,11 +388,11 @@ function endShape()
 end
 
 function bezierVertex(cx1, cy1, cx2, cy2, x2, y2)
-	draw:bezierVertex({cx1, cy1}, {cx2, cy2}, {x2, y2})
+	draw:bezierVertex({cx1, cy1}, {cx2, cy2}, {x2+fudge, y2+fudge})
 end
 
 function curveVertex(x, y)
-	draw:curveVertex({x, y})
+	draw:curveVertex({x+fudge, y+fudge})
 end
 
 --[[ ??
@@ -399,7 +402,7 @@ end
 --]]
 
 function vertex(x, y)
-	draw:vertex{x, y}
+	draw:vertex{x+fudge, y+fudge}
 end
 
 
@@ -509,37 +512,3 @@ for k, v in pairs(_M) do
 		_G[k] = v 
 	end
 end
-
---[[
-
-
-this hack makes it possible to have
-mousePressed() be a function, while
-print(mousePressed) returns a boolean
-
-however, I don't think that's a good idea for Lua... 
-
-local isMousePressed
-local proxied = {}
-
-setmetatable(_G, {
-	__index = function(self, k) 
-		if k == "mousePressed" then
-			return isMousePressed
-		elseif proxied[k] then 
-			return rawget(proxied, k) 
-		else 
-			return rawget(self, k) 
-		end
-	end,
-	__newindex = function(self, k, v)
-		if k == "mousePressed" then
-			rawset(proxied, k, v)
-			print("set proxied mousePressed", v)
-		else
-			rawset(self, k, v)
-		end
-	end,
-})
-
---]]
