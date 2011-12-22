@@ -1,17 +1,17 @@
 require "doc.lexer"
 
 function highlight_pre(src)
-       -- convert quotes
-       local src = src:gsub("&quot;", '"')
-       -- strip <pre> tag
-       src:gsub("<pre>", ''):gsub("</pre>", '')
-
-       local lexed = lexer(src)
-       local str = {}
-       for i, v in ipairs(lexed) do
-               table.insert(str, string.format("<span class=%s>%s</span>", unpack(v)))
-       end
-       return "<pre>"..table.concat(str).."</pre>"
+	-- convert quotes
+	local src = src:gsub("&quot;", '"')
+	-- strip <pre> tag
+	src:gsub("<pre>", ''):gsub("</pre>", '')
+	
+	local lexed = lexer(src)
+	local str = {}
+	for i, v in ipairs(lexed) do
+		table.insert(str, string.format("<span class=%s>%s</span>", unpack(v)))
+	end
+	return "<pre>"..table.concat(str).."</pre>"
 end
 
 -- example:

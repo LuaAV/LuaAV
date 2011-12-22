@@ -1,0 +1,107 @@
+<h3>Multi-channel expressions</h3>
+
+<p>LuaAV's <em>audio.Def</em> expressions can handle multi-channel streams quite easily. To expand an expression into multiple channels is a matter of replacing a singular argument with a list. Taking this simple sine tone:</p>
+
+<luacode>
+local mono = Def{
+	SinOsc{ freq=440 } * Env{ dur=1 }
+}
+</luacode>
+
+<p>We can replace the <em>freq</em> argument of <em>SinOsc</em> with a list, to produce a stereo version:</p>
+
+<luacode>
+local stereo = Def{
+	SinOsc{ freq={440, 550} } * Env{ dur=1 }
+}
+</luacode>
+
+<p>In this case, the multiply expression implicitly becomes stereo also, since the first input (the sinewave) is stereo.</p>
+
+<p>For most expression objects, including mathematical operators, the number of output channels will match the greatest number of input channels for any of its inputs, in order to prevent loss of information. Some expression operators calculate their number of output channels differently - for example spatialization expressions such as <em>Pan2</em>.</p>
+
+<p>Where an input stream doesn't have enough channels for the output stream, input stream channels cycle back again. So, for example, if an expression outputs a four-channel stream, but an input is only two-channel, these inputs will map to outputs as 1, 2, 1, 2. If you've used SuperCollider before, this should all seem familiar.</p>
+
+<p>To select individual channels or re-map channels, the <em>Channels</em> expression generator can be used. Very simply, it takes a multi-channel expression as first argument, and one or more channel number arguments to determine which channels of the input stream will be output. For example, to select only the right channel:</p>
+
+<luacode>
+local osc = SinOsc{ freq={440, 550} }	-- stereo
+local right = Channels{ osc, 2 }		-- mono
+</luacode>
+
+<p>And to swap left and right channels:</p>
+
+<luacode>
+local swapped = Channels{ osc, 2, 1 }
+</luacode>
+
+<p>A more common need is to mix a multi-channel stream down to mono or stereo; the Mono and Stereo expressions make this easy:</p>
+
+<luacode>
+-- a four-channel stream:
+local expr = SinOsc{ freq={440, 550, 660, 770} } * Env{ dur=1 } * 0.25
+
+-- no mix; on a stereo system, you will only hear the first 2 channels:
+local mono = Def{ expr }
+
+-- mix to mono (all channels summed):
+local mono = Def{ Mono{ expr } }
+
+-- mix to stereo (left gets channels 1 & 3, right gets channels 2 & 4):
+local stereo = Def{ Stereo{ expr } }
+</luacode>
+
+<h3>Multi-channel parameters</h3>
+
+<p>Parameters can also be expanded in a similar way. In the following example, the <em>freq</em> parameter is implicitly set to be stereo by assigning a list of two default values. Consequently any use of <em>P"freq"</em> in the expression is interpreted as a stereo stream:</p>
+
+<luacode>
+local pstereo = Def{
+	dur = 1,
+	freq = { 440, 550 }, 
+	SinOsc{ freq=P"freq" } * Env{ dur=P"dur" }
+}
+</luacode>
+
+<p>Since the parameter is multi-channel, we can assign multi-channel values to it; again, by assigning a list of values.</p>
+
+<luacode>
+local voice = pstereo()
+for i = 1, 10 do
+	voice.freq = { i * 110, (10-i) * 110 } -- set left & right channels to different frequencies
+	wait(0.1)
+end
+</luacode>
+
+<p>If the list is too long, extra values will be ignored (it is not possible to change the number of channels of a parameter). If the list contains nils, these channels will not be updated (the previous parameter value for that channel will still hold). In the following example, left and right frequency parameters are updated alternately:</p>
+
+<luacode>
+local voice = pstereo{ dur=2 }
+for i = 1, 10 do
+	voice.freq = { nil, (10-i) * 110 } -- set right channel only
+	wait(0.1)
+	voice.freq = { i * 110, nil } -- set left channel only
+	wait(0.1)
+end
+</luacode>
+
+<p>Setting a multi-channel parameter with a single number however will apply that value to all channels:</p>
+
+<luacode>
+local voice = pstereo()
+voice.freq = 550 -- sets all channels to 550Hz
+</luacode>
+
+
+<h3>Panning</h3>
+
+<p>Distributing channels can be more rich though the use of panning laws and spatialization techniques. More will be added to this tutorial soon, but for now, here's the simplest example of a panning oscillator:</p>
+
+<luacode>
+local panning = Def{
+	Pan2{ 
+		SinOsc{  440 } * Env{ dur=1 },
+		pan = SinOsc{ 4 }
+	}
+}
+</luacode>

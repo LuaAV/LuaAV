@@ -1,0 +1,83 @@
+<p>LuaAV has a powerful timing system, using on an internal scheduler that preserves deterministic ordering and logical timestamps to nanosecond accuracy. The deterministic ordering and accuracy is preserved in many messages to the audio system, such as adding/removing synths.</p>
+
+<p>The main scheduler follows the cpu clock as closely as possible, usually within and accuracy of around 10 milliseconds; however when slow functions are called (such as loading files and creating complex resources such as windows), the scheduler may experience a temporary drop-out, from which it will attempt to recover as soon as possible.</p>
+
+<p>The Lua language itself does not have means to control time, however this has been added in LuaAV via the <a href="http://lua-av.mat.ucsb.edu/doc/LuaAV/time.html" target="_blank">LuaAV.time</a> module. Several of the functions in this module are so useful that they are pre-loaded as globals in every script:</p>
+<ol>
+	<li>now()</li>
+	<li>wait()</li>
+	<li>go()</li>
+	<li>event()</li>
+</ol>
+<p>Printing out now() in a new script will return the logical time (in seconds) since the script was loaded. Until we start scheduling with time, all script actions occur immediately, so now() will return 0.</p>
+
+<p>The <em>wait()</em> function allows us to pause the execution of the script for a number of seconds, after which it will continue. The following script will print out the current logical time every 0.1 seconds (100 ms):</p>
+
+<luacode>
+local period = 0.1
+while true do
+	print(now())
+	wait(period)
+end
+</luacode>
+
+<p>This is ok, but there's nothing we can do in between each wait, so this kind of control over time is still quite minor.</p>
+
+<p>Fortunately, Lua provides a way to create parallelism within a script, using a coroutines. One way of thinking about a coroutines is that it is like a parallel function or script state; another way to think about it is as a function that can be paused in mid execution, while Lua goes off to execute some other code, and to later returned to (resume) at the point at which it paused (yielded).</p>
+
+<p>LuaAV adds more power to coroutines by connecting them with the scheduler. A convenience function <em>go()</em> will take a function and arguments, create a coroutine based on that function and arguments, and schedule this coroutine within the scheduler. Now we can create many parallel copies of the same function that can be scheduled alongside each other, each with potentially distinct timing, but without losing deterministic accuracy:</p>
+
+<luacode>
+function clockprinter(name, period) 
+	while true do
+		print(now(), name) 
+		wait(period)
+	end
+end
+
+go(clockprinter, "T O C K!", 4) 
+go(clockprinter, "...tick...", 1)
+</luacode>
+
+<p>The <em>go()</em> function can also take an optional first argument (delay in seconds), which allows us to schedule it to occur at some point in the future:</p>
+
+<luacode class="inling-fragment">go(2, clockprinter, "...tick...", 1) -- will start 2 seconds later</luacode>
+
+<p>Note that the even if the delay is 0, or is not given, the coroutine will not run immediately; <em>go()</em> simply adds the coroutine to the internal scheduler. (Lua is single-threaded by design, which means that only one actual function is executing at any time.) The scheduled function will not begin running until the context in which it was launched using <em>go()</em> yields with a <em>wait()</em> command, or reaches the end of the script.</p>
+
+<h3>Scheduling with events</h3>
+<p>Sometimes we want to schedule activity to occur not at a given time, but when a given situation occurs. To support this, the <em>go()</em> and <em>wait()</em> functions can also take a string argument in place of a duration. The string represents a unique event.</p>
+
+<p>The <em>event()</em> function can then be used to resume ALL coroutines that were scheduled against or waiting upon a particular event. A classic use-case of this is to make sure that OpenGL rendering commands only execute during a window's <em>draw()</em> method. The following example shows how a function <em>drawstuff() </em>is scheduled to execute only when the <em>draw</em> event occurs, and once it does, to wait until subsequent <em>draw</em> events to continue rendering:</p>
+
+<luacode>
+local gl = require("opengl")
+local GL = gl
+
+win = Window("test")
+
+function drawstuff()
+	while true do
+		gl.Begin(gl.LINES)
+			gl.Vertex(-math.cos(now()), math.sin(now()), 0)
+			gl.Vertex(0, 0, 0)
+		gl.End()
+		wait("draw")
+	end
+end
+
+go("draw", drawstuff)
+
+function win:draw()
+	-- resume any functions waiting on the draw event
+	event("draw")
+end
+</luacode>
+
+<p>The <em>event()</em> function can also take additional arguments; these arguments are returned by any corresponding wait(). Using this feature quite powerful event-based programming systems are possible.</p>
+
+<h3>Script-controlled schedulers</h3>
+<p>Users can create their own schedulers, which are independent of CPU clock, using the L<em>uaAV.time.scheduler()</em> function. A scheduler is an object that provides its own <em>scheduler.now()</em>, <em>scheduler.wait()</em> and <em>scheduler.go()</em> functions. The logical time of this user-controlled scheduler is not tied to the CPU clock, but instead is advanced within the script using the <em>scheduler.advance()</em> or <em>scheduler.update()</em> functions. For more information, see the <a href="LuaAV.time.html">LuaAV.time</a> module.</p>
+
+<h3>Timing and the OpenGL Window</h3>
+<p>Callbacks to draw the OpenGL window might not be scheduled with this tight accuracy, since they are dependent on timing factors outside their control (such as graphics drivers and GPU load). However, they will occur as closely as possible to the rate specified by the win.fps attribute.</p>
