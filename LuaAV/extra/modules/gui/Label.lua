@@ -76,15 +76,14 @@ function M:draw()
 	end
 
 	if (self.vertical_align == M.TOP) then
-		dpos[2] = self.margin[2] + self.size*0.5
+		dpos[2] = self.margin[2] + self.size*1.5
 	elseif (self.vertical_align == M.BOTTOM) then
-		dpos[2] = self.rect.h - (self.margin[2] + self.size*0.5)
+		dpos[2] = self.rect.h + self.size*0.5 - self.margin[2]
 	elseif (self.vertical_align == M.MIDDLE) then
-		dpos[2] = self.rect.h*0.5
+		dpos[2] = self.rect.h*0.5+self.size
 	end
 
 	self.font.alignment = self.horizontal_align
 	g.color(self.text_color)
 	self.font:draw(dpos, self.label)
-
 end

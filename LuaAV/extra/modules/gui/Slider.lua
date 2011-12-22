@@ -64,11 +64,11 @@ function M:mouse_down(btn, x, y, nclks)
 	self.mouse_handler("down", btn, x, y, nclks)
 end
 
-function M:mouse_drag(x, y)
+function M:mouse_drag(btn, x, y)
 	self.mouse_handler("drag", x, y)
 end
 
-function M:mouse_up(x, y)
+function M:mouse_up(btn, x, y)
 	self.mouse_handler("up", x, y)
 end
 
@@ -97,10 +97,15 @@ function M:create_mouse_handler()
 
 					local dx = x-start_x
 					local dy = y-start_y
-					self:set_value(
-						--start_v + (self.range[2] - self.range[1])*dx/self.rect.w
-						start_v + (self.range[2] - self.range[1])*dy/self.rect.h
-					)
+					if(self.rect.w > self.rect.h) then
+						self:set_value(
+							start_v + (self.range[2] - self.range[1])*dx/self.rect.w
+						)
+					else
+						self:set_value(
+							start_v + (self.range[2] - self.range[1])*dy/self.rect.h
+						)
+					end
 				until(e ~= "drag")
 			end
 		end
@@ -115,6 +120,9 @@ function M:draw()
 	local dv = self.range[2] - self.range[1]
 	--g.color(1, 1, 1, 1)
 	g.color(self.color)
-	--g.rect(g.Quads, 0, -r.h + (self.value+self.range[1])/dv*r.h, r.w, r.h)
-	g.rect(g.Quads, 0, r.h + (self.value * r.h), r.w, -r.h)	
+	if(self.rect.w > self.rect.h) then
+		g.rect(g.Quads, 0, 0, (self.value-self.range[1])/dv*r.w, r.h)
+	else
+		g.rect(g.Quads, 0, 0, r.w, (self.value-self.range[1])/dv*r.h)
+	end
 end

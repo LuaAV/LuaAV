@@ -23,6 +23,7 @@ win = Window{
 }
 
 local tex = Texture(ctx)
+local circle = true
 
 -- globals
 local color = {1, 0, 0.5, 1}
@@ -35,15 +36,18 @@ local gui = Gui{
 }
 
 -- create some widgets
-local gbtn = Button{
-	rect = Rect(10, 10, 15, 15),
-	value = true,
-	toggles = false,
+local btnlabel = Label{
+	rect = Rect(10, 10, 50, 15),
+	label = "Shape:",
+	--border = true,
+	horizontal_align = Label.LEFT,
+	vertical_align = Label.MIDDLE,
+	text_color = {1, 1, 1, 1},
 }
-
-local gtxt = Textfield{
-	rect = Rect(30, 10, 385, 15),
-	text = "test!",
+local gbtn = Button{
+	rect = Rect(50, 10, 15, 15),
+	value = circle,
+	toggles = true,
 }
 
 local xslider = Slider{
@@ -52,19 +56,9 @@ local xslider = Slider{
 	range = {-1, 1},
 }
 
-local glbl = Label{
-	rect = Rect(10, 50, 100, 40),
-	label = "Some Text",
-	border = true,
-	--horizontal_align = Label.LEFT,
-	vertical_align = Label.MIDDLE,
-	text_color = {1, 0, 0, 1},
-}
-
 -- add them to the gui
 gui:add_view(gbtn)
-gui:add_view(glbl)
-gui:add_view(gtxt)
+gui:add_view(btnlabel)
 gui:add_view(xslider)
 
 function win:copy()
@@ -85,34 +79,7 @@ end
 
 -- register for notifications
 gbtn:register("value", function(w)
-	color[2] = w.value and 1 or 0
-	print("W", w.value)
-	if(not w.value) then
-		go(function()
-			local res = app.openpanel()
-			if(res) then
-				gtxt:set_text(res[1])
-				gtxt:notify("value")
-			end
-		end)
-	end
-end)
-
-gtxt:register("value", function(w)
-	local f = io.open(w.text)
-	local filename
-	if(f) then
-		filename = w.text
-		f:close()
-	else
-		filename = LuaAV.findfile(w.text)
-	end
-	if(filename) then
-		local img = Image(filename)
-		tex:fromarray(img:array())
-	else
-		print("Can't find file "..w.text)
-	end
+	circle = w.value
 end)
 
 function win:key(e, k)
@@ -136,9 +103,30 @@ function win:modifiers()
 	gui:modifiers(self)
 end
 
+
+local
+function draw_circle()
+	gl.PointSize(20)
+	gl.Begin(GL.POINTS)
+		gl.Vertex(xslider.value, 0, 0)
+	gl.End()
+end
+
+local
+function draw_x()
+	gl.Begin(GL.LINES)
+		gl.Vertex(xslider.value-0.1, -0.1, 0)
+		gl.Vertex(xslider.value+0.1, 0.1, 0)
+		
+		gl.Vertex(xslider.value-0.1, 0.1, 0)
+		gl.Vertex(xslider.value+0.1, -0.1, 0)
+	gl.End()
+end
+
 function win:draw()
 	gui:draw()
 	
+	gl.Disable(GL.DEPTH_TEST)
 	gl.Color(1, 1, 1, 1)
 	tex:bind(0)
 	gl.Begin(GL.QUADS)
@@ -146,9 +134,10 @@ function win:draw()
 	gl.End()
 	tex:unbind(0)
 	
-	gl.PointSize(20)
 	gl.Color(color)
-	gl.Begin(GL.POINTS)
-		gl.Vertex(xslider.value, 0, 0)
-	gl.End()
+	if(circle) then
+		draw_circle()
+	else
+		draw_x()
+	end
 end

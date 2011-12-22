@@ -156,6 +156,8 @@ function M:draw(pos, text)
 	end
 	
     
+	local dt = gl.IsEnabled(GL.DEPTH_TEST)
+	local bl = gl.IsEnabled(GL.BLEND)
 	
 	gl.Disable(GL.DEPTH_TEST)
 	gl.Enable(GL.BLEND)
@@ -169,10 +171,12 @@ function M:draw(pos, text)
 		self.tex:unbind()
 	gl.PopMatrix()
 	
-	gl.Enable(GL.DEPTH_TEST)
-	gl.Disable(GL.BLEND)
-	
-	
+	if(dt == 1) then
+		gl.Enable(GL.DEPTH_TEST)
+	end
+	if(bl == 0) then
+		gl.Disable(GL.BLEND)
+	end
 end
 
 function M:draw_ortho(dim, pos, text)
