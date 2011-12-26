@@ -88,7 +88,7 @@ end
 function modules2tree(mods)
 	local treemods = {}
 	table.sort(mods, function(a, b)
-		return a.name < b.name
+		return a.name:lower() < b.name:lower()
 	end)
 	for i, mod in ipairs(mods) do
 		treemods[#treemods+1] = module2tree(mod)

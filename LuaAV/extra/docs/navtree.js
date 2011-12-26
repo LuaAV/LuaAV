@@ -12,16 +12,11 @@ var NAVTREE =
     [ "Drawing with Images", "tutorial.07.multi.channel.audio.html", null ] 
   ] ] ,
   [ "LuaAV Reference", "reference.html", [
-    [ "Array", "Array.html", null ] ,
-    [ "Image", "Image.html", null ] ,
-    [ "Label", "Label.html", null ] ,
-    [ "LuaAV", "LuaAV.html", [
-      [ "LuaAV.time", "LuaAV.time.html", null ] 
-    ] ] ,
     [ "app", "app.html", [
       [ "app.Window", "app.Window.html", null ] ,
       [ "app.screens", "app.screens.html", null ] 
     ] ] ,
+    [ "Array", "Array.html", null ] ,
     [ "audio", "audio.html", [
       [ "audio.Def", "audio.Def.html", null ] ,
       [ "audio.util", "audio.util.html", null ] ,
@@ -39,6 +34,11 @@ var NAVTREE =
       [ "gui.Rect", "gui.Rect.html", null ] ,
       [ "gui.slider", "gui.slider.html", null ] ,
       [ "gui.View", "gui.View.html", null ] 
+    ] ] ,
+    [ "Image", "Image.html", null ] ,
+    [ "Label", "Label.html", null ] ,
+    [ "LuaAV", "LuaAV.html", [
+      [ "LuaAV.time", "LuaAV.time.html", null ] 
     ] ] ,
     [ "midi", "midi.html", [
       [ "midi.Input", "midi.Input.html", null ] ,
