@@ -2,7 +2,6 @@
 #include "lua_glue.h"
 #include "RtMidi.h"
 
-#define MODULE_NAME (midi) 
 #define MIDI_NOTEOFF (0x80)
 #define MIDI_NOTEON (0x90)
 #define MIDI_AFTERTOUCH (0xA0)
@@ -20,7 +19,7 @@
 
 /*!	Get list of available MIDI input ports
 	@ret table list of input port names
-	@name inputs
+	@name inports
 */
 int lua_midi_inports(lua_State * L)
 {
@@ -65,7 +64,7 @@ int lua_midi_inports(lua_State * L)
 
 /*!	Get list of available MIDI output ports
 	@ret table list of output port names
-	@name outputs
+	@name outports
 */
 int lua_midi_outports(lua_State * L)
 {

@@ -67,11 +67,23 @@
 }
 
 #nav-tree {
-  padding: 0px 0px;
-  background-color: #FAFAFF; 
-  font-size:14px;
-  overflow:auto;
+	padding: 0px 0px;
+	/*background-color: #FAFAFF; */
+	/*background-color: #dadfe5; */
+	font-size:14px;
+	overflow:auto;
 }
+
+#nav-tree-contents {
+  margin: 6px 0px 0px 0px;
+}
+
+#nav-tree {
+	background-image:url('nav_h.png');
+	background-repeat:repeat-x;
+	background-color: #FAFAFA;
+}
+
 
 #doc-content {
   overflow:auto;
@@ -87,6 +99,7 @@
   position: absolute;
   left: 0px;
   width: 300px;
+
 }
 
 .ui-resizable .ui-resizable-handle {
@@ -108,16 +121,5 @@
   position:absolute;
   z-index:1;
 }
-
-#nav-tree-contents {
-  margin: 6px 0px 0px 0px;
-}
-
-#nav-tree {
-  background-image:url('nav_h.png');
-  background-repeat:repeat-x;
-  background-color: #FAFAFA;
-}
-
 
 

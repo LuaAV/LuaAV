@@ -434,7 +434,7 @@ extern const char * luaav_app_path();
 - (IBAction)help: (id)sender
 {
 	[[NSWorkspace sharedWorkspace] openFile:
-		[[NSString stringWithUTF8String:luaav_app_path()] stringByAppendingPathComponent: @"/extra/doc/index.html"]
+		[[NSString stringWithUTF8String:luaav_app_path()] stringByAppendingPathComponent: @"/extra/docs/index.html"]
 	];
 }
 

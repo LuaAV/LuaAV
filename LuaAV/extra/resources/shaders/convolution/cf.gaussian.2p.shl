@@ -49,15 +49,16 @@ void main() {
 
 	// transform texcoord	
 	vec2 texcoord = vec2(gl_TextureMatrix[0] * gl_MultiTexCoord0);
+	vec2 amt = width;
 
 	// get sample positions
     texcoordM = texcoord;
-    texcoordB0 = texcoord - width;
-    texcoordF0 = texcoord + width;
-    texcoordB1 = texcoord - width * 2.0;
-    texcoordF1 = texcoord + width * 2.0;
-    texcoordB2 = texcoord - width * 3.0;
-    texcoordF2 = texcoord + width * 3.0;
+    texcoordB0 = texcoord - amt;
+    texcoordF0 = texcoord + amt;
+    texcoordB1 = texcoord - amt * 2.0;
+    texcoordF1 = texcoord + amt * 2.0;
+    texcoordB2 = texcoord - amt * 3.0;
+    texcoordF2 = texcoord + amt * 3.0;
 }
 
 	]]

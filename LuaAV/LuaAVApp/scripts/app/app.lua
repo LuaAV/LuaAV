@@ -661,7 +661,7 @@ function M:generate_menus()
 			},
 			Reference{
 				action = function()
-					app.openurl("file://"..app.apppath.."/extra/doc/index.html");
+					app.openurl("file://"..app.apppath.."/extra/docs/index.html");
 				end,
 			}
 		}
