@@ -567,7 +567,7 @@ int lua_array_getcell(lua_State *L) {
 		int top = lua_gettop(L);
 		int ncoords = MIN(top-1, s->header.dimcount);
 		for(int i=2; i <= top; i++) {
-			coords[i-2] = CLAMP(lua::to<uint32_t>(L, i), 0, s->header.dim[i-2]);
+			coords[i-2] = CLAMP(lua::to<uint32_t>(L, i), 0, s->header.dim[i-2]-1);
 		}
 		
 		char *ptr = s->data.ptr;
