@@ -104,6 +104,8 @@ int opengl_model_read(lua_State * L) {
 extern "C" {
 #endif
 
+extern int luaopen_opengl_Mesh(lua_State *L);
+
 int luaopen_opengl_model(lua_State *L) {
 	const char *libname = lua_tostring(L, -1);
 	
@@ -116,6 +118,9 @@ int luaopen_opengl_model(lua_State *L) {
 		{NULL, NULL}
 	};
 	luaL_register(L, libname, lib);
+	
+	lua::call<const char *>(L, luaopen_opengl_Mesh, "opengl.Mesh");
+	lua_pop(L, 1);
 
 	return 1;
 }
