@@ -2796,7 +2796,7 @@ int gl_ReadBuffer(lua_State *L) {
 }
 
 /*! Draw a rectangle
-	OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glReadBuffer.xml">glRect</a>
+	OpenGL Documentation: <a target="_blank" href="http://www.opengl.org/sdk/docs/man/xhtml/glRect.xml">glRect</a>
 	
 	@param ... Specify the vertices of a rectangle as an array or list of 4 values.
 

@@ -124,15 +124,17 @@ int lua_shader_file(lua_State *L) {
 			lua_pushstring(L, ATTR_UDATA_FIELD);
 			lua_newtable(L);
 			
-			map<string, ShaderAttribute *> &attrs = *(s->attributes());
-			map<string, ShaderAttribute *>::iterator it = attrs.begin();
-			map<string, ShaderAttribute *>::iterator ite = attrs.end();
-			for(; it != ite; ++it) {
-				ShaderAttribute *a = it->second;
-				ShaderAttributeWrapper *aw = new ShaderAttributeWrapper(a);
-				lua_pushstring(L, a->name());
-				Glue<ShaderAttributeWrapper>::push(L, aw);
-				lua_rawset(L, -3);
+			map<string, ShaderAttribute *> *attrs = s->attributes();
+			if(attrs) {
+				map<string, ShaderAttribute *>::iterator it = attrs->begin();
+				map<string, ShaderAttribute *>::iterator ite = attrs->end();
+				for(; it != ite; ++it) {
+					ShaderAttribute *a = it->second;
+					ShaderAttributeWrapper *aw = new ShaderAttributeWrapper(a);
+					lua_pushstring(L, a->name());
+					Glue<ShaderAttributeWrapper>::push(L, aw);
+					lua_rawset(L, -3);
+				}
 			}
 			
 			lua_rawset(L, -3);

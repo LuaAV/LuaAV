@@ -49,6 +49,18 @@ const char * c_shlLoader[] = {
 	"end",
 "end",
 */
+
+"local function stripfilename(filename)",
+	"return string.match(filename, '(.+)/[^/]*%.%w+$')",
+"end",
+
+"function loadfile(filename)",
+	"if(filename:sub(1, 1) ~= '/') then",
+		"filename = stripfilename(assert(SHADER_FILENAME))..'/'..filename",
+	"end",
+	"return assert(io.open(filename)):read('*a')",
+"end",
+"",
 "function Program(t)",
 	"local info = debug.getinfo(2, 'lSn')",
 //	"print_t('2', info)",
