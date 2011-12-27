@@ -56,6 +56,11 @@ void OBJReader :: readOBJ(std::string fullpath) {
 					//printf("group %s\n", groupname.data());
 					g = &mGroups[groupname];
 				}
+				/*
+				if(mtl.length() == 0 && mMaterialLib.length() != 0) {
+					mtl = mMaterialLib;
+				}
+				*/
 				g->material = mtl;
                 break;
 

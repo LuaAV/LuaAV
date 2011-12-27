@@ -58,9 +58,13 @@ int opengl_model_read(lua_State * L) {
 				lua_setfield(L, -2, "material");
 				
 				lua_rawseti(L, groups, groupID);
-				
-			} else {
-				printf("could not find graphics data\n");
+			}
+			else {
+				//printf("could not find graphics data\n");
+				lua_newtable(L);
+				Glue<Mesh>::push(L, mesh);
+				lua_setfield(L, -2, "mesh");
+				lua_rawseti(L, groups, groupID);
 			}
 		}
 		iter++;
