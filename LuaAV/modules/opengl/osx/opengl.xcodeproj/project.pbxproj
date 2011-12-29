@@ -75,6 +75,7 @@
 		B9B0C2B6122D5CD90026D582 /* al_Slab.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B9B0C2B5122D5CD90026D582 /* al_Slab.hpp */; };
 		B9B0C33C122D71370026D582 /* lua_opengl_shader.h in Headers */ = {isa = PBXBuildFile; fileRef = B9B0C33B122D71370026D582 /* lua_opengl_shader.h */; };
 		B9BF795713B578E9006A1F26 /* lua_opengl_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9BF795513B578E9006A1F26 /* lua_opengl_draw.cpp */; };
+		B9CECD2414ABD96F00FD4C91 /* lua_opengl_surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9CECD2314ABD96F00FD4C91 /* lua_opengl_surface.cpp */; };
 		B9F37D9A1293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.h in Headers */ = {isa = PBXBuildFile; fileRef = B9F37D981293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.h */; };
 		DF00B63F0E17FD4700E60A0B /* lua_opengl.h in Headers */ = {isa = PBXBuildFile; fileRef = DF00B6390E17FD4700E60A0B /* lua_opengl.h */; };
 		DF00B6400E17FD4700E60A0B /* lua_opengl_config.h in Headers */ = {isa = PBXBuildFile; fileRef = DF00B63A0E17FD4700E60A0B /* lua_opengl_config.h */; };
@@ -150,6 +151,7 @@
 		B9B0C339122D70BF0026D582 /* lua_opengl_slab.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_slab.cpp; sourceTree = "<group>"; };
 		B9B0C33B122D71370026D582 /* lua_opengl_shader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_opengl_shader.h; sourceTree = "<group>"; };
 		B9BF795513B578E9006A1F26 /* lua_opengl_draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_draw.cpp; sourceTree = "<group>"; };
+		B9CECD2314ABD96F00FD4C91 /* lua_opengl_surface.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_opengl_surface.cpp; sourceTree = "<group>"; };
 		B9F37D981293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = al_GraphicsBackendOpenGLPBO.h; sourceTree = "<group>"; };
 		B9F37D991293D84B005DF3C4 /* al_GraphicsBackendOpenGLPBO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = al_GraphicsBackendOpenGLPBO.cpp; sourceTree = "<group>"; };
 		DF00B6390E17FD4700E60A0B /* lua_opengl.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = lua_opengl.h; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				B9B0BC29122D0E410026D582 /* lua_opengl_shader.cpp */,
 				B9B0C339122D70BF0026D582 /* lua_opengl_slab.cpp */,
 				B9B0B590122C3A350026D582 /* lua_opengl_texture.cpp */,
+				B9CECD2314ABD96F00FD4C91 /* lua_opengl_surface.cpp */,
 				B97524E312413D7E00A932A1 /* lua_opengl_sketch.cpp */,
 				B9753B1D1246044300A932A1 /* lua_opengl_tess.cpp */,
 				B9BF795513B578E9006A1F26 /* lua_opengl_draw.cpp */,
@@ -494,6 +497,7 @@
 				36C9248512967364006FD1DB /* lua_opengl_sketch.cpp in Sources */,
 				36C9248612967364006FD1DB /* lua_opengl_tess.cpp in Sources */,
 				B9BF795713B578E9006A1F26 /* lua_opengl_draw.cpp in Sources */,
+				B9CECD2414ABD96F00FD4C91 /* lua_opengl_surface.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
