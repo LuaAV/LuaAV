@@ -19,7 +19,7 @@ local Mixer = Def{
 	wet = 0.1,
 	decay = 0.85,
 	bandwidth = 0.9995,
-	damping = 0.4,
+	damping = 0.1,
 
 	P"dry" * P"input" + 
 	P"wet" * Reverb{ 
