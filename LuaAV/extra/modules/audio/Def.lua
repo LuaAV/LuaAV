@@ -22,9 +22,9 @@ local lfs = require "lfs"
 -- The Def module is a table containing a range of expression generators, and is also a callable function as a constructor of Synth definitions from trees of expressions. Better described by example:
 -- <luacode>
 --  local Def = require "audio.Def"
---  local P, Pan2, Lag, Env, SinOsc = Def.P, Def.Pan2, Def.Lag, Def.Env, Def.SinOsc
+--  Def.globalize()
 --  -- create a concrete synth definition (JIT-compiled), returns a constructor
---  local synth = Def{
+--  local example = Def{
 --  	-- parameters (settable, gettable) of the synth, and default values:
 --  	dur = 1, 
 --  	amp = 0.5,
@@ -39,7 +39,7 @@ local lfs = require "lfs"
 --  }
 --  -- call the generated constructor to create a voice (genarating sound)
 --  local synth = example{ amp = 0.2, dur = 2, freq = 800 }
---  -- paramters become settable/gettable properties
+--  -- paramaters become settable/gettable properties
 --  synth.freq = { 500, 600 }
 -- </luacode>
 -- @param args Constructor properties
@@ -197,7 +197,23 @@ intrinsics.eq = function(v) return string.format("(%s == %s)", tostring(v[1]), t
 intrinsics.neq = function(v) return string.format("(%s != %s)", tostring(v[1]), tostring(v[2])) end
 intrinsics["not"] = function(v) return string.format("(!%s)", tostring(v[1])) end
 
-intrinsics.done = function(v) return string.format("if (%s) { synth.audio_stop(); return; }", tostring(v[1])) end
+intrinsics.done = function(v) return string.format("if (%s >= %s) { synth.audio_stop(); return; }", tostring(v[1]), tostring(v[2])) end
+
+intrinsics.notdone = function(v) return string.format("if (%s >= %s) { %s = %s; }", tostring(v[1]), tostring(v[2]), tostring(v[1]), tostring(v[2])) end
+
+intrinsics["switch"] = function(v)
+	local result = v[1]
+	local option = v[#v]
+	local code = { format("switch(int(%s)) {", option) }
+	for i = 2, #v-1 do
+		code[#code+1] = format("\tcase %d: %s = %s; break;", i-2, tostring(result), tostring(v[i]))
+	end
+	code[#code+1] = "\tdefault: break;"
+	code[#code+1] = "}"
+	return table.concat(code, "\n\t\t\t")
+end
+
+intrinsics.pass = function(v) return tostring(v[1]) end
 intrinsics.assign = function(v) return format("%s = %s", tostring(v[1]), tostring(v[2])) end
 intrinsics.mix = function(v) return format("%s += %s", tostring(v[1]), tostring(v[2])) end
 intrinsics.call = function(v) 
@@ -250,7 +266,7 @@ end
 --------------------------------------------------------------------------------
 
 local function gen_expr(expr)
-	local args = {}
+	local args = { name=expr.name }
 	for i, v in ipairs(expr) do
 		if type(v) == "table" then
 			args[i] = gen_expr(v)
@@ -1215,6 +1231,7 @@ function parser.EnvDriver(unit, node, inputs)
 	local channels = 1
 	local rate = max_rate(inputs, "c")
 	local outputs = { rate="a" }
+	local done = node.done
 	
 	unit.flags['Synth::SYNTH_HAS_ENV'] = true
 	
@@ -1233,11 +1250,30 @@ function parser.EnvDriver(unit, node, inputs)
 		--statement(unit, "a", { op="mix", env_t, { op="eq", hold, 0 } })
 		statement(unit, "a", { op="mix", env_t, { op="or", "synth.envIsReleased()", { op="eq", hold, 0 } } })
 		-- stop synth if counter >= dur
-		statement(unit, "a", { op="done", { op="gte", env_t, env_dur } })
+		if done then 
+			statement(unit, "a", { op="done", env_t, env_dur })
+		else
+			statement(unit, "a", { op="notdone", env_t, env_dur })
+		end
 		-- output result as t/dur
 		statement(unit, "a", { name=ramp, op="div", env_t, env_dur })
 		
 		outputs[c] = ramp
+	end
+	return outputs
+end
+
+function parser.Switch(unit, node, inputs)
+	local option = inputs[#inputs]
+	local rate = max_rate(inputs, "c")
+	local channels = max_channels(inputs)
+	local outputs = { rate=rate }
+	for c=1, channels do
+		output = uid(format("switch%d", c))
+		statement(unit, rate, { name=output, op="pass", 0 })
+		statement(unit, rate, { op="switch", output, inputsforchannel(inputs, c) })
+		
+		outputs[c] = output
 	end
 	return outputs
 end
@@ -1357,17 +1393,20 @@ end
 
 local function unop(name)
 	return function(args) 
+		assert(type(args) == "table", "Expression requires a table argument")
 		return setmetatable({ op=name, args[1] or 0 }, Expr)
 	end
 end
 
 local function binop(name)
 	return function(args) 
+		assert(type(args) == "table", "Expression requires a table argument")
 		return setmetatable({ op=name, args[1] or 0, args[2] or 0 }, Expr)
 	end
 end
 local function binop1(name)
 	return function(args) 
+		assert(type(args) == "table", "Expression requires a table argument")
 		return setmetatable({ op=name, args[1] or 1, args[2] or 1 }, Expr)
 	end
 end
@@ -1686,6 +1725,7 @@ function EnvDriver(args)
 	local dur = args.dur or args[1] or 1
 	local hold = args.hold or args[2] or 0
 	local done = args.done
+	if done == nil then done = true end
 	return setmetatable({ op="EnvDriver", dur, hold, done=done }, Expr)
 end
 
@@ -1695,6 +1735,17 @@ end
 -- @see EnvDriver
 function Env(args)
 	return 1 - EnvDriver(args)
+end
+
+--- switch between inputs
+-- Switches between one out of sevseral inputs
+-- @param args Constructor properties
+-- @param args[1]: default, first input
+-- @param args[2..(N-1)]: additional inputs
+-- @param args[N]: choose input (0..N-1)
+function Switch(args)
+	assert(#args > 1, "Switch{} requires at least two arguments")
+	return setmetatable({ op="Switch", unpack(args) }, Expr)
 end
 
 local
@@ -1960,7 +2011,7 @@ function Def(def)
 	--printt(unit)
 	--print"Proto:"	printt(proto)
 	local code = generate(unit)
-	--print(code)
+	print(code)
 	local ctor = compile(code, proto)
 	return ctor, code, unit
 end
