@@ -2011,7 +2011,6 @@ function Def(def)
 	--printt(unit)
 	--print"Proto:"	printt(proto)
 	local code = generate(unit)
-	print(code)
 	local ctor = compile(code, proto)
 	return ctor, code, unit
 end
