@@ -26,36 +26,11 @@ wait(1)
 -- send a value:
 control.set("Bang", 2)
 
+-- remove a widget:
 control.remove("Twiddler")
-
 
 
 -- install a generic handler:
 control.handler = function(m)
 	print(m.addr, m.types, unpack(m))
 end
-
-
---[=[
-
-
-go(function()
-	while true do
-		--send:send("/Slider1", math.random())
-		--send:send("/Knobbersmith", math.random())
-		wait(0.5)
-	end
-end)
-
--- receive controls:
-while true do
-	for m in recv:recv() do
-		print(m.addr, m.types, unpack(m))
-		local slidername = m.addr
-		local value = m[1]
-	end
-	wait(0.1)
-end
-
-
---]=]
