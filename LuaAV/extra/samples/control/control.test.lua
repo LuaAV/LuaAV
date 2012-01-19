@@ -36,5 +36,3 @@ control.set("Twiddler", 0.5)
 wait(1)
 
 control.remove("Twiddler")
-
-
