@@ -8,8 +8,8 @@ Def.globalize()
 -- build up a synthdef from sub-expressions
 -- core oscillator:
 local osc = Min{ 
-	Abs{SinOsc{"freq"}}, 
-	Abs{SinOsc{ P"freq" * "ratio" }} 
+	Abs{ SinOsc{"freq"} }, 
+	Abs{ SinOsc{ P"freq" * "ratio" } }, 
 }
 -- strange envelope:
 local env = Sin{ math.pi * P"ratio" * Env{ "dur", 0 } }
@@ -42,17 +42,19 @@ go(function()
 end)
 
 go(function()
-	for i = 0, 256 do
-		-- create (schedule) a synth:
-		Zow{ 
-			amp = 0.25, 
-			dur = du, 
-			freq = 200 * (1+(-i % 16)), 
-			ratio = ratio, 
-			pan = math.random()-0.5 
-		}
-		wait(du/4)
+	while playing do
+		for i = 0, 256 do
+			-- create (schedule) a synth:
+			Zow{ 
+				amp = 0.25, 
+				dur = du, 
+				freq = 200 * (1+(-i % 16)), 
+				ratio = ratio, 
+				pan = math.random()-0.5 
+			}
+			wait(du/8)
+		end
+		-- stop the other coroutine:
+		playing = false
 	end
-	-- stop the other coroutine:
-	playing = false
 end)
