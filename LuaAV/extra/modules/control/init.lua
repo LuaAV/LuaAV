@@ -13,9 +13,14 @@ local
 function makeJSON(def)
 	local json = {}
 	for k, v in pairs(def) do
-		json[#json+1] = string.format("'%s' : '%s', ", k, tostring(v))
+	    if(type(v) == "string") then
+    		json[#json+1] = string.format("'%s' : '%s' ", k, tostring(v))
+    	elseif type(v) == "number" then
+    	    json[#json+1] = string.format("'%s' : %f ", k, v)
+    	end
+    	
 	end
-	return string.format('{ %s }', table.concat(json))
+	return string.format('{ %s }', table.concat(json, ", "))
 end
 
 local Master_meta = {
