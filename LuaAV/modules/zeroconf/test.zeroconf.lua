@@ -1,14 +1,21 @@
 local zeroconf = require "zeroconf"
 
-print(zeroconf.hostname())
+print("host:", zeroconf.hostname())
 
 local client = zeroconf.Client()
 print(client)
 
-local service = zeroconf.Service(zeroconf.hostname() .. "_myfunkyservice")
+-- add callbacks to be notified when a service is added, resolved or removed:
+client:added(function(name) print("added service", name) end)
+client:resolved(function(name, host, port, address) print("resolved service", name, host, port, address) end)
+client:removed(function(name) print("removed service", name) end)
+
+
+local service = zeroconf.Service("LuaAV:"..zeroconf.hostname())
 print(service)
 
-while true do
-	--client:poll()
-	wait(1)
-end
+wait(2)
+
+service = nil
+collectgarbage()
+collectgarbage()
