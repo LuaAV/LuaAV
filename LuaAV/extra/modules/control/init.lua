@@ -1,4 +1,6 @@
 local osc = require "osc"
+local zeroconf = require "zeroconf"
+
 local format = string.format
 
 local uid = (function()
@@ -23,25 +25,44 @@ function makeJSON(def)
 	return string.format('{ %s }', table.concat(json, ", "))
 end
 
+
+-- figure out host ip:
+local hostip = "127.0.0.1"
+for i, v in ipairs{ zeroconf.hostip() } do
+    --print(i, v.name, v.address)
+    if v.name:match("en") then
+        hostip = v.address
+    end
+end
+
+local client = zeroconf.Client()
+
+-- a dictionary of devices
+-- each is a dictionary of service names -> osc Send objects
+local devices = {}
+
 local Master_meta = {
 	name = uid("LuaAV"),
 	
 	-- defaults:
-	remote_host = "127.0.0.1",
-	remote_port = 8080,
-	host = "127.0.0.1",
+--	remote_host = "127.0.0.1",
+--	remote_port = 8080,
+	host = hostip,
 	port = 8081,
-	shouldDisplayMenu = 1,
+--	shouldDisplayMenu = "true",
 	orientation = "landscape",
 	poll_interval = 0.01,
 	handler = function() end,
 }
 Master_meta.__index = Master_meta
 
+-- the singleton object
 local self = {
+    -- the GUI
 	_widgets = {}
 }
 setmetatable(self, Master_meta)
+
 
 --- use this function to 
 self.init = function(def)
@@ -54,30 +75,54 @@ self.init = function(def)
 	
 	-- fix parameter types:
 	-- FIXME: many more tests here
-	self.shouldDisplayMenu = self.shouldDisplayMenu and (self.shouldDisplayMenu ~= 0 and 1 or 0) or 0
+	--self.shouldDisplayMenu = self.shouldDisplayMenu and "true" or nil
 	
 	-- close sockets:
-	self.oscsend = nil
 	self.oscrecv = nil
-	collectgarbage()
-	collectgarbage()
-	
-	-- re-create interface:
-	self.oscsend = osc.Send(self.remote_host, self.remote_port)
 	self.oscrecv = osc.Recv(self.port)
 	
+	self._widgets = {}
+	
 	-- handshake:
-	self.send("/control/createBlankInterface", 
-		self.name, self.orientation, self.shouldDisplayMenu
-	)
-	self.send("/control/pushDestination", 
-		string.format("%s:%d", self.host, self.port)
-	)
+	self.refresh()
 end
 
 
-function self.send(address, ...)
-	self.oscsend:send(address, ...)
+function self.sendGUI(oscsend)
+    
+    -- handshake:
+	oscsend:send("/control/createBlankInterface", 
+		self.name, self.orientation --, self.shouldDisplayMenu
+	)
+	oscsend:send("/control/pushDestination", 
+		string.format("%s:%d", self.host, self.port)
+	)
+	
+	for name, widget in pairs(self._widgets) do
+	    oscsend:send("/control/addWidget", widget.json) --, options)
+    end
+     
+end
+
+function self.refresh()
+    -- send to all known destinations
+    for host, dev in pairs(devices) do
+       for servicename, oscsend in pairs(dev) do
+            self.sendGUI(oscsend)
+       end 
+    end
+--	self.oscsend:send(address, ...)
+end
+
+function self.send(oscaddress, ...)
+    -- send to all known destinations
+    for host, dev in pairs(devices) do
+       for servicename, oscsend in pairs(dev) do
+            print("sending to ", oscsend:ip(), servicename, host, oscaddress, ...)
+            oscsend:send(oscaddress, ...)
+       end 
+    end
+--	self.oscsend:send(address, ...)
 end
 
 local function printer(w) print("asdasdasd", w.name, w.value) end
@@ -95,6 +140,8 @@ self.Widget = function(def)
 	local options = [[{ \"min\" : 1, \"max" : 6, }]]
 	--print(json)
 	self.send("/control/addWidget", json) --, options)
+	
+	def.json = json
 	
 	self._widgets["/"..def.name] = def
 	return def -- should return def???
@@ -116,8 +163,33 @@ self.set = function(addr, v)
 	end
 end
 
+-- add callbacks to be notified when a service is added, resolved or removed:
+client:added(function(name) 
+    print("added service", name) 
+end)
+
+client:resolved(function(name, host, port, address) 
+    print("resolved service", name, host, port, address) 
+    local dev = devices[host] or {}
+    if address ~= "0.0.0.0" then
+    
+        local oscsend = osc.Send(address, port)
+    
+        self.sendGUI(oscsend)
+    
+        dev[name] = oscsend
+        devices[host] = dev
+    end
+end)
+
+client:removed(function(name) 
+    print("removed service", name) 
+    devices[name] = nil
+end)
+
 -- create default interface:
 self.init{}
+
 
 -- launch receiver coroutine:
 go(function()
