@@ -1,6 +1,11 @@
 #include "lua.hpp"
 #include "luaav.h"
 #include "lua_glue.h"
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <ifaddrs.h>
+
 
 #include "allocore/protocol/al_Zeroconf.hpp"
 
@@ -183,11 +188,45 @@ int hostname(lua_State * L) {
 	return 1;
 }
 
+int hostip(lua_State * L) {
+
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    int results = 0;
+    
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL) {
+            if(temp_addr->ifa_addr->sa_family == AF_INET) {
+                
+                lua_newtable(L);
+                lua_pushstring(L, temp_addr->ifa_name);
+                lua_setfield(L, -2, "name");
+                lua_pushstring(L, inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr));
+                lua_setfield(L, -2, "address");
+                results++;
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    
+    // Free memory
+    freeifaddrs(interfaces);
+
+	//lua_pushstring(L, Socket::hostIP().c_str());
+	return results;
+}
+
 extern "C" int luaopen_zeroconf(lua_State *L) {
 	const char * libname = luaL_optstring(L, 1, "zeroconf");
 	
 	static const luaL_reg lib[] = {
 		{ "hostname", hostname },
+        { "hostip", hostip },
 		{ NULL, NULL}
 	};
 	luaL_register(L, libname, lib);
