@@ -163,6 +163,27 @@ function M.Widget(def)
 	widgets[w.address] = w
 end
 
+local 
+function setter(name, destination)
+	return function(w)
+		destination[name] = w.value
+	end
+end
+
+function M.bind(name, destination)
+	local w = assert(widgets[name], format("no such widget: %s", name))
+	if type(destination) == "table" or type(destination) == "userdata" then
+		assert(type(w.value) == "number", "cannot bind a multi-valued widget to an object; use a function callback instead")
+		-- install setter callback:
+		
+		-- set value immediately
+		destination[name] = w.value
+	elseif type(destination) == "function" then
+		-- install a callback
+	else
+		error("unexpected type for bind destination")
+	end
+end
 -- read the widget value:
 function M:__index(name)
 	local w = assert(widgets[name], format("no such widget: %s", name))

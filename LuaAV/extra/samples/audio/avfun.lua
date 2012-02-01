@@ -23,7 +23,7 @@ simple = Def{
 	
 	Pan2{
 		Env{ "dur", "hold" } 
-		* Lag{ Tri{ "freq" }, 0.9 } 
+		* Lag{ SinOsc{ "freq" }, 0.9 } 
 		* Lag{ "amp" } 
 		* 0.2,
 		"pan",
