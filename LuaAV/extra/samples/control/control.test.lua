@@ -5,10 +5,12 @@ Def.globalize()
 local synthdef = Def{
 	amp = 0.2,
 	freq = 220,
-	Lag{ P"amp", 0.9 } * SinOsc{ Lag{ P"freq", 0.9 } }
+	mod = 10,
+	depth = 1,
+	Lag{ P"amp", 0.997 } * SinOsc{ Lag{ P"freq", 0.999 } * (-1 + P"depth" * SinOsc{ P"mod" }) }
 }
 
-local synth = synthdef()
+synth = synthdef()
 
 -- load dependencies, 
 -- handshake with Zeroconf, 
@@ -16,22 +18,32 @@ local synth = synthdef()
 local control = require "control"
 
 -- declare some controls:
-control.Knob{ "amp" }
-control.Slider{ "freq", value=220, min=110, max=880, }
-control.Accelerometer{ "accel" }
+control.Slider{ "amp", value=0.1 }
+control.Slider{ "mod", value=0.1, min=0, max=1000 }
+control.Slider{ "freq", value=220, min=55, max=1760, }
+control.Slider{ "depth", value=1, min=0, max=10, }
+--control.Accelerometer{ "accel" }
 
 -- get the value:
-print("amp", control.amp)
+--print("amp", control.amp)
+
+wait(1)
 
 -- set the value
-control.amp = 0.1
+control.amp = 0.5
 
 -- remove a control:
 control.accel = nil
 
 -- set up notifiers to update the synth from control:
+---[[
 control.bind("amp", synth)
 control.bind("freq", synth)
+control.bind("mod", synth)
+control.bind("depth", synth)
+--]]
+
+--control.bind(synth)
 
 -- this will be optional soon, once bonjour etc. is working:
 --[[

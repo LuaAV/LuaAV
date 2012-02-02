@@ -23,9 +23,8 @@ local poll_wait = 0.01
 -- figure out host ip:
 local host_ip = "127.0.0.1"
 for i, v in ipairs{ zeroconf.hostip() } do
-    --print(i, v.name, v.address)
     if v.name:match("en") then
-        hostip = v.address
+        host_ip = v.address
     end
 end
 local host_port = 8081
@@ -87,9 +86,9 @@ function M.init(def)
 	M.refresh()
 end
 
-local 
-function sendGUI(oscsend)  
-    -- handshake:
+function M.sendGUI(oscsend)  
+	--print("sendGUI", interface_name, host_ip, host_port)
+	-- handshake:
 	oscsend:send("/control/createBlankInterface", 
 		interface_name, orientation --, self.shouldDisplayMenu
 	)
@@ -98,7 +97,10 @@ function sendGUI(oscsend)
 	)
 	
 	for name, widget in pairs(widgets) do
-	    oscsend:send("/control/addWidget", widget.json) --, options)
+		if name:sub(1, 1) ~= "/" then
+			--print("sending", name, widget)
+	   	 	oscsend:send("/control/addWidget", widget.json) --, options)
+	   	end
     end
 end
 
@@ -112,7 +114,7 @@ function M.refresh()
 end
 
 function M.send(oscaddress, ...)
-    print("sending ", oscaddress, ...)
+    --print("sending ", oscaddress, ...)
     -- send to all known destinations
     for host, dev in pairs(devices) do
        for servicename, oscsend in pairs(dev) do
@@ -171,26 +173,42 @@ function setter(name, destination)
 end
 
 function M.bind(name, destination)
-	local w = assert(widgets[name], format("no such widget: %s", name))
-	if type(destination) == "table" or type(destination) == "userdata" then
-		assert(type(w.value) == "number", "cannot bind a multi-valued widget to an object; use a function callback instead")
-		-- install setter callback:
-		
-		-- set value immediately
-		destination[name] = w.value
-	elseif type(destination) == "function" then
-		-- install a callback
+	if type(name) == "table" or type(name) == "userdata" then
+		-- global binding:
+		for k in pairs(widgets) do
+			if k:sub(1, 1) ~= "/" then
+				M.bind(k, name)
+			end
+		end
 	else
-		error("unexpected type for bind destination")
+		local w = assert(widgets[name], format("no such widget: %s", name))
+		if type(destination) == "table" or type(destination) == "userdata" then
+			assert(type(w.value) == "number", "cannot bind a multi-valued widget to an object; use a function callback instead")
+			-- install setter callback:
+			w.callback = setter(name, destination)
+			
+			-- set value immediately
+			destination[name] = w.value
+		elseif type(destination) == "function" then
+			-- install a callback
+			w.callback = destination
+		else
+			error("unexpected type for bind destination: " .. type(destination))
+		end
 	end
 end
+
 -- read the widget value:
 function M:__index(name)
-	local w = assert(widgets[name], format("no such widget: %s", name))
-	if type(w.value) == "table" then
-		return unpack(w.value)
+	local w = widgets[name]
+	if w then
+		if type(w.value) == "table" then
+			return unpack(w.value)
+		else
+			return w.value
+		end
 	else
-		return w.value
+		return rawget(M, name)
 	end
 end
 
@@ -208,10 +226,11 @@ function M:__newindex(name, v)
 		assert(w, format("no such widget: %s", name))
 		if type(w.value) == "table" then
 			assert(type(v) == "table", "multi-valued Widget requires a table value to set")
+			self.send(w.address, unpack(v))
 			
 		elseif type(w.value) == "number" then
 			assert(type(v) == "number", "single-valued Widget requires a number to set")
-			
+			self.send(w.address, v)
 		end
 	end
 end
@@ -225,7 +244,7 @@ M.init{}
 go(function()
 	while M do
 		for m in oscrecv:recv() do
-		    print(m.addr, m.types, unpack(m))
+		    --print(m.addr, m.types, unpack(m))
 		    -- find widget in map:
 		    local w = widgets[m.addr]
 		    if w then
