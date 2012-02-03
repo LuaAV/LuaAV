@@ -129,7 +129,7 @@ function M.Widget(def)
 	local name = def.name or table.remove(def)
 	assert(name and type(name) == "string", "widget definition requires a name")
 	
-	local bind = def.bind or table.remove(def)
+	local map = def.map or table.remove(def)
 	
 	local ty = def.type or "Slider"
 	local min, max, value
@@ -165,8 +165,8 @@ function M.Widget(def)
 	widgets[w.name] = w
 	widgets[w.address] = w
 	
-	if bind then
-		M.bind(w.name, bind)
+	if map then
+		M.map(w.name, map)
 	end
 	
 	M.send("/control/addWidget", json) --, options)
@@ -179,18 +179,18 @@ function setter(name, destination)
 	end
 end
 
-function M.bind(name, destination)
+function M.map(name, destination)
 	if type(name) == "table" or type(name) == "userdata" then
-		-- global binding:
+		-- global maping:
 		for k in pairs(widgets) do
 			if k:sub(1, 1) ~= "/" then
-				M.bind(k, name)
+				M.map(k, name)
 			end
 		end
 	else
 		local w = assert(widgets[name], format("no such widget: %s", name))
 		if type(destination) == "table" or type(destination) == "userdata" then
-			assert(type(w.value) == "number", "cannot bind a multi-valued widget to an object; use a function callback instead")
+			assert(type(w.value) == "number", "cannot map a multi-valued widget to an object; use a function callback instead")
 			-- install setter callback:
 			w.callback = setter(name, destination)
 			
@@ -200,7 +200,7 @@ function M.bind(name, destination)
 			-- install a callback
 			w.callback = destination
 		else
-			error("unexpected type for bind destination: " .. type(destination))
+			error("unexpected type for map destination: " .. type(destination))
 		end
 	end
 end

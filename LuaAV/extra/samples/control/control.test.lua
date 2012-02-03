@@ -37,13 +37,13 @@ control.accel = nil
 
 -- set up notifiers to update the synth from control:
 ---[[
-control.bind("amp", synth)
-control.bind("freq", synth)
-control.bind("mod", synth)
-control.bind("depth", synth)
+control.map("amp", synth)
+control.map("freq", synth)
+control.map("mod", synth)
+control.map("depth", synth)
 --]]
 
---control.bind(synth)
+--control.map(synth)
 
 -- this will be optional soon, once bonjour etc. is working:
 --[[
