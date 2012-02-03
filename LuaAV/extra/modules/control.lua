@@ -3,6 +3,15 @@ local osc = require "osc"
 
 local format = string.format
 
+local uid = (function()
+	local id = 0
+	return function(name)
+		id = id + 1
+		return string.format("%s%d", name or "anon", id)
+	end
+end)()
+
+
 local
 function makeJSON(def)
 	local json = {}
@@ -126,8 +135,8 @@ end
 
 function M.Widget(def)
 	assert(def and type(def) == "table", "widget constructor requires a table argument")
-	local name = def.name or table.remove(def)
-	assert(name and type(name) == "string", "widget definition requires a name")
+	local name = def.name or table.remove(def) or uid("control")
+	assert(name and type(name) == "string", "widget definition requires a name (string)")
 	
 	local map = def.map or table.remove(def)
 	
