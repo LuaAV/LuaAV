@@ -18,10 +18,10 @@ synth = synthdef()
 local control = require "control"
 
 -- declare some controls:
-control.Slider{ "amp", value=0.1, bind=synth, }
-control.Slider{ "mod", value=0.1, min=0, max=1000, bind=synth, }
-control.Slider{ "freq", value=220, min=55, max=1760, }
-control.Slider{ "depth", value=1, min=0, max=10, }
+control.Slider{ "amp", synth, value=0.1, }
+control.Slider{ "mod", synth, value=0.1, min=0, max=1000, }
+control.Slider{ "freq", synth, value=220, min=55, max=1760, }
+control.Slider{ "depth", synth, value=1, min=0, max=10, }
 --control.Accelerometer{ "accel" }
 
 -- get the value:

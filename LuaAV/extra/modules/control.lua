@@ -126,8 +126,10 @@ end
 
 function M.Widget(def)
 	assert(def and type(def) == "table", "widget constructor requires a table argument")
-	local name = def.name or def[1]
+	local name = def.name or table.remove(def)
 	assert(name and type(name) == "string", "widget definition requires a name")
+	
+	local bind = def.bind or table.remove(def)
 	
 	local ty = def.type or "Slider"
 	local min, max, value
@@ -160,14 +162,14 @@ function M.Widget(def)
 	local json = makeJSON(w)
 	w.json = json
 	
-	M.send("/control/addWidget", json) --, options)
-	
 	widgets[w.name] = w
 	widgets[w.address] = w
 	
-	if def.bind then
-		M.bind(w.name, def.bind)
+	if bind then
+		M.bind(w.name, bind)
 	end
+	
+	M.send("/control/addWidget", json) --, options)
 end
 
 local 
