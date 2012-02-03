@@ -154,6 +154,7 @@ function M.Widget(def)
 		value = value,
 		min = min,
 		max = max,
+		-- TODO add other fields
 	}
 	
 	local json = makeJSON(w)
@@ -163,6 +164,10 @@ function M.Widget(def)
 	
 	widgets[w.name] = w
 	widgets[w.address] = w
+	
+	if def.bind then
+		M.bind(w.name, def.bind)
+	end
 end
 
 local 
