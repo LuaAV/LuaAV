@@ -641,7 +641,7 @@ function parser.Channels(unit, node, inputs)
 		local ch = tonumber(input[1])
 		outputs[i-1] = input_channel(src, ch)
 		
-		print(ch, i-1, outputs[i-1])
+		--print(ch, i-1, outputs[i-1])
 	end
 	return outputs
 end
@@ -2011,7 +2011,6 @@ function Def(def)
 	--printt(unit)
 	--print"Proto:"	printt(proto)
 	local code = generate(unit)
-	print(code)
 	local ctor = compile(code, proto)
 	return ctor, code, unit
 end

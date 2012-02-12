@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		3602B6D2110A858C005DC3D0 /* libapr-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3663393F10B3640D006BA7C5 /* libapr-1.a */; };
 		3616AF64129DC246001235C9 /* al_Compiler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3616AF5E129DC228001235C9 /* al_Compiler.cpp */; };
 		3616AF65129DC250001235C9 /* lua_clang.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3616AF5F129DC228001235C9 /* lua_clang.cpp */; };
 		3616AF83129DC3AF001235C9 /* libclangFrontend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3616AEF4129DC227001235C9 /* libclangFrontend.a */; };
@@ -87,6 +86,8 @@
 		3663394010B3640D006BA7C5 /* libapr-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3663393F10B3640D006BA7C5 /* libapr-1.a */; };
 		36633A7110B378B5006BA7C5 /* luaav_scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36633A7010B378B5006BA7C5 /* luaav_scheduler.cpp */; };
 		36633D1810B3815D006BA7C5 /* lfs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36633D1710B3815D006BA7C5 /* lfs.cpp */; };
+		3669D36414D2092700726C9C /* libapr-1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3669D36314D2092700726C9C /* libapr-1.0.dylib */; };
+		3669D36514D2092700726C9C /* libapr-1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3669D36314D2092700726C9C /* libapr-1.0.dylib */; };
 		367F1B9E123EB6C200944D54 /* luaav_audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 367F1B9C123EB6C200944D54 /* luaav_audio.cpp */; };
 		369A377010B32698003F82AA /* luaav.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 369A376F10B32698003F82AA /* luaav.cpp */; };
 		369A377510B326EA003F82AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 369A377310B326E2003F82AA /* main.cpp */; };
@@ -153,7 +154,6 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B960834813C5A1BB004A4537 /* luarocks in Resources */ = {isa = PBXBuildFile; fileRef = B960830813C5A1BB004A4537 /* luarocks */; };
-		B9699B4D135545DD00B6DD34 /* libapr-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3663393F10B3640D006BA7C5 /* libapr-1.a */; };
 		B990080A10B7E23F00AFEE2B /* luaav_filewatcher_cocoa.mm in Sources */ = {isa = PBXBuildFile; fileRef = B990080910B7E21700AFEE2B /* luaav_filewatcher_cocoa.mm */; };
 		B990082C10B7E55A00AFEE2B /* UKFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B990082310B7E55A00AFEE2B /* UKFileWatcher.m */; };
 		B990082E10B7E55A00AFEE2B /* UKFNSubscribeFileWatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = B990082510B7E55A00AFEE2B /* UKFNSubscribeFileWatcher.m */; };
@@ -3954,6 +3954,7 @@
 		36633A7010B378B5006BA7C5 /* luaav_scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_scheduler.cpp; sourceTree = "<group>"; };
 		36633D1710B3815D006BA7C5 /* lfs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lfs.cpp; sourceTree = "<group>"; };
 		3667AD2C12C6C599003CE9F4 /* luaav_audio_oscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luaav_audio_oscillator.hpp; sourceTree = "<group>"; };
+		3669D36314D2092700726C9C /* libapr-1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libapr-1.0.dylib"; path = "/usr/lib/libapr-1.0.dylib"; sourceTree = "<absolute>"; };
 		3673976C12834F33006CB140 /* lpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lpeg.h; sourceTree = "<group>"; };
 		367F1B9C123EB6C200944D54 /* luaav_audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_audio.cpp; sourceTree = "<group>"; };
 		36965361127112A7001B9BD4 /* luaav_revision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luaav_revision.h; sourceTree = "<group>"; };
@@ -4222,7 +4223,7 @@
 			files = (
 				36ABED3F1120B37A00D02FB7 /* libsndfile.a in Frameworks */,
 				36E46F631116494700D2D8DC /* libportaudio.a in Frameworks */,
-				B9699B4D135545DD00B6DD34 /* libapr-1.a in Frameworks */,
+				3669D36414D2092700726C9C /* libapr-1.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4249,7 +4250,6 @@
 			files = (
 				36B76D8413C2A73D00C99026 /* liblua.a in Frameworks */,
 				36418FDE10B47A0A000C646B /* libluaav.a in Frameworks */,
-				3602B6D2110A858C005DC3D0 /* libapr-1.a in Frameworks */,
 				36418FDF10B47A0A000C646B /* libportaudio.a in Frameworks */,
 				36418FE010B47A0A000C646B /* AudioToolbox.framework in Frameworks */,
 				36418FE110B47A0A000C646B /* AudioUnit.framework in Frameworks */,
@@ -4302,6 +4302,7 @@
 				3616AFB3129DC58F001235C9 /* libLLVMInterpreter.a in Frameworks */,
 				3616AFB4129DC59B001235C9 /* libLLVMArchive.a in Frameworks */,
 				3616AFB5129DC59D001235C9 /* libLLVMAnalysis.a in Frameworks */,
+				3669D36514D2092700726C9C /* libapr-1.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4321,6 +4322,7 @@
 		29B97314FDCFA39411CA2CEA /* osx */ = {
 			isa = PBXGroup;
 			children = (
+				3669D36314D2092700726C9C /* libapr-1.0.dylib */,
 				36B9A9C61133CE1D00F28D07 /* README */,
 				3641941E10B4B92D000C646B /* todo */,
 				3615992212400B3E00B1C5CA /* dev */,
@@ -10844,6 +10846,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../dev_osx/lib\"",
+					/usr/lib,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = $inherited;
@@ -10870,6 +10873,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../dev_osx/lib\"",
+					/usr/lib,
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = $inherited;

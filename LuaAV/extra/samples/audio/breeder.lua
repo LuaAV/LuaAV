@@ -14,6 +14,8 @@ local pan = {}
 local freq = {}
 local osc = {}
 
+local synth = { x=0.5, y=0.5, }
+
 -- potential elements of a graph:
 local binops = { 
 	"Add", "Sub", "Mul",
@@ -24,44 +26,58 @@ local unops = {
 	"Abs", "Sign", "Ceil", "Floor",
 	"ATan", "Cos", "Sin", "Tanh"
 }
+local x, y = Port{ "x", 0.5 }, Port{ "y", 0.5 }
 local constants = {
 	1, 2, 3, 
 	1/2, 2/3, 3/2,
 	64, 256, 512, 1024,
 	-3, -5, -9,
 	1/16, 1/32,
-	env, 
-	env * env, 
-	1 - env, 
+	--env, 
+	--env * env, 
+	--1 - env, 
 	noise.Pink{},
+	x, y,
+	x * x,
+	y * y,
 }	
 
 -- create a random graph:
-function makenode(depth)
+function makenode(depth, cache)
 	local d = math.random(depth) - 1
 	if d == 0 then
-		return constants[math.random(#constants)]
+		if #cache > 0 then
+			return table.remove(cache)
+		else
+			return constants[math.random(#constants)]
+		end
 	elseif d == 1 then
 		local op = unops[math.random(#unops)]
-		return Def[op]{makenode(depth-1)}
+		local node = Def[op]{makenode(depth-1, cache)}
+		cache[#cache+1] = node
+		return node
 	else
 		local op = binops[math.random(#binops)]
-		return Def[op]{makenode(depth-1), makenode(depth-1)}
+		local node = Def[op]{makenode(depth-1, cache), makenode(depth-1, cache)}
+		cache[#cache+1] = node
+		return node
 	end
 end
 
 -- generate & play:
 go(function()
 	while true do
-		freq = makenode(7)
-		pan = makenode(3)
-		osc = env * 0.1 * Pan2{ SinOsc{ 512 * freq }, pan }
+		local cache = { x, y }
+		freq = makenode(5, cache)
+		pan = makenode(5, cache)
+		--osc = env * 0.1 * 
+		osc = Pan2{ SinOsc{ 512 * freq }, pan }
 		--
-		osc:dump()
-		local synth = Def{ osc }
-		synth()
+		--osc:dump()
+		local def = Def{ osc, x = synth.x, y = synth.y }
+		synth = def()
 		
-		wait(.1)
+		wait("key")
 	end
 end)
 
@@ -113,6 +129,15 @@ function drawosc(o, x, y, w)
 		gl.Color(1., 0., 0.)
 		label:draw({x, y, 0}, tostring(o))
 	end
+end
+
+function win:mouse(e, k, x, y)
+	synth.x = x / self.dim[1]
+	synth.y = 1 - (y / self.dim[2])
+end
+
+function win:key(e, k)
+	event("key", e, k)
 end
 
 function win:draw()

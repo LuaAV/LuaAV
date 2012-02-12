@@ -216,6 +216,11 @@ function stripsvn(dir, sudo)
 	exec(cmd, nil, sudo)
 end
 
+function stripgit(dir, sudo)
+   local cmd = string.format("find %s \\( -name .git -and -exec rm -rf {} \\; -and -prune \\)", dir)
+   exec(cmd, nil, sudo)
+end
+
 function movefile(src, dst, sudo)
 	ensurepath(dst)
 	local cmd = string.format("mv %s %s", src, dst)
@@ -236,7 +241,8 @@ end
 
 function exportdir(src, dst, sudo)
 	ensurepath(dst)
-	local cmd = string.format("svn export --force %s %s", src, dst)
+-- 	local cmd = string.format("svn export --force %s %s", src, dst)
+   local cmd = string.format("cp -R %s %s", src, dst)
 	exec(cmd, nil, sudo)
 end
 

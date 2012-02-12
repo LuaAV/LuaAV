@@ -1,7 +1,9 @@
 local Def = require "audio.Def"
 Def.globalize()
 
-script.live = true
+--script.live = true
+
+local ctx = "CREATE"
 
 local gl = require("opengl")
 local GL = gl
@@ -10,7 +12,7 @@ local sketch = require "opengl.sketch"
 require "color"
 local HSLtoRGB = color.HSLtoRGB
 
-win = win or Window("AV Canvas", 0, 0, 720, 480)
+win = win or Window(ctx, 0, 0, 720, 480)
 
 simple = Def{
 	freq = 100,
@@ -108,6 +110,7 @@ function win:mouse(e, b, x, y)
 	dx, dy = x-x1, y-y1
 	x1, y1 = x, y
 	
+	print(x, y)
 end
 
 function win:draw()
