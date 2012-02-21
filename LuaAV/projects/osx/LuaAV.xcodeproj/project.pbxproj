@@ -66,7 +66,7 @@
 		3616AFB3129DC58F001235C9 /* libLLVMInterpreter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3616AF1C129DC228001235C9 /* libLLVMInterpreter.a */; };
 		3616AFB4129DC59B001235C9 /* libLLVMArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3616AF03129DC228001235C9 /* libLLVMArchive.a */; };
 		3616AFB5129DC59D001235C9 /* libLLVMAnalysis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3616AF02129DC228001235C9 /* libLLVMAnalysis.a */; };
-		3622B1AE14F43BF700E0ECA7 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3622B1AD14F43BF700E0ECA7 /* libluajit.a */; };
+		3622B1BE14F43F4F00E0ECA7 /* libluajit-beta9.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3622B1BD14F43F4F00E0ECA7 /* libluajit-beta9.a */; };
 		36247E1912CEE080002A971A /* luaav_audio_soundfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36247E1812CEE080002A971A /* luaav_audio_soundfile.cpp */; };
 		36418FDE10B47A0A000C646B /* libluaav.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 369A35FA10B325A6003F82AA /* libluaav.a */; };
 		36418FDF10B47A0A000C646B /* libportaudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 369A383D10B32EA8003F82AA /* libportaudio.a */; };
@@ -84,7 +84,6 @@
 		36446D391294581800BE3F60 /* Recorder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36446D381294581800BE3F60 /* Recorder.cpp */; };
 		366334F510B333AB006BA7C5 /* test.lua in CopyFiles */ = {isa = PBXBuildFile; fileRef = 366334F210B33384006BA7C5 /* test.lua */; };
 		366337A610B345CE006BA7C5 /* test2.lua in CopyFiles */ = {isa = PBXBuildFile; fileRef = 366337A410B345C0006BA7C5 /* test2.lua */; };
-		3663394010B3640D006BA7C5 /* libapr-1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3663393F10B3640D006BA7C5 /* libapr-1.a */; };
 		36633A7110B378B5006BA7C5 /* luaav_scheduler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36633A7010B378B5006BA7C5 /* luaav_scheduler.cpp */; };
 		36633D1810B3815D006BA7C5 /* lfs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36633D1710B3815D006BA7C5 /* lfs.cpp */; };
 		3669D36414D2092700726C9C /* libapr-1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3669D36314D2092700726C9C /* libapr-1.0.dylib */; };
@@ -3596,6 +3595,7 @@
 		3616AF60129DC228001235C9 /* lua_clang_llvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_clang_llvm.cpp; sourceTree = "<group>"; };
 		3616E59F12D3D14600662405 /* luaav_audio_spatial.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luaav_audio_spatial.hpp; sourceTree = "<group>"; };
 		3622B1AD14F43BF700E0ECA7 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libluajit.a; sourceTree = "<group>"; };
+		3622B1BD14F43F4F00E0ECA7 /* libluajit-beta9.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libluajit-beta9.a"; sourceTree = "<group>"; };
 		36247E1812CEE080002A971A /* luaav_audio_soundfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_audio_soundfile.cpp; sourceTree = "<group>"; };
 		36247F8B12CFE0F9002A971A /* luaav_audio_denormal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luaav_audio_denormal.hpp; sourceTree = "<group>"; };
 		36247F9A12CFE65D002A971A /* luaav_audio_reverb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_audio_reverb.cpp; sourceTree = "<group>"; };
@@ -3949,7 +3949,6 @@
 		3663393C10B36403006BA7C5 /* apr_user.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apr_user.h; sourceTree = "<group>"; };
 		3663393D10B36403006BA7C5 /* apr_version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apr_version.h; sourceTree = "<group>"; };
 		3663393E10B36403006BA7C5 /* apr_want.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = apr_want.h; sourceTree = "<group>"; };
-		3663393F10B3640D006BA7C5 /* libapr-1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libapr-1.a"; sourceTree = "<group>"; };
 		36633A7010B378B5006BA7C5 /* luaav_scheduler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_scheduler.cpp; sourceTree = "<group>"; };
 		36633D1710B3815D006BA7C5 /* lfs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lfs.cpp; sourceTree = "<group>"; };
 		3667AD2C12C6C599003CE9F4 /* luaav_audio_oscillator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luaav_audio_oscillator.hpp; sourceTree = "<group>"; };
@@ -4237,7 +4236,6 @@
 				369A384410B32ED7003F82AA /* AudioUnit.framework in Frameworks */,
 				369A384510B32ED7003F82AA /* CoreAudio.framework in Frameworks */,
 				369A384610B32ED7003F82AA /* CoreAudioKit.framework in Frameworks */,
-				3663394010B3640D006BA7C5 /* libapr-1.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4299,7 +4297,7 @@
 				3616AFB4129DC59B001235C9 /* libLLVMArchive.a in Frameworks */,
 				3616AFB5129DC59D001235C9 /* libLLVMAnalysis.a in Frameworks */,
 				3669D36514D2092700726C9C /* libapr-1.0.dylib in Frameworks */,
-				3622B1AE14F43BF700E0ECA7 /* libluajit.a in Frameworks */,
+				3622B1BE14F43F4F00E0ECA7 /* libluajit-beta9.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10092,10 +10090,10 @@
 		369A37CD10B32B15003F82AA /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				3622B1BD14F43F4F00E0ECA7 /* libluajit-beta9.a */,
 				3622B1AD14F43BF700E0ECA7 /* libluajit.a */,
 				36EB754710C9D8630002F872 /* libsndfile.a */,
 				36FFE26510B7833200718E3A /* liblua.a */,
-				3663393F10B3640D006BA7C5 /* libapr-1.a */,
 				369A383D10B32EA8003F82AA /* libportaudio.a */,
 			);
 			path = lib;

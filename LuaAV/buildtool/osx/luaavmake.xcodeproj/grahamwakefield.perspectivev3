@@ -357,6 +357,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {603, 414}}</string>
+										<key>RubberWindowFrame</key>
+										<string>310 384 810 487 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -411,8 +413,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {603, 414}}</string>
-										<key>RubberWindowFrame</key>
-										<string>310 384 810 487 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -440,11 +440,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>362B33FB14A5975A008CE8A6</string>
+				<string>3622B1CF14F43F9300E0ECA7</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>362B33FC14A5975A008CE8A6</string>
+				<string>3622B1D014F43F9300E0ECA7</string>
 				<string>362B33F914A5975A008CE8A6</string>
-				<string>362B33FD14A5975A008CE8A6</string>
+				<string>3622B1D114F43F9300E0ECA7</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -614,7 +614,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/grahamwakefield/Source/LuaAV/LuaAV/buildtool/osx/luaavmake.xcodeproj</string>
+		<string>/Users/grahamwakefield/code/LuaAV/LuaAV/buildtool/osx/luaavmake.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>310 384 810 487 0 0 1440 878 </string>
