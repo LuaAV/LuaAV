@@ -58,6 +58,13 @@ function C:__call(init)
 		app.console.rect(m.config.console_rect)
 	end
 	
+	local startup = app.apppath.."/startup.lua"
+	local ok, res = pcall(io.open, startup)
+	if(res) then
+		res:close()
+		m:fileopen(startup)
+	end
+	
 	return m
 end
 
