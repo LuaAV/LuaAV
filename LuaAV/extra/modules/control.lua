@@ -165,6 +165,9 @@ function M.Widget(def)
 		value = value,
 		min = min,
 		max = max,
+		label = def.label,
+		page = def.page,
+		color = def.color,
 		-- TODO add other fields
 	}
 	
@@ -179,6 +182,8 @@ function M.Widget(def)
 	end
 	
 	M.send("/control/addWidget", json) --, options)
+	
+	return name
 end
 
 local 

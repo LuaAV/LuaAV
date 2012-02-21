@@ -66,6 +66,7 @@
 		3616AFB3129DC58F001235C9 /* libLLVMInterpreter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3616AF1C129DC228001235C9 /* libLLVMInterpreter.a */; };
 		3616AFB4129DC59B001235C9 /* libLLVMArchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3616AF03129DC228001235C9 /* libLLVMArchive.a */; };
 		3616AFB5129DC59D001235C9 /* libLLVMAnalysis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3616AF02129DC228001235C9 /* libLLVMAnalysis.a */; };
+		3622B1AE14F43BF700E0ECA7 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3622B1AD14F43BF700E0ECA7 /* libluajit.a */; };
 		36247E1912CEE080002A971A /* luaav_audio_soundfile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36247E1812CEE080002A971A /* luaav_audio_soundfile.cpp */; };
 		36418FDE10B47A0A000C646B /* libluaav.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 369A35FA10B325A6003F82AA /* libluaav.a */; };
 		36418FDF10B47A0A000C646B /* libportaudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 369A383D10B32EA8003F82AA /* libportaudio.a */; };
@@ -103,7 +104,6 @@
 		369FB5AD10B91338006B5FB9 /* al_mainloop.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 369FB5A910B9131F006B5FB9 /* al_mainloop.cpp */; };
 		369FB5B710B91373006B5FB9 /* al_mainloop_osx.mm in Sources */ = {isa = PBXBuildFile; fileRef = 369FB5B610B91373006B5FB9 /* al_mainloop_osx.mm */; };
 		36ABED3F1120B37A00D02FB7 /* libsndfile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EB754710C9D8630002F872 /* libsndfile.a */; };
-		36B1EC6814118B4A00145513 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36EB754610C9D8630002F872 /* libluajit.a */; };
 		36B1EC6B14118B6700145513 /* luaav_audio_reverb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36247F9A12CFE65D002A971A /* luaav_audio_reverb.cpp */; };
 		36B23FD41241575D00FEEDCB /* lpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = 36B23FD31241575D00FEEDCB /* lpeg.c */; };
 		36B414F710F1298F007B16D0 /* luaav-icon4.icns in Resources */ = {isa = PBXBuildFile; fileRef = 36B414F610F1298F007B16D0 /* luaav-icon4.icns */; };
@@ -132,7 +132,6 @@
 		36B546AC128FDB730088B58D /* al_Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36B546A3128FDB730088B58D /* al_Time.cpp */; };
 		36B546AD128FDB730088B58D /* al_Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36B546A5128FDB730088B58D /* al_Color.cpp */; };
 		36B546AE128FDB730088B58D /* al_MsgQueue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36B546A6128FDB730088B58D /* al_MsgQueue.cpp */; };
-		36B76D8413C2A73D00C99026 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36FFE26510B7833200718E3A /* liblua.a */; };
 		36B9A9C71133CE1D00F28D07 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 36B9A9C61133CE1D00F28D07 /* README */; };
 		36CDA0E912C3BE2B001F9FC8 /* luaav_audio_jit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36CDA0E812C3BE2B001F9FC8 /* luaav_audio_jit.cpp */; };
 		36D3177C11514FE8009D33AC /* lua_array.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 36D3177B11514FE8009D33AC /* lua_array.cpp */; };
@@ -3596,6 +3595,7 @@
 		3616AF5F129DC228001235C9 /* lua_clang.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_clang.cpp; sourceTree = "<group>"; };
 		3616AF60129DC228001235C9 /* lua_clang_llvm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_clang_llvm.cpp; sourceTree = "<group>"; };
 		3616E59F12D3D14600662405 /* luaav_audio_spatial.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luaav_audio_spatial.hpp; sourceTree = "<group>"; };
+		3622B1AD14F43BF700E0ECA7 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libluajit.a; sourceTree = "<group>"; };
 		36247E1812CEE080002A971A /* luaav_audio_soundfile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_audio_soundfile.cpp; sourceTree = "<group>"; };
 		36247F8B12CFE0F9002A971A /* luaav_audio_denormal.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luaav_audio_denormal.hpp; sourceTree = "<group>"; };
 		36247F9A12CFE65D002A971A /* luaav_audio_reverb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_audio_reverb.cpp; sourceTree = "<group>"; };
@@ -3617,7 +3617,6 @@
 		36446D381294581800BE3F60 /* Recorder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Recorder.cpp; sourceTree = "<group>"; };
 		36446D511294622E00BE3F60 /* FormantData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormantData.h; sourceTree = "<group>"; };
 		36446D521294622E00BE3F60 /* Recorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recorder.h; sourceTree = "<group>"; };
-		36493A3B1162CD2900B6E45E /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libluajit.a; sourceTree = "<group>"; };
 		364D4E2312F6531E00E71C1E /* screens.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = screens.html; sourceTree = "<group>"; };
 		364D4E2412F6531E00E71C1E /* Window.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Window.html; sourceTree = "<group>"; };
 		364D4E2512F6531E00E71C1E /* app.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = app.html; sourceTree = "<group>"; };
@@ -4095,7 +4094,6 @@
 		36E81050128F777800D95650 /* pstdint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pstdint.h; sourceTree = "<group>"; };
 		36E81211128F866100D95650 /* al_MsgQueue.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_MsgQueue.hpp; sourceTree = "<group>"; };
 		36E81212128F866100D95650 /* al_MsgTube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_MsgTube.hpp; sourceTree = "<group>"; };
-		36EB754610C9D8630002F872 /* libluajit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libluajit.a; sourceTree = "<group>"; };
 		36EB754710C9D8630002F872 /* libsndfile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsndfile.a; sourceTree = "<group>"; };
 		36EB755E10C9D9440002F872 /* FreeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreeImage.h; sourceTree = "<group>"; };
 		36EB755F10C9D9440002F872 /* lua.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua.hpp; sourceTree = "<group>"; };
@@ -4231,7 +4229,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36B1EC6814118B4A00145513 /* libluajit.a in Frameworks */,
 				369FB59410B91277006B5FB9 /* CoreMIDI.framework in Frameworks */,
 				369A381F10B32D13003F82AA /* Cocoa.framework in Frameworks */,
 				369A37C510B32B05003F82AA /* libluaav.a in Frameworks */,
@@ -4248,7 +4245,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36B76D8413C2A73D00C99026 /* liblua.a in Frameworks */,
 				36418FDE10B47A0A000C646B /* libluaav.a in Frameworks */,
 				36418FDF10B47A0A000C646B /* libportaudio.a in Frameworks */,
 				36418FE010B47A0A000C646B /* AudioToolbox.framework in Frameworks */,
@@ -4303,6 +4299,7 @@
 				3616AFB4129DC59B001235C9 /* libLLVMArchive.a in Frameworks */,
 				3616AFB5129DC59D001235C9 /* libLLVMAnalysis.a in Frameworks */,
 				3669D36514D2092700726C9C /* libapr-1.0.dylib in Frameworks */,
+				3622B1AE14F43BF700E0ECA7 /* libluajit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -10095,8 +10092,7 @@
 		369A37CD10B32B15003F82AA /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				36493A3B1162CD2900B6E45E /* libluajit.a */,
-				36EB754610C9D8630002F872 /* libluajit.a */,
+				3622B1AD14F43BF700E0ECA7 /* libluajit.a */,
 				36EB754710C9D8630002F872 /* libsndfile.a */,
 				36FFE26510B7833200718E3A /* liblua.a */,
 				3663393F10B3640D006BA7C5 /* libapr-1.a */,
@@ -10548,6 +10544,7 @@
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "LuaAV" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,

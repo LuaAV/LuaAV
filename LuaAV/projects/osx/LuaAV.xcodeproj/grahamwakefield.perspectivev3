@@ -233,8 +233,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -271,6 +269,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>3615992212400B3E00B1C5CA</string>
+								<string>3615992312400B3E00B1C5CA</string>
 								<string>369A361410B325E3003F82AA</string>
 								<string>369A361610B325E3003F82AA</string>
 								<string>36B5464E128FDAEE0088B58D</string>
@@ -280,20 +280,18 @@
 								<string>3616AF5D129DC228001235C9</string>
 								<string>369A361910B325E3003F82AA</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>3669D35D14D208E400726C9C</string>
-								<string>3669D35E14D208E400726C9C</string>
-								<string>3669D35F14D208E400726C9C</string>
-								<string>3669D36014D208E400726C9C</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>136</integer>
-									<integer>72</integer>
+									<integer>23</integer>
+									<integer>5</integer>
+									<integer>4</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1764}, {240, 769}}</string>
+							<string>{{0, 0}, {240, 769}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -310,7 +308,7 @@
 							<real>240</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>324 50 895 828 0 0 1440 878 </string>
+						<string>67 50 895 828 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -321,12 +319,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>362B341114A5975C008CE8A6</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>luaav_filewatcher.h</string>
+								<string>lua_utility.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,18 +334,16 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>362B341214A5975C008CE8A6</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>luaav_filewatcher.h</string>
+										<string>lua_utility.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3669D51C14D27CA000726C9C</string>
+										<string>3622B18914F43A1A00E0ECA7</string>
 										<key>history</key>
 										<array>
 											<string>362B341314A5975C008CE8A6</string>
 											<string>362B341414A5975C008CE8A6</string>
 											<string>362B341514A5975C008CE8A6</string>
-											<string>362B341714A5975C008CE8A6</string>
-											<string>362B341814A5975C008CE8A6</string>
 											<string>362B341914A5975C008CE8A6</string>
 											<string>362B341A14A5975C008CE8A6</string>
 											<string>362B341B14A5975C008CE8A6</string>
@@ -359,9 +357,11 @@
 											<string>3675D4E014AF75B3001DD9F1</string>
 											<string>3600110714CA8D3B00EF76AA</string>
 											<string>3600110814CA8D3B00EF76AA</string>
-											<string>36F9D41E14CD811800FE9DBE</string>
 											<string>3669D33514D2084300726C9C</string>
-											<string>3669D36D14D2095000726C9C</string>
+											<string>362A21B514EE2A00000268EC</string>
+											<string>362A21B614EE2A00000268EC</string>
+											<string>362A21B714EE2A00000268EC</string>
+											<string>362A21B814EE2A00000268EC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -375,18 +375,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {633, 303}}</string>
+								<string>{{0, 0}, {633, 782}}</string>
 								<key>RubberWindowFrame</key>
-								<string>324 50 895 828 0 0 1440 878 </string>
+								<string>67 50 895 828 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>303pt</string>
+							<string>782pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>479pt</string>
+							<string>0pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -400,7 +400,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {633, 452}}</string>
+										<string>{{10, 27}, {633, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>67 50 895 828 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -455,8 +457,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {633, 452}}</string>
-										<key>RubberWindowFrame</key>
-										<string>324 50 895 828 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -484,11 +484,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3669D33714D2084300726C9C</string>
+				<string>3622B18A14F43A1A00E0ECA7</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>3669D33814D2084300726C9C</string>
+				<string>3622B18B14F43A1A00E0ECA7</string>
 				<string>362B341114A5975C008CE8A6</string>
-				<string>3669D33914D2084300726C9C</string>
+				<string>3622B18C14F43A1A00E0ECA7</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -678,12 +678,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>3669D34214D2085D00726C9C</string>
-		<string>3669D34314D2085D00726C9C</string>
 		<string>/Users/grahamwakefield/code/LuaAV/LuaAV/projects/osx/LuaAV.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>324 50 895 828 0 0 1440 878 </string>
+	<string>67 50 895 828 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>

@@ -1,0 +1,3 @@
+[submodule "LuaAV/modules/freenect/libfreenect"]
+	path = LuaAV/modules/freenect/libfreenect
+	url = https://github.com/OpenKinect/libfreenect
