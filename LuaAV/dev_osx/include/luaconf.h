@@ -1,6 +1,6 @@
 /*
 ** Configuration header.
-** Copyright (C) 2005-2010 Mike Pall. See Copyright Notice in luajit.h
+** Copyright (C) 2005-2011 Mike Pall. See Copyright Notice in luajit.h
 */
 
 #ifndef luaconf_h
@@ -9,19 +9,8 @@
 #include <limits.h>
 #include <stddef.h>
 
-/* Try to determine supported features for a couple of standard platforms. */
-#if defined(_WIN32)
-#define LUA_USE_WIN
-#define LUA_DL_DLL
-#elif defined(__linux__) || defined(__solaris__) || defined(__CYGWIN__) || \
-      defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || \
-      defined(__FreeBSD_kernel__) || (defined(__MACH__) && defined(__APPLE__))
-#define LUA_USE_POSIX
-#define LUA_DL_DLOPEN
-#endif
-
 /* Default path for loading Lua and C modules with require(). */
-#ifdef LUA_USE_WIN
+#if defined(_WIN32)
 /*
 ** In Windows, any exclamation mark ('!') in the path is replaced by the
 ** path of the directory of the executable file of the current process.
@@ -37,12 +26,12 @@
 #define LUA_LDIR	LUA_ROOT "share/lua/5.1/"
 #define LUA_CDIR	LUA_ROOT "lib/lua/5.1/"
 #ifdef LUA_XROOT
-#define LUA_JDIR	LUA_XROOT "share/luajit-2.0.0-beta4/"
+#define LUA_JDIR	LUA_XROOT "share/luajit-2.0.0-beta9/"
 #define LUA_XPATH \
   ";" LUA_XROOT "share/lua/5.1/?.lua;" LUA_XROOT "share/lua/5.1/?/init.lua"
 #define LUA_XCPATH	LUA_XROOT "lib/lua/5.1/?.so;"
 #else
-#define LUA_JDIR	LUA_ROOT "share/luajit-2.0.0-beta4/"
+#define LUA_JDIR	LUA_ROOT "share/luajit-2.0.0-beta9/"
 #define LUA_XPATH
 #define LUA_XCPATH
 #endif
@@ -58,7 +47,7 @@
 #define LUA_INIT	"LUA_INIT"
 
 /* Special file system characters. */
-#ifdef LUA_USE_WIN
+#if defined(_WIN32)
 #define LUA_DIRSEP	"\\"
 #else
 #define LUA_DIRSEP	"/"
