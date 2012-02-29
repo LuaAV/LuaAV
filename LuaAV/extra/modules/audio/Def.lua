@@ -1117,6 +1117,22 @@ function parser.Biquad(unit, node, inputs)
 	return outputs
 end
 
+function parser.Delay(unit, node, inputs)
+	assert(#inputs >= 3)
+	unit.depends['#include "luaav_audio_delay.hpp"'] = true
+	
+	local objname = uid("delay")
+	unit.state[objname] = { ty="Delay", audio.samplerate() * (node.maxdelay or 1) }	
+	
+	local output = uid("output")
+	local input = inputs[1][1]
+	local delay = inputs[2][1]
+	local feedback = inputs[3][1]
+	statement(unit, "a", { op="call", name=output, objname, input, { op="mul", audio.samplerate(), delay } , feedback })
+	
+	return { output, rate="a" }
+end
+
 function parser.Reverb(unit, node, inputs)
 	assert(#inputs >= 8)
 	unit.depends['#include "luaav_audio_reverb.hpp"'] = true
@@ -1947,6 +1963,20 @@ function Reverb(args)
 	return setmetatable({ op="Reverb", input, decay, bandwidth, damping, diffusionIn1, diffusionIn2, diffusionDecay1, diffusionDecay2 }, Expr)
 end
 
+--- Basic delay line
+-- @param args Constructor properties
+-- @param args.maxdelay: max delay size (samples, default 44100)
+-- @param args.input or args[1]: input
+-- @param args.delay or args[2]: delay (samples, default 4410)
+-- @param args.feedback or args[3]: feedback (default 0.1)
+function Delay(args)
+	local maxdelay = args.maxdelay
+	local input = args.input or args[1] or 0
+	local delay = args.delay or args[2] or 4410
+	local feedback = args.feedback or args[3] or 0.1
+	return setmetatable({ op="Delay", maxdelay=maxdelay, input, delay, feedback }, Expr)
+end
+
 --------------------------------------------------------------------------------
 -- public API
 --------------------------------------------------------------------------------
@@ -2011,6 +2041,7 @@ function Def(def)
 	--printt(unit)
 	--print"Proto:"	printt(proto)
 	local code = generate(unit)
+	--print(code)
 	local ctor = compile(code, proto)
 	return ctor, code, unit
 end

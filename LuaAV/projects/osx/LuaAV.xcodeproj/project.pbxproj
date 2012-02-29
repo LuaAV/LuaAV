@@ -4064,6 +4064,7 @@
 		36BF981B1273F4770066E0C0 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		36BF981C1273F4770066E0C0 /* UnitMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitMaps.h; sourceTree = "<group>"; };
 		36BF98D8127409010066E0C0 /* al_Compiler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = al_Compiler.hpp; sourceTree = "<group>"; };
+		36C3C6EF14FC1A650066C555 /* luaav_audio_delay.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luaav_audio_delay.hpp; sourceTree = "<group>"; };
 		36CDA0E712C3BDF9001F9FC8 /* luaav_audio_jit.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = luaav_audio_jit.hpp; sourceTree = "<group>"; };
 		36CDA0E812C3BE2B001F9FC8 /* luaav_audio_jit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaav_audio_jit.cpp; sourceTree = "<group>"; };
 		36D3177B11514FE8009D33AC /* lua_array.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lua_array.cpp; sourceTree = "<group>"; };
@@ -4395,6 +4396,7 @@
 				36394AB312C897F800C7AEA6 /* luaav_audio_noise.hpp */,
 				36394D2812C9E44C00C7AEA6 /* luaav_audio_filter.hpp */,
 				3667AD2C12C6C599003CE9F4 /* luaav_audio_oscillator.hpp */,
+				36C3C6EF14FC1A650066C555 /* luaav_audio_delay.hpp */,
 				36FEF3F413076203009FA23A /* luaav_audio_reverb.hpp */,
 				360DF0F8127ADE35001F6154 /* luaav_state.hpp */,
 				360DF0DF127ADBAA001F6154 /* luaav_udata.hpp */,
@@ -11005,7 +11007,6 @@
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../dev_osx/lib\"";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-DLUAAV_USE_LUAJIT",
 					"-DOSC_HOST_LITTLE_ENDIAN",
 					"-DAPR_FAST_COMPAT",
 					"-DAPR_STRICT",
@@ -11028,7 +11029,6 @@
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../dev_osx/lib\"";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
-					"-DLUAAV_USE_LUAJIT",
 					"-DOSC_HOST_LITTLE_ENDIAN",
 					"-DAPR_FAST_COMPAT",
 					"-DAPR_STRICT",

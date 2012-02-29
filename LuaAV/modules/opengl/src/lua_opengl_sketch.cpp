@@ -125,7 +125,7 @@ void vec3_tangent(float *res, const float *v) {
 int opengl_sketch_enter_ortho(lua_State *L) {
 	float vp[] = {-1, -1, 2, 2};
 	int n = 4;
-	lua::to_vec_n(L, 1, n, vp);
+	lua::to_vec_n<float>(L, 1, n, vp);
 	if(n > 2) {
 		if(n == 3) {
 			vp[3] = vp[2];

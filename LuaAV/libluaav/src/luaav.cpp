@@ -26,9 +26,9 @@
 #include <string>
 #include <stdlib.h>
 
-//#undef LUAAV_USE_LUAJIT
+#define LUAAV_USE_LUAJIT
 #ifdef LUAAV_USE_LUAJIT
-#include "luajit.h"
+	#include "luajit.h"
 #endif
 
 #define ddebug(...) 
@@ -465,8 +465,9 @@ void luaav_init(int argc, char ** argv) {
 	luaav_add_critical_module( LUA_DBLIBNAME, luaopen_debug );
 #if defined(LUAAV_USE_LUAJIT) 
 	// luajit:
-//	luaav_add_main_module( LUA_JITLIBNAME, luaopen_jit );
-//	luaav_add_opt_module( LUA_BITLIBNAME, luaopen_bit ); 
+	luaav_add_main_module( LUA_JITLIBNAME, luaopen_jit );
+	luaav_add_opt_module( LUA_BITLIBNAME, luaopen_bit ); 
+	luaav_add_opt_module( LUA_FFILIBNAME, luaopen_ffi ); 
 #endif	
 	/* LuaAV modules */
 	luaav_add_main_module( "LuaAV", luaopen_luaav );
