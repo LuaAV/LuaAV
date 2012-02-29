@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3622B27614F4743700E0ECA7 /* luaopen_freenect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3622B22B14F471FC00E0ECA7 /* luaopen_freenect.cpp */; };
+		3622B28E14F4749000E0ECA7 /* libfreenect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3622B28C14F4749000E0ECA7 /* libfreenect.a */; };
+		3622B28F14F4749000E0ECA7 /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3622B28D14F4749000E0ECA7 /* libusb-1.0.a */; };
+		3622B2C514F475CE00E0ECA7 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3622B2C414F475CE00E0ECA7 /* Carbon.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3622B2A114F4752000E0ECA7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3622B22B14F471FC00E0ECA7 /* luaopen_freenect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = luaopen_freenect.cpp; sourceTree = "<group>"; };
+		3622B23914F4726800E0ECA7 /* lakefile.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; path = lakefile.lua; sourceTree = "<group>"; };
+		3622B23A14F4727000E0ECA7 /* test_freenect.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; path = test_freenect.lua; sourceTree = "<group>"; };
+		3622B26114F473FE00E0ECA7 /* freenect.so */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = freenect.so; sourceTree = BUILT_PRODUCTS_DIR; };
+		3622B28414F4749000E0ECA7 /* libfreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libfreenect.h; sourceTree = "<group>"; };
+		3622B28614F4749000E0ECA7 /* libusb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
+		3622B28714F4749000E0ECA7 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua.h; sourceTree = "<group>"; };
+		3622B28814F4749000E0ECA7 /* lua.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua.hpp; sourceTree = "<group>"; };
+		3622B28914F4749000E0ECA7 /* luaconf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = luaconf.h; sourceTree = "<group>"; };
+		3622B28A14F4749000E0ECA7 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lualib.h; sourceTree = "<group>"; };
+		3622B28C14F4749000E0ECA7 /* libfreenect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfreenect.a; sourceTree = "<group>"; };
+		3622B28D14F4749000E0ECA7 /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libusb-1.0.a"; sourceTree = "<group>"; };
+		3622B2C414F475CE00E0ECA7 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		3622B44514F5B51100E0ECA7 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lauxlib.h; sourceTree = "<group>"; };
+		3622B44614F5B51100E0ECA7 /* lua_glue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_glue.h; sourceTree = "<group>"; };
+		3622B44714F5B51100E0ECA7 /* lua_utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_utility.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3622B25F14F473FE00E0ECA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3622B28E14F4749000E0ECA7 /* libfreenect.a in Frameworks */,
+				3622B28F14F4749000E0ECA7 /* libusb-1.0.a in Frameworks */,
+				3622B2C514F475CE00E0ECA7 /* Carbon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* lua_freenect */ = {
+			isa = PBXGroup;
+			children = (
+				3622B28314F4749000E0ECA7 /* include */,
+				3622B28B14F4749000E0ECA7 /* lib */,
+				3622B23A14F4727000E0ECA7 /* test_freenect.lua */,
+				3622B23914F4726800E0ECA7 /* lakefile.lua */,
+				3622B22B14F471FC00E0ECA7 /* luaopen_freenect.cpp */,
+				3622B26214F473FE00E0ECA7 /* Products */,
+				3622B2C414F475CE00E0ECA7 /* Carbon.framework */,
+			);
+			name = lua_freenect;
+			sourceTree = "<group>";
+		};
+		3622B26214F473FE00E0ECA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3622B26114F473FE00E0ECA7 /* freenect.so */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3622B28314F4749000E0ECA7 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				3622B44614F5B51100E0ECA7 /* lua_glue.h */,
+				3622B44714F5B51100E0ECA7 /* lua_utility.h */,
+				3622B28414F4749000E0ECA7 /* libfreenect.h */,
+				3622B28514F4749000E0ECA7 /* libusb-1.0 */,
+				3622B28714F4749000E0ECA7 /* lua.h */,
+				3622B28814F4749000E0ECA7 /* lua.hpp */,
+				3622B28914F4749000E0ECA7 /* luaconf.h */,
+				3622B44514F5B51100E0ECA7 /* lauxlib.h */,
+				3622B28A14F4749000E0ECA7 /* lualib.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		3622B28514F4749000E0ECA7 /* libusb-1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				3622B28614F4749000E0ECA7 /* libusb.h */,
+			);
+			path = "libusb-1.0";
+			sourceTree = "<group>";
+		};
+		3622B28B14F4749000E0ECA7 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				3622B28C14F4749000E0ECA7 /* libfreenect.a */,
+				3622B28D14F4749000E0ECA7 /* libusb-1.0.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		D28A88AD04BDD90700651E21 /* lua_freenect */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(ACTION)";
+			buildConfigurationList = 1DEB918F08733D9F0010E9CD /* Build configuration list for PBXLegacyTarget "lua_freenect" */;
+			buildPhases = (
+			);
+			buildToolPath = ./lake;
+			dependencies = (
+			);
+			name = lua_freenect;
+			passBuildSettingsInEnvironment = 1;
+			productName = lua_freenect;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXNativeTarget section */
+		3622B26014F473FE00E0ECA7 /* freenect */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3622B26514F473FE00E0ECA7 /* Build configuration list for PBXNativeTarget "freenect" */;
+			buildPhases = (
+				3622B25E14F473FE00E0ECA7 /* Sources */,
+				3622B25F14F473FE00E0ECA7 /* Frameworks */,
+				3622B2A114F4752000E0ECA7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = freenect;
+			productName = freenect;
+			productReference = 3622B26114F473FE00E0ECA7 /* freenect.so */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "lua_freenect" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* lua_freenect */;
+			productRefGroup = 3622B26214F473FE00E0ECA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D28A88AD04BDD90700651E21 /* lua_freenect */,
+				3622B26014F473FE00E0ECA7 /* freenect */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3622B25E14F473FE00E0ECA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3622B27614F4743700E0ECA7 /* luaopen_freenect.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB919008733D9F0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = lua_freenect;
+			};
+			name = Debug;
+		};
+		1DEB919108733D9F0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = lua_freenect;
+			};
+			name = Release;
+		};
+		1DEB919408733D9F0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = include;
+				LIBRARY_SEARCH_PATHS = lib;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		1DEB919508733D9F0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = include;
+				LIBRARY_SEARCH_PATHS = lib;
+				ONLY_ACTIVE_ARCH = NO;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+		3622B26314F473FE00E0ECA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = .;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_EXTENSION = so;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/freenect/lib\"",
+					"\"$(SRCROOT)/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = freenect;
+			};
+			name = Debug;
+		};
+		3622B26414F473FE00E0ECA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CONFIGURATION_BUILD_DIR = .;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_EXTENSION = so;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/freenect/lib\"",
+					"\"$(SRCROOT)/lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = freenect;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB918F08733D9F0010E9CD /* Build configuration list for PBXLegacyTarget "lua_freenect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919008733D9F0010E9CD /* Debug */,
+				1DEB919108733D9F0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "lua_freenect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919408733D9F0010E9CD /* Debug */,
+				1DEB919508733D9F0010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3622B26514F473FE00E0ECA7 /* Build configuration list for PBXNativeTarget "freenect" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3622B26314F473FE00E0ECA7 /* Debug */,
+				3622B26414F473FE00E0ECA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
