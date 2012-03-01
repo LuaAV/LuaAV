@@ -54,7 +54,7 @@
 #define MAXBACK		INITBACK
 
 /* size for call/backtrack stack for verifier */
-#define MAXBACKVER	200
+#define MAXBACKVER	300
 
 /* initial size for capture's list */
 #define INITCAPSIZE	32

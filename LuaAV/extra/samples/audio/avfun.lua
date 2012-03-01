@@ -109,8 +109,6 @@ function win:mouse(e, b, x, y)
 	end
 	dx, dy = x-x1, y-y1
 	x1, y1 = x, y
-	
-	print(x, y)
 end
 
 function win:draw()

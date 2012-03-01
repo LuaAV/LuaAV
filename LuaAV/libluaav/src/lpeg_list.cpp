@@ -25,7 +25,7 @@
 #define MAXBACK         400
 
 /* initial size for capture's list */
-#define IMAXCAPTURES    600
+#define IMAXCAPTURES    900
 
 
 /* index, on Lua stack, for subject */

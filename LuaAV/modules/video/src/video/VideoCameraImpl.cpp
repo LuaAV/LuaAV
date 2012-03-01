@@ -29,5 +29,18 @@ void VideoCameraImpl :: destroy(VideoCameraImpl *impl) {
 	delete impl;
 }
 
+#if defined (__APPLE__) || defined (OSX)
+
+VideoCameraImpl * VideoCameraImpl :: create(const char *uid) {
+	VideoCameraImpl *impl = NULL;
+	impl = new QtKitVideoCameraImpl(uid);
+	return impl;
+}
+
+void VideoCameraImpl :: list_devices(vector<Device> &devices) {
+	QtKitVideoCameraImpl::list_devices(devices);
+}
+#endif
+
 }	// video::
 

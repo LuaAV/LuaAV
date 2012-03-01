@@ -4,10 +4,20 @@
 #include "allocore/types/al_Array.hpp"
 #include "video_common.h"
 #include <string>
+#include <vector>
 
 using std::string;
+using std::vector;
 
 namespace video {
+
+
+class Device{
+public:
+	string name;
+	string uid;
+};
+
 
 class VideoCameraImpl;
 
@@ -23,6 +33,9 @@ public:
 	VideoCamera();
 	virtual ~VideoCamera();
 
+#if defined (__APPLE__) || defined (OSX)
+	VideoError open(const char *uid, int w, int h);
+#endif
 	VideoError open(int w, int h);
 	VideoError close();
 	VideoError settings();
@@ -32,6 +45,7 @@ public:
 	
 	void set_pixel_format(PixelFormat fmt);
 	PixelFormat get_pixel_format() {return mFormat;}
+	static VideoError list_devices(vector<Device> &devices);
 
 protected:
 	VideoError make_impl();

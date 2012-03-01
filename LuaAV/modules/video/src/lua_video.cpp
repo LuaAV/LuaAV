@@ -318,9 +318,17 @@ template<> void Glue<Video>::usr_mt(lua_State * L) {
 int lua_video_camera_open(lua_State *L) {
 	VideoCamera *s = Glue<VideoCamera>::checkto(L, 1);
 	if(s) {
-		int dim[] = {720, 480};
-		lua::to_vec(L, 2, 2, dim);
-		s->open(dim[0], dim[1]);
+		if(lua_type(L, 2) == LUA_TSTRING) {
+			const char *uid = lua_tostring(L, 2);
+			int dim[] = {720, 480};
+			lua::to_vec(L, 3, 2, dim);
+			s->open(uid, dim[0], dim[1]);
+		}
+		else {
+			int dim[] = {720, 480};
+			lua::to_vec(L, 2, 2, dim);
+			s->open(dim[0], dim[1]);
+		}
 	}
 	else {
 		luaL_error(L, "VideoCamera.open: invalid arguments");
@@ -359,6 +367,21 @@ int lua_video_camera_array(lua_State *L) {
 	}
 	else {
 		luaL_error(L, "VideoCamera.array: invalid arguments");
+	}
+	return 1;
+}
+
+int lua_video_list_devices(lua_State *L) {
+	vector<video::Device> devices;
+	VideoCamera::list_devices(devices);
+	lua_newtable(L);
+	for(int i=0; i < devices.size(); i++) {
+		lua_newtable(L);
+		lua_pushstring(L, devices[i].name.c_str());
+		lua_setfield(L, -2, "name");
+		lua_pushstring(L, devices[i].uid.c_str());
+		lua_setfield(L, -2, "uid");
+		lua_rawseti(L, -2, i+1);
 	}
 	return 1;
 }
@@ -423,6 +446,7 @@ template<> void Glue<VideoCamera>::usr_mt(lua_State * L) {
 		{"open", lua_video_camera_open},
 		{"close", lua_video_camera_close},
 		{"array", lua_video_camera_array},
+		{"list_devices", lua_video_list_devices},
 		{ NULL, NULL}
 	};
 	

@@ -31,6 +31,11 @@ public:
 
 	virtual VideoError next_frame(AlloArray *mat) = 0;
 	
+#if defined (__APPLE__) || defined (OSX)
+	static VideoCameraImpl * create(const char *uid);
+	static void list_devices(vector<Device> &devices);
+#endif
+	
 	Type type() {return mType;}
 	
 protected:

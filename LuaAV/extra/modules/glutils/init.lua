@@ -4,13 +4,11 @@ local setmetatable = setmetatable
 
 local string = require 'string'
 
-require("opengl")
-local gl = gl
+local gl = require("opengl")
 local GL = gl
-local glu = glu
+local glu = require("opengl.glu")
 
-require("muro")
-local sketch = muro.Sketch
+local sketch = require("opengl.sketch")
 local enter_ortho = sketch.enter_ortho
 local leave_ortho = sketch.leave_ortho
 local quad = sketch.quad
@@ -27,9 +25,9 @@ end
 
 local defoutline = {0.25, 0.25, 0.25, 1.}
 function drawoutline(f, c)
-	local c = c or defoutline
+	c = c or defoutline
 	
-	gl.Enable(GL.POLYGON_OFFSET)
+	gl.Enable(GL.POLYGON_OFFSET_FILL)
 	gl.Enable(GL.POLYGON_OFFSET_LINE)
 	gl.PolygonOffset(-1, -2)
 	
@@ -39,7 +37,8 @@ function drawoutline(f, c)
 	gl.PolygonOffset(0, 0)
 	
 	gl.PolygonMode(GL.FRONT_AND_BACK, GL.FILL)
-	gl.Disable(GL.POLYGON_OFFSET)
+	gl.Disable(GL.POLYGON_OFFSET_FILL)
+	gl.Disable(GL.POLYGON_OFFSET_LINE)
 end
 
 --[[

@@ -14,6 +14,7 @@
 }
 
 - (id) init;
+- (id) initWithDeviceID:(NSString *)uid;
 - (void) openWithWidth:(NSInteger)_width height:(NSInteger)_height pixelFormat:(NSInteger)_format;
 - (void) close;
 - (void) captureOutput:(QTCaptureOutput *)captureOutput 
@@ -21,6 +22,7 @@
 			withSampleBuffer:(QTSampleBuffer *)sampleBuffer 
 			fromConnection:(QTCaptureConnection *)connection;
 - (void) getFrame:(AlloArray *)mat;
++ (void) listDevices:(vector<video::Device> *)devices;
 
 @end
 
@@ -37,6 +39,43 @@
 		QTCaptureDevice *device = [QTCaptureDevice defaultInputDeviceWithMediaType:QTMediaTypeVideo];
 		if(! [device open: &error]) {
 			fprintf(stderr, "Error opening default video capture device\n");
+		}
+
+		capture_device_input = [[QTCaptureDeviceInput alloc] initWithDevice:device];
+		if(! [capture_session addInput:capture_device_input error:&error]) {
+			fprintf(stderr, "Error adding input to capture session\n");
+		}
+		
+		capture_decompressed_video_output = [[QTCaptureDecompressedVideoOutput alloc] init];
+		[capture_decompressed_video_output setDelegate:self];
+		if(! [capture_session addOutput:capture_decompressed_video_output error:&error]) {
+			fprintf(stderr, "Error adding output to capture session\n");
+		}
+		
+		current_frame = 0;
+		has_new_frame = NO;
+		width = 0;
+		height = 0;
+		format = kCVPixelFormatType_24RGB;
+	}
+	
+	return self;
+}
+
+- (id) initWithDeviceID:(NSString *)uid
+{
+	if(self = [super init]) {
+		NSError *error = nil;
+
+		capture_session = [[QTCaptureSession alloc] init];
+
+		QTCaptureDevice *device = [QTCaptureDevice deviceWithUniqueID:uid];
+		if(! [device open: &error]) {
+			fprintf(stderr, "Error opening specified video capture device, trying default\n");
+			device = [QTCaptureDevice defaultInputDeviceWithMediaType:QTMediaTypeVideo];
+			if(! [device open: &error]) {
+				fprintf(stderr, "Error opening default video capture device\n");
+			}
 		}
 
 		capture_device_input = [[QTCaptureDeviceInput alloc] initWithDevice:device];
@@ -192,6 +231,28 @@ int components_for_qt_format(NSInteger fmt) {
 	}
 }
 
++ (void) listDevices:(vector<video::Device> *)devices
+{
+	NSArray *devs = [
+		[QTCaptureDevice inputDevicesWithMediaType:QTMediaTypeVideo] 
+			arrayByAddingObjectsFromArray:[QTCaptureDevice inputDevicesWithMediaType:QTMediaTypeMuxed]
+	];
+	for(int i=0; i < [devs count]; i++) {
+		QTCaptureDevice *dev = [devs objectAtIndex:i];
+		NSString *name = [dev localizedDisplayName];
+		NSString *uid = [dev uniqueID];
+		video::Device D;
+		D.name = [name cStringUsingEncoding:NSASCIIStringEncoding];
+		D.uid = [uid cStringUsingEncoding:NSASCIIStringEncoding];
+		devices->push_back(D);
+		/*printf("%s unique ID: %s\n", 
+			[name cStringUsingEncoding:NSASCIIStringEncoding],
+			[uid cStringUsingEncoding:NSASCIIStringEncoding]
+		);
+		*/
+	}
+}
+
 @end
 
 
@@ -203,6 +264,13 @@ QtKitVideoCameraImpl :: QtKitVideoCameraImpl()
 	mOpen(false)
 {
 	mVideoGrabber = (void *)[[QtKitVideoCamera alloc] init];
+}
+
+QtKitVideoCameraImpl :: QtKitVideoCameraImpl(const char *uid)
+:	VideoCameraImpl(QTKIT)
+{
+	NSString *nsuid = [NSString stringWithCString:uid encoding:NSASCIIStringEncoding];
+	mVideoGrabber = (void *)[[QtKitVideoCamera alloc] initWithDeviceID:nsuid];
 }
 
 QtKitVideoCameraImpl :: ~QtKitVideoCameraImpl() {
@@ -241,5 +309,8 @@ VideoError QtKitVideoCameraImpl :: next_frame(AlloArray *mat) {
 	return err;
 }
 
+void QtKitVideoCameraImpl :: list_devices(vector<Device> &devices) {
+	[QtKitVideoCamera listDevices:&devices];
+}
 	
 } // video::

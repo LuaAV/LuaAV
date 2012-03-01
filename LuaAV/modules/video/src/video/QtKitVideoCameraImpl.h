@@ -8,6 +8,7 @@ namespace video {
 class QtKitVideoCameraImpl:  public VideoCameraImpl {
 public:
 	QtKitVideoCameraImpl();
+	QtKitVideoCameraImpl(const char *uid);
 	virtual ~QtKitVideoCameraImpl();
 	
 	virtual VideoError open(int w, int h, PixelFormat fmt);
@@ -15,6 +16,7 @@ public:
 	virtual VideoError settings();
 
 	virtual VideoError next_frame(AlloArray *mat);
+	static void list_devices(vector<Device> &devices);
 	
 protected:
 	void	*mVideoGrabber;		///< QtKit vide grabber object
