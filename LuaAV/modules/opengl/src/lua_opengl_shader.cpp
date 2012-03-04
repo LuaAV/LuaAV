@@ -109,6 +109,42 @@ void set_prototype_params(lua_State *L) {
 	@module opengl.Shader
 */
 
+/*! Set shader source code
+	@LuaMethod SET
+	@name M.source
+*/
+int lua_shader_source(lua_State * L) {
+	Shader *s = Glue<Shader>::checkto(L, 1);
+	if(s && lua::is<const char *>(L, 2)) {
+		s->source(lua::to<const char *>(L, 2));
+		
+		// put shader attr userdata in shader env table
+		lua_getfenv(L, 1);
+		lua_pushstring(L, ATTR_UDATA_FIELD);
+		lua_newtable(L);
+		
+		map<string, ShaderAttribute *> *attrs = s->attributes();
+		if(attrs) {
+			map<string, ShaderAttribute *>::iterator it = attrs->begin();
+			map<string, ShaderAttribute *>::iterator ite = attrs->end();
+			for(; it != ite; ++it) {
+				ShaderAttribute *a = it->second;
+				ShaderAttributeWrapper *aw = new ShaderAttributeWrapper(a);
+				lua_pushstring(L, a->name());
+				Glue<ShaderAttributeWrapper>::push(L, aw);
+				lua_rawset(L, -3);
+			}
+		}
+		
+		lua_rawset(L, -3);
+		lua_pop(L, 1);
+	}
+	else {
+		luaL_error(L, "Shader.source: invalid arguments");
+	}
+	return 0;
+}
+
 /*! The shader file
 	@LuaMethod GETSET
 	@name M.file
@@ -326,6 +362,7 @@ template<> void Glue<Shader>::usr_mt(lua_State * L) {
 	};
 	static luaL_reg setters[] = {
 		{ "file", lua_shader_file },
+		{ "source", lua_shader_source },
 		{ NULL, NULL}
 	};
 	Glue<Shader>::usr_attr_mt(L, methods, getters, setters);
