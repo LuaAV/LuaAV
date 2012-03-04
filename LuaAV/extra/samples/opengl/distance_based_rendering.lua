@@ -8,10 +8,7 @@ local Shader = require("opengl.Shader")
 @see http://www.iquilezles.org/www/articles/distfunctions/distfunctions.htm
 --]]
 
-local ctx = "Respect to IQ"
-local win = Window(ctx, 0, 0, 1024, 768)
-win.sync = true
-local glsl = [=[
+local template = [=[
 
 Shader{
 	name = "distance.fields",
@@ -149,37 +146,9 @@ vec3 opTwist( vec3 p, float angle )
 }
 
 
-
-
-
 // the scene
 float map( vec3 p0 ) {
-	
-	vec3 p1 = rotateXZ(p0, pi * param1);
-	vec3 p2 = translate(p1, vec3(0, 0.25 * param1, 0));
-	vec3 p3 = translate(p1, vec3(0.95, 0, 0));
-	vec3 p4 = rotateYZ(p3, 1. * pi * param2);
-	vec3 p5 = translate(p0, vec3(sin(pi * param1), 0, 0));
-	vec3 p6 = rotateYZ(p2, param1);
-	vec3 p7 = opRepeat(p4, vec3(0.5, 0.5, 0.5));
-	vec3 p8 = rotateYZ(p0, pi * param1);
-	vec3 p9 = opTwist ( p5, 4.*param2 );
-
-	float s1 = sdSphere(p8, 0.5);
-	float s2 = udBox(p7, vec3(0.55, 0.1, 0.8));
-	float s3 = udBox(p9, vec3(0.5, 0.2, 0.8));
-	float s4 = udHexPrism( p8, vec2(0.5, 0.7) );
-	
-	float t1 = opUnion(s1, s3);
-	float t2 = opIntersect(s2, s4);
-	
-	float t3 = mix(t1, s3, param2);
-	float t4 = mix(t2, s1, param3);
-	
-	//return mix(h, g, 0.85);
-	
-	return mix(t4, t3, param4);
-
+	$map
 }
 
 
@@ -202,10 +171,10 @@ float shadow( in vec3 ro, in vec3 rd, float mint, float maxt, float mindt, float
 }
 
 void main() {
-	vec3 light3 = vec3(3, 4, 14);
+	vec3 light3 = vec3(3, 4, 7);
 	vec3 light2 = vec3(1, -3, 7);
-	vec3 light1 = vec3(5, 4, 2);
-	vec3 color1 = vec3(0.2, 0, 0.5);
+	vec3 light1 = vec3(5, 4, 1);
+	vec3 color1 = vec3(0.3, 0, 0.5);
 	vec3 color2 = vec3(0, 0.4, 0.4);
 	vec3 color3 = vec3(0.1, 0.1, 0.6);
 	vec3 ambient = vec3(0.1, 0.1, 0.1);
@@ -279,7 +248,7 @@ void main() {
 
 		// check for shadow:
 		float shadowstart = 0.01;
-		float shadowend = 6.;
+		float shadowend = 8.;
 		float shadowdt = 0.002;
 		// shadow penumbra coefficient:
 		float k = 1.5;
@@ -317,10 +286,211 @@ void main() {
 
 ]=]
 
+math.randomseed(os.time())
+
+local format = string.format
+local 
+function sub(str, dict)
+	return str:gsub("%$([%a_][%w_]*)[{}]*", dict)
+end
+local id = 0
+local function uid(str)
+	id = id + 1
+	return format("%s%d", str or "_", id)
+end
+
+local ctx = "Respect to IQ"
+local win = Window(ctx, 0, 0, 720, 480)
+win.sync = true
+
+local function srandom() return math.random()*2-1 end
+local function pick(t) return t[math.random(#t)] end
+local function first(t) 
+	if #t > 0 then 
+		return table.remove(t, 1)
+	else
+		return format("%1.3f", srandom())
+	end
+end
+
+local makeshapes = {
+	function(floats, vec3s)
+		local res = uid("f")
+		local s = first(floats)
+		return res, format("sdSphere( %s, abs(%s) );", pick(vec3s), s)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("f")
+		local x = math.random()
+		local y = math.random()
+		return res, format("udHexPrism( %s, vec2(%s, %s) );", pick(vec3s), x, y)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("f")
+		local x = math.random()
+		local y = math.random()
+		local z = math.random()
+		return res, format("udBox( %s, vec3(%s, %s, %s) );", pick(vec3s), x, y, z)
+	end,
+}
+
+local makefloats = {	
+	function(floats, vec3s)
+		local res = uid("f")
+		local x = first(floats)
+		local y = first(floats)
+		return res, format("opUnion( %s, %s );", x, y)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("f")
+		local x = first(floats)
+		local y = first(floats)
+		return res, format("opIntersect( %s, %s );", x, y)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("f")
+		local x = first(floats)
+		local y = first(floats)
+		return res, format("opSubtract( %s, %s );", x, y)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("f")
+		local x = first(floats)
+		local y = first(floats)
+		return res, format("opBlend( %s, %s, %s );", pick(vec3s), x, y)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("f")
+		local x = first(floats)
+		local y = first(floats)
+		local z = first(floats)
+		return res, format("mix( %s, %s, %s );", x, y, z)
+	end,
+	
+}
+local makevecs = {
+	function(floats, vec3s)
+		local res = uid("v")
+		local x = first(floats)
+		local y = first(floats)
+		local z = first(floats)
+		return res, format("translate(%s, vec3(%s, %s, %s));", pick(vec3s), x, y, z)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("v")
+		local a = first(floats)
+		return res, format("rotateXY(%s, %s * pi);", pick(vec3s), a)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("v")
+		local a = first(floats)
+		return res, format("rotateXZ(%s, %s * pi);", pick(vec3s), a)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("v")
+		local a = first(floats)
+		return res, format("rotateYZ(%s, %s * pi);", pick(vec3s), a)
+	end,
+	
+	function(floats, vec3s)
+		local res = uid("v")
+		local a = first(floats)
+		return res, format("opTwist(%s, %s * 5.);", pick(vec3s), a)
+	end,
+	
+	--[[
+	function(floats, vec3s)
+		local res = uid("v")
+		local x = first(floats)
+		local y = first(floats)
+		local z = first(floats)
+		return res, format("opRepeat(%s, vec3(%s * 5., %s * 5., %s * 5.));", pick(vec3s), x, y, z)
+	end,
+	--]]
+
+}
+local 
+function makemap()
+	local lines = {}
+	local floats = { "param1", "param2", "param3", "param4" }
+	local shapes = {}
+	local vec3s = { "rotateXZ(p0, param1 * pi)" }
+	
+	for i = 1, 5 do
+		local v, s = pick(makevecs)(floats, vec3s)
+		table.insert(lines, format("vec3 %s = %s", v, s))
+		table.insert(vec3s, v)
+	end
+	for i = 1, 4 do	
+		local v, s = pick(makeshapes)(floats, vec3s)
+		table.insert(lines, format("float %s = %s", v, s))
+		table.insert(shapes, v)
+	end
+	for i = 1, 2 do	
+		local v, s = pick(makefloats)(shapes, vec3s)
+		table.insert(lines, format("float %s = %s", v, s))
+		table.insert(floats, v)
+	end
+	table.insert(lines, format("return %s;", floats[#floats]))
+	local code = table.concat(lines, "\n\t")
+	--print(code)
+	return code
+end
+
+function makeglsl()
+	return sub(template, { map=makemap() })
+end
+
+local glsl = sub(template, {
+	map = [=[
+	vec3 p1 = rotateXZ(p0, pi * param1);
+	vec3 p2 = translate(p1, vec3(0, 0.25 * param1, 0));
+	vec3 p3 = translate(p1, vec3(0.95, 0, 0));
+	vec3 p4 = rotateYZ(p3, 1. * pi * param2);
+	vec3 p5 = translate(p0, vec3(sin(pi * param1), 0, 0));
+	vec3 p6 = rotateYZ(p2, param1);
+	vec3 p7 = opRepeat(p4, vec3(0.5, 0.5, 0.5));
+	vec3 p8 = rotateYZ(p0, pi * param1);
+	vec3 p9 = opTwist ( p5, 4.*param2 );
+
+	float s1 = sdSphere(p8, 0.5);
+	float s2 = udBox(p7, vec3(0.55, 0.1, 0.8));
+	float s3 = udBox(p9, vec3(0.5, 0.2, 0.8));
+	float s4 = udHexPrism( p8, vec2(0.5, 0.7) );
+	
+	float t1 = opUnion(s1, s3);
+	float t2 = opIntersect(s2, s4);
+	
+	float t3 = mix(t1, s3, param2);
+	float t4 = mix(t2, s1, param3);
+	
+	//return mix(h, g, 0.85);
+	
+	return mix(t4, t3, param4);
+	
+	]=]
+})
+
 local shader = Shader{
 	ctx = ctx,
-	source = glsl,
+	source = makeglsl(),
 }
+
+go(function()
+	while true do
+		wait(5)
+		shader.source = makeglsl()
+	end
+end)
 
 function win:key(e, k)
 	if(e == "down") then
@@ -334,10 +504,10 @@ local frame = 0
 function win:draw()
 	frame = frame + 1
 	sketch.enter_ortho()
-	shader:param("param1", math.sin(frame * 0.007))
+	shader:param("param1", math.sin(frame * 0.02))
 	shader:param("param2", math.cos(frame * 0.01))
 	shader:param("param3", math.cos(frame * 0.03))
-	shader:param("param4", math.sin(frame * 0.001))
+	shader:param("param4", math.sin(frame * 0.04))
 	shader:bind()
 	--tex:bind()
 	gl.Color(0.5, 0.5, 1, 1)
