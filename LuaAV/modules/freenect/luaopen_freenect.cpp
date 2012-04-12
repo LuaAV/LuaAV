@@ -28,66 +28,43 @@ THE SOFTWARE.
 #include "lua_utility.h"
 #include "libfreenect.h"
 
+#include "lua_array.h"
+
+#include "allocore/system/al_Thread.hpp"
+
 #include <vector>
+#include <map>
 
-//class Freenect {
-//public:
-//	static Freenect& get();
-//	
-//	struct Device {
-//		freenect_device * dev;
-//		
-//		bool close() {
-//			return check("close", freenect_close_device(dev));
-//		}
-//		
-//		void set_user(void * user) {
-//			freenect_set_user(dev, user);
-//		}
-//		
-//		void * get_user() { return freenect_get_user(dev); }
-//		
-//		Device() : dev(0) {}
-//	};
-//	
-//	static bool check(const char * what, int code) {
-//		if (code < 0) {
-//			printf("error (%s): %d\n", what, code);
-//			return false;
-//		}
-//		return true;
-//	}
-//	
-//	Device& open(int idx) {
-//		check("open", freenect_open_device(ctx, &devices[idx].dev, idx));
-//		return devices[idx];
-//	}
-//
-//private:
-//	Freenect() {
-//		// TODO: handle multiple contexts?
-//		freenect_usb_context * usb_ctx = NULL;
-//		int res = freenect_init(&ctx, usb_ctx);
-//		if (res < 0) {
-//			printf("error: failed to initialize libfreenect\n");
-//			exit(0);
-//		}
-//		
-//		int numdevs = freenect_num_devices(ctx);
-//		printf("%d devices\n", numdevs);
-//		devices.resize(numdevs);
-//	}
-//	
-//	Freenect * singleton;
-//	freenect_context * ctx;
-//	
-//	std::vector<Device> devices;
-//};
 
+struct FreenectData {
+	al::ArrayWrapper depth;
+	al::ArrayWrapper video;
+	
+	FreenectData() { init(); }
+	FreenectData(const FreenectData& cpy) { init(); }
+	
+	void init() {	
+		depth.retain();
+		video.retain();
+	}
+	
+	~FreenectData() {}
+};
 
 // singleton:
 static freenect_context * ctx = 0;
 static std::vector<freenect_device *> devices;
+static std::map<freenect_device *, FreenectData> datamap;
+al::Thread thread;
+bool active = 0;
+
+
+void * freenectThreadFunction(void * userData) {
+	while (active) {
+		freenect_process_events(ctx);
+	}
+	return 0;
+}
 
 int lua_push_frame_mode(lua_State * L, const freenect_frame_mode mode) {
 	lua_newtable(L);
@@ -106,6 +83,7 @@ int lua_push_frame_mode(lua_State * L, const freenect_frame_mode mode) {
 
 template<> const char * Glue<freenect_device>::usr_name() { return "freenect_device"; }
 template<> void Glue<freenect_device>::usr_gc(lua_State * L, freenect_device * dev) { 
+	printf("closing freenect device\n");
 	int res = freenect_close_device(dev);
 	if (res < 0) luaL_error(L, "error (%d): freenect_close_device\n", res);
 }
@@ -124,16 +102,46 @@ int lua_freenect_get_user(lua_State * L) {
 }
 
 void lua_freenect_depth_cb(freenect_device *dev, void *depth, uint32_t timestamp) {
-	printf("depth...");
+	al::ArrayWrapper& arr = datamap[dev].depth;
+	uint16_t * ptr = (uint16_t *)depth;
+	
+	int width = arr.header.dim[0];
+	int height = arr.header.dim[1];
+	
+	for (int h=0; h<height; h++) {
+		int row = h*width;
+		for (int w=0; w<width; w++) {
+			float d = (float)ptr[row+w];
+			arr.write(&d, w, h);
+		}
+	}
 }
 
 void lua_freenect_video_cb(freenect_device *dev, void *video, uint32_t timestamp) {
-	printf("video...");
+	al::ArrayWrapper& arr = datamap[dev].video;
+	uint8_t * ptr = (uint8_t *)video;
+	
+	int width = arr.header.dim[0];
+	int height = arr.header.dim[1];
+	
+	for (int h=0; h<height; h++) {
+		int row = h*width*3;
+		for (int w=0; w<width; w++) {
+			arr.write(ptr+row+w*3, w, h);
+		}
+	}
 }
 
 int lua_freenect_start_depth(lua_State * L) {
 	freenect_device * dev = Glue<freenect_device>::checkto(L, 1);
 	freenect_set_depth_callback(dev, lua_freenect_depth_cb);
+	
+	// create & configure the data for the callback:
+	FreenectData& data = datamap[dev];
+	al::ArrayWrapper& arr = data.depth;
+	const freenect_frame_mode mode = freenect_get_current_depth_mode(dev);
+	arr.format(1, AlloFloat32Ty, mode.width, mode.height);
+	
 	int res = freenect_start_depth(dev);
 	if (res < 0) luaL_error(L, "error (%d): freenect_start_depth\n", res);
 	return 0;
@@ -142,6 +150,13 @@ int lua_freenect_start_depth(lua_State * L) {
 int lua_freenect_start_video(lua_State * L) {
 	freenect_device * dev = Glue<freenect_device>::checkto(L, 1);
 	freenect_set_video_callback(dev, lua_freenect_video_cb);
+	
+	// create & configure the data for the callback:
+	FreenectData& data = datamap[dev];
+	al::ArrayWrapper& arr = data.video;
+	const freenect_frame_mode mode = freenect_get_current_video_mode(dev);
+	arr.format(3, AlloUInt8Ty, mode.width, mode.height);
+	
 	int res = freenect_start_video(dev);
 	if (res < 0) luaL_error(L, "error (%d): freenect_start_video\n", res);
 	return 0;
@@ -267,6 +282,17 @@ int lua_freenect_set_depth_mode(lua_State * L) {
 	return 0;
 }
 
+int lua_freenect_depth(lua_State * L) {
+	freenect_device * dev = Glue<freenect_device>::checkto(L, 1);
+	Glue<al::ArrayWrapper>::push(L, &datamap[dev].depth);
+	return 1;
+}
+
+int lua_freenect_video(lua_State * L) {
+	freenect_device * dev = Glue<freenect_device>::checkto(L, 1);
+	Glue<al::ArrayWrapper>::push(L, &datamap[dev].video);
+	return 1;
+}
 	
 template<> void Glue<freenect_device>::usr_mt(lua_State * L) {
 	struct luaL_reg lib[] = {
@@ -287,12 +313,19 @@ template<> void Glue<freenect_device>::usr_mt(lua_State * L) {
 		{ "get_current_depth_mode", lua_freenect_get_current_depth_mode },
 		{ "set_video_mode", lua_freenect_set_video_mode },
 		{ "set_depth_mode", lua_freenect_set_depth_mode },
-		{NULL, NULL},
+		{ "depth", lua_freenect_depth },
+		{ "video", lua_freenect_video },
+		{ NULL, NULL },
 	};
 	luaL_register(L, NULL, lib);
 }
 
 int lua_freenect_shutdown(lua_State * L) {
+	printf("shutting down freenect context\n");
+	if (active) {
+		active = 0;
+		thread.wait();
+	}
 	int res = freenect_shutdown(ctx);
 	lua_pushinteger(L, res);
 	if (res < 0) luaL_error(L, "error (%d): freenect_shutdown\n", res);
@@ -330,9 +363,7 @@ int lua_freenect_set_log_level(lua_State * L) {
  * @return 0 on success, other values on error, platform/library dependant
  */
 int lua_freenect_process_events(lua_State * L) {
-	printf("before\n");
 	int res = freenect_process_events(ctx);
-	printf("after\n");
 	lua_pushinteger(L, res);
 	if (res < 0) luaL_error(L, "error (%d): freenect_process_events\n", res);
 	return 1;
@@ -506,12 +537,16 @@ extern "C" int luaopen_freenect(lua_State * L) {
 	FREENECT_BITFIELD(LOG_FLOOD) //,   
 	lua_setfield(L, -2, "loglevel"); 
 	
-	
-	
 	Glue<freenect_device>::define(L);
 	
 	// attach a close handler:
 	lua::gc_sentinel(L, -1, lua_freenect_shutdown);
+	
+	// start thread:
+	if (!active) {
+		active = true;
+		thread.start(freenectThreadFunction, 0);
+	}
 	
 	return 1;
 }
