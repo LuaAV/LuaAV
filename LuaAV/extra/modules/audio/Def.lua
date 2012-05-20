@@ -1699,7 +1699,7 @@ ATan2 = binop("ATan2")
 -- @param args.init or args[3]: initial value of filter (default 0)
 function Lag(args)
 	local input = args.input or args[1] or 0
-	local lag = args.lag or args[2] or 0.1
+	local lag = args.lag or args[2] or 0.995
 	local init = args.init or args[3] or 0
 	return setmetatable({ op="Lag", input, lag, init=init }, Expr)
 end
