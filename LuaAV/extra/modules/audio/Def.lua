@@ -590,6 +590,7 @@ end
 
 function parser.id(unit, node, inputs)
 	local name = node[1]
+	local outputs = {}
 	-- lookup string in unit:
 	local v = unit.state[name]
 	if not v then
@@ -599,7 +600,6 @@ function parser.id(unit, node, inputs)
 		v = member(unit, name, "Port", name, 0, 0)
 	end
 	
-	local outputs = {}
 	-- Port is a special case because it supports multi-channel semantics:
 	if v.ty == "Port" then
 		-- return no. channels according to port
@@ -609,7 +609,7 @@ function parser.id(unit, node, inputs)
 		end
 	else
 		-- as long as we assume this is a state variable, rate can be 'i'
-		outputs.rate = "i"
+		outputs.rate = "a"
 		outputs[1] = name
 	end
 	return outputs
@@ -831,6 +831,22 @@ function parser.Mix(unit, node, inputs)
 	end
 	return outputs
 end
+
+function parser.Assign(unit, node, inputs)
+	assert(#inputs == 2)
+	local channels = #inputs[1] --max_channels(inputs) --#inputs[2]
+	local rate = inputs[2].rate
+	for c=1,channels do
+		local dst, src = input_channel(inputs[1], c),
+						input_channel(inputs[2], c) 
+		local instr = { 
+			op="assign", dst, src
+		}
+		table.insert(unit.blocks[rate], instr)
+	end
+	return inputs[2]
+end
+
 
 function parser.Pan2(unit, node, inputs)
 	assert(#inputs >= 1)
@@ -1994,6 +2010,8 @@ function Def(def)
 		flags = {},
 	}
 	
+	local histories = {}
+	
 	-- copy in named fields
 	for k, v in pairs(def) do
 		if type(k) == "string" then
@@ -2001,7 +2019,12 @@ function Def(def)
 			if type(v) == "number" then
 				member(unit, k, "Port", k, v)
 			elseif type(v) == "table" then
-				if not v.ty then
+				if getmetatable(v) == Expr then
+					local m = member(unit, k, "number", nil, 0)
+					local dst = parser.id(unit, {k}, nil)
+					local src = parse(unit, v)
+					histories[k] = src
+				elseif not v.ty then
 					member(unit, k, "Port", k, unpack(v))
 				else
 					member(unit, k, v.ty, k, unpack(v))
@@ -2026,6 +2049,12 @@ function Def(def)
 		parser.Mix(unit, nil, { dst, outputs } )
 	end
 	
+	for k, v in pairs(histories) do
+		-- write assignments:
+		local dst = parser.id(unit, {k}, nil)
+		parser.Assign(unit, nil, { dst, v } )
+	end
+	
 	-- build default prototype:
 	local proto = {}
 	for k, v in pairs(unit.state) do
@@ -2041,7 +2070,6 @@ function Def(def)
 	--printt(unit)
 	--print"Proto:"	printt(proto)
 	local code = generate(unit)
-	--print(code)
 	local ctor = compile(code, proto)
 	return ctor, code, unit
 end

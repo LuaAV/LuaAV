@@ -118,6 +118,11 @@ float lengthN(vec3 p, float n) {
 	return pow(pow(p.x,n) + pow(p.y,n) + pow(p.z,n), 1./n);
 }
 
+// distance of p from ground-plane
+float planeXZ(vec3 p, float y) {
+	return p.y - y;
+}
+
 // distance of p from a sphere radius s (at origin):
 float sdSphere( vec3 p, float s ) {
 	return length(p)-s;
@@ -425,7 +430,7 @@ function makemap()
 	local shapes = {}
 	local vec3s = { "rotateXZ(p0, param1 * pi)" }
 	
-	for i = 1, 5 do
+	for i = 1, 6 do
 		local v, s = pick(makevecs)(floats, vec3s)
 		table.insert(lines, format("vec3 %s = %s", v, s))
 		table.insert(vec3s, v)
@@ -440,9 +445,16 @@ function makemap()
 		table.insert(lines, format("float %s = %s", v, s))
 		table.insert(floats, v)
 	end
-	table.insert(lines, format("return %s;", floats[#floats]))
+	
+	table.insert(lines, format([[
+		float pp = planeXZ(p0, -1.);
+		float pu = opUnion(pp, %s);
+		return pu;
+	]], floats[#floats]))
+	
+	--table.insert(lines, format("return %s;", floats[#floats]))
 	local code = table.concat(lines, "\n\t")
-	--print(code)
+	print(code)
 	return code
 end
 

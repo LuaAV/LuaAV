@@ -52,7 +52,7 @@ extern int luaopen_box2d(lua_State *L) {
 	
 	lua::preloadlib(L, "box2d.Contact", luaopen_box2d_Contact);
 	lua::preloadlib(L, "box2d.Body", luaopen_box2d_Body);
-	lua::preloadlib(L, "box2d.Body", luaopen_box2d_Joint);
+	lua::preloadlib(L, "box2d.Joint", luaopen_box2d_Joint);
 	lua::preloadlib(L, "box2d.World", luaopen_box2d_World);
 	
 	return 1;

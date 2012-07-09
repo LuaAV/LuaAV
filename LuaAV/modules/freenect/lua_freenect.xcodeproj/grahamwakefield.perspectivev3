@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -275,18 +275,17 @@
 								<string>36ADFF9815373FC700209A4B</string>
 								<string>3622B28314F4749000E0ECA7</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>36ADFF7515373F5D00209A4B</string>
 								<string>1C37FAAC04509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>67</integer>
-									<integer>65</integer>
+									<integer>62</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 608}, {185, 769}}</string>
+							<string>{{0, 536}, {185, 769}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -302,6 +301,8 @@
 							<string>MainColumn</string>
 							<real>185</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>458 50 916 828 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -317,7 +318,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>3622B21B14F471CD00E0ECA7</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>test_freenect.lua</string>
+								<string>luaopen_freenect.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>3622B21C14F471CD00E0ECA7</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>test_freenect.lua</string>
+										<string>luaopen_freenect.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>36AD02D71537543E00209A4B</string>
+										<string>361A25431538EFB200EB40AE</string>
 										<key>history</key>
 										<array>
 											<string>3622B44E14F5B5B700E0ECA7</string>
@@ -344,8 +345,8 @@
 											<string>36AD01D815374CA100209A4B</string>
 											<string>36AD021315374E8B00209A4B</string>
 											<string>36AD021415374E8B00209A4B</string>
-											<string>36AD02C1153753B700209A4B</string>
-											<string>36AD02CE153753DB00209A4B</string>
+											<string>361A25411538EFB200EB40AE</string>
+											<string>361A25421538EFB200EB40AE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -359,16 +360,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {709, 547}}</string>
+								<string>{{0, 0}, {709, 541}}</string>
+								<key>RubberWindowFrame</key>
+								<string>458 50 916 828 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>547pt</string>
+							<string>541pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>235pt</string>
+							<string>241pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -382,7 +385,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {709, 208}}</string>
+										<string>{{10, 27}, {709, 214}}</string>
+										<key>RubberWindowFrame</key>
+										<string>458 50 916 828 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -436,7 +441,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {709, -27}}</string>
+										<string>{{0, 0}, {568, 405}}</string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -464,11 +469,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>36ADFEE515373C4E00209A4B</string>
+				<string>361A25441538EFB200EB40AE</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>36ADFEE615373C4E00209A4B</string>
+				<string>361A25451538EFB200EB40AE</string>
 				<string>3622B21B14F471CD00E0ECA7</string>
-				<string>36ADFEE715373C4E00209A4B</string>
+				<string>361A25461538EFB200EB40AE</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -509,8 +514,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -521,14 +524,12 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {916, 339}}</string>
-						<key>RubberWindowFrame</key>
-						<string>458 50 916 828 0 0 1440 878 </string>
+						<string>{{0, 0}, {916, 327}}</string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
 					<key>Proportion</key>
-					<string>339pt</string>
+					<string>327pt</string>
 				</dict>
 				<dict>
 					<key>ContentConfiguration</key>
@@ -547,8 +548,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {458, 221}}</string>
-									<string>{{0, 221}, {458, 222}}</string>
+									<string>{{0, 0}, {458, 227}}</string>
+									<string>{{0, 227}, {458, 228}}</string>
 								</array>
 							</dict>
 							<key>VerticalSplitView</key>
@@ -563,8 +564,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {458, 443}}</string>
-									<string>{{458, 0}, {458, 443}}</string>
+									<string>{{0, 0}, {458, 455}}</string>
+									<string>{{458, 0}, {458, 455}}</string>
 								</array>
 							</dict>
 						</dict>
@@ -584,7 +585,7 @@
 						<key>DebugSTDIOWindowFrame</key>
 						<string>{{200, 200}, {500, 300}}</string>
 						<key>Frame</key>
-						<string>{{0, 344}, {916, 443}}</string>
+						<string>{{0, 332}, {916, 455}}</string>
 						<key>PBXDebugSessionStackFrameViewKey</key>
 						<dict>
 							<key>DebugVariablesTableConfiguration</key>
@@ -597,17 +598,13 @@
 								<real>228</real>
 							</array>
 							<key>Frame</key>
-							<string>{{0, 221}, {458, 222}}</string>
-							<key>RubberWindowFrame</key>
-							<string>458 50 916 828 0 0 1440 878 </string>
+							<string>{{0, 227}, {458, 228}}</string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>458 50 916 828 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
 					<key>Proportion</key>
-					<string>443pt</string>
+					<string>455pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -625,13 +622,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>36AD0188153748EB00209A4B</string>
+				<string>361A25471538EFB200EB40AE</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>36AD0189153748EB00209A4B</string>
-				<string>36AD018A153748EB00209A4B</string>
-				<string>36AD018B153748EB00209A4B</string>
-				<string>36AD018C153748EB00209A4B</string>
+				<string>361A25481538EFB200EB40AE</string>
+				<string>361A25491538EFB200EB40AE</string>
+				<string>361A254A1538EFB200EB40AE</string>
+				<string>361A254B1538EFB200EB40AE</string>
 				<string>3622B21B14F471CD00E0ECA7</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
@@ -666,9 +663,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>36AD02D81537543E00209A4B</string>
-		<string>36AD018E153748EB00209A4B</string>
-		<string>36AD018F153748EB00209A4B</string>
 		<string>/Users/grahamwakefield/code/LuaAV/LuaAV/modules/freenect/lua_freenect.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

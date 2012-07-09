@@ -211,6 +211,7 @@
 				<string>XCToolbarPerspectiveControl</string>
 				<string>NSToolbarSeparatorItem</string>
 				<string>active-combo-popup</string>
+				<string>active-platform-popup</string>
 				<string>toggle-editor</string>
 				<string>NSToolbarFlexibleSpaceItem</string>
 				<string>build-and-go</string>
@@ -275,16 +276,13 @@
 								<string>362E19C410866B7400145CFE</string>
 								<string>DF00B63C0E17FD4700E60A0B</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>3639E139129A16B000B8AE66</string>
-								<string>3639E147129A17AF00B8AE66</string>
-								<string>3639E148129A17AF00B8AE66</string>
+								<string>36AD02DA15375F6200209A4B</string>
+								<string>36AD02DB15375F6200209A4B</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
-									<integer>4</integer>
-									<integer>1</integer>
+									<integer>14</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -324,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>36387EEE1295D5EA00B43240</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>setup-1.sh</string>
+								<string>luaopen_kinect.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,21 +330,19 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>36387EEF1295D5EA00B43240</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>setup-1.sh</string>
+										<string>luaopen_kinect.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3639E16B129A1CE800B8AE66</string>
+										<string>36AD02E115375F6200209A4B</string>
 										<key>history</key>
 										<array>
-											<string>36387FA21295E47A00B43240</string>
-											<string>36387FBA1295E6A400B43240</string>
-											<string>3639E149129A17AF00B8AE66</string>
-											<string>3639E165129A1CE800B8AE66</string>
-											<string>3639E166129A1CE800B8AE66</string>
-											<string>3639E167129A1CE800B8AE66</string>
-											<string>3639E168129A1CE800B8AE66</string>
-											<string>3639E169129A1CE800B8AE66</string>
+											<string>3674064915365B3B001B63CE</string>
+											<string>36AD02DC15375F6200209A4B</string>
+											<string>36AD02DD15375F6200209A4B</string>
+											<string>36AD02DE15375F6200209A4B</string>
+											<string>36AD02DF15375F6200209A4B</string>
+											<string>36AD02E015375F6200209A4B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -385,7 +381,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {647, 208}}</string>
+										<string>{{10, 27}, {647, -27}}</string>
+										<key>RubberWindowFrame</key>
+										<string>478 50 902 828 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -440,8 +438,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {647, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>478 50 902 828 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -469,11 +465,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3639E14E129A17AF00B8AE66</string>
+				<string>36AD02E215375F6200209A4B</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>3639E14F129A17AF00B8AE66</string>
+				<string>36AD02E315375F6200209A4B</string>
 				<string>36387EEE1295D5EA00B43240</string>
-				<string>3639E150129A17AF00B8AE66</string>
+				<string>36AD02E415375F6200209A4B</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -643,7 +639,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>/Users/grahamwakefield/Source/LuaAV/LuaAV/trunk/modules/kinect/osx/kinect.xcodeproj</string>
+		<string>/Users/grahamwakefield/code/LuaAV/LuaAV/modules/kinect/osx/kinect.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>478 50 902 828 0 0 1440 878 </string>
