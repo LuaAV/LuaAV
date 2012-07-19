@@ -1,6 +1,8 @@
 #ifndef INCLUDE_LUAAV_AUDIO_DELAY_H
 #define INCLUDE_LUAAV_AUDIO_DELAY_H 1
 
+#include "luaav_audio_denormal.hpp"
+
 extern "C" void	*calloc(size_t, size_t);
 extern "C" void free(void *);
 
@@ -26,7 +28,7 @@ public:
 		
 		/// Write value to delay
 		void write(const double& v){
-			buffer[pos()] = v;
+			buffer[pos()] = denormal::kill_by_quantization(v);
 			++mPos; 
 			if(mPos >= size()) mPos=0;
 		}
@@ -98,7 +100,6 @@ public:
 	:	mDelay(maxdelay)
 	{}
 	
-	/// Compute wet stereo output from dry input
 	inline double operator()(const double& i0, const double& d, const double& feedback){
 		double o = mDelay.read_linear(d);
 		mDelay.write(i0 + o*feedback);

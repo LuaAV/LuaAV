@@ -335,6 +335,13 @@ static int lua_audio_driver_status(lua_State * L) {
 	return 1;
 }
 
+static int lua_audio_driver_cpu(lua_State * L) {
+	if (nrtActive)
+		luaL_error(L, "LuaAV audio failed in application launch; please try restarting LuaAV.");
+	lua_pushnumber(L, 100.*Pa_GetStreamCpuLoad(gPaStream));
+	return 1;
+}
+
 int lua_audio_driver_refresh(lua_State * L) {
 	if (nrtActive)
 		luaL_error(L, "LuaAV audio failed in application launch; please try restarting LuaAV.");
@@ -390,6 +397,7 @@ int luaopen_audio_driver(lua_State * L) {
 	struct luaL_reg lib[] = {
 		{"configure", lua_audio_driver_configure},
 		{"status", lua_audio_driver_status},
+		{"cpu", lua_audio_driver_cpu},
 		{NULL, NULL},
 	};
 	luaL_register(L, libname, lib);

@@ -137,7 +137,9 @@ function win:mouse(e, k, x, y)
 end
 
 function win:key(e, k)
-	event("key", e, k)
+	if e == "down" then
+		event("key", e, k)
+	end
 end
 
 function win:draw()

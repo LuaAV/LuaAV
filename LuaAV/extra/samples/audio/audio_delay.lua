@@ -4,8 +4,8 @@ Def.globalize()
 
 
 -- a Def to click:
-local env = Lag{ Env{ dur=P"dur"}, 0.95 }
-local s = Def{
+env = Lag{ Env{ dur=P"dur"}, 0.95 }
+s = Def{
 	dur = 0.1, 
 	amp = 0.3,
 	Pan2{ 
@@ -15,20 +15,28 @@ local s = Def{
 }
 
 -- Def using a built-in reverb unit:
-local Mixer = Def{
+Mixer = Def{
 	dry = 1,
 	wet = 0.25,
 
 	P"input" + 
 	{ 
-		Delay{ P"wet" * P"input", delay = 1/4 + SinOsc{ 3/2 }/16, feedback = 0.9 },
-		Delay{ P"wet" * P"input", delay = 1/8 + SinOsc{ 4 }/(2^(6*(2+SinOsc{ -1/8 }))), feedback = 0.95 }
+		Delay{ 
+			P"wet" * P"input", 
+			delay = 1/4 + SinOsc{ 3/2 }/16, 
+			feedback = 0.9 
+		},
+		Delay{ 
+			P"wet" * P"input", 
+			delay = 1/8 + SinOsc{ 4 }/(2^(6*(2+SinOsc{ -1/8 }))), 
+			feedback = 0.95 
+		}
 	}
 }
 
 -- a bus to route audio signals to the mixer:
-local bus = audio.Bus("bus")
-local mixer = Mixer{ input = bus }
+bus = audio.Bus("bus")
+mixer = Mixer{ input = bus }
 
 
 while true do

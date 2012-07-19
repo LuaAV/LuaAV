@@ -20,16 +20,19 @@ beep = Def{
 	dur = 0.25,
 	amp = 0.25,
 	
-	Env{ "dur" } * SinOsc{
-		freq = P"freq"*(
-			0.5+0.5*P"jump"*
-			SinOsc{
-				phase = 0.25, --0.25,
-				freq = 1/P"dur",
-			}
-			--]]
-		)
-	}*P"amp"
+	Pan2{ 
+			Env{ "dur" } * SinOsc{
+			freq = P"freq"*(
+				0.5+0.5*P"jump"*
+				SinOsc{
+					phase = 0.25, --0.25,
+					freq = 1/P"dur",
+				}
+				--]]
+			)
+		}*P"amp", 
+		pan=SinOsc{ freq=1 } 
+	}
 }
 
 local F = 10 --49.333333333333 --34.666666666667 --10
@@ -50,14 +53,14 @@ end)
 
 
 local ctx = "Scope"
-win = Window(ctx, 0, -800, 1920, 1000)
+win = Window(ctx, 0, -800, 800, 400)
 win.sync = true
 win.fps = 40
 
 local label = Label{
 	ctx = ctx,
-	size = 20,
-	alignment = Label.RIGHT
+	size = 12,
+	alignment = Label.LEFT
 }
 
 local scope = Scope{ctx = ctx}
@@ -93,17 +96,22 @@ function win:draw()
 	
 
 	local aspect = self.dim[1]/self.dim[2]
-	sketch.enter_ortho()
-	gl.Scale(1/aspect, 1, 1)
-		gl.Color(1, 1, 1, 0.1)
-		grid(-1, 1, -1, 1, 10, 10)
+	
+	
+	sketch.enter_ortho(0, 0, unpack(self.dim))
 	
 		gl.Color(1, 1, 1, 1)
-		label:draw_3d(self.dim, {-1.2, 0.2, 0}, format("samplerate: %d", audio.samplerate()))
-		label:draw_3d(self.dim, {-1.2, 0.15, 0}, format("nsamples: %d", scope:nsamples()))
-		label:draw_3d(self.dim, {-1.2, 0.1, 0}, format("time: %f", scope:time()))
-		label:draw_3d(self.dim, {-1.2, 0.05, 0}, format("scope: %d", audio.scope()))
-		label:draw_3d(self.dim, {-1.2, 0, 0}, format("now: %.4f", now()))
+		label:draw_3d(self.dim, {0, 0, 0}, format("samplerate: %d now: %06.2f", audio.samplerate(), now()))
+		--label:draw_3d(self.dim, {-.2, 0.15, 0}, format("nsamples: %d", scope:nsamples()))
+		--label:draw_3d(self.dim, {-.2, 0.1, 0}, format("time: %f", scope:time()))
+		--label:draw_3d(self.dim, {-.2, 0.05, 0}, format("scope: %d", audio.scope()))
+		--label:draw_3d(self.dim, {-.2, 0, 0}, format("now: %.4f", now()))
+	
+	sketch.leave_ortho()
+	sketch.enter_ortho()
+	--gl.Scale(1/aspect, 1, 1)
+		gl.Color(1, 1, 1, 0.5)
+		grid(-1, 1, -1, 1, 10, 10)
 		
 		
 		gl.Enable(GL.BLEND)

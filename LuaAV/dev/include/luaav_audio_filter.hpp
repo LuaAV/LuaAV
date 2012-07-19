@@ -2,6 +2,7 @@
 #define INCLUDE_LUAAV_AUDIO_FILTER_H 1
 
 #include "luaav_audio_scl.hpp"
+#include "luaav_audio_denormal.hpp"
 
 
 
@@ -21,13 +22,30 @@ public:
 	}
 
 	inline double operator()(const double& v) const {
-		return mo[0] = mo[0]*mb[0] + v*ma[0];
+		return mo[0] = mo[0]*mb[0] + denormal::kill_by_quantization(v)*ma[0];
 	}
 
 	mutable double mo[1];
 	double ma[1], mb[1];
 };
 
+class DCBlock {
+public:
+
+	DCBlock() {
+		x1 = y1 = 0.;
+	}
+	
+	inline double operator()(const double& v) {
+		double in = denormal::kill_by_quantization(v);
+		y1 = in - x1 + y1 * 0.999;
+		x1 = in;
+		return y1;
+	}
+
+	double x1;
+	double y1;
+};
 
 /// 2-pole/2-zero IIR filter.
 /// The biquadratic filter contains 2 zeroes and 2 poles in its transfer
@@ -119,6 +137,7 @@ public:
 
 	double operator()(double i0) {				///< Return next filter output.
 		// Direct form II
+		i0 = denormal::kill_by_quantization(i0);
 		i0 = i0 - d1*mB1 - d2*mB2;
 		double o0 = i0*mA0 + d1*mA1 + d2*mA2;
 		d2 = d1; 

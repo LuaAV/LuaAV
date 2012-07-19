@@ -1,5 +1,9 @@
+#ifndef _LUAAV_DENORMAL_H_
+#define _LUAAV_DENORMAL_H_ 1
+
 namespace denormal {
 
+/*
 void test_and_kill (float & val)
 {
 	// Requires 32-bit int
@@ -10,14 +14,16 @@ void test_and_kill (float & val)
 		val = 0;
 	}
 }
-
-void kill_by_quantization (float &val)
+*/
+double kill_by_quantization (double val)
 {
-	static const float anti_denormal = 1e-18;
+	static const double anti_denormal = 1e-18;
 	val += anti_denormal;
 	val -= anti_denormal;
+	return val;
 }
 
+/*
 static int32_t rand_state = 1; 
 void prevent_by_computed_noise (float &val) {
 	rand_state = rand_state * 1234567UL + 890123UL;
@@ -46,7 +52,7 @@ void prevent_by_adding_dc (float & val) {
 	static const float anti_denormal = 1e-20;
 	val += anti_denormal;
 }
-
+*/
 void prevent_by_block_pulses(float * buffer, int blocksize) {
 	static const float anti_denormal = 1e-20;
 	// put a few dc pulses into the buffer:
@@ -56,3 +62,5 @@ void prevent_by_block_pulses(float * buffer, int blocksize) {
 }
 
 } // denormal ::
+
+#endif

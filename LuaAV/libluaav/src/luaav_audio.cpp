@@ -136,7 +136,8 @@ void Glue<Context>::usr_newindex(lua_State * L, Context * u) {
 	lua_pushvalue(L, 2);
 	lua_gettable(L, -2);
 	if (!lua_isnoneornil(L, -1)) {
-		luaL_error(L, "cannot redefine existing %s", lua_tostring(L, 2));
+		//luaL_error(L, "cannot redefine existing %s", lua_tostring(L, 2));
+		return;	// returns existing bus
 	}
 	lua_settop(L, busses);
 	
@@ -194,6 +195,13 @@ Context :: ~Context() {
 	for (int i=0; i<mSignals.size(); i++) {
 		//printf("release bus %d\n", i);
 		mSignals[i]->release();	// except for the main IO signals that is...
+	}
+}
+
+void Context :: clear_synths() {
+	for (std::list<Synth *>::iterator it=mSynths.begin(); it!=mSynths.end();) {
+		Synth& n = **it++;
+		n.stop();
 	}
 }
 
@@ -327,6 +335,13 @@ int lua_audio_scope(lua_State * L) {
 	return 0;
 }
 
+
+int lua_audio_clear(lua_State * L) {
+	LuaAVState * S = luaav_fromstate(L);
+	S->clear_synths();
+	return 0;
+}
+
 extern "C" int luaopen_audio(lua_State * L) {
 	const luaav_audio_config cfg = luaav_audio_config_current();
 	
@@ -349,6 +364,7 @@ extern "C" int luaopen_audio(lua_State * L) {
 		{ "Bus", lua_audio_Bus },
 		{ "record", lua_audio_record },
 		{ "scope", lua_audio_scope },
+		{ "clear", lua_audio_clear },
 		{ NULL, NULL },
 	};
 	luaL_register(L, "audio", lib);

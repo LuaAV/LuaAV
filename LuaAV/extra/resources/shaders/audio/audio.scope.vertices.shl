@@ -32,7 +32,13 @@ Shader{
 		Parameter {
 			0,
 			name = "tex0", type = "int",
-			description = "audio buffer",
+			description = "audio buffer 1",
+		},
+		
+		Parameter {
+			0,
+			name = "tex1", type = "int",
+			description = "audio buffer 2",
 		},
 	},
 
@@ -81,10 +87,11 @@ void main() {
 	vec2 tc = vec2(mod(pos, texdim.x), floor(pos/texdim.x))/texdim;
 	tc += delta;
 
-	vec4 c = texture2D(tex0, tc);
+	vec4 c0 = texture2D(tex0, tc);
+	vec4 c1 = texture2D(tex1, tc);
 	float xpos = spos/nsamples*scale;
 	gl_FragColor.r = (xrange.y-xrange.x)*xpos+xrange.x;
-	gl_FragColor.g = c.g;
+	gl_FragColor.g = c0.g;
 	gl_FragColor.b = 0.;
 }
 

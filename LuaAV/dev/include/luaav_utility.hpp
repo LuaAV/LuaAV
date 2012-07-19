@@ -84,7 +84,7 @@ namespace denormal {
 		- Quantifies the smallest numbers, adding relative error.
 		- Must be repeated at each stage of the process.
 	*/
-	static void kill_by_quantization (float &val);
+	static double kill_by_quantization (double val);
 	
 	/*
 		+ Fills the spectrum uniformly.

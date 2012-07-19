@@ -36,7 +36,7 @@ go(function()
 		for i = 1, 8 do
 			print(string.format("ratio: %i/%i", i+1, i))
 			ratio = ((i+1)/i)
-			wait(du*8)
+			wait(du*4)
 		end
 	end
 end)

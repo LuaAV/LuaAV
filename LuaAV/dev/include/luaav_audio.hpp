@@ -259,6 +259,8 @@ public:
 		}
 	}
 	
+	void clear_synths();
+	
 	void addSignal(Signal * s) { mSignals.push_back(s); }
 	
 	virtual const char * name() { return "Context"; }

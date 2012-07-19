@@ -1133,6 +1133,25 @@ function parser.Biquad(unit, node, inputs)
 	return outputs
 end
 
+function parser.DCBlock(unit, node, inputs)
+	assert(#inputs >= 1)
+	unit.depends['#include "luaav_audio_filter.hpp"'] = true
+	
+	local channels = max_channels(inputs)
+	local outputs={ rate="a" }
+	for c = 1,channels do
+		local x = inputsforchannel(inputs, c)
+		local obj = uid("dcblock")
+		local y = uid("dcblock_out")
+		
+		member(unit, obj, "DCBlock");
+		statement(unit, "a", { name=y, op="call", obj, x })
+		
+		outputs[c] = y
+	end
+	return outputs
+end
+
 function parser.Delay(unit, node, inputs)
 	assert(#inputs >= 3)
 	unit.depends['#include "luaav_audio_delay.hpp"'] = true
@@ -1140,7 +1159,7 @@ function parser.Delay(unit, node, inputs)
 	local objname = uid("delay")
 	unit.state[objname] = { ty="Delay", audio.samplerate() * (node.maxdelay or 1) }	
 	
-	local output = uid("output")
+	local output = uid("delay_out")
 	local input = inputs[1][1]
 	local delay = inputs[2][1]
 	local feedback = inputs[3][1]
@@ -1984,13 +2003,21 @@ end
 -- @param args.maxdelay: max delay size (samples, default 44100)
 -- @param args.input or args[1]: input
 -- @param args.delay or args[2]: delay (samples, default 4410)
--- @param args.feedback or args[3]: feedback (default 0.1)
+-- @param args.feedback or args[3]: feedback (default 0.)
 function Delay(args)
 	local maxdelay = args.maxdelay
 	local input = args.input or args[1] or 0
 	local delay = args.delay or args[2] or 4410
-	local feedback = args.feedback or args[3] or 0.1
+	local feedback = args.feedback or args[3] or 0.
 	return setmetatable({ op="Delay", maxdelay=maxdelay, input, delay, feedback }, Expr)
+end
+
+--- Prevent DC buildup
+-- @param args Constructor properties
+-- @param args.input or args[1]: input
+function DCBlock(args)
+	local input = args.input or args[1] or 0
+	return setmetatable({ op="DCBlock", input }, Expr)
 end
 
 --------------------------------------------------------------------------------
@@ -2020,10 +2047,8 @@ function Def(def)
 				member(unit, k, "Port", k, v)
 			elseif type(v) == "table" then
 				if getmetatable(v) == Expr then
-					local m = member(unit, k, "number", nil, 0)
-					local dst = parser.id(unit, {k}, nil)
-					local src = parse(unit, v)
-					histories[k] = src
+					member(unit, k, "number", nil, 0)
+					histories[k] = v
 				elseif not v.ty then
 					member(unit, k, "Port", k, unpack(v))
 				else
@@ -2033,6 +2058,13 @@ function Def(def)
 				error("unrecognized type for member")
 			end
 		end
+	end
+	
+	-- handle history exprs
+	for k, v in pairs(histories) do
+		local dst = parser.id(unit, {k}, nil)
+		local src = parse(unit, v)
+		histories[k] = src
 	end
 	
 	-- handle numeric exprs

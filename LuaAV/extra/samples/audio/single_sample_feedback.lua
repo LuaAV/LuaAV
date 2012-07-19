@@ -1,10 +1,11 @@
 local Def = require "audio.Def"
 Def.globalize()
+audio.clear()
 
-local SR = audio.samplerate()
-local twopi = math.pi * 2
+SR = audio.samplerate()
+twopi = math.pi * 2
 
-local osc = Def{
+osc = Def{
 	freq = 440,
 	-- define a recursive accumulator:
 	phase = P"phase" + P"freq" / SR,
@@ -14,4 +15,5 @@ local osc = Def{
 
 -- play it
 local v = osc{ freq = 440 }
-
+wait(1)
+v:stop()

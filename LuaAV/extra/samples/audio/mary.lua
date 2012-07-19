@@ -3,10 +3,11 @@ local mtof = audio.util.mtof
 
 local Def = require "audio.Def"
 Def.globalize()
+audio.clear() 
 
 math.randomseed(os.time())
 
-local mary = {
+mary = {
        { 64, 1/2 },
        { 62, 1/2 },
        { 60, 1/2 },
@@ -42,10 +43,10 @@ local mary = {
        { 60, 2 },
 }
 
-local env = Env{ "dur", hold="gate" }
-local freq = Lag{"freq", "slide", mtof(64) }
-local am = SinOsc{1/P"dur"}^3
-local fm_env = Def{
+env = Env{ "dur", hold="gate" }
+freq = Lag{"freq", "slide", mtof(64) }
+am = SinOsc{1/P"dur"}^3
+fm_env = Def{
    amp = 1, dur = 1, pan=0, gate = 0,
    freq = 400, cm = 1.5, mod_depth = 0.5,
    slide = 0.7,
