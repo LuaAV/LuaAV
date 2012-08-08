@@ -117,9 +117,14 @@ Project{
 		({
 			OSX = {},
 			LINUX = {		
-				Dependency{
+				--[[Dependency{
 					name = "lua5.1",
 					path = "/usr/lib",
+					type = "shared",
+				},--]]
+				Dependency{
+					name = "luajit-5.1",
+					path = "/usr/lib/x86_64-linux-gnu/libluajit-5.1.a",
 					type = "shared",
 				},
 
