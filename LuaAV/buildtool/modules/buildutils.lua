@@ -242,7 +242,7 @@ end
 function exportdir(src, dst, sudo)
 	ensurepath(dst)
 -- 	local cmd = string.format("svn export --force %s %s", src, dst)
-   local cmd = string.format("cp -R %s %s", src, dst)
+   	local cmd = string.format("cp -R %s/* %s/", src, dst)
 	exec(cmd, nil, sudo)
 end
 
