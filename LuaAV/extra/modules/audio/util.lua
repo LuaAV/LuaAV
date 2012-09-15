@@ -3,6 +3,7 @@ local ipairs = ipairs
 local tostring = tostring
 local tonumber = tonumber
 local print = print
+local audio = require "audio"
 
 --- Audio related utilities
 -- @name audio.util
@@ -13,6 +14,8 @@ local log10 = math.log10
 local round = math.round
 local floor = math.floor
 local LOG2 = log(2)
+local pow = math.pow
+local SR = audio.samplerate()
 
 --- convert amplitude (0..1) to decibels:
 -- @param amplitude (0..1)
@@ -69,3 +72,11 @@ end
 function mton(n)
 	return notenames[floor(1+n%12)] .. tostring(floor(n/12))
 end
+
+-- returns multiplicaton factor for reaching -60 dB after a given time in seconds
+-- @param s seconds
+-- @ret multiplication factor
+function t60(s)
+	return pow(0.001, 1./(s * SR));
+end
+
