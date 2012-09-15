@@ -226,7 +226,7 @@ base = {
 		"opengl",
 		"space",
 		"socket",
-		"video",
+		--"video",
 	},
 
 	-- app

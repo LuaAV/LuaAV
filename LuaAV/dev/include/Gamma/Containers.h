@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <vector>
 #include <map>
+#include <cstddef>
 
 #include "Gamma/Allocator.h"
 #include "Gamma/Conversion.h"

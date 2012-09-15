@@ -117,9 +117,14 @@ Project{
 		({
 			OSX = {},
 			LINUX = {		
-				Dependency{
+				--[[Dependency{
 					name = "lua5.1",
 					path = "/usr/lib",
+					type = "shared",
+				},--]]
+				Dependency{
+					name = "luajit-5.1",
+					path = "/usr/lib/x86_64-linux-gnu/libluajit-5.1.a",
 					type = "shared",
 				},
 
@@ -955,10 +960,8 @@ Project{
 	on_install = function(self, config)
 		-- copy script resources to install directory
 		local resource_path = makepath(self[config].install_path[1], "resources")
-		exportdir(makepath(self.path[1], "scripts"), resource_path)
-
 		local header_path = makepath(self[config].install_path[1], "resources/Headers")
-
+		local lua_include = Path{reporoot, "dependencies/lua-5.1.4/src"}
 		local clang_path = Path{
 			({
 				[32] = "luaclang/llvm-2.8/lib_linux",
@@ -967,10 +970,12 @@ Project{
 			relative = true
 		}
 		clang_path:resolve(self.path[1])
+
+		exportdir(makepath(reporoot, "LuaAVApp/scripts"), resource_path)
+
 		exportdir(makepath(clang_path[1], "clang/2.8/include"), header_path)
 		exportdir(makepath(reporoot, "dev/include"), header_path)
 
-		local lua_include = Path{reporoot, "dependencies/lua-5.1.4/src"}
 		copyfile(makepath(lua_include[1], "luaconf.h"), header_path)
 		copyfile(makepath(lua_include[1], "lua.h"), header_path)
 		copyfile(makepath(lua_include[1], "lualib.h"), header_path)

@@ -40,7 +40,8 @@ Project{
 		--]]
 
 		LINUX = {
-			Path{"/usr/include/lua5.1"},
+			--Path{"/usr/include/lua5.1"},
+			Path{"/usr/include/luajit-2.0"},
 			Path{"/usr/include/apr-1.0"},
 		--	Path{reporoot, "dev_linux/include"},
 			--Path{"library/portaudio/src/os/unix", relative = true},
@@ -60,9 +61,14 @@ Project{
 		({
 			OSX = {},
 			LINUX = {		
-				Dependency{
+				--[[Dependency{
 					name = "lua5.1",
 					path = "/usr/lib",
+					type = "shared",
+				},--]]
+				Dependency{
+					name = "luajit-5.1",
+					path = "/usr/lib/x86_64-linux-gnu/libluajit-5.1.a",
 					type = "shared",
 				},
 
