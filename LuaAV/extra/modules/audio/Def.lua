@@ -435,6 +435,11 @@ end
 -- re-use the same compiler:
 local cc = clang.Compiler()
 cc:include(clang_headers)
+if not clang.hosttriple:find("apple") then
+	-- problematic on OSX
+	cc:include("/usr/include/i386-linux-gnu")
+	cc:include("/usr/include/x86_64-linux-gnu")
+end
 -- preload the standard header:
 ---[[
 local name = "luaav_audio_jit.hpp"
