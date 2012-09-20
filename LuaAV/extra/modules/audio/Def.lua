@@ -17,7 +17,7 @@ local clang_headers = app.resourcepath .. "/Headers"
 local audio = require "audio"
 local wait = wait
 local collectgarbage = collectgarbage
-
+local jit = require "jit"
 local lfs = require "lfs"
 
 --- Constructing audio synthesis objects from expression trees
@@ -435,7 +435,7 @@ end
 -- re-use the same compiler:
 local cc = clang.Compiler()
 cc:include(clang_headers)
-if not clang.hosttriple:find("apple") then
+if jit.os ~= "OSX" then
 	-- problematic on OSX
 	cc:include("/usr/include/i386-linux-gnu")
 	cc:include("/usr/include/x86_64-linux-gnu")
