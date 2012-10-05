@@ -56,6 +56,7 @@ int lua_compiler_jit(lua_State *L) {
 int lua_compiler_define(lua_State *L) {
 	Compiler *s = Glue<Compiler>::checkto(L, 1);
 	if(lua::is<const char *>(L, 2)) {
+		//printf("define %s\n", lua::to<const char *>(L, 2));
 		s->options.defines.push_back(
 			string(lua::to<const char *>(L, 2))
 		);

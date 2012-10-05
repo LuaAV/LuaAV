@@ -208,6 +208,12 @@ bool Compiler :: compile(std::string code, std::string name) {
 		CI.getPreprocessorOpts().addRemappedFile(remapped_name, remapped_buffer);
 	}
 	
+	// Defines:
+	std::string defines;
+	for (unsigned int i=0; i<options.defines.size(); i++) {
+		//defines += options.defines[i];
+		CI.getPreprocessorOpts().addMacroDef(llvm::StringRef(options.defines[i]));
+	}
 	CI.createPreprocessor();
 	Preprocessor &PP = CI.getPreprocessor();
 	
@@ -223,12 +229,7 @@ bool Compiler :: compile(std::string code, std::string name) {
 	}
 	ApplyHeaderSearchOptions(PP.getHeaderSearchInfo(), headeropts, lang, CI.getTarget().getTriple());
 	
-//	// Defines:
-//	std::string defines;
-//	for (unsigned int i=0; i<options.defines.size(); i++) {
-//		defines += options.defines[i];
-//	}
-//	PP.setPredefines(defines);
+	
 	
 //	//	// list standard invocation args:
 //	std::vector<std::string> Args;
