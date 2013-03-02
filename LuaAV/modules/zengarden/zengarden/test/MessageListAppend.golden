@@ -1,9 +1,0 @@
-[@ 0.000ms] append: 1 2
-[@ 0.000ms] append: walk the dog 1 2
-[@ 0.000ms] append: 1 2 3 1 2
-[@ 0.000ms] append: bang
-[@ 0.000ms] append: walk the dog
-[@ 0.000ms] append: 1 2 3
-[@ 0.000ms] append: go dog go
-[@ 0.000ms] append: walk the dog go dog go
-[@ 0.000ms] append: 1 2 3 go dog go

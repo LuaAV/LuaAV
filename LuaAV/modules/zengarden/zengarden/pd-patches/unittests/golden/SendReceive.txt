@@ -1,5 +1,0 @@
-start: bang
-distant2: bang
-distant1-1: bang
-distant1-2: bang
-end: bang

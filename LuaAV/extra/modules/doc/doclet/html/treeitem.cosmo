@@ -1,9 +1,0 @@
-$if_submodule[===[
-	<ul class="module_tree">
-		$do_modules[==[
-			$list_item
-		]==]
-	</ul>
-]===],[===[
-	<li class="name" nowrap><a name="$name"></a><a href="$link" target="homeframe">$name </a></li>
-]===]

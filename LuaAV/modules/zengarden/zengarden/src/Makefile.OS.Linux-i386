@@ -1,5 +1,0 @@
-#SUPPORTED_PLATFORM=1
-PLATFORM_TARGETS=libzengarden libzengarden-static libjnizengarden java-jar
-MAKE_SO=$(CC) -o $(1) $(CXXFLAGS) -shared $(2) $(3) $(SNDFILE_LIB) -lstdc++
-JNI_EXTENSION=so
-SO_EXTENSION=so
