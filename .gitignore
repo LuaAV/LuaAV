@@ -1,1 +1,4 @@
-sysbuild/
+build
+*.o
+*.a
+
