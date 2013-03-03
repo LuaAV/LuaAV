@@ -1,0 +1,173 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		362BFEA216E358BE00405F7A /* build.sh */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 362BFEB116E358C900405F7A /* Build configuration list for PBXAggregateTarget "build.sh" */;
+			buildPhases = (
+				362BFEA116E358BE00405F7A /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = build.sh;
+			productName = build.sh;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXFileReference section */
+		362BFEB216E358D700405F7A /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = build.sh; path = ../build.sh; sourceTree = "<group>"; };
+		362BFEB316E3598800405F7A /* av.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = av.cpp; sourceTree = "<group>"; };
+		362BFECB16E35D3500405F7A /* start.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; name = start.lua; path = ../start.lua; sourceTree = "<group>"; };
+		362BFF3C16E3616900405F7A /* av.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = av.h; sourceTree = "<group>"; };
+		362BFF4A16E3627B00405F7A /* h2ffi.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; path = h2ffi.lua; sourceTree = "<group>"; };
+		362BFF5216E3643D00405F7A /* av_ffi_header.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = av_ffi_header.cpp; sourceTree = "<group>"; };
+		362BFFBE16E369EC00405F7A /* gl.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; path = gl.lua; sourceTree = "<group>"; };
+		362BFFBF16E369EC00405F7A /* glfw.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; path = glfw.lua; sourceTree = "<group>"; };
+		362BFFC016E369EC00405F7A /* glfw3.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; path = glfw3.lua; sourceTree = "<group>"; };
+		362BFFC116E369EC00405F7A /* sdl.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; path = sdl.lua; sourceTree = "<group>"; };
+		362BFFCE16E36A7F00405F7A /* window.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lua; path = window.lua; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		362BFE7F16E3586E00405F7A = {
+			isa = PBXGroup;
+			children = (
+				362BFFBD16E369EC00405F7A /* modules */,
+				362BFECB16E35D3500405F7A /* start.lua */,
+				362BFFB816E369C600405F7A /* src */,
+			);
+			sourceTree = "<group>";
+		};
+		362BFFB816E369C600405F7A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				362BFF3C16E3616900405F7A /* av.h */,
+				362BFF5216E3643D00405F7A /* av_ffi_header.cpp */,
+				362BFEB316E3598800405F7A /* av.cpp */,
+				362BFEB216E358D700405F7A /* build.sh */,
+				362BFF4A16E3627B00405F7A /* h2ffi.lua */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = "<group>";
+		};
+		362BFFBD16E369EC00405F7A /* modules */ = {
+			isa = PBXGroup;
+			children = (
+				362BFFCE16E36A7F00405F7A /* window.lua */,
+				362BFFBE16E369EC00405F7A /* gl.lua */,
+				362BFFBF16E369EC00405F7A /* glfw.lua */,
+				362BFFC016E369EC00405F7A /* glfw3.lua */,
+				362BFFC116E369EC00405F7A /* sdl.lua */,
+			);
+			name = modules;
+			path = ../modules;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		362BFE8116E3586E00405F7A /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 362BFE8416E3586E00405F7A /* Build configuration list for PBXProject "osx" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 362BFE7F16E3586E00405F7A;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				362BFEA216E358BE00405F7A /* build.sh */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		362BFEA116E358BE00405F7A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\ncd ..\n./build.sh\nexit 0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		362BFE8216E3586E00405F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		362BFE8316E3586E00405F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		362BFEA316E358BE00405F7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = build.sh;
+			};
+			name = Debug;
+		};
+		362BFEA416E358BE00405F7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = build.sh;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		362BFE8416E3586E00405F7A /* Build configuration list for PBXProject "osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				362BFE8216E3586E00405F7A /* Debug */,
+				362BFE8316E3586E00405F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		362BFEB116E358C900405F7A /* Build configuration list for PBXAggregateTarget "build.sh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				362BFEA316E358BE00405F7A /* Debug */,
+				362BFEA416E358BE00405F7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 362BFE8116E3586E00405F7A /* Project object */;
+}
