@@ -10,18 +10,18 @@ local bit = require 'bit'
 -- load from active executable rather than dynamic library
 --local lib = ffi.C
 
----[[
 local libs = ffi_OpenGL_libs or {
    OSX     = { x86 = "OpenGL.framework/OpenGL", x64 = "OpenGL.framework/OpenGL" },
    Windows = { x86 = "OPENGL32.DLL",            x64 = "OPENGL32.DLL" },
    Linux   = { x86 = "libGL.so",                x64 = "libGL.so", arm = "libGL.so" },
-   Linux = { x86 = ffi.C, x64 = ffi.C },
+   Linux = { x86 = "libGL.so", x64 = "libGL.so" },
    BSD     = { x86 = "libGL.so",                x64 = "libGL.so" },
    POSIX   = { x86 = "libGL.so",                x64 = "libGL.so" },
    Other   = { x86 = "libGL.so",                x64 = "libGL.so" },
 }
+
 local lib = lib or ffi.load( ffi_OpenGL_lib or libs[ ffi.os ][ ffi.arch ] )
---]]
+
 
 ffi.cdef [[
 enum {
